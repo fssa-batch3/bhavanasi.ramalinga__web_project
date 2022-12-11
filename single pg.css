@@ -1,0 +1,341 @@
+
+#container {
+	margin: 0 auto;
+}
+
+p {
+	text-align: center;
+}
+
+nav {
+
+	background-color: #E64A19;
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: space-around;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #E64A19;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color:none; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px;
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
+  
+  .btn{
+    display:inline-block;
+    background-color: #f44336;
+    color:#FFF;
+    padding:14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left:20px;
+    opacity:0.9;
+  }
+  input[type="text"]{
+    height:40px;
+    margin-top: 10px;
+    border-radius:22px;
+    
+  }
+  .searchbar i{
+    position:relative;
+  right: 13%;
+  }
+  .slide1{
+    display: flex;
+    margin-right: 30%;
+  }
+
+
+.rent{
+
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid;
+    margin-top: 3%;
+    flex-wrap: nowrap;
+}
+.bar{
+    display: flex;
+   border:1px solid;
+   width:80%;
+   margin-top: 3%;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 1px 2px rgb(0 0 0 /20%);
+   background-clip: padding-box;
+   margin-left: 10%;
+}
+.button{
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 8%;
+}
+.last{
+    display: flex;
+    justify-content: space-around;
+}
+
+    .btn{
+        display:inline-block;
+        background-color: #f44336;
+        color:#FFF;
+        padding:14px 25px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin-left:20px;
+        opacity:0.9;
+      }
+      a{
+        color:white;
+        text-decoration: none;
+      }
+      .main-content{
+        display: flex;
+        flex-direction: column; 
+        margin-left: 3%;
+        align-content: space-around;
+        flex-wrap: nowrap;
+        justify-content: center;
+       
+      }
+      div.image{
+        margin-top: 2%;
+        margin-left: 2%;
+      }
+      .passage{
+        border-bottom: 1px solid;
+      }
+      .one{
+        display: flex;
+        flex-direction: column;
+      }
+      .slide{
+        display: flex;
+        margin-top: 3%;
+        margin-right: 1%;
+      }
+      .main{
+        display: flex;
+        border:1px solid;
+        width:100%;
+        height:auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+       
+        align-content: space-around;
+        width:80%;
+        margin-left: 10%;
+      }
+      .sidebar{
+        margin-left: 7%;
+      }
+      div.photo{
+        margin-right: 2%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+      .another{
+        display:flex;
+        
+
+      }
+      .texttop{
+        border:1px solid;
+        border:1px solid;
+        width:100%;
+        height:auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+        align-content: space-around;
+        width:80%;
+        margin-left: 10%;
+      }
+      .another1{
+        display: flex;
+        margin-top: 3%;
+        flex-wrap: nowrap;
+        margin-left: 3%;
+      }
+      .\31{
+        display: flex;
+        flex-direction: column;
+      }
+      .\32{
+        display: flex;
+        flex-direction: column;
+      }
+      .\33{
+        display: flex;
+        flex-direction: column;
+      }
+      i.fa.fa-check-circle-o{
+        margin-right: 1%;
+      }
+      .number{
+        display:inline-block;
+        background-color: darkred;
+        color:#FFF;
+        padding:14px 25px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin-left:20px;
+        opacity:0.9;
+      }
+     
+      .roomdetail{
+       width:40vh;
+       height:100%;
+       border:1px solid #000;
+       box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+        border-radius: 8px;
+      }
+      .twin{
+        margin-top: 2%;
+        flex-wrap: nowrap;
+      }
+       .bed img{
+        width:100%;
+        
+       }
+      
+       td{
+        padding-top: 8%;
+       }
+       .fecilities{
+        margin-top: 8%;
+        margin-bottom: 8%;
+        flex-wrap: nowrap;
+       }
+      .content{
+        margin-left: 8%;
+        flex-wrap: nowrap;
+      }
+      .twodetails{
+        display: flex;
+        margin-bottom: 5%;
+        flex-wrap: nowrap;
+        justify-content: center;
+        
+       
+
+      }
+      .entire{
+        border:1px solid;
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-right: 10%;
+        flex-wrap: nowrap;
+        box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+      }
+      .left{
+        margin-right: 10%;
+        box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+        border-radius: 8px;
+      }
+      h3{
+        margin-left: 4%;
+        margin-bottom: 3%;
+        color:blue;
+      }
+     .otherfecilities{
+        border:1px solid;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-radius: 8px;
+        box-shadow: 1px 2px rgb(0 0 0 /20%);
+        background-clip: padding-box;
+        height:20vh;
+     }
+     .slides{
+        display:flex;
+        margin-left: 3%;
+     }
+     footer{
+        display: flex;
+        background-color: skyblue;
+        margin-top: 10%;
+     }
+     .footer2{
+        margin-bottom: 4%;
+        margin-top: 8%;
+     }
+     .footer1{
+        margin-top: 3%;
+        margin-left: 5%;
+     }
+     .link{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+     }
+     h2{
+      color:deeppink;
+     }
+     
+     
+
