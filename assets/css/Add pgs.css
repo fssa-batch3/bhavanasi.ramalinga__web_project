@@ -1,0 +1,177 @@
+input[type="text" i]{
+    border:0;
+    border-bottom:1px solid;
+    margin:0;
+    top:0;
+
+    
+    background-color: 0 8px 0 0;
+   
+    cursor:text;
+    
+}
+a{
+    text-decoration: none;
+}
+.soundarya{
+    border:1px solid;
+    width:70vh;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 7%;
+    height:650px;
+    box-shadow:20px 20px 10px 20px white;
+    height:90%;
+    border-radius: 8%;
+    
+}
+.id{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+h1{
+    color:brown;
+}
+h4{
+    border:1px solid;
+    padding:16px;
+    border-radius: 20px;
+    background-color:darkred;
+    color:white;
+}
+div#button.submit{
+    padding-right: 150px;
+}
+div.button{
+    display: flex;
+}
+form{
+    margin-left: 3%;
+}
+
+
+
+h3 a {
+	color:black;
+}
+
+a {
+	color: white;
+    text-decoration: none;
+}
+
+h1 {
+
+	
+    color:deeppink;
+    display: flex;
+	}
+    h2{
+        color:blue;
+    }
+
+#container {
+	margin: 0 auto;
+}
+
+p {
+	text-align: center;
+}
+
+nav {
+
+	background-color: #E64A19;
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: space-around;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #E64A19;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color:none; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px;
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
+ 
+ img{
+    height:50vh;
+ }
+ div.information{
+    display: flex;
+    margin-top: 5%;
+ }
+ .one{
+    display: flex;
+    margin-top: 3%;
+    background-color: rgb(235, 223, 223);
+ }
+ .one4{
+    margin-left: 8%;
+ }
+ .one1{
+    margin-left: 4%;
+ }
+ .more{
+    margin-left: 3%;
+ }
+
+
+    
+
+
