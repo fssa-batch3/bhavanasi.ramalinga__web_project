@@ -48,6 +48,11 @@ header{
   align-items: center;
 }
 
+.dropdownlist a{
+  text-decoration: none;
+  color: white;
+}
+
 .one{
     margin-left: 20px;
     margin-top: 10px;
