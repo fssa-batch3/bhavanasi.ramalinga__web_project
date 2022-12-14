@@ -18,9 +18,7 @@ input[type="text" i]{
     cursor:text;
     
 }
-a{
-    text-decoration: none;
-}
+
 .soundarya{
     border:1px solid;
     width:40vw;
@@ -41,9 +39,7 @@ a{
     flex-direction: row;
     flex-wrap: nowrap;
 }
-h1{
-    color:brown;
-}
+
 h4{
     border:1px solid;
     padding:16px;
@@ -67,10 +63,7 @@ h3 a {
 	color:black;
 }
 
-a {
-	color: white;
-    text-decoration: none;
-}
+
 
 h1 {
 

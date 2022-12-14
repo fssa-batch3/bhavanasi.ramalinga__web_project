@@ -172,15 +172,12 @@ a:link, a:visited{
     margin-top: 20px;
     background-color: green;
     width:80px;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 span.fa.fa-star.checked{
     color:orange;
 }
-.button{
-    display: flex;
-    justify-content: space-around;
-}
+
 footer{
     background-color: aliceblue;
 }
@@ -192,7 +189,7 @@ div.review{
 }
 .link{
     display: flex;
-    justify-content: space-around;
+    align-content: space-between;
 }
 .real{
     color:deeppink;
@@ -202,5 +199,15 @@ div.review{
 }
 .options{
     color:deeppink;
+}
+input[type="text"] {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
 }
 
