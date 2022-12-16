@@ -19,6 +19,7 @@ input[type="text" i]{
     
 }
 
+
 .soundarya{
     border:1px solid;
     width:40vw;
@@ -96,11 +97,13 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
+    height:70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
+    height:70%;
 	}
 
 nav a {
@@ -108,8 +111,9 @@ nav a {
 	padding:0 10px;	
 	color:#FFF;
 	font-size:20px;
-	line-height: 60px;
+	line-height: 5;
 	text-decoration:none;
+    
 }
 
 nav a:hover { 
@@ -150,8 +154,11 @@ nav ul ul ul li {
   }
   
  
- img{
+ .image img{
     height:50vh;
+ }
+ .magic{
+    margin-right: 70%;
  }
  div.information{
     display: flex;

@@ -49,11 +49,13 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
+    height:70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
+    height:70%;
 	}
 
 nav a {

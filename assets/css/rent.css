@@ -48,12 +48,14 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
+    height: 70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
   margin-right: 5%;
+  height:70%;
 	}
 
 nav a {
@@ -101,6 +103,10 @@ nav ul ul ul li {
     justify-content: space-around;
     
   }
+   .magic{
+    margin-right: 100px;
+   }
+ 
   
   
   .btn{
@@ -125,7 +131,7 @@ nav ul ul ul li {
   }
   input[type="text"]{
     height:40px;
-    margin-top: 10px;
+    margin-top: 18px;
     border-radius: 22px;
   }
   .main{

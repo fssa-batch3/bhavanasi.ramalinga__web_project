@@ -52,12 +52,14 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
+    height:70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
   margin-right: 5%;
+  height:70%;
 	}
 
 nav a {
@@ -65,8 +67,9 @@ nav a {
 	padding:0 10px;	
 	color:#FFF;
 	font-size:20px;
-	line-height: 60px;
+	line-height: 4;
 	text-decoration:none;
+ 
 }
 
 nav a:hover { 
@@ -91,6 +94,7 @@ nav ul ul li {
 	float:none;
 	display:list-item;
 	position: relative;
+ 
 }
 
 
@@ -98,6 +102,10 @@ nav ul ul ul li {
 	position: relative;
 	top:-60px; 
 	left:170px;
+  
+}
+.magic{
+  margin-right: 40%;
 }
 
   .last{
@@ -129,7 +137,7 @@ nav ul ul ul li {
   }
   input[type="text"]{
     height:40px;
-    margin-top: 10px;
+    margin-top: 18px;
     border-radius: 22px;
   }
   .main{
