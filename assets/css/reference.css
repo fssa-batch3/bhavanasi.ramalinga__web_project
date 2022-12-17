@@ -97,9 +97,6 @@ nav ul ul ul li {
 	top:-60px; 
 	left:170px;
 }
-i.fa.fa-user{
-  margin-top: 1%;
-}
 
   .last{
     display: flex;
@@ -120,7 +117,7 @@ i.fa.fa-user{
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin-left:20px;
+    margin-left:200px;
     opacity:0.9;
   }
   .btn a{

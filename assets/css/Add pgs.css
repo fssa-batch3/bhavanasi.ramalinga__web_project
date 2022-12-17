@@ -98,12 +98,14 @@ nav ul {
     align-content: center;
     justify-content: space-around;
     height:70px;
+    align-items: center;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-    height:70%;
+    
+    
 	}
 
 nav a {
@@ -111,7 +113,7 @@ nav a {
 	padding:0 10px;	
 	color:#FFF;
 	font-size:20px;
-	line-height: 5;
+	
 	text-decoration:none;
     
 }
