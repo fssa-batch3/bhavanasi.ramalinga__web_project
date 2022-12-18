@@ -11,12 +11,19 @@ input[type="text" i]{
     border-bottom:1px solid;
     margin:0;
     top:0;
-
+   outline: none;
     
     background-color: 0 8px 0 0;
    
     cursor:text;
     
+}
+.box{
+    border:1px solid;
+    width:40%;
+}
+i.fa.fa-plus{
+    margin-left: 30%;
 }
 
 
@@ -180,6 +187,8 @@ nav ul ul ul li {
  .more{
     margin-left: 3%;
  }
+
+
 
 
     

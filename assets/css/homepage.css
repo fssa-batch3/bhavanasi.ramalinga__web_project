@@ -122,6 +122,9 @@ img{
     
     
   }
+  a{
+    text-decoration: none;
+  }
 
   .content i{
     position: relative;
@@ -133,7 +136,7 @@ img{
     margin-top: 8%;
   }
   h2{
- margin-right: 8%;
+ margin-left: 6%;
   }
   .three{
     display: flex;
