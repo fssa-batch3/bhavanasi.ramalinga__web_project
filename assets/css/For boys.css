@@ -123,7 +123,9 @@ nav ul ul ul li {
   .image{
    
     margin-right: 40px;
-   
+    
+    margin-left: 2%;
+    margin-top: 2%;
 
   }
   input[type="text"]{
@@ -203,11 +205,8 @@ nav ul ul ul li {
     align-items: flex-start;
     flex-wrap: nowrap;
   }
-  .image{
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-top: 2%;
-  }
+  
+  
   .link{
     display: flex;
     flex-direction: row;
