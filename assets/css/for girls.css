@@ -121,12 +121,8 @@ nav ul ul ul li {
   .btn a{
     color:white;
   }
-  .image{
+  
    
-    margin-right: 40px;
-   
-
-  }
   input[type="text"]{
     height:40px;
     margin-top: 10px;
@@ -205,9 +201,10 @@ nav ul ul ul li {
     flex-wrap: nowrap;
   }
   .image{
-    margin-right: 2%;
+    
     margin-left: 2%;
     margin-top: 2%;
+    margin-right: 40px;
   }
   .link{
     display: flex;

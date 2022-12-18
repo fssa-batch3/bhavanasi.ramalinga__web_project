@@ -68,6 +68,7 @@ input[type=text], input[type=password] {
     display: flex;
     flex-direction: row;
     margin-bottom: 100px;
+    
   }
  
 body{
@@ -87,9 +88,7 @@ a:link, a:visited{
     text-decoration:none;
    
 }
-span.psw{
-    padding-bottom: 80px;
-}
+
 div.button{
     height: 50px;
 }

@@ -5,7 +5,17 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
-form {border: 3px solid #f1f1f1;}
+form {
+  border: 3px solid #f1f1f1;
+  height:10%;
+    width: 400px;
+    
+    margin-top: 100px;
+    box-shadow: 20px 20px 50px 15px white;
+
+
+
+}
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -88,19 +98,11 @@ a:link, a:visited{
     align-content: center;
     justify-content: center;
 }
-span.psw{
-    padding-bottom: 80px;
-}
+
 div.button{
     height: 50px;
 }
-form{
-    height:600px;
-    width: 400px;
-    border:1px solid;
-    margin-top: 100px;
-    box-shadow: 20px 20px 50px 15px white;
-}
+
 h2,p{
     display: flex;
     justify-content:center;
