@@ -25,11 +25,13 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
+    height:70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
+  height:70%;
 	}
 
 nav a {
@@ -71,10 +73,14 @@ nav ul ul ul li {
 	top:-60px; 
 	left:170px;
 }
+.magic{
+  margin-right: 60%;
+}
 
   .last{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 5%;
     
   }
   
@@ -92,7 +98,7 @@ nav ul ul ul li {
   }
   input[type="text"]{
     height:40px;
-    margin-top: 10px;
+    margin-top: 15px;
     border-radius:22px;
     
   }
@@ -103,6 +109,7 @@ nav ul ul ul li {
   .slide1{
     display: flex;
     margin-right: 30%;
+    margin-top: 8%;
   }
 
 
@@ -125,11 +132,13 @@ nav ul ul ul li {
    background-clip: padding-box;
    margin-left: 10%;
 }
+ 
 .button{
-    display: flex;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 8%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  
+  margin-left: 8%;
 }
 .last{
     display: flex;
@@ -245,7 +254,7 @@ nav ul ul ul li {
         padding:14px 25px;
         text-align: center;
         text-decoration: none;
-    
+        margin-right: 30%;
         margin-left:18%;
         opacity:0.9;
       }
@@ -306,7 +315,7 @@ nav ul ul ul li {
       h3{
         margin-left: 4%;
         margin-bottom: 3%;
-        color:blue;
+        
       }
      .otherfecilities{
         border:1px solid;
@@ -318,24 +327,33 @@ nav ul ul ul li {
         height:20vh;
      }
      .slides{
-        display:flex;
+        display: flex;
         margin-left: 3%;
      }
+
      footer{
-        display: flex;
+     
         background-color: skyblue;
         margin-top: 10%;
+        padding-bottom: 4%;
+     }
+     .footerone{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
      }
      .footer2{
         margin-bottom: 4%;
         margin-top: 8%;
      }
      .footer1{
+      display: flex;
         margin-top: 3%;
-        margin-left: 5%;
+        margin-left: 3%;
+        
      }
      .link{
-        display:flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
      }
@@ -343,6 +361,9 @@ nav ul ul ul li {
       color:deeppink;
      }
      
-     
-     
+
+
+
+
+    
 
