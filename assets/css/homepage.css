@@ -1,5 +1,17 @@
 
 @import "normalize.css";
+@media screen and (max-width:800px){
+  /* For tablets:*/
+  .header{
+    width: 100px;
+    padding:0;
+  }
+  .both{
+    width:100px;
+    padding:0;
+  }
+
+}
 
 *{
   font-family: 'Poppins', sans-serif;
@@ -88,30 +100,67 @@ img{
    
     margin-right: 5%;
 } */
-
+ 
   
-.text-block {
-    
-    bottom: 20px;
-    margin-bottom: 30px;
-    
-    color: black;
-    padding-left: 80px;
-    padding-right: 20px;
-   
+.container {
+  position: relative;
+  width: 50%;
 }
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  
+
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 15%;
+}
+
 
   .both{
     display:flex;
   }
   .image{
-    margin-left: 50vh;
-    margin-right: 10%;
+  
     margin-top: 3%;
-    height:70%;
-   
+    height:100%;
+    flex-wrap: nowrap;
      
     
+  }
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  div.image{
+    width:30%;
   }
   input[type="text"i]{
     height:40px;
@@ -122,9 +171,7 @@ img{
     
     
   }
-  a{
-    text-decoration: none;
-  }
+ 
 
   .content i{
     position: relative;
@@ -217,7 +264,7 @@ footer{
  .next{
   margin-left: 10%;
  }
- .line{
+ .meals{
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
