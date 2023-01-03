@@ -183,11 +183,51 @@ nav ul ul ul li {
  }
  .one1{
     margin-left: 4%;
+    margin-bottom: 3%;
+ }
+ .one6{
+    margin-top: 5%;
  }
  .more{
     margin-left: 3%;
  }
+ @media screen and (max-width: 900px){
+   body{
+    width:1000px;
+    height:auto;
+   }
+   
+    header{
+        width:1040px;
+        background-color: green;
+    }
+    .magic{
+        width:150px;
+    }
+    .information{
+        width:800px;
+    }
+    .image{
+        margin-left: 3%;
+    }
+    .soundarya{
+        width:650px;
+       
+        
+    }
+   
+      form{
+        width:600px;
+        margin-left: 15%;
 
+      }
+      footer{
+        width:1040px;
+      }
+ }
+ @media screen and (max-width: 900px) and (min-width: 600px){
+
+ }
 
 
 

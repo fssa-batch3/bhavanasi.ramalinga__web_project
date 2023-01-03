@@ -274,9 +274,7 @@ footer{
     width:980px;
   }
   .border{
-    width:1000px;
-    
-    
+    width:1000px; 
   }
   
   div.container .imag{
@@ -288,7 +286,7 @@ footer{
     height: 300px;
   }
   .photos{
-    width:800px;
+    width:700px;
   }
   div.both{
     width:800px;
@@ -296,9 +294,5 @@ footer{
   .next{
     width:900px;
   }
-  header{
-    height: 15vh;
-  }
+  
  }
-
- 
