@@ -25,19 +25,19 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="first name"><b>first name</b></label>
-    <input type="text" placeholder="Enter first name" name="name" id="name" required>
+    <input type="text" placeholder="Enter first name"  id="name"  >
     
     <label for="last name"><b>Last name</b></label>
-    <input type="text" placeholder="Enter last name" name="name" id="name" required>
+    <input type="text" placeholder="Enter last name"  id="Last"  >
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter Email"  id="email" >
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <input type="password" placeholder="Enter Password"  id="psw">
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password"  id="repeat" >
    <h4> <label for="option">choose Pg Owner/Tenant:</label></h4>
     <select id="options">
         <option value="option">pg owner</option>
@@ -49,12 +49,31 @@
     <hr>
     <p>By creating an account you agree to our website </p>
 
-    <div id="submit" class="registerbtn">
-    <a  href="../../pages/homepage/rent.html">Register</a></div>
+       <button type="button" onclick="register()">register</button>
+    
   </div>
   
   
 </form>
+<script>
+  function register(){
+  const name = document.getElementById("name").value
+  const last = document.getElementById("Last").value
+  const email = document.getElementById("email").value
+  const psw = document.getElementById("psw").value
+  const repeat = document.getElementById("repeat").value
 
+  console.log(name)
+  console.log(last)
+  console.log(email)
+  console.log(psw)
+  console.log(repeat)
+
+  localStorage.setItem("user_email",email);
+  localStorage.setItem("user_name",name);
+
+  window.location.href = "../../pages/homepage/rent.html"
+}
+</script>
 </body>
 </html>

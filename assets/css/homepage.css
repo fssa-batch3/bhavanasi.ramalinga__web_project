@@ -261,6 +261,7 @@ footer{
   margin-left: 10%;
  }
  .meals{
+  
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
@@ -272,10 +273,32 @@ footer{
  {
   header{
     width:980px;
+    height:10%;
   }
   .border{
-    width:1000px; 
+    width:900px; 
   }
+  .meals{
+    
+    margin-left: 8%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+   }
+   span{
+    font-size: 30px;
+   }
+   
+   .one{
+    height:80px;
+    width:80px;
+   }
+   input[type="text"i]{
+    height:40px;
+    width:80vh;
+    margin-left: 10%;
+    border-radius: 22px;
+    margin-top: 5%;
+   }
   
   div.container .imag{
      width:30%;
@@ -285,8 +308,22 @@ footer{
     width:980px;
     height: 300px;
   }
+  .button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10%;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 2%;
+ }
   .photos{
     width:700px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    row-gap: 5%;
+    margin-left: 40%;
+
   }
   div.both{
     width:800px;
@@ -294,5 +331,6 @@ footer{
   .next{
     width:900px;
   }
+
   
  }

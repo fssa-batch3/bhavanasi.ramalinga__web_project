@@ -43,7 +43,7 @@
         
         <div class="details">
    <h2> <span class="pg"> 1.First name:</label>
-    <input type="text" id="pg" name="pg"><br><br>
+    <input type="text"  name="pg" id="user_name" ><br><br>
     <label for="Rooms">2. Last name:</label>
     <input type="text" id="rooms" name="rooms"><br><br>
     <label for="Address">3. Age:</label>
@@ -75,6 +75,13 @@
     </div>
     </div>
 
-    
+    <script>
+        // localStorage.getItem("key")
+        const user_first_name = localStorage.getItem("user_name");
+        console.log();
+        documnet.getElementById("user_name").innerText =  user_first_name;
+       
+
+    </script>
 </body>
 </html>

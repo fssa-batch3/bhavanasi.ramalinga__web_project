@@ -7,11 +7,6 @@
     <link   rel="stylesheet"  href="../../assets/css/login.css">
     
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-form {border: 3px solid #f1f1f1;}
-
-</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -27,10 +22,10 @@ form {border: 3px solid #f1f1f1;}
    
   <div class="container">
     <label for="uid"><b>User Email-id</b></label>
-    <input type="text" placeholder="Enter Email-id" email-id="uname" required>
+    <input type="text" placeholder="Enter Email-id" id="email" value="soundaryabavanasi@gmail.com">
 
    <br> <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" email-id="psw" required></br>
+    <input type="password" placeholder="Enter Password" id="psw" value="ramalinga"></br>
         
     <br><button type="submit">
       <a href="../../pages/homepage/rent.html">Login</a>
@@ -43,6 +38,13 @@ form {border: 3px solid #f1f1f1;}
   
     </div>
 </form>
+<script>
 
+  
+  const email = document.getElementById("email").value
+  const psw = document.getElementById("psw").value
+  console.log(email)
+  console.log(psw )
+</script>
 </body>
 </html>

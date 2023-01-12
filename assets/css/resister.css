@@ -9,6 +9,13 @@
   .container {
     padding: 16px;
     background-color: white;
+    border:3px solid #f1f1f1;
+    height: 860px;
+    width: 450px;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    margin-top:3%;
+
   }
   
   
@@ -32,7 +39,7 @@
     margin-bottom: 25px;
   }
   
-   .registerbtn {
+   button {
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
@@ -61,22 +68,25 @@
     background-color: #f1f1f1;
     text-align: center;
   }
-  body{
-    padding-left: 350px;
-    padding-top: 40px;
-    padding-right: 350px;
-  }
-  div.container{
-    border:3px solid #f1f1f1;
-    height: 860px;
-    width: 450px;
-    margin-left: 150px;
-    margin-bottom: 5%;
-   
-    
-  }
+  
+ 
   select#options{
     width:130px;
     height:40px;
   }
+  @media screen and (max-width:800px){
+    .container {
+      margin: 10px;
+      background-color: white;
+      border:3px solid #f1f1f1;
+      height: 860px;
+      width: 430px;
+      margin-bottom: 5%;
+      margin-top:3%;
+      display: table-cell;
+  
+    }
+    
+    
+}
   
