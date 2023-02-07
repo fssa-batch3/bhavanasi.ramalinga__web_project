@@ -80,7 +80,7 @@ nav ul ul ul li {
   .last{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 5%;
+    
     
     
   }
@@ -133,10 +133,7 @@ nav ul ul ul li {
   margin-bottom: 4%;
 }
 
-    
-
-
-    .btn{
+     .button{
         display:inline-block;
         background-color: #f44336;
         color:#FFF;
@@ -160,9 +157,17 @@ nav ul ul ul li {
         justify-content: center;
        
       }
-      div.image{
-        margin-top: 2%;
+      .roomdetail img{
+        width:99%;
+        height:50%;
+      }
+      .bar img{
+        margin-top: 3%;
         margin-left: 2%;
+        height:400px;
+        width:350px;
+        margin-bottom: 2%;
+        
       }
       .passage{
         border-bottom: 1px solid;
@@ -179,7 +184,8 @@ nav ul ul ul li {
       .main{
         display: flex;
         border:1px solid;
-        
+        margin-top: 2%;
+        margin-bottom: 2%;
         height:auto;
         background-color: #fff;
         border-radius: 8px;
@@ -193,7 +199,7 @@ nav ul ul ul li {
       .sidebar{
         margin-left: 7%;
       }
-      div.photo{
+      .main img{
         margin-right: 2%;
         margin-top: 2%;
         margin-bottom: 2%;
@@ -238,7 +244,7 @@ nav ul ul ul li {
       i.fa.fa-check-circle-o{
         margin-right: 1%;
       }
-      .number{
+      /* .{
         display:inline-block;
         background-color: darkred;
         color:#FFF;
@@ -248,7 +254,7 @@ nav ul ul ul li {
         margin-right: 30%;
         margin-left:18%;
         opacity:0.9;
-      }
+      } */
      
       .roomdetail{
        width:48vh;
@@ -257,6 +263,7 @@ nav ul ul ul li {
        box-shadow: 1px 2px rgb(0 0 0 /20%);
         background-clip: padding-box;
         border-radius: 8px;
+        margin-right: 10vh;
       }
       .twin{
         margin-top: 2%;
@@ -276,8 +283,9 @@ nav ul ul ul li {
         flex-wrap: nowrap;
        }
       .content{
-        margin-left: 8%;
+       margin-bottom: 2%;
         flex-wrap: nowrap;
+        margin-left: 2%;
       }
       .twodetails{
         display: flex;

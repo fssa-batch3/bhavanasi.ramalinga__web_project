@@ -28,7 +28,7 @@
                             </ul>        
                             </li>
                             <li><a href="../../pages/homepage/review.html">Reviews</a></li>
-                            <li><a href="../../pages/homepage/my profile.html">my ptofile</a></li>
+                            <li><a href="../../pages/homepage/my profile.html">my profile</a></li>
                             <li><a href="../../pages/homepage/Add pgs.html">Add pg</a></li>
                             <div class="search"> 
                                 <input type="text" placeholder="search.."name="search">
@@ -48,7 +48,7 @@
             </div>
         </header>
         
-<h2 class="gender">This is for both Genders</h2>
+<h2 >This is for both Genders</h2>
 
  <script>
 
@@ -81,20 +81,19 @@
                      "alt" : "photo", 
                     "height":"280px",
                     "width":"300px"},
-    "starting_price" :  "5,000/- onwards" ,
-    "addrees" :{"../../pages/homepage/single pg.html":"Zolo thrones pg/paying Guest in perungudi"},
-     "single romm":"single sharing with AC",
-     "single rate" : "20,000/-",
-     "twin room" : "twin sharing with AC",
-     "twin rate": "18,0000/-",
-     "triple room" : "triple sharing with AC",
-     "triple rate" : "15,000/-",
+    "starting_price" :  "7,000/- onwards" ,
+    "address" :{"../../pages/homepage/single pg.html":"Zolo thrones pg/paying Guest in perungudi"},
+     "single_room":"single sharing with AC",
+     "single_rate" : "20,000/-",
+     "twin_room" : "twin sharing with AC",
+     "twin_rate": "18,0000/-",
+     "triple_room" : "triple sharing with AC",
+     "triple_rate" : "13,000/-",
+     "four_room":"four sharing Non AC",
+     "four_rate" : "7,000",
      "location" : "Located in perungudi,chennai,Zolo Thrones is a modern and specious pg.",
      "button"   : "contact owner",
-
-
-
-
+      "link" : "../../pages/homepage/bothsingle.html" 
     },
 
     
@@ -102,21 +101,61 @@
                      "alt" : "photo", 
                     "height":"280px",
                     "width":"300px"},
+    "starting_price" :  "8,000/- onwards" ,
+    "address" :{"../../pages/homepage/bothsingle pg.html":"Zolo thrones pg/paying Guest in perungudi."},
+     "single_room":"single sharing with AC",
+     "single_rate" : "25,000/-",
+     "twin_room" : "twin sharing with AC",
+     "twin_rate": "20,0000/-",
+     "triple_room" : "triple sharing with AC",
+     "triple_rate" : "15,000/-",
+     "four_room":"four sharing Non-AC",
+     "four_rate" : "8,000/-",
+     "location" : "No-15, Srinath Nager, 2nd Street,Perungudi, 600097 , 2nd Street,Perungudi, 600097",
+     "button"   : "contact owner",
+     "link" : "../../pages/homepage/single pg.html" 
+},
+
+{ "image" : {  "src" : "../../assets/images/image1.jpg",
+                     "alt" : "photo", 
+                    "height":"280px",
+                    "width":"300px"},
+    "starting_price" :  "6,000/- onwards" ,
+    "address" :{"../../pages/homepage/boyssingle pg.html":"sarasu pg/paying Guest in perungudi."},
+     "single_room":"single sharing with AC",
+     "single_rate" : "20,000/-",
+     "twin_room" : "twin sharing with AC",
+     "twin_rate": "15,0000/-",
+     "triple_room" : "triple sharing with AC",
+     "triple_rate" : "10,000/-",
+     "four_room":"four sharing Non-AC",
+     "four_rate" : "6,000/-",
+     "location" : "Located Plot No.1, 2 & 3, Seevaram 3rd Street Near Perungudi Toll Plaza , OMR Rajiv Gandhi Salai, OMR, Seevaram, Perungudi, Chennai,chennai.this  is a modern and specious pg.",
+     "button"   : "contact owner",
+     "link":"../../pages/homepage/bothsingle.html"
+},
+{ "image" : {  "src" : "../../assets/images/3.jpg",
+                     "alt" : "photo", 
+                    "height":"280px",
+                    "width":"300px"},
     "starting_price" :  "5,000/- onwards" ,
-    "addrees" :{"../../pages/homepage/single pg.html":"Zolo thrones pg/paying Guest in perungudi"},
-     "single romm":"single sharing with AC",
-     "single rate" : "20,000/-",
-     "twin room" : "twin sharing with AC",
-     "twin rate": "18,0000/-",
-     "triple room" : "triple sharing with AC",
-     "triple rate" : "15,000/-",
+    "address" :{"../../pages/homepage/boyssingle1 pg.html":"grace pg/paying Guest in perungudi."},
+     "single_room":"single sharing with AC",
+     "single_rate" : "20,000/-",
+     "twin_room" : "twin sharing with AC",
+     "twin_rate": "15,0000/-",
+     "triple_room" : "triple sharing with AC",
+     "triple_rate" : "10,000/-",
+     "four_room":"four sharing Non-AC",
+     "four_rate" : "5,000/-",
      "location" : "Located in perungudi,chennai,Zolo Thrones is a modern and specious pg.",
      "button"   : "contact owner",
-}
+     "link":"../../pages/homepage/bothsingle.html"
+}   
  ]
 
 
-    for ( let i = 0; i < 8; i++){
+    for ( let i = 0; i < 8; i++){  
         div_bar = document.createElement("div");
         div_bar.setAttribute("class", "bar"); 
         console.log(div_bar);
@@ -142,9 +181,9 @@
      div_bar.append(div_room_details);
 
     //<div class="onwards"></div>
-     div_onwards = document.createElement("div");
+     div_onwards = document.createElement("div");                                                                   
      div_onwards.setAttribute("class" ,"onwards");
-     div_onwards.innerText="5,000/- onwards";
+     div_onwards.innerText=pg_list[i]["starting_price"];
      div_room_details.append(div_onwards);
 
      //<div class="para"> </div>
@@ -154,14 +193,14 @@
     div_room_details.append(div_para);
     
      page_a = document.createElement("a")
-    page_a.setAttribute("href","../../pages/homepage/single pg.html");
+    page_a.setAttribute("href",pg_list[i]["link"]);
     div_para.append(page_a);
 
     line_p = document.createElement("p");
    page_a.append(line_p);
 
    one_b = document.createElement("b");
-   one_b.innerText = "Zolo thrones pg/paying Guest in perungudi"
+   one_b.innerText =("Zolo thrones pg/paying Guest in perungudi");
    line_p.append(one_b);
 
 //    <div class="payment">
@@ -182,8 +221,8 @@
     div_rent.append(div_text);
 
     rate_p = document.createElement("p");
-    rate_p.innerText="20,000/-";
-   div_text.append(rate_p);
+    rate_p.innerText = pg_list[i]["single_rate"];
+    div_text.append(rate_p);
 
    div_one = document.createElement("div");
     div_one.setAttribute("class","one");
@@ -191,7 +230,7 @@
     div_rent.append(div_one);
 
     rate1_p = document.createElement("p");
-    rate1_p.innerText="18,000/-";
+    rate1_p.innerText=pg_list[i]["twin_rate"];
    div_one.append(rate1_p);
 
    div_two = document.createElement("div");
@@ -200,17 +239,17 @@
     div_rent.append(div_two);
 
     rate2_p = document.createElement("p");
-    rate2_p.innerText="15,000/-";
+    rate2_p.innerText=pg_list[i]["triple_rate"];
    div_two.append(rate2_p);
 
    div_three = document.createElement("div");
     div_three.setAttribute("class","three");
-    div_three.innerText=" four sharing with AC";
+    div_three.innerText=" four sharing with Non_AC";
     div_rent.append(div_three);
 
     rate3_p = document.createElement("p");
-    rate3_p.innerText="15,000/-";
-   div_three.append(rate2_p);
+    rate3_p.innerText= pg_list[i]["four_rate"];
+   div_three.append(rate3_p);
 
 
 //    <div class="content">
@@ -219,7 +258,7 @@
      div_payment.append(div_content);
 
     rate4_b = document.createElement("p");
-    rate4_b.innerText="Located in Perungudi,chennai,Zolo Thrones is a modern and specious pg.";
+    rate4_b.innerText=pg_list[i]["location"];
    div_content.append(rate4_b);
 
 //    <div class="button">

@@ -43,26 +43,26 @@
 
 </div>
 </header>
-<div>
-                        
-    <div class="bar">
-        <div class="image">
-            <img src="../../assets/images/image1.jpg" alt="photo" height="400px"    width="350px"/>
+<div class = "start">
+                         
+      <!-- <div class="bar">
+        
+    <img src="../../assets/images/image1.jpg" />
             
-        </div>
+        
         <div class="main-content">
-            <div> 
-                <h2>Zolo Thrones,perungudi,chennai</h2></div>
+            
+                <h2>Zolo Thrones,perungudi,chennai</h2>
             <div class="passage"> Located in perungudi,chennai,Zolo Thrones is a Modern and spacious PG Home that is close to major<br>
                  educational commericial hubs in the area. <br>
                 This unisex pg offers all the comforts like TV,AC,FOOD More</div>
             <div class="payment">
                 <div class="rent">
                     <div class="text">
-                        Deposite amoount<p>15000/-</p></div>
+                        <p>Deposite amoount</p><p>15000/-</p></div>
                     <div class="one">maintainace<p>-</p></div>
                     <div class="two"> notice period <p>Month</p></div>
-                    <div class="three">Electricity change<p> -</p></div>
+                    <div class="three">Electricity charge<p> -</p></div>
                 </div>
                 
                    <div class="rent">
@@ -80,24 +80,17 @@
                         <div class="three">operating since<p>2015</p></div>
                     </div>
                     <div class="button">
-                        <div class="last">
-                            <div id="contact" class="btn">
+                        
                                 <a href="../../pages/homepage/viewcontact.html">contact owner</a>
-                            </div>
-                            
-                            
-                                </div>
+                           
                     </div>
                     </div>
-        </div>
-    </div>
+        </div>   -->
+      </div> 
         
-   
-   
-    <ol></ol>
-    <div class="main">
-    <div class="sidebar">
-        <h2>Common Area and Amenities</h2>
+     <!-- <div class="main">
+     <div class="sidebar">
+     <h2>Common Area and Amenities</h2>
     <div class="slide">
         <div class="one" >
         <img src="../../assets/images/parking.jpg "alt="photo"  height="70%"  width="30%"/> <b>Parking </b></div>
@@ -107,7 +100,7 @@
         <img src="../../assets/images/food1.jpg" alt="photo"  height="50%"  width="30%"/><b>Food</b></div>
         <div class="one">
         <img src="../../assets/images/fridge.jpg " alt="photo" height="50%"  width="30%"/><b>Fridge</b></div>
-    </div>
+        </div>
     
         
     
@@ -120,11 +113,11 @@
             <img src="../../assets/images/wifi.png" alt="photo"height="50%" width="30%"/><b>Wifi</b></div>
         </div>
     </div>
-    <div class="photo">
+    
         <img src="../../assets/images/image1.jpg" alt="photo"  height="300px"  width="300px"/>
-    </div>
-    </div>
-    <ol></ol>
+   
+    </div> -->
+    
     <div class="texttop">
         <div class="materials">
             <h3>Food and Kitchen</h3>
@@ -186,11 +179,11 @@
    <h3> Occupancy Option in Zolo Thrones</h3></div>
 <div class="twodetails">
     
-<div class="left">
+
     <div class="roomdetail">
-    <div class="bed">
+   
         <img src="../../assets/images/b1.jpg"   alt="photo"/>
-    </div>
+    
     <div class="content">
     <div class="twin"> 
    <b> Twin sharing with AC in Zolo Throne</b></div>
@@ -214,21 +207,21 @@
     <i class="fa fa-check-circle-o" style="font-size:20px;color:green"></i><b>Cot</b>
     </div>
     <div class="button">
-    <div id="viewphone" class="number">
+    
         <a href="">view phone No.</a>
-    </div>
+    
     </div>
     </div>
       
     
     </div>
-</div>
 
-<div class="right">
+
+
     <div class="roomdetail">
-    <div class="bed">
-        <img src="../../assets/images/b2.jpg"  alt="photo" height="50%"/>
-    </div>
+    
+        <img src="../../assets/images/b2.jpg"  alt="photo" />
+    
     <div class="content">
     <div class="twin"> 
     <b>Twin sharing with AC in Zolo Throne</b></div>
@@ -252,16 +245,16 @@
         <i class="fa fa-check-circle-o" style="font-size:20px;color:green"></i><b>Cot</b>
         </div>
     <div class="button">
-    <div id="viewphone" class="number">
+    
         <a href="">view phone No.</a>
-    </div>
+    
     </div>
     </div>
       
     
     </div>
 
-</div>
+
 </div>
 </div>
 
@@ -288,7 +281,7 @@
            <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
         </div>
 
- <div class="button">
+ <div class="last">
    
     <div >sitemap</div>
     <div>Terms&conditions</div>
@@ -302,6 +295,237 @@
    <div> Buy our services</div>
  </div>
 </footer>
+
+
+<script>
+    let div_bar;
+    let img;
+    let main_contant;
+    let passage;
+    let payment;
+    let rent;
+    let text;
+    let one;
+    let two;
+    let three;
+    let button;
+
+    let pg_details=
+        {
+            
+            "images":[
+                {
+                    "src":"../../assets/images/parking.jpg ",
+                    
+                },
+                {
+                    "src":"../../assets/images/wifi.png",
+                   
+                }, 
+                {
+                    "src":"../../assets/images/food1.jpg ",
+                    
+                },
+                {
+                    "src":"../../assets/images/fridge.jpg ",
+                },
+            ]
+        }
+       
     
+
+
+        div_bar = document.createElement("div");
+        div_bar.setAttribute("class", "bar"); 
+        console.log(div_bar);
+        document.querySelector ("div.start").append(div_bar);
+       //img //
+        img = document.createElement("img");
+        img.setAttribute("src","../../assets/images/image1.jpg");
+        img.setAttribute("alt","photo");
+        img.setAttribute("height","400px");
+        img.setAttribute("width","450px");
+        div_bar.append(img);
+
+        // //div class="main-content"//
+        div_main_content = document.createElement("div");
+        div_main_content.setAttribute("class","main-content");
+        div_bar.append(div_main_content);
+
+        h2=document.createElement("h2");
+        h2.innerText=("Zolo Thrones,perungudi,chennai");
+        div_main_content.append(h2);
+        //div class=passage//
+        div_passage=document.createElement("div");
+        div_passage.setAttribute("class","passage");
+        div_passage.innerText=("Located in perungudi,chennai,Zolo Thrones is a modern and spacious pg Home that is close to major educational commertial hubs in the area.This unisex pg offers all the comforts like TV,AC,FOOD,more.");
+        div_main_content.append(div_passage);
+        //div class=payment//
+        div_payment=document.createElement("div");
+        div_payment.setAttribute("class","payment");
+        div_main_content.append(div_payment);
+        //div class=rent//
+        div_rent=document.createElement("div");
+        div_rent.setAttribute("class","rent");
+        div_payment.append(div_rent);
+        //div class=text//
+        div_text=document.createElement("div");
+        div_text.innerText=("Deposite amount");
+        div_rent.append(div_text);
+       //p//
+        p=document.createElement("p");
+        p.innerText=("15000/-");
+        div_text.append(p);
+       //div class=one//
+       div_one=document.createElement("div");
+       div_one.innerText=("maintainance");
+       div_rent.append(div_one);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("--");
+        div_one.append(p);
+       //div class=two//
+       div_two=document.createElement("div");
+       div_two.innerText=("notice period");
+       div_rent.append(div_two);
+       //p//
+
+       p=document.createElement("p");
+        p.innerText=("month");
+        div_two.append(p);
+
+
+        //div class=three//
+        div_three=document.createElement("div");
+       div_three.innerText=("Electricity charge");
+       div_rent.append(div_three);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("--");
+        div_three.append(p);
+         //div class=rent//
+         div_rent=document.createElement("div");
+        div_rent.setAttribute("class","rent");
+        div_payment.append(div_rent);
+        //div class=text//
+        div_text=document.createElement("div");
+        div_text.innerText=("Food availability");
+        div_rent.append(div_text);
+       //p//
+        p=document.createElement("p");
+        p.innerText=("Veg & Non-veg");
+        div_text.append(p);
+       //div class=one//
+       div_one=document.createElement("div");
+       div_one.innerText=("AC rooms");
+       div_rent.append(div_one);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("Available");
+        div_one.append(p);
+       //div class=two//
+       div_two=document.createElement("div");
+       div_two.innerText=("Parking");
+       div_rent.append(div_two);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("Available");
+        div_two.append(p);
+        //div class=three//
+        div_three=document.createElement("div");
+       div_three.innerText=("power Backup");
+       div_rent.append(div_three);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("Available");
+        div_three.append(p);
+         //div class=rent//
+         div_rent=document.createElement("div");
+        div_rent.setAttribute("class","rent");
+        div_payment.append(div_rent);
+        //div class=text//
+        div_text=document.createElement("div");
+        div_text.innerText=("available for");
+        div_rent.append(div_text);
+       //p//
+        p=document.createElement("p");
+        p.innerText=("Girls & boys");
+        div_text.append(p);
+       //div class=one//
+       div_one=document.createElement("div");
+       div_one.innerText=("preferred Tenants");
+       div_rent.append(div_one);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("All");
+        div_one.append(p);
+       //div class=two//
+       div_two=document.createElement("div");
+       div_two.innerText=("Total number of Beds");
+       div_rent.append(div_two);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("148");
+        div_two.append(p);
+        //div class=three//
+        div_three=document.createElement("div");
+       div_three.innerText=("operating since");
+       div_rent.append(div_three);
+       //p//
+       p=document.createElement("p");
+        p.innerText=("2015");
+        div_three.append(p);
+
+        page_a = document.createElement("a")
+    page_a.setAttribute("href","../../pages/homepage/viewcontact.html");
+    div_payment.append(page_a);
+
+        //div class=button//
+        div_button = document.createElement("div");
+     div_button.setAttribute("class","button");
+     div_button.innerHTML = "contact owner";
+     page_a.append(div_button); 
+    
+    //next box//
+     //div class=main//
+     div_main=document.createElement("div");
+     div_main.setAttribute("class","main");
+     document.querySelector ("div.start").append(div_main);
+     //div class="sidebar"//
+     div_sidebar=document.createElement("div");
+     div_sidebar.setAttribute("class","sidebar");
+     div_main.append(div_sidebar);
+     //h2//
+     h2_text=document.createElement("h2");
+     h2_text.innerHTML="Common Area and Amendities";
+     div_sidebar.append(h2_text);
+     //div class=slide//
+     div_slide=document.createElement("div");
+     div_slide.setAttribute("class","slide");
+     div_sidebar.append(div_slide);
+     //div class=one//
+     div_one=document.createElement("div");
+     div_one.setAttribute("class","one");
+      div_slide.append(div_one);
+    //   //img//
+      for (let i=0; i<3;i++){
+
+        div_one=document.createElement("div");
+     div_one.setAttribute("class","one");
+      div_slide.append(div_one);
+        
+      img_picture = document.createElement("img");
+        img_picture.setAttribute("src",pg_details["images"][i]["src"]);
+        img_picture.setAttribute("alt","photo");
+        img_picture.setAttribute("height","250px");
+        img_picture.setAttribute("width","250px");
+        div_one.append(img_picture);
+      }
+     
+
+
+
+
+</script>
 </body>
 </html>

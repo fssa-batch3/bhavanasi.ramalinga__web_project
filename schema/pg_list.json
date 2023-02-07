@@ -1,0 +1,19 @@
+
+
+{ "image" : {  "src" : "string",
+                     "alt" : "string", 
+                    "height":"string",
+                    "width":"string"},
+    "starting_price" :  "string" ,
+    "address" :"string",
+     "single_room":"string",
+     "single_rate" : "number",
+     "twin_room" : "string",
+     "twin_rate": "number",
+     "triple_room" : "string",
+     "triple_rate" : "number",
+     "four_room":"string",
+     "four_rate" : "number",
+     "location" : "string",
+     "button"   : "string"
+}

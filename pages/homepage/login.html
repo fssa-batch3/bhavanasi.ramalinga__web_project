@@ -10,41 +10,99 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script href="../../pages/homepage/register and login.js"></script>
 </head>
 <body>
-<form>
+  <form  role="form" role="form" onsubmit = "signIn(event)" >
 <h2>Login Form</h2>
 <p> please fill in this form to login.</p>
-<form action="/action_page.php" method="post">
+
   <div class="avathar">
     <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar">
   </div>
    
-  <div class="container">
+  <div class="container" >
     <label for="uid"><b>User Email-id</b></label>
-    <input type="text" placeholder="Enter Email-id" id="email" value="soundaryabavanasi@gmail.com">
+    <input type="text" placeholder="Enter Email-id" id="email" required="true" />
 
    <br> <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="psw" value="ramalinga"></br>
+    <input type="password" placeholder="Enter Password" id="psw" required="true"/></br>
         
-    <br><button type="submit">
-      <a href="../../pages/homepage/rent.html">Login</a>
-    </button>
-       
-    
-     </div>
-    
- 
-  
+    <br><button type="button" onclick="saveData()" >login</button>
+
     </div>
 </form>
-<script>
+<script >
+
+  function saveData()
+  {
+  let em,ail,psw;
+  email = document.getElementById("email").value;
+  psw = document.getElementById("psw").value;
+  let user_details=new Array();
+  user_details=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+  if(user_details.some((v)=>{return v.email==email && v.psw == psw}))
+  {
+    alert("Successfully Logined ");
+    let current_user=user_details.filter((v)=>{return v.email == email && v.psw == psw})[0]
+   localStorage.setItem('email',current_user.email);
+   localStorage.setItem('psw',current_user.psw);
+    window.location.href="./rent.html"
+  }
+  else
+  {
+    alert('Please Check your details');
+  }
+  }
+
+// <!-- const signIn = e =>{
+//     let email = document.getElementById('email').value,
+//         psw = document.getElementById('psw').value;
+//     let user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+//     let exist = user_list.length &&
+//     JSON.parse(localStorage.getItem('user_list')).some(data =>
+//         data.email.toLowerCase() == email &&
+//         data.psw.toLowerCase() ==  psw);
+//     if(!exist){
+//         alert("Incorrect login credentials");
+//     }
+//     else{
+//         alert("Your login in successful");
+//         location.href = "./rent.html";
+//     }
+//     e.preventDefault();
+// } -->
+
+
+
+
+            //  function check() {
+            //     let useremail = document.getElementById('useremail').value;
+            //     let user = document.getElementById('userpassword').value;
+                
+            // stored data from the register-form
+            //     let storedemail = localStorage.getItem('email');
+            //     let storedpsw = localStorage.getItem('psw');
+                
+            //     let stored_users = JSON.parse(localStorage.getItem('users'))
+            //     if(stored_users) {
+            //         for (let u = 0; u < stored_users.length; u++){
+            //             if (username == stored_users[u].name && usrPw == stored_users[u].password && userphone_number == stored_users[u].phonenumber) {
+            //                 alert('You are logged in ' + usrName);
+            //                 return location.replace("../homepage/rent.html");
+            //             }
+            //         }
+            //     }
+            //         else {
+            //         localStorage.setItem('users', '[]');
+            //     }
+            //     return alert('Access denied. Valid username and password is required.');
+            // } 
+ </script>
+  
 
   
-  const email = document.getElementById("email").value
-  const psw = document.getElementById("psw").value
-  console.log(email)
-  console.log(psw )
-</script>
+  
+
 </body>
 </html>
