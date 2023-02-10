@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<script href="../../pages/homepage/register and login.js"></script>
+
 </head>
 <body>
   <form  role="form" role="form" onsubmit = "signIn(event)" >
@@ -28,32 +28,57 @@
    <br> <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" id="psw" required="true"/></br>
         
-    <br><button type="button" onclick="saveData()" >login</button>
+    <br><button type="button" onclick="signIn(event)" >login</button>
 
     </div>
 </form>
 <script >
 
-  function saveData()
-  {
-  let em,ail,psw;
-  email = document.getElementById("email").value;
-  psw = document.getElementById("psw").value;
-  let user_details=new Array();
-  user_details=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-  if(user_details.some((v)=>{return v.email==email && v.psw == psw}))
-  {
-    alert("Successfully Logined ");
-    let current_user=user_details.filter((v)=>{return v.email == email && v.psw == psw})[0]
-   localStorage.setItem('email',current_user.email);
-   localStorage.setItem('psw',current_user.psw);
-    window.location.href="./rent.html"
-  }
-  else
-  {
-    alert('Please Check your details');
-  }
-  }
+
+
+
+const signIn= e =>{
+        let email = document.getElementById('email');
+       let  psw = document.getElementById('psw').value;
+      const  user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+           const exist = user_cred.length &&
+       JSON.parse(localStorage.getItem('user_cred')).some(data =>
+           data.psw.toLowerCase() == psw);
+       if(!exist){
+           alert("Incorrect login credentials...");
+       }
+       else{
+           alert("Your login in successful ..");
+           location.href = "./rent.html";
+       }
+       e.preventDefault();
+   }
+
+  // function saveData()
+  // {
+  // let email,psw;
+  // email = document.getElementById("email").value;
+  // psw = document.getElementById("psw").value;
+  // let user_details=new Array();
+  // user_details=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+  // if(user_details.some((v)=>{return v.email==email && v.psw == psw}))
+  // {
+  //   alert("Successfully Logined ");
+  //   let current_user=user_details.filter((v)=>{return v.email == email && v.psw == psw})[0]
+  //  localStorage.setItem('email',current_user.email);
+  //  localStorage.setItem('psw',current_user.psw);
+  //   window.location.href="./rent.html"
+  // }
+  // else
+  // {
+  //   alert('Please Check your details');
+  // }
+  // }
+
+
+
+
+
 
 // <!-- const signIn = e =>{
 //     let email = document.getElementById('email').value,

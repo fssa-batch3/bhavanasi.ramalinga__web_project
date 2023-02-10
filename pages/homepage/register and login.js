@@ -34,20 +34,20 @@
 //    }
 //    e.preventDefault();
 // }
-// const signIn = e =>{
-//         let email = document.getElementById('email');
-//        let  psw = document.getElementById('psw').value;
-//       let   user_list = JSON.parse(localStorage.getItem('user_list')) || [];
-//            let exist = user_list.length &&
-//        JSON.parse(localStorage.getItem('user_list')).some(data =>
-//            data.email.toLowerCase() == email &&
-//            data.psw.toLowerCase() == psw);
-//        if(!exist){
-//            alert("Incorrect login credentials..:x:");
-//        }
-//        else{
-//            alert("Your login in successful ..:white_check_mark:");
-//            location.href = "./user_interface.html";
-//        }
-//        e.preventDefault();
-//    }
+const signIn = e =>{
+        let email = document.getElementById('email');
+       let  psw = document.getElementById('psw').value;
+      let   user_list = JSON.parse(localStorage.getItem('user_list')) || [];
+           let exist = user_list.length &&
+       JSON.parse(localStorage.getItem('user_list')).some(data =>
+           data.email.toLowerCase() == email &&
+           data.psw.toLowerCase() == psw);
+       if(!exist){
+           alert("Incorrect login credentials..:x:");
+       }
+       else{
+           alert("Your login in successful ..:white_check_mark:");
+           location.href = "./user_interface.html";
+       }
+       e.preventDefault();
+   }

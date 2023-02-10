@@ -252,4 +252,10 @@ nav ul ul ul li {
     display: flex;
     justify-content: space-around;
   }
+
+  @media screen and (max-width:800px){
+    .bar{
+      width:50%;
+    }
+  }
   
