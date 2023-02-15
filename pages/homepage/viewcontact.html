@@ -18,27 +18,27 @@ form {border: 3px solid #f1f1f1;}
 <form>
 <h2>For boys and girls</h2>
 <p>  owner Zolo thrones</p>
-<form action="/action_page.php" method="post">
+<form role="form">
   
   <div class="container">
-    <label for="uid"><b>Name</b></label>
-    <input type="text" placeholder="Enter name" email-id="uname">
-     <label for="uid"><b>female/male</b></label>
-     <input type="text" placeholder="male/female" >
-   <br> <label for="psw"><b>Email-id</b></label>
-    <input type="password" placeholder="Enter- id" email-id="psw"></br>
+    <label for="Name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name"  pattern="[a-z]+" email-id="uname" required>
+     <label for="F/M"><b>female/male</b></label>
+     <input type="text" placeholder="male/female"required >
+   <br> <label for="Email"><b>Email-id</b></label>
+    <input type="password" placeholder="Enter- id" email-id="psw" required ></br>
 
     <br> <label for="psw"><b>Phone-number</b></label>
-    <input type="password" placeholder="phone-number" email-id="psw" ></br>
+    <input type="password" placeholder="phone-number" email-id="psw" required></br>
       <br> <label for="sharing"><b>You are interested in:</b></label><br>
       <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-      <label for="vehicle1"> single sharing with AC(12,000/-)</label><br>
+      <label for="vehicle1"> single sharing </label><br>
       <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-      <label for="vehicle2">Twin sharing with AC (9,500/-)</label><br>
+      <label for="vehicle2">Twin sharing </label><br>
       <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-      <label for="vehicle3"> Triple sharing with AC (6,000/-)</label><br>
+      <label for="vehicle3"> Triple sharing  </label><br>
       <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-      <label for="vehicle3"> Four sharing with AC (4,000/-)</label><br><br>              
+      <label for="vehicle3"> Four sharing </label><br><br>              
          <br><button type="Contact">
             <a href="../../pages/homepage/message.html"> contact</a></button>
        

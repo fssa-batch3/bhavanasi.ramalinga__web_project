@@ -41,46 +41,50 @@
     <div class="overall">
     <div class="photo">
         <h1>My profile</h1>
-    <img src="../../assets/images/new.jpg" alt="photo" height="140vh" width="15%"></div>
+        <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar"   height="140vh" width="15%">
+     <!-- <img src="." alt="photo" height="140vh" width="15%"> -->
+    </div> 
     
     <div class="main">
         <div class="information">
-
-       
-       <h2> First Name<br>
-           second Name<br>
-             Age<br>
-            phone number<br>
-             Email-id<br>
-                Address<br></h2>
-             </div>
-                <div class="formation">
-                    
-                       <h2> soundarya<br>
-                        Ramalinga Reddy<br>
-                        19<br>
-                      8466009892<br>
-                    soundaryabavanasi@gmail.com<br>
-                    8/32,rayudu colony,kadapa district Andhra pradesh</h2>                                        
+            <label for="name"><b>First Name :</b></label>
+            <input type="text"  name="pg" id="first_name"  disabled><br><br>
+            
+            <label for="phone-number"><b>phone-number :</b></label>
+            <input type="text"  name="phone-number" id="phone_number" disabled ><br><br>
+            <label for="Email-id"><b> Email-id :</b></label>
+            <input type="text"  name="email" id="email" disabled><br><br>
+            <label for="address" ><b> Address :</b></label><br>
+            <textarea name="address" id="address" disabled></textarea> 
                                     
-                    </div>
-                
-
-       
-        </div>
+</div> 
+</div>
         <div class="button">
             <div id="button" class="Edit">
                <a href="../../pages/homepage/edit.html"><h4>Edit</h4></a>
             </div>
-               <div id="button" class="cancel">
-                   <a href="../../pages/homepage/rent.html"><h4>Cancel</h4></a>
+               <div id="button" class="update">
+                   <a href="../../pages/homepage/rent.html"><h4>submit</h4></a>
                </div>
-               
-            </div>
+             </div>
     </div>
     </div>
    <script>
-    
+   let userId = JSON.parse(localStorage.getItem('userId'));
+    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+    function login_data(e){
+      return e.email == userId;
+    }
+
+    user_data = user_cred.find(login_data);
+
+    document.getElementById("first_name").value = user_data["name"];
+    document.getElementById("phone_number").value = user_data["phone_number"];
+    document.getElementById("email").value = user_data["email"];
+    document.getElementById("address").value = user_data["address"];
+
+
+  
    </script> 
 </body>
 </html>

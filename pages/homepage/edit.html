@@ -34,7 +34,7 @@
 
         </div>
     </header>
-    <div class="edit">
+    <form class="edit" onsubmit="update(event)">
     <div class="main">
     <div class="content">
         <div class="avathar">
@@ -42,46 +42,76 @@
           </div>
         
         <div class="details">
-   <h2> <span class="pg"> 1.First name:</label>
-    <input type="text"  name="pg" id="user_name" ><br><br>
-    <label for="Rooms">2. Last name:</label>
-    <input type="text" id="rooms" name="rooms"><br><br>
-    <label for="Address">3. Age:</label>
-    <input type="text" id="name"><br><br>
-    <label for="city"> 4.Phone number:</label>
-     <input type="text" id="city" name="city"><br><br>
-     <label for="id"> 5.Email-id:</label>
-     <input type="text" id="id" name="id"> <br> <br>
-     
-     <label for="Facilities"> 6.Adress:</label><br>
-     <textarea></textarea> <br> <br>
-     </h2>
-    
-     
-       
-       
-        </div>
+            <label for="name"><b> Name :</b></label>
+            <input type="text"  name="fname" pattern="[a-z]+" id="name" required><br><br>
+            
+            
+            <label for="phone"><b>phone_number :</b></label>
+            <input type="text" name="tel"pattern="[0-9].{9}" id="phone_number" required disabled> <br> <br>  
+        
+            <label for="email"><b>E-mail :</b></label>
+            <input type="text"  name="email"   pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="email" required disabled><br><br>
+        
+      <label for="address"> <b>Address:</b></label><br>
+     <textarea id="address"></textarea  > <br> <br>
+     </div>
         </div>
     
-        <div class="button">
-            <div id="button" class="Edit">
-               <a href="../../pages/homepage/rent.html"><h4>submit</h4></a>
+           
+        <button type="submit"  >submit</button>
+        
+
+            
             </div>
-               <div id="button" class="cancel">
-                   <a href="../../pages/homepage/rent.html"><h4>Cancel</h4></a>
-               </div>
-               
-            </div>
-    </div>
-    </div>
+        </form>
+    
 
     <script>
         // localStorage.getItem("key")
-        const user_first_name = localStorage.getItem("user_name");
-        console.log();
-        documnet.getElementById("user_name").innerText =  user_first_name;
+        // const user_first_name = localStorage.getItem("user_name");
+        // console.log();
+        // documnet.getElementById("user_name").innerText =  user_first_name;
        
+        let userId = JSON.parse(localStorage.getItem('userId'));
+    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+
+    console.log(user_cred);
+
+    function login_data(e){
+      return e.email == userId;
+    }
+
+    user_data = user_cred.find(login_data);
+
+    console.log(user_data);
+
+    document.getElementById("name").value = user_data["name"];
+    document.getElementById("phone_number").value = user_data["phone_number"];
+    document.getElementById("email").value = user_data["email"];
+    document.getElementById("address").value = user_data["address"];
+
+    function update(e){
+
+        e.preventDefault();
+
+        let up_name = document.getElementById("name").value
+        let up_address = document.getElementById("address").value
+
+        user_data["name"] = up_name;
+        user_data["address"] = up_address;
+
+        localStorage.setItem("user_cred", JSON.stringify(user_cred));
+
+        window.location.href="./my profile.html"
+
+
+
+    }
+
+
 
     </script>
+    
+        
 </body>
 </html>

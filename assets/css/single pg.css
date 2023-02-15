@@ -359,6 +359,30 @@ nav ul ul ul li {
      h2{
       color:deeppink;
      }
+
+@media screen and (max-width:800px)
+     {
+      
+      nav{
+        width:1600px;
+      }
+      div.magic{
+        margin-right: 0%;
+
+      }
+      div.start{
+        width:200vh;
+        margin-bottom: 4%;
+      }
+      div.bar{
+        margin-left: 4%;
+      }
+      .main{
+        margin-left: 19%;
+        width:160vh;
+        margin-top: 3%;
+      }
+    }
      
 
 

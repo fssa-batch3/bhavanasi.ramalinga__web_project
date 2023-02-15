@@ -88,7 +88,7 @@
         </div>   -->
       </div> 
         
-     <!-- <div class="main">
+     <div class="main">
      <div class="sidebar">
      <h2>Common Area and Amenities</h2>
     <div class="slide">
@@ -104,7 +104,7 @@
     
         
     
-        <div class="slide1">
+         <div class="slide1">
             <div class="one">
         <img src="../../assets/images/TV.jpg"  alt="photo"height="50%"  width="30%"/><b> TV</b></div>
         <div class="one">
@@ -116,7 +116,7 @@
     
         <img src="../../assets/images/image1.jpg" alt="photo"  height="300px"  width="300px"/>
    
-    </div> -->
+    </div>  -->
     
     <div class="texttop">
         <div class="materials">
@@ -316,18 +316,20 @@
             "images":[
                 {
                     "src":"../../assets/images/parking.jpg ",
+                    "height":"70%"  ,"width":"30%",
                     
                 },
                 {
                     "src":"../../assets/images/wifi.png",
-                   
+                    "height":"50%"  , "width":"30%",
                 }, 
                 {
                     "src":"../../assets/images/food1.jpg ",
-                    
+                    "height":"50%",  "width":"30%",
                 },
                 {
                     "src":"../../assets/images/fridge.jpg ",
+                    "height":"50%",  "width":"30%",
                 },
             ]
         }
@@ -488,39 +490,39 @@
     
     //next box//
      //div class=main//
-     div_main=document.createElement("div");
-     div_main.setAttribute("class","main");
-     document.querySelector ("div.start").append(div_main);
-     //div class="sidebar"//
-     div_sidebar=document.createElement("div");
-     div_sidebar.setAttribute("class","sidebar");
-     div_main.append(div_sidebar);
-     //h2//
-     h2_text=document.createElement("h2");
-     h2_text.innerHTML="Common Area and Amendities";
-     div_sidebar.append(h2_text);
-     //div class=slide//
-     div_slide=document.createElement("div");
-     div_slide.setAttribute("class","slide");
-     div_sidebar.append(div_slide);
-     //div class=one//
-     div_one=document.createElement("div");
-     div_one.setAttribute("class","one");
-      div_slide.append(div_one);
-    //   //img//
-      for (let i=0; i<3;i++){
+    //  div_main=document.createElement("div");
+    //  div_main.setAttribute("class","main");
+    //  document.querySelector ("div.start").append(div_main);
+    //  //div class="sidebar"//
+    //  div_sidebar=document.createElement("div");
+    //  div_sidebar.setAttribute("class","sidebar");
+    //  div_main.append(div_sidebar);
+    //  //h2//
+    //  h2_text=document.createElement("h2");
+    //  h2_text.innerHTML="Common Area and Amendities";
+    //  div_sidebar.append(h2_text);
+    //  //div class=slide//
+    //  div_slide=document.createElement("div");
+    //  div_slide.setAttribute("class","slide");
+    //  div_sidebar.append(div_slide);
+    //  //div class=one//
+    //  div_one=document.createElement("div");
+    //  div_one.setAttribute("class","one");
+    //   div_slide.append(div_one);
+       //img//
+    //   for (let i=0; i<=3;i++){
 
-        div_one=document.createElement("div");
-     div_one.setAttribute("class","one");
-      div_slide.append(div_one);
+    //     div_one=document.createElement("div");
+    //  div_one.setAttribute("class","one");
+    //   div_slide.append(div_one);
         
-      img_picture = document.createElement("img");
-        img_picture.setAttribute("src",pg_details["images"][i]["src"]);
-        img_picture.setAttribute("alt","photo");
-        img_picture.setAttribute("height","250px");
-        img_picture.setAttribute("width","250px");
-        div_one.append(img_picture);
-      }
+    //   img_picture = document.createElement("img");
+    //     img_picture.setAttribute("src",pg_details["images"][i]["src"]);
+    //     img_picture.setAttribute("alt","photo");
+    //     img_picture.setAttribute("height","75px");
+    //     img_picture.setAttribute("width","40px");
+    //     div_one.append(img_picture);
+    //   }
      
 
 
