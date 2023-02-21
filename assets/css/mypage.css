@@ -1,126 +1,111 @@
-*{
+@import "normalize.css";
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+  
+  * {
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
 
-  nav {
+  img{
+    border-radius: 50px;
+    margin-left: 40%;
+  }
 
-	background-color: #E64A19;
-}
+  
+ 
+  .container {
+    padding: 16px;
+    background-color: white;
+    border:3px solid #f1f1f1;
+     width: 450px;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    margin-top:3%;
 
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
-    justify-content: space-around;
-    height:70px;
-    align-items: center;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-    
-    
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	
-	text-decoration:none;
-    
-}
-
-nav a:hover { 
-	background-color:none; 
-}
-
-
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-.magic{
-    margin-right: 60%;
-    
-}
-
-  .last{
-    display: flex;
-    justify-content: space-around;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+   button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
     
   }
   
-
-
-a{
-    text-decoration: none;
-    
-}
-.main{
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  
+  a {
     display: flex;
-    
-    margin-left: 20vh;
-}
-.information{
-    margin-left: 10%;
-}
-.button{
-    display: flex;
-}
-.photo,img{
-    margin-left: 20%;
-    border-radius: 20px;
-    margin-top: 5%;
-}
-.overall{
-    border:1px solid;
-}
-.another{
-    margin-top: 5%;
-    margin-left: 50vh;
-    margin-right: 50vh;
-    margin-bottom: 10%;
-}
-h4{
-    border:1px solid;
-    padding:16px;
-    border-radius: 20px;
-    background-color:darkred;
     color:white;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
+ 
+  select#options{
+    width:130px;
+    height:40px;
+  }
+  @media screen and (max-width:800px){
+    .container {
+      margin: 10px;
+      background-color: white;
+      border:3px solid #f1f1f1;
+      height: 860px;
+      width: 430px;
+      margin-bottom: 5%;
+      margin-top:3%;
+      display: table-cell;
+  
+    }
+    
+    
 }
-div#button.Edit{
-    margin-right: 40%;
-    margin-left: 20%;
-}
-input[type=text]{
-    border:none;
-}
-@media screen and (max-width:800px){
-}
+  
