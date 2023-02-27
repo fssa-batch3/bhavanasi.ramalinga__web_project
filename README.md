@@ -24,7 +24,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 
   2.PG_Details CRUD:
   
- create  PG_Derails
+ create  PG_list
   
   Read pg_details
   
