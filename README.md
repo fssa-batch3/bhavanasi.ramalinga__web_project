@@ -24,11 +24,11 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 
   2.PG_Details CRUD:
   
-  Uploading On create  PG_Derails
+ create  PG_Derails
   
   Read pg_details
   
   Edit Pg_details
   
-  Detail pg_details
+  Delete pg_details
 
