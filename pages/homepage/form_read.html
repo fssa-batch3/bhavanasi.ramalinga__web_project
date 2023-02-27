@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link   rel="stylesheet"  href="../../assets/css/form_read.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_read</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</head>
+<body>
+    <form role="form">
+        
+        <div class="container">
+        <label for="name"><b> pg_Name</b></label>
+        <input type="text" placeholder="pg_name" name="fname" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
+        
+       
+        <label for="type"><b>Rooms categories are available and rent</b></label><br>
+        <input type="checkbox" id="one_share" name="vehicle1"   disabled>
+      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing" disabled  ><br><br>
+
+      <input type="checkbox" id="two_share" name="vehicle2"   disabled>
+      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" disabled><br><br>
+
+      <input type="checkbox" id="three_share" name="vehicle3" disabled>
+      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" disabled><br><br>
+
+      <input type="checkbox" id="four_share" name="vehicle4" disabled >
+      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing" disabled ><br><br>
+
+
+      <label for="pg_name"><b>Image</b></label>
+        <input type="text"  name="image" id="image" disabled><br><br>
+
+         <label for="address"><b> Address</b></label><br>
+        <textarea type="text"id="address" disabled></textarea><br>
+        
+        <div class="last">
+          <button type="button"  onclick="del(event)"class="registerbtn" >delete</button>
+          <button type="submit"  class="registerbtn"><a href="../../pages/homepage/for boys.html">submit</a></button>
+      </div>
+      
+
+       </div>
+    </form>
+    <script>
+     
+     
+    
+   let userId = JSON.parse(localStorage.getItem("userId"));
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    console.log(users);
+
+    function login_data(e){
+      
+      return e.name == userId;
+    }
+     user_data = users.find(login_data);
+
+    console.log(user_data);
+
+    document.getElementById("name").value = user_data["name"];
+    document.getElementById("one_share").checked = user_data["one_share"];
+    document.getElementById("two_share").checked = user_data["two_share"];
+    document.getElementById("three_share").checked = user_data["three_share"];
+    document.getElementById("four_share").checked = user_data["four_share"];
+
+    document.getElementById("onesharing").value = user_data["onesharing"];
+    document.getElementById("twosharing").value = user_data["twosharing"];
+    document.getElementById("threesharing").value = user_data["threesharing"];
+    document.getElementById("foursharing").value = user_data["foursharing"];
+
+    document.getElementById("image").value = user_data["image"];
+    document.getElementById("address").value = user_data["address"];
+   
+    
+    function del(e){
+e.preventDefault();
+if(confirm("Are you sure delete your account?")){
+
+let userId = JSON.parse(localStorage.getItem("userId"));
+let users = JSON.parse(localStorage.getItem("users"));
+
+function login_data(e){
+  e.preventDefault();
+return e.name == userId;
+}
+
+user_data = users.find(login_data);
+
+
+const indexOfUser = users.indexOf(user_data);
+console.log(indexOfUser);
+users.splice(indexOfUser, 1);
+// console.log(indexOfUser);  
+localStorage.setItem("users", JSON.stringify(users));   
+window.location.href="./for boys.html";
+}
+// localStorage.
+}
+// function logOut(e){
+
+// window.location.href="./rent.html";
+// }
+ 
+
+
+
+    
+
+        
+    // function del(e){
+
+    //     if(confirm("Are you sure delete your account?")){
+
+    
+    // let users = JSON.parse(localStorage.getItem('users'));
+
+    // user_data = users.find(form_data);
+
+
+// let indexOfUser = users.indexOf(user_data);
+// console.log(indexOfUser);
+// user_cred.splice(indexOfUser,1);
+// // console.log(indexOfUser);  
+// localStorage.setItem("user_cred", JSON.stringify(user_cred));   
+
+//         }
+// localStorage.
+// }
+// function logOut(e){
+//     localStorage.setItem('userId'," ");
+//     window.location.href="./index.html";
+// }
+  
+
+                
+            
+           
+               
+            
+
+            
+
+           
+           
+
+
+    </script>
+</body>
+</html>

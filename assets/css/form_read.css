@@ -1,0 +1,51 @@
+*{font-family: 'Poppins', sans-serif;}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+  }
+
+form{
+    
+    width: 400px;
+    border:3px solid #f1f1f1;
+    margin-top: 100px;
+    box-shadow: 20px 20px 50px 15px white;
+    margin-left: 35%;
+}
+.container {
+    padding: 19px;
+  }
+  
+  span.psw {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    
+  }
+  
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+     border: none;
+    cursor: pointer;
+    width:30%;
+   margin-left: 15%;
+   height: 50px;  
+  }
+  a {
+    display: flex;
+    color:white;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .last{
+    display: flex;
+  }

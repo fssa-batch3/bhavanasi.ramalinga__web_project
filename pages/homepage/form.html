@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link   rel="stylesheet"  href="../../assets/css/form.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</head>
+<body>
+    <form role="form" onsubmit="signUp(event)">
+        
+        <div class="container">
+        <label for="name"><b> pg_Name</b></label>
+        <input type="text" placeholder="pg_name"id="name" name="fname" pattern="[a-zA-Z]+"id="name" required><br><br>
+        
+       
+        <label for="type"><b>Rooms categories are available and rent</b></label><br>
+        <input type="checkbox" id="one_share" name="vehicle1"  >
+      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"  ><br><br>
+
+      <input type="checkbox" id="two_share" name="vehicle2"  >
+      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing"><br><br>
+
+      <input type="checkbox" id="three_share" name="vehicle3" >
+      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
+
+      <input type="checkbox" id="four_share" name="vehicle4" >
+      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing" ><br><br>
+
+
+      <label for="pg_name"><b>Image</b></label>
+        <input type="text"  name="image" id="image" required><br><br>
+
+         <label for="address"><b> Address</b></label><br>
+        <textarea type="text"id="address" required></textarea><br>
+
+        <button type="submit" class="registerbtn">Submit</button><br>
+        
+
+       </div>
+    </form>
+    <script>
+     const signUp = e => {           
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            
+               one_share= document.getElementById("one_share").checked;
+               two_share= document.getElementById("two_share").checked;
+               three_share= document.getElementById("three_share").checked;
+               four_share= document.getElementById("four_share").checked;
+               
+
+               onesharing=document.getElementById("onesharing").value;
+               twosharing=document.getElementById("twosharing").value;
+               threesharing=document.getElementById("threesharing").value;
+               foursharing=document.getElementById("foursharing").value;
+
+                image=document.getElementById("image").value;
+             address = document.getElementById("address").value;
+            let my_uuid= uuidv4();
+          
+
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    let exit = users.length && 
+              JSON.parse(localStorage.getItem('users')).some(data =>
+            data.name == name);
+            if(!exit)
+            {
+                users.push({name,one_share,two_share,three_share,four_share,address,onesharing,twosharing,threesharing,image,
+                    foursharing,my_uuid});
+
+                    let checked = JSON.parse (localStorage.getItem ('checkbox'));
+                    
+                        localStorage.setItem('users',JSON.stringify(users));
+                        console.log(localStorage.getItem('users'));
+                        localStorage.setItem("userId",JSON.stringify(name));
+
+                document.querySelector('form').reset();
+               
+                
+                alert('Account created successfully');
+
+
+                location.href = "../../pages/homepage/form_read.html";
+                    }
+                       
+                    // }
+                    // else{
+                        // alert("please select check boxes")
+                    // }
+                    //  if (checked == true) 
+                    //  { 
+                    //     document.getElementById ("checkbox").checked = true; 
+                    // }
+                
+               
+
+                
+            
+           
+               
+            
+
+            
+
+           
+           
+}
+
+    </script>
+</body>
+</html>

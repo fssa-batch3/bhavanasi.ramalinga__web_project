@@ -13,36 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-    <!-- <form>
-    <div class="another">
-    <div class="overall">
-    <div class="photo">
-        <h1>My profile</h1>
-        <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar"   height="140vh" width="15%">
-      <img src="." alt="photo" height="140vh" width="15%"> -->
-    <!-- </div> 
-
-    <div class="main">
-        <div class="information">
-            <label for="name"><h2>First Name :</h2></label>
-            <input type="text"  name="pg" id="name"  disabled>
-            
-            <label for="phone-number"><h2>phone-number :</h2></label>
-            <input type="text"  name="phone-number" id="phone_number" disabled >
-            <label for="Email-id"><h2> Email-id :</h2></label>
-            <input type="text"  name="email" id="email" disabled>
-            <label for="address" ><h2> Address :</h2></label><br>
-            <textarea name="address" id="address" disabled></textarea> <br><br>
-                                    
-</div> 
-</div>
-           <div class="last">
-               <button type="button" onclick="del(event)" class="registerbtn">delete</button>
-               <button type="submit"  class="registerbtn"><a href="../../pages/homepage/edit.html">Edit</a></button>
-           </div>  
-            </div>
-             </div>
-    </form> --> 
+  
 
     <form>
         <div class="container">
@@ -87,6 +58,7 @@
 
 
     function del(e){
+        e.preventDefault();
 
         if(confirm("Are you sure delete your account?")){
 
@@ -99,20 +71,28 @@
 
     user_data = user_cred.find(login_data);
 
-
-let indexOfUser = user_cred.indexOf(user_data);
+    const indexOfUser = user_cred.indexOf(user_data);
 console.log(indexOfUser);
-user_cred.splice(indexOfUser,1);
+user_cred.splice(indexOfUser, 1);
 // console.log(indexOfUser);  
 localStorage.setItem("user_cred", JSON.stringify(user_cred));   
+window.location.href="./rent.html";
 
-        }
-// localStorage.
+
+// let indexOfUser = user_cred.indexOf(user_data);
+// console.log(indexOfUser);
+// user_cred.splice(indexOfUser,1);
+// // console.log(indexOfUser);  
+// localStorage.setItem("user_cred", JSON.stringify(user_cred));   
+
+//         }
+// // localStorage.
+// }
+// function logOut(e){
+//     localStorage.setItem('userId'," ");
+//     window.location.href="./index.html";
 }
-function logOut(e){
-    localStorage.setItem('userId'," ");
-    window.location.href="./index.html";
-}
+    }
   
    </script> 
 </body>
