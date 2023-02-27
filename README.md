@@ -6,7 +6,7 @@
 
 This is About PG Searching Website
 The following are Low Fedility, User Flow and Problem Statement Of my project.
-  Low Fedility: https://drive.google.com/drive/folders/1GwAT_vkxBQoMfeP-OVm0JL81SU8moE17?usp=sharing
+  Wire Frame: https://drive.google.com/drive/folders/1GwAT_vkxBQoMfeP-OVm0JL81SU8moE17?usp=sharing
   
   User Flow: https://drive.google.com/file/d/1XjWAiCRLa7lyKMpxWjrK8ookP2N7Xxio/view?usp=sharing
   
