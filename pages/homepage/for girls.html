@@ -51,7 +51,7 @@
     </header>
    
 
-<div class="bar">
+<!-- <div class="bar">
     <div class="image"> 
         <img src="../../assets/images/image3.jpg" alt="photo" height="280px"  width="300px">
     </div>
@@ -447,8 +447,166 @@
                     </div>
         </div>
         </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
+
+  <script>
+    
+    const pg_details = JSON.parse(localStorage.getItem("users"));
+        // console.log(pg_details)
+
+
+
+        for (i = 0; i<pg_details.length; i++) {
+            let div_bar;
+            let div_image;
+            let img_picture;
+            let div_room_details;
+            let div_onwards;
+            let div_para;
+            let page_a;
+            let line_p;
+            let one_b;
+            let div_payment;
+            let div_rent;
+            let div_text;
+            let rate_p;
+            let div_one;
+            let rate1_p;
+            let div_two;
+            let rate2_p;
+            let div_three;
+            let rate3_p;
+            let div_content;
+            let rate4_b;
+            let div_button;
+
+            div_bar = document.createElement("div");
+            div_bar.setAttribute("class", "bar");
+            console.log(div_bar);
+            document.querySelector("body").append(div_bar);
+
+            // <div class= "image" >
+            div_image = document.createElement("div");
+            div_image.setAttribute("class", "image");
+            div_bar.append(div_image);
+
+            // <img> //
+
+            img_picture = document.createElement("img");
+            img_picture.setAttribute ("src", pg_details[i]["image"]);
+            img_picture.setAttribute("alt", "image");
+            img_picture.setAttribute("height", "280px");
+            img_picture.setAttribute("width", "300px");
+            div_image.append(img_picture);
+
+            //<div class="room-details"> </div>
+            div_room_details = document.createElement("div");
+            div_room_details.setAttribute("class", "room-details");
+            div_bar.append(div_room_details);
+
+            //<div class="onwards"></div>
+            // div_onwards = document.createElement("div");
+            // div_onwards.setAttribute("class", "onwards");
+            // div_onwards.innerText = pg_list[i];
+            // div_room_details.append(div_onwards);
+
+            //<div class="para"> </div>
+
+            div_para = document.createElement("div");
+            div_para.setAttribute("class", "para");
+            div_room_details.append(div_para);
+
+
+
+            line_p = document.createElement("p");
+            div_para.append(line_p);
+
+            one_b = document.createElement("b");
+            one_b.innerText = pg_details[i]["name"];
+            line_p.append(one_b);
+
+            page_a = document.createElement("a")
+            page_a.setAttribute("href",pg_details[i]["name"]);
+            one_b.append(page_a);
+
+            //    <div class="payment">
+            div_payment = document.createElement("div");
+            div_payment.setAttribute("class", "payment");
+            div_room_details.append(div_payment);
+
+            // div class="rent">
+
+            div_rent = document.createElement("div");
+            div_rent.setAttribute("class", "rent");
+            div_payment.append(div_rent);
+
+            // <div class="text">
+            div_text = document.createElement("div");
+            div_text.setAttribute("class", "text");
+            div_text.innerText = " single sharing with AC";
+            div_rent.append(div_text);
+
+            rate_p = document.createElement("p");
+            rate_p.innerText = pg_details[i]["onesharing"];
+            div_text.append(rate_p);
+
+            div_one = document.createElement("div");
+            div_one.setAttribute("class", "one");
+            div_one.innerText = " twin sharing with AC";
+            div_rent.append(div_one);
+
+            rate1_p = document.createElement("p");
+            rate1_p.innerText = pg_details[i]["twosharing"];
+            div_one.append(rate1_p);
+
+            div_two = document.createElement("div");
+            div_two.setAttribute("class", "two");
+            div_two.innerText = " triple sharing with AC";
+            div_rent.append(div_two);
+
+            rate2_p = document.createElement("p");
+            rate2_p.innerText = pg_details[i]["threesharing"];
+            div_two.append(rate2_p);
+
+            div_three = document.createElement("div");
+            div_three.setAttribute("class", "three");
+            div_three.innerText = " four sharing with Non_AC";
+            div_rent.append(div_three);
+
+            rate3_p = document.createElement("p");
+            rate3_p.innerText = pg_details[i]["foursharing"];
+            div_three.append(rate3_p);
+
+
+            //    <div class="content">
+            div_content = document.createElement("div");
+            div_content.setAttribute("class", "content");
+            div_payment.append(div_content);
+
+            rate4_b = document.createElement("p");
+            rate4_b.innerText = pg_details[i]["address"];
+            div_content.append(rate4_b);
+
+            //    <div class="button">
+
+                div_button = document.createElement("div");
+            div_button.setAttribute("class", "button");
+            div_button.setAttribute("data-id", pg_details[i]["my_uuid"]);
+            div_button.innerHTML = "Contact Owner";
+            div_content.append(div_button);
+
+        }
+
+        let selectbtn = document.querySelectorAll(".button");
+    selectbtn.forEach(each => {
+      each.addEventListener("click", (event) => {
+        const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
+        
+        window.location.href = `./viewcontact.html?my_uuid=${person_data["my_uuid"]}`;
+      })
+    })
+  </script>
 
 
 <footer>

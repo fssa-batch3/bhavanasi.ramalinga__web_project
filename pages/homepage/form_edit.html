@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link   rel="stylesheet"  href="../../assets/css/form_read.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_edit</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</head>
+<body>
+    <form role="form">
+        
+        <div class="container">
+        <label for="name"><b> pg_Name</b></label>
+        <input type="text" placeholder="pg_name" name="fname" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
+        
+       
+        <label for="type"><b>Rooms categories are available and rent</b></label><br>
+        <input type="checkbox" id="one_share" name="vehicle1"   disabled>
+      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"   ><br><br>
+
+      <input type="checkbox" id="two_share" name="vehicle2"   disabled>
+      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" ><br><br>
+
+      <input type="checkbox" id="three_share" name="vehicle3" disabled>
+      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
+
+      <input type="checkbox" id="four_share" name="vehicle4" disabled >
+      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing"  ><br><br>
+
+
+      <label for="pg_name"><b>Image</b></label>
+        <input type="text"  name="image" id="image" ><br><br>
+
+         <label for="address"><b> Address</b></label><br>
+        <textarea type="text"id="address" ></textarea><br>
+        
+        <div class="last">
+          
+          <button type="button"  onclick="update(event)" class="registerbtn">submit</button>
+          
+      
+
+       </div>
+    </form>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const my_uuid = urlParams.get('my_uuid');
+        let users = JSON.parse(localStorage.getItem("users"));
+
+    
+   function login_data(e){
+      
+      return e.my_uuid == my_uuid;
+    }
+     let user_data = users.find(login_data);
+     console.log(users)
+
+     document.getElementById("name").value = user_data["name"];
+    document.getElementById("one_share").checked = user_data["one_share"];
+    document.getElementById("two_share").checked = user_data["two_share"];
+    document.getElementById("three_share").checked = user_data["three_share"];
+    document.getElementById("four_share").checked = user_data["four_share"];
+
+document.getElementById("name").value = user_data["name"]
+document.getElementById("onesharing").value = user_data["onesharing"];
+    document.getElementById("twosharing").value = user_data["twosharing"];
+    document.getElementById("threesharing").value = user_data["threesharing"];
+    document.getElementById("foursharing").value = user_data["foursharing"];
+
+    document.getElementById("image").value = user_data["image"];
+    document.getElementById("address").value = user_data["address"];
+
+
+    function update(e){
+
+e.preventDefault();
+
+let up_name = document.getElementById("name").value
+let up_address = document.getElementById("address").value
+let up_onesharing = document.getElementById("onesharing").value
+let up_twosharing = document.getElementById("twosharing").value
+let up_threesharing = document.getElementById("threesharing").value
+let up_foursharing = document.getElementById("foursharing").value
+
+
+user_data["name"] = up_name;
+user_data["address"] = up_address;
+user_data["onesharing"] = up_onesharing;
+user_data["twosharing"] = up_twosharing;
+user_data["threesharing"] = up_threesharing;
+user_data["foursharing"] = up_foursharing;
+
+localStorage.setItem("users", JSON.stringify(users));
+
+window.location.href="./for boys.html"
+
+}
+
+
+
+    </script>
+

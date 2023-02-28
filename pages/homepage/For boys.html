@@ -324,7 +324,7 @@
 <script>
 
          const pg_details = JSON.parse(localStorage.getItem("users"));
-        console.log(pg_details)
+        // console.log(pg_details)
 
 
 
@@ -463,15 +463,21 @@
 
             div_button = document.createElement("div");
             div_button.setAttribute("class", "button");
+            div_button.setAttribute("data-id", pg_details[i]["my_uuid"]);
             div_button.innerHTML = "edit";
             div_content.append(div_button);
 
-        
-
-
-
-
+    
         }
+
+        let selectbtn = document.querySelectorAll(".button");
+    selectbtn.forEach(each => {
+      each.addEventListener("click", (event) => {
+        const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
+        
+        window.location.href = `./form_edit.html?my_uuid=${person_data["my_uuid"]}`;
+      })
+    })
 </script>
 
         <footer>
