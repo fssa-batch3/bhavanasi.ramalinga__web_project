@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For girls</title>
-    <link rel="stylesheet" href="../../assets/css/for girls.css">
+    <link rel="stylesheet" href="../../assets/css/updated for girls.css">
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,12 +452,12 @@
 
   <script>
     
-    const pg_details = JSON.parse(localStorage.getItem("users"));
-        // console.log(pg_details)
+      const users = JSON.parse(localStorage.getItem("users"));
 
+       let filteredUseravailable = users.filter(e => e.available == "Girls" );
+       console.log(filteredUseravailable)
 
-
-        for (i = 0; i<pg_details.length; i++) {
+         for (i = 0; i<filteredUseravailable.length; i++) {
             let div_bar;
             let div_image;
             let img_picture;
@@ -481,6 +481,9 @@
             let rate4_b;
             let div_button;
 
+           
+
+
             div_bar = document.createElement("div");
             div_bar.setAttribute("class", "bar");
             console.log(div_bar);
@@ -494,7 +497,7 @@
             // <img> //
 
             img_picture = document.createElement("img");
-            img_picture.setAttribute ("src", pg_details[i]["image"]);
+            img_picture.setAttribute ("src", filteredUseravailable[i]["image"]);
             img_picture.setAttribute("alt", "image");
             img_picture.setAttribute("height", "280px");
             img_picture.setAttribute("width", "300px");
@@ -515,6 +518,7 @@
 
             div_para = document.createElement("div");
             div_para.setAttribute("class", "para");
+            div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
             div_room_details.append(div_para);
 
 
@@ -523,11 +527,11 @@
             div_para.append(line_p);
 
             one_b = document.createElement("b");
-            one_b.innerText = pg_details[i]["name"];
+            one_b.innerText = filteredUseravailable[i]["name"];
             line_p.append(one_b);
 
             page_a = document.createElement("a")
-            page_a.setAttribute("href",pg_details[i]["name"]);
+            page_a.setAttribute("href",filteredUseravailable[i]["name"]);
             one_b.append(page_a);
 
             //    <div class="payment">
@@ -544,38 +548,38 @@
             // <div class="text">
             div_text = document.createElement("div");
             div_text.setAttribute("class", "text");
-            div_text.innerText = " single sharing with AC";
+            div_text.innerText = " single sharing ";
             div_rent.append(div_text);
 
             rate_p = document.createElement("p");
-            rate_p.innerText = pg_details[i]["onesharing"];
+            rate_p.innerText = filteredUseravailable[i]["onesharing"];
             div_text.append(rate_p);
 
             div_one = document.createElement("div");
             div_one.setAttribute("class", "one");
-            div_one.innerText = " twin sharing with AC";
+            div_one.innerText = " twin sharing ";
             div_rent.append(div_one);
 
             rate1_p = document.createElement("p");
-            rate1_p.innerText = pg_details[i]["twosharing"];
+            rate1_p.innerText = filteredUseravailable[i]["twosharing"];
             div_one.append(rate1_p);
 
             div_two = document.createElement("div");
             div_two.setAttribute("class", "two");
-            div_two.innerText = " triple sharing with AC";
+            div_two.innerText = " triple sharing ";
             div_rent.append(div_two);
 
             rate2_p = document.createElement("p");
-            rate2_p.innerText = pg_details[i]["threesharing"];
+            rate2_p.innerText = filteredUseravailable[i]["threesharing"];
             div_two.append(rate2_p);
 
             div_three = document.createElement("div");
             div_three.setAttribute("class", "three");
-            div_three.innerText = " four sharing with Non_AC";
+            div_three.innerText = " four sharing ";
             div_rent.append(div_three);
 
             rate3_p = document.createElement("p");
-            rate3_p.innerText = pg_details[i]["foursharing"];
+            rate3_p.innerText = filteredUseravailable[i]["foursharing"];
             div_three.append(rate3_p);
 
 
@@ -585,27 +589,40 @@
             div_payment.append(div_content);
 
             rate4_b = document.createElement("p");
-            rate4_b.innerText = pg_details[i]["address"];
+            rate4_b.innerText = filteredUseravailable[i]["address"];
             div_content.append(rate4_b);
 
-            //    <div class="button">
 
-                div_button = document.createElement("div");
+
+
+      //    <div class="button">
+
+            div_button = document.createElement("div");
             div_button.setAttribute("class", "button");
-            div_button.setAttribute("data-id", pg_details[i]["my_uuid"]);
-            div_button.innerHTML = "Contact Owner";
+            // div_button.setAttribute("data-id", filteredUseravailable[i]["my_uuid"]);
+            div_button.innerHTML = "contact";
             div_content.append(div_button);
+      }
 
-        }
-
-        let selectbtn = document.querySelectorAll(".button");
+      let selectbtn = document.querySelectorAll(".para")
     selectbtn.forEach(each => {
-      each.addEventListener("click", (event) => {
-        const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
+                            each.addEventListener("click", (event) => {
+                                const person_data = each.dataset.id;
+                                console.log(person_data)
+                                window.location.href = `./Addedpg_details.html?my_uuid=${person_data}`;
+                            })
+                        })
+
+      
+
+    //     let selectbtn = document.querySelectorAll(".button");
+    // selectbtn.forEach(each => {
+    //   each.addEventListener("click", (event) => {
+    //     const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
         
-        window.location.href = `./viewcontact.html?my_uuid=${person_data["my_uuid"]}`;
-      })
-    })
+    //     window.location.href = `./.html?my_uuid=${person_data["my_uuid"]}`;
+    //   })
+    // })
   </script>
 
 
@@ -632,7 +649,7 @@
            <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
         </div>
 
- <div class="button">
+ <div class="buttons">
    <li>
     <a href="#" onclick="pointer">sitemap</a></li>
     <div>Terms&conditions</div>

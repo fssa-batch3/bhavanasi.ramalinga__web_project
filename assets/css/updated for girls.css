@@ -1,17 +1,16 @@
-
 @import "normalize.css";
-
 
 *{
   font-family: 'Poppins', sans-serif;
 }
 
 
+	
+
 h1 {
 	font-size: 60px;
 	text-align: center;
 	color:black;
-  display: flex;
 }	
 
 
@@ -26,11 +25,14 @@ a {
 }
 
 
+
 #container {
 	margin: 0 auto;
 }
 
-
+/* p {
+	text-align: center;
+} */
 
 nav {
 
@@ -51,6 +53,7 @@ nav ul {
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
+  margin-right: 5%;
   height:70%;
 	}
 
@@ -94,7 +97,7 @@ nav ul ul ul li {
 	left:170px;
 }
 .magic{
-  margin-right: 40%;
+  margin-right: 30%;
 }
 
   .last{
@@ -104,29 +107,22 @@ nav ul ul ul li {
   }
   
   
-  .button{
+  /* .btn{
     display:inline-block;
     background-color: #f44336;
-    color:white;
+    color:#FFF;
     padding:14px 25px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin-left:20px;
     opacity:0.9;
-  }
-  
-  .button a{
+  } */
+  .btn a{
     color:white;
   }
-  .image{
+  
    
-    margin-right: 40px;
-    
-    margin-left: 2%;
-    margin-top: 2%;
-
-  }
   input[type="text"]{
     height:40px;
     margin-top: 10px;
@@ -143,8 +139,8 @@ nav ul ul ul li {
 
   .bar{
     display:flex;
-    border-style: outset;
-   width:70%;
+    border:1px solid;
+    width:65%;
     margin-top: 4%;
     align-items: center;
     margin-left: 17%;
@@ -154,7 +150,7 @@ nav ul ul ul li {
     display: flex;
     justify-content: flex-start;
     border:1px solid;
-    width:60%;
+    width:50%;
 
   }
   div.text{
@@ -183,7 +179,7 @@ nav ul ul ul li {
     margin-left: 1%;
   }
   div.three{
-    border-right: 1px solid;
+    /* border-right: 1px solid; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -204,8 +200,12 @@ nav ul ul ul li {
     align-items: flex-start;
     flex-wrap: nowrap;
   }
-  
-  
+  .image{
+    
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-right: 40px;
+  }
   .link{
     display: flex;
     flex-direction: row;
@@ -214,13 +214,8 @@ nav ul ul ul li {
     align-items: center;
     justify-content: space-around;
   }
-
-  .buttons{
-    display: flex;
-    justify-content: space-between;
-  }
   footer{
-    background-color: hsl(240, 49%, 84%);
+    background-color: #eed9d9;
     height:40vh;
     
     
@@ -229,25 +224,35 @@ nav ul ul ul li {
   }
   .search i{
     position: relative;
-    right:30px;
+    right:50px;
     
   }
   .footerone{
     margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  
-  div.boys{
-    color:deeppink;
   }
   .button{
+    display: flex;
+    justify-content: space-around;
+    display:inline-block;
+    background-color: #f44336;
+    color:#FFF;
+    padding:14px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left:20px;
+    opacity:0.9;
     
+  }
+  
+  .buttons{
+    display: flex;
     justify-content: space-around;
   }
+  h3{
+    color:deeppink;
+  }
 
-  
   @media screen and (max-width:800px)
   {
     .header{
@@ -264,7 +269,5 @@ nav ul ul ul li {
       width:280%;
     }
   }
-  
-  
   
   

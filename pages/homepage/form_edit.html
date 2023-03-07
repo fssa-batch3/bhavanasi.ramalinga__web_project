@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     
-    <link   rel="stylesheet"  href="../../assets/css/form_read.css">
-    <meta charset="UTF-8">
+    <link   rel="stylesheet"     href="../../assets/css/form_read.css">
+    <meta charset="UTF-8">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form_edit</title>
@@ -14,7 +14,7 @@
         
         <div class="container">
         <label for="name"><b> pg_Name</b></label>
-        <input type="text" placeholder="pg_name" name="fname" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
+        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
         
        
         <label for="type"><b>Rooms categories are available and rent</b></label><br>
@@ -30,6 +30,25 @@
       <input type="checkbox" id="four_share" name="vehicle4" disabled >
       <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing"  ><br><br>
 
+      <label for="name"><b> Deposite amount</b></label>
+      <input type="text" placeholder=""name="fname" id="amount" required><br><br>
+      
+      <label for="sharing"> Notice Period </label>
+      <input  id="period" required><br><br>
+    
+      <label for="sharing"> Closing Time </label>
+      <input  id="time" required><br><br>
+   
+
+      <label for="sharing"> Available For</label>
+      <input  id="available" required><br><br>
+  
+
+   
+    <label for="sharing"> Total Number of Beds </label>
+    <input  id="beds" required><br><br>
+     
+
 
       <label for="pg_name"><b>Image</b></label>
         <input type="text"  name="image" id="image" ><br><br>
@@ -38,12 +57,10 @@
         <textarea type="text"id="address" ></textarea><br>
         
         <div class="last">
-          
+            <button type="button"  onclick="del(event)"class="registerbtn" >delete</button>
           <button type="button"  onclick="update(event)" class="registerbtn">submit</button>
           
-      
-
-       </div>
+      </div>
     </form>
     <script>
         const queryString = window.location.search;
@@ -70,10 +87,13 @@ document.getElementById("onesharing").value = user_data["onesharing"];
     document.getElementById("twosharing").value = user_data["twosharing"];
     document.getElementById("threesharing").value = user_data["threesharing"];
     document.getElementById("foursharing").value = user_data["foursharing"];
-
+   document.getElementById("beds").value = user_data["beds"];
+   document.getElementById("time").value = user_data["time"];
+   document.getElementById("period").value = user_data["period"];
+   document.getElementById("available").value = user_data["available"];
     document.getElementById("image").value = user_data["image"];
     document.getElementById("address").value = user_data["address"];
-
+    document.getElementById("amount").value = user_data["amount"];
 
     function update(e){
 
@@ -85,6 +105,7 @@ let up_onesharing = document.getElementById("onesharing").value
 let up_twosharing = document.getElementById("twosharing").value
 let up_threesharing = document.getElementById("threesharing").value
 let up_foursharing = document.getElementById("foursharing").value
+let up_image = document.getElementById("image").value
 
 
 user_data["name"] = up_name;
@@ -96,10 +117,34 @@ user_data["foursharing"] = up_foursharing;
 
 localStorage.setItem("users", JSON.stringify(users));
 
-window.location.href="./for boys.html"
+window.location.href="./edit and update owners.html"
 
 }
 
+function del(e){
+e.preventDefault();
+if(confirm("Are you sure delete your account?")){
+
+let userId = JSON.parse(localStorage.getItem("name"));
+let users = JSON.parse(localStorage.getItem("users"));
+
+function login_data(e){
+ 
+return e.name == name;
+}
+
+user_data = users.find(login_data);
+
+
+const indexOfUser = users.indexOf(user_data);
+console.log(indexOfUser);
+users.splice(indexOfUser, 1);
+// console.log(indexOfUser);  
+localStorage.setItem("users", JSON.stringify(users));   
+window.location.href="./edit and update owners.html";
+}
+// localStorage.
+}
 
 
     </script>

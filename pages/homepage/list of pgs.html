@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
     <link rel="stylesheet" href="../../assets/css/For boys.css">
-    <title>For boys</title>
+    <title>updating autometically</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -324,7 +324,9 @@
 <script>
 
          const pg_details = JSON.parse(localStorage.getItem("users"));
-        // console.log(pg_details)
+        console.log(pg_details)
+
+
 
 
 
@@ -386,6 +388,7 @@
 
             div_para = document.createElement("div");
             div_para.setAttribute("class", "para");
+            div_para.setAttribute("data-id",pg_details[i]["my_uuid"]);
             div_room_details.append(div_para);
 
 
@@ -395,11 +398,14 @@
 
             one_b = document.createElement("b");
             one_b.innerText = pg_details[i]["name"];
+            
             line_p.append(one_b);
 
             page_a = document.createElement("a")
             page_a.setAttribute("href",pg_details[i]["name"]);
+            
             one_b.append(page_a);
+
 
             //    <div class="payment">
             div_payment = document.createElement("div");
@@ -449,36 +455,50 @@
             rate3_p.innerText = pg_details[i]["foursharing"];
             div_three.append(rate3_p);
 
+           div_content=document.createElement("div");
+           div_content.setAttribute("class","content");
+          div_payment.append(div_content);
 
-            //    <div class="content">
-            div_content = document.createElement("div");
-            div_content.setAttribute("class", "content");
-            div_payment.append(div_content);
+          page=document.createElement("p");
+          page.innerText=pg_details[i]["address"];
+          div_content.append(page);
 
-            rate4_b = document.createElement("p");
-            rate4_b.innerText = pg_details[i]["address"];
-            div_content.append(rate4_b);
-
-            //    <div class="button">
 
             div_button = document.createElement("div");
             div_button.setAttribute("class", "button");
-            div_button.setAttribute("data-id", pg_details[i]["my_uuid"]);
-            div_button.innerHTML = "edit";
-            div_content.append(div_button);
+            div_button.innerHTML = "contact owner";
+            div_payment.append(div_button);
 
     
         }
 
-        let selectbtn = document.querySelectorAll(".button");
-    selectbtn.forEach(each => {
-      each.addEventListener("click", (event) => {
-        const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
+    //     let selectbtn = document.querySelectorAll(".para");
+    // selectbtn.forEach(each => {
+    //   each.addEventListener("click", (event) => {
+    //     const person_data = pg_details.find(book => book["my_uuid"] === each.dataset.id);
         
-        window.location.href = `./form_edit.html?my_uuid=${person_data["my_uuid"]}`;
-      })
-    })
+    //     window.location.href = `./Addedpg_details.html?my_uuid=${person_data["my_uuid"]}`;
+    //   })
+    // })
+
+    let selectbtn = document.querySelectorAll(".para")
+    selectbtn.forEach(each => {
+                            each.addEventListener("click", (event) => {
+                                const person_data = each.dataset.id;
+                                console.log(person_data)
+                                window.location.href = `./Addedpg_details.html?my_uuid=${person_data}`;
+                            })
+                        })
 </script>
+
+
+
+
+
+
+
+
+
 
         <footer>
         <div clas="foot">

@@ -9,13 +9,36 @@ input[type=text], input[type=password] {
 
   }
 
+  .more{
+    margin-left: 3%;
+  }
+  .fa{
+    display:inline-block;
+
+  }
+  h1{
+    color:deeppink;
+    display: flex;
+  }
+  .image img{
+    height: 50vh;
+  }
+  .information{
+    display: flex;
+    border:1px solid;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+  }
+
 form{
     
     width: 400px;
     border:3px solid #f1f1f1;
     margin-top: 100px;
     box-shadow: 20px 20px 50px 15px white;
-    margin-left: 35%;
+    margin-bottom: 20px;
+    
 }
 .container {
     padding: 19px;
@@ -40,3 +63,8 @@ form{
    margin-left: 35%;
    height: 50px;  
   }
+  select#available{
+    margin-bottom: 8%;
+    margin-top: 4%;
+  }
+  

@@ -1,0 +1,544 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/Addedpg_details.css">
+
+    <title>single pg</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div id="container">
+            <nav>
+                <ul>
+                    <div class="magic">
+                        <li><a href="../../pages/homepage/rent.html"><img
+                                    src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                    height="70px" width="100%"></a></li>
+                    </div>
+                    <li><a href="#">Boys/Girls</a>
+
+                        <ul>
+                            <li><a href="../../pages/homepage/For boys.html">Boys</a></li>
+                            <li><a href="../../pages/homepage/for girls.html">Girls</a></li>
+                            <li><a href="../../pages/homepage/both.html">Both</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    </li>
+                    <li><a href="../../pages/homepage/my profile.html">My profile</a></li>
+                    <li><a href="../../pages/homepage/review.html">Reviews</a></li>
+                    <div class="searchbar">
+                        <input type="text" placeholder="search.." name="search">
+                        <i class="fa fa-search"></i>
+                    </div>
+            </nav>
+        </div>
+
+
+    </div>
+    </header>
+
+
+
+
+
+    <!-- <div class="border">
+
+        <div class="pg_detail">
+
+            <div>
+                <img src="../../assets/images/b4.jpg" alt="photo" height="400px" width="350px" />
+            </div>
+
+            <div class="address">
+                <h2 id="pg_name"></h2>
+                <p> 29/38, 4th govindha sami street, opp. to GEM HOSPITAL,
+                    Kanu Nagar, Kandhanchavadi, Perungudi, Chennai, Tamil Nadu 600096 </p>
+
+
+                    <div class="sharing">
+
+                        <div>
+                            <h4> Single sharing </h4>
+                            <b> Deposite amount: </b> <p > Rs.5000 </p> 
+                            <b  id="rent"> Rent: </b> Rs.5000
+                        </div>
+
+                        <div>
+                            <h4> Twin sharing </h4> 
+                            <b> Deposite amount: </b> <p> Rs.5000 </p>
+                            <b  id="two_share_rent"> Rent: </b> Rs.5000
+                        </div>
+
+                        <div>
+                            <h4> Triple sharing </h4>
+                            <b> Deposite amount: </b> <p> Rs.5000 </p>
+                            <b id="three_share_rent"> Rent: </b> Rs.5000
+                        </div>
+
+                        <div>
+                            <h4> Four sharing </h4>
+                            <b> Deposite amount: </b> <p> Rs.5000 </p>
+                            <b  id="four_share_rent"> Rent: </b> Rs.5000
+                        </div>
+
+                    </div>
+
+                    <div class="time">
+                        
+                       <p ></p>  
+
+                       <p> <b> Closing time: </b>  11 pm  </p>
+
+                       <p> <b> Available for: </b>  Girls  </p>
+
+                       <p> <b> No.of beds: </b>  64  </p>
+
+                    </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="facilities">
+
+            <strong> Facilities: </strong>
+
+            <div class="faculties">
+
+                <img src="../../assets/images/parking.jpg" alt="photo" height="180px" width="150px" />
+
+                <img src="../../assets//images/wifi.png" alt="photo" height="150px" width="150px" />
+
+                <img src="../../assets/images/food1.jpg" alt="photo" height="120px" width="100px" />
+
+                <img src="../../assets/images/fridge.jpg" alt="photo" height="150px" width="120px" />
+
+                <img src="../../assets/images/TV.jpg" alt="photo" height="130px" width="120px" />
+
+                <img src="../../assets/images/power.jpg" alt="photo" height="120px" width="150px" />
+
+                   <p> Maintainence: Yes </p>   -->
+
+    <!-- </div>
+ 
+        </div> 
+         <div class="last">
+        <button class="button" type="submit" > Contact Owner </button>
+         
+         
+         
+    </div>   -->
+
+
+
+
+
+    <script>
+
+       
+
+        let single_details = JSON.parse(localStorage.getItem("users"));
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const pg_id = urlParams.get('my_uuid');
+        console.log(pg_id)
+        let unique_id = single_details.find(e => e.my_uuid == pg_id);
+        console.log(unique_id)
+
+        // let pg_details=
+        //         {
+
+        //             "images":[
+        //                 {
+        //                     "src":"../../assets/images/parking.jpg ",
+        //                     height:"180px", width:"150px", 
+
+
+        //                 },
+        //                 {
+        //                     "src":"../../assets/images/wifi.png",
+        //                     height:"180px", width:"150px", 
+        //                 }, 
+        //                 {
+        //                     "src":"../../assets/images/food1.jpg ",
+        //                     height:"180px", width:"150px", 
+        //                 },
+        //                 {
+        //                     "src":"../../assets/images/fridge.jpg ",
+        //                     height:"180px", width:"150px", 
+        //                 },
+        //                 {
+        //                    "src":" ../../assets/images/TV.jpg",
+        //                    height:"180px", width:"150px", 
+
+        //                 }
+        //             ]
+        //         }
+
+
+
+        div_border = document.createElement("div");
+        div_border.setAttribute("class", "border");
+        console.log(div_border);
+        document.querySelector("body").append(div_border);
+
+        div_detail = document.createElement("div");
+        div_detail.setAttribute("class", "pg_detail");
+        div_border.append(div_detail);
+
+        div_image = document.createElement("div");
+        div_detail.append(div_image);
+
+        img = document.createElement("img");
+        img.setAttribute("src", unique_id["image"]);
+        img.setAttribute("alt", "photo");
+        img.setAttribute("height", "400px");
+        img.setAttribute("width", "450px");
+        div_image.append(img);
+
+        div_address = document.createElement("div");
+        div_address.setAttribute("class", "address");
+        div_detail.append(div_address);
+
+        h2 = document.createElement("h2");
+        h2.innerText = unique_id["name"];
+        div_address.append(h2);
+
+        p = document.createElement("p");
+        p.innerText = unique_id["address"];
+        div_address.append(p);
+
+
+
+        div_sharing = document.createElement("div");
+        div_sharing.setAttribute("class", "sharing");
+        div_address.append(div_sharing);
+
+        div_one = document.createElement("div");
+        div_sharing.append(div_one);
+
+
+        h4 = document.createElement("h4");
+        h4.innerText = "single sharing";
+        div_one.append(h4);
+
+        b = document.createElement("b");
+        b.innerText = "Monthly Rent:";
+        div_one.append(b);
+
+        p_one = document.createElement("p");
+        p_one.innerText = unique_id["onesharing"];
+        b.append(p_one);
+
+        b_one = document.createElement("b");
+        b_one.innerText = "Advance:";
+        div_one.append(b_one);
+
+        b_one = document.createElement("b");
+        b_one.innerText = 5000 + "/-";
+        div_one.append(b_one);
+
+        //two sharing//
+        div_two = document.createElement("div");
+        div_sharing.append(div_two);
+
+        h4_one = document.createElement("h4");
+        h4_one.innerText = "Twin sharing";
+        div_two.append(h4_one);
+
+        b_two = document.createElement("b");
+        b_two.innerText = "Monthly Rent:";
+        div_two.append(b_two);
+
+        p_two = document.createElement("p");
+        p_two.innerText = unique_id["twosharing"];
+        b_two.append(p_two);
+
+        b_three = document.createElement("b");
+        b_three.innerText = "Advance:";
+        div_two.append(b_three);
+
+        b_three = document.createElement("b");
+        b_three.innerText = 5000 + "/-";
+        div_two.append(b_three);
+        //three sharing//
+
+        div_three = document.createElement("div");
+        div_sharing.append(div_three);
+
+        h4_two = document.createElement("h4");
+        h4_two.innerText = "Three sharing";
+        div_three.append(h4_two);
+
+        b_four = document.createElement("b");
+        b_four.innerText = " Monthly Rent:";
+        div_three.append(b_four);
+
+        p_three = document.createElement("p");
+        p_three.innerText = unique_id["threesharing"];
+        b_four.append(p_three);
+
+        b_five = document.createElement("b");
+        b_five.innerText = "Advance:";
+        div_three.append(b_five);
+
+        b_five = document.createElement("b");
+        b_five.innerText = 5000 + "/-";
+        div_three.append(b_five);
+
+        //four sharing//
+        div_four = document.createElement("div");
+        div_sharing.append(div_four);
+
+        h4_three = document.createElement("h4");
+        h4_three.innerText = "four sharing";
+        div_four.append(h4_three);
+
+        b_six = document.createElement("b");
+        b_six.innerText = "Monthly Rent:";
+        div_four.append(b_six);
+
+        para_four = document.createElement("p");
+        para_four.innerText = 5000 + "/-";
+        b_six.append(para_four);
+
+        b_seven = document.createElement("b");
+        b_seven.innerText = "Advance:";
+        div_four.append(b_seven);
+
+        b_seven = document.createElement("b");
+        b_seven.innerText = unique_id["foursharing"];
+        div_four.append(b_seven);
+
+        //timimg//
+        div_time = document.createElement("div");
+        div_time.setAttribute("class", "time");
+        div_address.append(div_time);
+
+        para = document.createElement("b");
+        para.innerText = "Notice period :";
+        div_time.append(para);
+
+        bold = document.createElement("p");
+        bold.innerText = unique_id["period"];
+        para.append(bold);
+
+        para_one = document.createElement("b");
+        para_one.innerText = "Closing Time :";
+        div_time.append(para_one);
+
+        bold_one = document.createElement("p");
+        bold_one.innerText = unique_id["time"];
+        para_one.append(bold_one);
+
+        para_two = document.createElement("b");
+        para_two.innerText = "Available For:";
+        div_time.append(para_two);
+
+        bold_two = document.createElement("p");
+        bold_two.innerText = unique_id["available"];
+        para_two.append(bold_two);
+
+        para_three = document.createElement("b");
+        para_three.innerText = "No.of beds:";
+        div_time.append(para_three);
+
+        bold_three = document.createElement("p");
+        bold_three.innerText = unique_id["beds"];
+        para_three.append(bold_three);
+        //facilities//
+        div_facilities = document.createElement("div");
+        div_facilities.setAttribute("class", "facilities");
+        div_border.append(div_facilities);
+
+        strong = document.createElement("strong");
+        strong.innerText = "Facilities:";
+        div_facilities.append(strong);
+
+
+        div_faculties = document.createElement("div");
+        div_faculties.setAttribute("class", "faculties");
+        div_facilities.append(div_faculties);
+
+
+        div_last = document.createElement("div");
+        div_last.setAttribute("class", "last");
+        div_facilities.append(div_last);
+
+
+        button = document.createElement("button");
+        button.setAttribute("class", "button");
+       button.setAttribute("type", "submit")
+        button.innerHTML = "Contact Owner";
+        div_last.append(button);
+
+
+
+        //images//
+        img_picture = document.createElement("img");
+        img_picture.setAttribute("src", unique_id["food"]);
+        img_picture.setAttribute("alt", "photo");
+        img_picture.setAttribute("height", "130px");
+        img_picture.setAttribute("width", "120px");
+        div_faculties.append(img_picture);
+
+
+        img_picture = document.createElement("img");
+        img_picture.setAttribute("src", unique_id["wifi"]);
+        img_picture.setAttribute("alt", "photo");
+        img_picture.setAttribute("height", "130px");
+        img_picture.setAttribute("width", "120px");
+        div_faculties.append(img_picture);
+
+
+        img_picture = document.createElement("img");
+        img_picture.setAttribute("src", unique_id["tv"]);
+        img_picture.setAttribute("alt", "photo");
+        img_picture.setAttribute("height", "130px");
+        img_picture.setAttribute("width", "120px");
+        div_faculties.append(img_picture);
+
+
+
+        img_picture = document.createElement("img");
+        img_picture.setAttribute("src", unique_id["parking"]);
+        img_picture.setAttribute("alt", "photo");
+        img_picture.setAttribute("height", "130px");
+        img_picture.setAttribute("width", "120px");
+        div_faculties.append(img_picture);
+
+
+
+
+        img_picture = document.createElement("img");
+        img_picture.setAttribute("src", unique_id["fridge"]);
+        img_picture.setAttribute("alt", "photo");
+        img_picture.setAttribute("height", "130px");
+        img_picture.setAttribute("width", "120px");
+        div_faculties.append(img_picture);
+
+        
+
+
+   // another images//
+
+
+
+
+
+    // let del_product = document.querySelector(".that");
+    // del_product.addEventListener("click", delData);
+    // function delData() {
+    //   if (confirm("Are you sure?")) {
+    //     let uid = JSON.parse(localStorage.getItem("product_uuid"));
+    //     let product = JSON.parse(localStorage.getItem("product_crud"));
+    //     function find_data(e) {
+    //       return e.product_uuid == uid;
+    //     }
+    //     product_data = product.find(find_data);
+    //     const indexOfUser = product.indexOf(product_data);
+    //     product.splice(indexOfUser, 1);
+    //     localStorage.setItem('product_crud', JSON.stringify(product));
+    //     location.reload();
+    //   };
+    // }
+
+    </script>
+
+
+<div class="otherfecilities">
+    <div class="sidebar">
+
+        <h2>House rules</h2></div>
+    <div class="slides">
+        <div class="one" >
+        <img src="../../assets/images/gate.jpg"   alt="photo" height="70%"  width="30%"/><b>  closing time </b></div>
+        
+        <div class="one">
+        <img src="../../assets/images/drinking.jpg"  alt="photo"  height="50%"  width="30%"/> <b> Drinking</b>  <span style='font-size:20px; color:red'>&#9746;</span></i></div>
+        <div class="one">
+        <img src="../../assets/images/food1.jpg "  alt="photo"height="50%"  width="30%"/><b> Non-veg </b><i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i></div>
+        
+              <div class="one">
+                <img src="../../assets/images/party.jpg"  alt="photo" height="50%"  width="30%"/><b>party</b><i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i></div><br>
+                
+                
+                <div class="one">
+                <img src="../../assets/images/music.jpg"  alt="photo"  height="50%"  width="30%"/><b>Music</b><i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i></div>
+                <div class="one">
+                <img src="../../assets/images/visitor.jpg" alt="photo"height="50%"  width="30%"/><b>Visitor Entry</b><i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i></div>
+                <div class="one">
+                    <img src="../../assets/images/smoking.jpg"  alt="photo"height="50%"  width="30%"/><b>Smoking</b><span style='font-size:20px; color:red'>&#9746;</span></div>
+            
+                
+       </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div clas="foot">
+        </div>
+        <div class="footer1">
+            <div class="footerone">
+                <h2> About Sound Bricks</h2>
+                <h3> Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
+                    services including home loans, pay rent, packers and movers, legal assistance, property
+                    valuation,<br>
+                </h3>
+            </div>
+            <div class="foot">
+                <h2>Real Estate in India</h2><br>
+                <h3>Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+
+                    in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+                    New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br></h3>
+            </div>
+        </div>
+        <div class="link">
+            <i class="fa fa-instagram" style="font-size:48px;"> </i>
+            <i class="fa fa-facebook-f" style="font-size:36px"></i>
+            <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+        </div>
+
+        <div class="last">
+
+            <div>site map</div>
+            <div>Terms&conditions</div>
+            <div> Blog</div>
+            <div>Careers</div>
+            <div> Testimonials</div>
+            <div> Feedback</div>
+            <div> Unsubscribe</div>
+            <div> Help centeer</div>
+            <div> Sales Enquiry</div>
+            <div> Buy our services</div>
+        </div>
+    </footer>
+</body>
+
+</html>
