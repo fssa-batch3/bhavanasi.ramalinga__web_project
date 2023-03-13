@@ -57,7 +57,7 @@
         <textarea type="text"id="address" ></textarea><br>
         
         <div class="last">
-            <button type="button"  onclick="del(event)"class="registerbtn" >delete</button>
+            <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
           <button type="button"  onclick="update(event)" class="registerbtn">submit</button>
           
       </div>
@@ -121,30 +121,30 @@ window.location.href="./edit and update owners.html"
 
 }
 
-function del(e){
-e.preventDefault();
-if(confirm("Are you sure delete your account?")){
+// function del(e){
+// e.preventDefault();
+// if(confirm("Are you sure delete your account?")){
 
-let userId = JSON.parse(localStorage.getItem("name"));
-let users = JSON.parse(localStorage.getItem("users"));
+// let userId = JSON.parse(localStorage.getItem("name"));
+// let users = JSON.parse(localStorage.getItem("users"));
 
-function login_data(e){
+// function login_data(e){
  
-return e.name == name;
-}
+// return e.name == name;
+// }
 
-user_data = users.find(login_data);
+// user_data = users.find(login_data);
 
 
-const indexOfUser = users.indexOf(user_data);
-console.log(indexOfUser);
-users.splice(indexOfUser, 1);
-// console.log(indexOfUser);  
-localStorage.setItem("users", JSON.stringify(users));   
-window.location.href="./edit and update owners.html";
-}
-// localStorage.
-}
+// const indexOfUser = users.indexOf(user_data);
+// console.log(indexOfUser);
+// users.splice(indexOfUser, 1);
+// // console.log(indexOfUser);  
+// localStorage.setItem("users", JSON.stringify(users));   
+// window.location.href="./edit and update owners.html";
+// }
+// // localStorage.
+// }
 
 
     </script>

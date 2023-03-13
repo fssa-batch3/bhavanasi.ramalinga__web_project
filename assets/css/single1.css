@@ -159,8 +159,20 @@ strong {
     justify-content: space-evenly;
 }
 
+
 .button {
     color: white;
+    background-color: red;
+    border: none;
+    height: 40px;
+    width: 80px;
+    margin-top: 2rem;
+    display:flex;
+align-items: center;
+justify-content: center;
+}
+button.edit{
+  color: white;
     background-color: red;
     border: none;
     height: 40px;

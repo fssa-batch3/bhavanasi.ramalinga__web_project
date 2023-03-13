@@ -39,9 +39,13 @@
       <input  id="time" required><br><br>
    
 
-      <label for="sharing"> Available For</label>
-      <input  id="available" required><br><br>
-  
+      <label for="cars">Choose </label>
+    <select name="available" id="available" required>
+      <option >Boys</option>
+      <option >Girls</option>
+      <option  >Both for girls and boys</option>
+    </select><br><br>
+     
 
    
     <label for="sharing"> Total Number of Beds </label>
@@ -78,7 +82,7 @@
         <textarea type="text"id="address" disabled></textarea><br>
         
         <div class="last">
-          <button type="button"  onclick="del(event)"class="registerbtn" >delete</button>
+          <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
           <button type="submit"  class="registerbtn"><a href="../../pages/homepage/edit and update owners.html">submit</a></button>
       </div>
       
@@ -141,30 +145,30 @@
   
    
     
-    function del(e){
- e.preventDefault();
- if(confirm("Are you sure delete your account?")){
+//     function del(e){
+//  e.preventDefault();
+//  if(confirm("Are you sure delete your account?")){
 
- let userId = JSON.parse(localStorage.getItem("name"));
- let users = JSON.parse(localStorage.getItem("users"));
+//  let userId = JSON.parse(localStorage.getItem("name"));
+//  let users = JSON.parse(localStorage.getItem("users"));
 
- function login_data(e){
+//  function login_data(e){
  
- return e.name == name;
- }
+//  return e.name == name;
+//  }
 
- user_data = users.find(login_data);
+//  user_data = users.find(login_data);
 
 
-const indexOfUser = users.indexOf(user_data);
-console.log(indexOfUser);
-users.splice(indexOfUser, 1);
-// console.log(indexOfUser);  
-localStorage.setItem("users", JSON.stringify(users));   
-window.location.href="./edit and update owners.html"
-}
-// localStorage.
-}
+// const indexOfUser = users.indexOf(user_data);
+// console.log(indexOfUser);
+// users.splice(indexOfUser, 1);
+// // console.log(indexOfUser);  
+// localStorage.setItem("users", JSON.stringify(users));   
+// window.location.href="./edit and update owners.html"
+// }
+// // localStorage.
+// }
 // function logOut(e){
 
 // window.location.href="./rent.html";

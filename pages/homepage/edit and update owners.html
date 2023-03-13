@@ -369,13 +369,20 @@ let pg_details=
            div_facilities.append(div_last)
            
         button = document.createElement("button");
-            button.setAttribute("class", "button");
+            button.setAttribute("class", "edit");
            button.setAttribute("data-id",pg_updates[i]["my_uuid"]);
             button.setAttribute("type","submit")
             button.innerHTML = "Edit";
             div_last.append(button);
 
+ button_del = document.createElement("button");
+ button_del.setAttribute("type", "submit");
+ button_del.setAttribute("class", "button");          
+button_del.setAttribute("onclick", "del()")
+button_del.innerHTML = "Delete";
+div_last.append(button_del);
 
+            
            
             // buttons = document.createElement("div");
             // buttons.setAttribute("class", "button");
@@ -435,7 +442,7 @@ let pg_details=
         }
 
        
-        let selectbtn = document.querySelectorAll(".button");
+        let selectbtn = document.querySelectorAll(".edit");
     selectbtn.forEach(each => {
       each.addEventListener("click", (event) => {
         const person_data = pg_updates.find(book => book["my_uuid"] === each.dataset.id);
@@ -443,6 +450,50 @@ let pg_details=
         window.location.href = `./form_edit.html?my_uuid=${person_data["my_uuid"]}`;
       })
     })
+
+    function del(){
+                
+        if(confirm("Are you sure to delete this product ?")){
+                   
+
+                    let users = JSON.parse(localStorage.getItem("users"));
+            let user_id = JSON.parse(localStorage.getItem("my_uuid"));
+            console.log(user_id);
+            function check (e){
+                return e.my_uuid == user_id;
+            }
+            user_data = users.find(check)
+                    const indexOfUser = users.indexOf(user_data);
+                    users.splice(indexOfUser, 1);
+                    localStorage.setItem("users", JSON.stringify(users));
+                    // window.location.href = "../edit and update owners.html";
+        }
+       
+     } 
+
+
+//      function del(e){
+//         e.preventDefault();
+
+//         if(confirm("Are you sure delete your account?")){
+
+//     let userId = JSON.parse(localStorage.getItem('userId'));
+//     let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+
+//     function login_data(e){
+//       return e.email == userId;
+//     }
+
+//     user_data = user_cred.find(login_data);
+
+//     const indexOfUser = user_cred.indexOf(user_data);
+// console.log(indexOfUser);
+// user_cred.splice(indexOfUser, 1);
+// // console.log(indexOfUser);  
+// localStorage.setItem("user_cred", JSON.stringify(user_cred));   
+// window.location.href="./rent.html";}}
+
+
     
 
 
