@@ -86,7 +86,7 @@ body{
     
 
 }
-a:link, a:visited{
+button{
     background-color:red;
     color:white;
     padding:14px 25px;

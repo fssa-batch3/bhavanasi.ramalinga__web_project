@@ -33,7 +33,7 @@
         
        
         <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
-        <input type="checkbox" id="one_share" name="vehicle1"  >
+        <!-- <input type="checkbox" id="one_share" name="vehicle1"  > -->
       <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"  ><br><br>
 
       <!-- <input type="checkbox" id="two_share" name="vehicle2"  > -->
@@ -65,24 +65,24 @@
     <input  id="beds" required><br><br>
      
          
-    <label for="sharing">Parking </label>
+    <label for="sharing"> Image url of Facilities </label>
     <input  id="parking" name="vehicle1"  ><br><br>
 
     
 
-      <label for="sharing"> wifi </label>
+      <label for="sharing"> Image url of Facilities </label>
     <input   id="wifi" ><br><br>
 
    
-    <label for="sharing">Food </label>
+    <label for="sharing"> Image url of Facilities</label>
     <input   id="food" ><br><br>
 
     
-    <label for="sharing"> Fridge </label>
+    <label for="sharing">  Image url of Facilities</label>
     <input  id="fridge"  ><br><br>
 
    
-    <label for="sharing"> TV </label>
+    <label for="sharing">  Image url of Facilities</label>
     <input   id="tv" ><br><br>
 
     <label for="pg_name"><b> Image</b></label>
@@ -109,10 +109,10 @@
             e.preventDefault();
             let name = document.getElementById("name").value;
             
-               one_share= document.getElementById("one_share").checked;
-               two_share= document.getElementById("two_share").checked;
-               three_share= document.getElementById("three_share").checked;
-               four_share= document.getElementById("four_share").checked;
+            //    one_share= document.getElementById("one_share").checked;
+            //    two_share= document.getElementById("two_share").checked;
+            //    three_share= document.getElementById("three_share").checked;
+            //    four_share= document.getElementById("four_share").checked;
                food= document.getElementById("food").value;
               
                parking= document.getElementById("parking").value;
@@ -120,7 +120,7 @@
                wifi=document.getElementById("wifi").value;
               
                tv=document.getElementById("tv").value;
-              
+              fridge=document.getElementById("fridge").value;
              
                
 
@@ -154,7 +154,7 @@
             data.name == name);
             if(!exit)
             {
-                users.push({name,one_share,two_share,three_share,four_share,food,parking,wifi,tv,period,available,beds,amount,time,address,onesharing,twosharing,threesharing,image, foursharing,my_uuid});
+                users.push({name,food,parking,wifi,tv,fridge,period,available,beds,amount,time,address,onesharing,twosharing,threesharing,image, foursharing,my_uuid});
 
                     let checked = JSON.parse (localStorage.getItem ('checkbox'));
                     

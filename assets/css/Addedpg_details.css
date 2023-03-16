@@ -107,7 +107,7 @@ nav ul ul ul li {
     border: 1px solid gray;
     border-radius: 8px;
     height: 850px;
-    width: 1250px;
+    width: 1300px;
     margin: 8rem 5rem 0 7rem;
     margin-bottom: 4%;
 }  
@@ -138,6 +138,7 @@ h4, b {
     border: 0.5px solid black;
     width: 11rem;
     height: 10rem;
+    margin-left: 3%;
 }
 
 .time {
@@ -175,9 +176,10 @@ justify-content: center;
 .edit {  
     margin-left: 55rem;
 }
-
-.delete {  
-    margin-left: 5rem;
+div.click{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4%;
 }
 
 

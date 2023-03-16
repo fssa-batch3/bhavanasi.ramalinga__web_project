@@ -22,9 +22,9 @@
              <li><a href="#">Boys/Girls </a>
                 
                 <ul>
-                    <li><a href="../../pages/homepage/For boys.html">Boys</a></li>
-                    <li><a href="../../pages/homepage/for girls.html">Girls</a></li>
-                    <li><a href="../../pages/homepage/both.html">Both</a></li>
+                    <li><a href="../../pages/homepage/updated Boys.html">Boys</a></li>
+                    <li><a href="../../pages/homepage/updated for girls.html">Girls</a></li>
+                    <li><a href="../../pages/homepage/updated for both.html">Both</a></li>
                 </ul>        
                 </li>
                 
@@ -347,6 +347,9 @@ let pg_details=
             bold_three=document.createElement("p");
             bold_three.innerText=pg_updates[i]["beds"];
             para_three.append(bold_three);
+
+            
+
            //facilities//
            div_facilities=document.createElement("div");
            div_facilities.setAttribute("class","facilities");
@@ -360,6 +363,8 @@ let pg_details=
             div_faculties=document.createElement("div");
            div_faculties.setAttribute("class","faculties");
            div_facilities.append(div_faculties);
+
+           
 
            
           //button//
@@ -377,8 +382,9 @@ let pg_details=
 
  button_del = document.createElement("button");
  button_del.setAttribute("type", "submit");
- button_del.setAttribute("class", "button");          
-button_del.setAttribute("onclick", "del()")
+ button_del.setAttribute("class", "delete"); 
+ button_del.setAttribute("data-del", pg_updates[i]["my_uuid"]);
+// button_del.setAttribute("onclick", "del()")
 button_del.innerHTML = "Delete";
 div_last.append(button_del);
 
@@ -451,25 +457,60 @@ div_last.append(button_del);
       })
     })
 
-    function del(){
+
+    let del_pgs = document.querySelectorAll("button.delete");
+    del_pgs.forEach(function (check) {
+        check.addEventListener("click", function () {
+            let unique_id = this.dataset.del;
+            localStorage.setItem("uniqueId", JSON.stringify(unique_id));
+
+            if (confirm("Are you sure to delete this pg?")){
+                let id = JSON.parse(localStorage.getItem("uniqueId"));
+                console.log(id);
+                let all_pgs = JSON.parse(localStorage.getItem("users"));
+                console.log(all_pgs);
+                let pg_check = all_pgs.find(e => e.my_uuid == id);
+                console.log(pg_check);
+                let pgs = all_pgs.indexOf(pg_check); 
+                all_pgs.splice(pgs, 1);
+                console.log(pgs);
+                localStorage.setItem("users", JSON.stringify(all_pgs));
+            }
+
+        })
+    })
+   
+
+    // function del(){
                 
-        if(confirm("Are you sure to delete this product ?")){
+    //     if(confirm("Are you sure to delete this product ?")){
                    
 
-                    let users = JSON.parse(localStorage.getItem("users"));
-            let user_id = JSON.parse(localStorage.getItem("my_uuid"));
-            console.log(user_id);
-            function check (e){
-                return e.my_uuid == user_id;
-            }
-            user_data = users.find(check)
-                    const indexOfUser = users.indexOf(user_data);
-                    users.splice(indexOfUser, 1);
-                    localStorage.setItem("users", JSON.stringify(users));
-                    // window.location.href = "../edit and update owners.html";
-        }
+    //                 let users = JSON.parse(localStorage.getItem("users"));
+            
+    //                 let user_id = JSON.parse(localStorage.getItem("my_uuid"));
+            
+    //                 console.log(user_id);
+            
+    //                 function check (e){
+            
+    //                     return e.my_uuid == user_id;
+            
+    //                 }
+            
+    //                 users = users.find(check)
+            
+    //                 let indexOfUser = users.indexOf(users);
+            
+    //                 users.removeI(indexOfUser, 1);
+            
+    //                 localStorage.setItem("users", JSON.stringify(users));
+            
+    //                 // window.location.href = "../edit and update owners.html";
+        
+    //     }
        
-     } 
+    // } 
 
 
 //      function del(e){

@@ -18,16 +18,16 @@
         
        
         <label for="type"><b>Rooms categories are available and rent</b></label><br>
-        <input type="checkbox" id="one_share" name="vehicle1"   disabled>
+        
       <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"   ><br><br>
 
-      <input type="checkbox" id="two_share" name="vehicle2"   disabled>
+     
       <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" ><br><br>
 
-      <input type="checkbox" id="three_share" name="vehicle3" disabled>
+      
       <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
 
-      <input type="checkbox" id="four_share" name="vehicle4" disabled >
+      
       <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing"  ><br><br>
 
       <label for="name"><b> Deposite amount</b></label>
@@ -49,6 +49,25 @@
     <input  id="beds" required><br><br>
      
 
+    <label for="sharing">Image of Facilities</label>
+    <input  id="parking" name="vehicle1"  ><br><br>
+
+    
+
+      <label for="sharing"> Image of Facilities </label>
+    <input   id="wifi" ><br><br>
+
+   
+    <label for="sharing">image of Facilities </label>
+    <input   id="food" ><br><br>
+
+    
+    <label for="sharing"> Image of Facilities </label>
+    <input  id="fridge"  ><br><br>
+
+   
+    <label for="sharing"> Image of Facilities </label>
+    <input   id="tv" ><br><br>
 
       <label for="pg_name"><b>Image</b></label>
         <input type="text"  name="image" id="image" ><br><br>
@@ -77,12 +96,6 @@
      console.log(users)
 
      document.getElementById("name").value = user_data["name"];
-    document.getElementById("one_share").checked = user_data["one_share"];
-    document.getElementById("two_share").checked = user_data["two_share"];
-    document.getElementById("three_share").checked = user_data["three_share"];
-    document.getElementById("four_share").checked = user_data["four_share"];
-
-document.getElementById("name").value = user_data["name"]
 document.getElementById("onesharing").value = user_data["onesharing"];
     document.getElementById("twosharing").value = user_data["twosharing"];
     document.getElementById("threesharing").value = user_data["threesharing"];
@@ -94,7 +107,12 @@ document.getElementById("onesharing").value = user_data["onesharing"];
     document.getElementById("image").value = user_data["image"];
     document.getElementById("address").value = user_data["address"];
     document.getElementById("amount").value = user_data["amount"];
-
+     
+   document.getElementById("parking").value = user_data["parking"];
+   document.getElementById("tv").value = user_data["tv"];
+   document.getElementById("wifi").value = user_data["wifi"];
+   document.getElementById("food").value = user_data["food"];
+   document.getElementById("fridge").value = user_data["fridge"]; 
     function update(e){
 
 e.preventDefault();
@@ -106,6 +124,12 @@ let up_twosharing = document.getElementById("twosharing").value
 let up_threesharing = document.getElementById("threesharing").value
 let up_foursharing = document.getElementById("foursharing").value
 let up_image = document.getElementById("image").value
+let up_parking = document.getElementById("parking").value
+let up_tv = document.getElementById("tv").value
+let up_wifi = document.getElementById("wifi").value
+let up_food = document.getElementById("food").value
+let up_fridge = document.getElementById("fridge").value
+let up_available = document.getElementById("available").value
 
 
 user_data["name"] = up_name;
@@ -114,6 +138,13 @@ user_data["onesharing"] = up_onesharing;
 user_data["twosharing"] = up_twosharing;
 user_data["threesharing"] = up_threesharing;
 user_data["foursharing"] = up_foursharing;
+user_data ["image"] = up_image;
+user_data["parking"] = up_parking;
+user_data["tv"] = up_tv;
+user_data["wifi"] = up_wifi;
+user_data["food"] = up_food;
+user_data["fridge"] = up_fridge;
+user_data["available"] = up_available;
 
 localStorage.setItem("users", JSON.stringify(users));
 
