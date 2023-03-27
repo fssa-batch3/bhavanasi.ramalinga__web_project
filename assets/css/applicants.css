@@ -106,6 +106,7 @@ h3.name_of_pg{
 }
 div.detail img{
 	margin: 3.5rem 0 0 4rem;
+	margin-bottom: 5%;
 }
 div.click{
 	display: flex;
@@ -117,6 +118,10 @@ button.button{
 	color:white;
 	background-color:black;
 	border-radius: 22px;
+	margin-left:3%
+}
+button.buttons{
+	margin-left: 10%;
 }
 
 

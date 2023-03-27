@@ -22,13 +22,13 @@
         
         
         <label for="phone"><b>phone_number</b></label>
-        <input type="text" placeholder="phone_number" name="tel"pattern="[0-9].{9}" id="phone_number" disabled>    
+        <input type="text" placeholder="phone_number" name="tel"pattern="[0-9].{9}" id="phone_number" >    
     
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email"   pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="email" disabled>
         
         <label for="cars"><b>Choose Owner/Customer</b> </label>
-        <select name="available" id="customer_or_owner" disabled>
+        <select name="available" id="customer_or_owner" >
             <option>Customer</option>
             <option>Owner</option></select><br><br>
 
@@ -70,11 +70,18 @@
 
         let up_name = document.getElementById("name").value
         let up_address = document.getElementById("address").value
+        let up_phone_number = document.getElementById("phone_number").value
+        let customer_or_owner = document.getElementById("customer_or_owner").value
 
         user_data["name"] = up_name;
         user_data["address"] = up_address;
+        user_data["phoe_number"] =up_phone_number;
+        user_data["customer_or_owner"] = customer_or_owner;
 
         localStorage.setItem("user_cred", JSON.stringify(user_cred));
+
+
+
 
         window.location.href="./my profile.html"
 

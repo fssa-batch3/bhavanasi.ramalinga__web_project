@@ -454,7 +454,7 @@
     
       const users = JSON.parse(localStorage.getItem("users"));
 
-       let filteredUseravailable = users.filter(e => e.available == "Both for girls and boys" );
+       let filteredUseravailable = users.filter(e => e.available == "both girls and boys" );
 
          for (i = 0; i<filteredUseravailable.length; i++) {
             let div_bar;
@@ -517,7 +517,7 @@
 
             div_para = document.createElement("div");
             div_para.setAttribute("class", "para");
-            div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
+            // div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
             div_room_details.append(div_para);
 
 
@@ -551,7 +551,7 @@
             div_rent.append(div_text);
 
             rate_p = document.createElement("p");
-            rate_p.innerText = filteredUseravailable[i]["onesharing"];
+            rate_p.innerText = filteredUseravailable[i]["sharing"]["onesharing"];
             div_text.append(rate_p);
 
             div_one = document.createElement("div");
@@ -560,7 +560,7 @@
             div_rent.append(div_one);
 
             rate1_p = document.createElement("p");
-            rate1_p.innerText = filteredUseravailable[i]["twosharing"];
+            rate1_p.innerText = filteredUseravailable[i]["sharing"]["twosharing"];
             div_one.append(rate1_p);
 
             div_two = document.createElement("div");
@@ -569,7 +569,7 @@
             div_rent.append(div_two);
 
             rate2_p = document.createElement("p");
-            rate2_p.innerText = filteredUseravailable[i]["threesharing"];
+            rate2_p.innerText = filteredUseravailable[i]["sharing"]["threesharing"];
             div_two.append(rate2_p);
 
             div_three = document.createElement("div");
@@ -578,7 +578,7 @@
             div_rent.append(div_three);
 
             rate3_p = document.createElement("p");
-            rate3_p.innerText = filteredUseravailable[i]["foursharing"];
+            rate3_p.innerText = filteredUseravailable[i]["sharing"]["foursharing"];
             div_three.append(rate3_p);
 
 
@@ -599,21 +599,19 @@
             div_button = document.createElement("div");
             div_button.setAttribute("class", "button");
             div_button.setAttribute("data-id", filteredUseravailable[i]["my_uuid"]);
-            div_button.innerHTML = "contact";
+            div_button.innerHTML = "View more >>";
             div_content.append(div_button);
       }
 
 
-      let selectbtn = document.querySelectorAll(".para")
+      let selectbtn = document.querySelectorAll(".button")
     selectbtn.forEach(each => {
                             each.addEventListener("click", (event) => {
                                 const person_data = each.dataset.id;
                                 console.log(person_data)
-                                window.location.href = `./Addedpg_details.html?my_uuid=${person_data}`;
+                                window.location.href = `../../pages/homepage/Addedpg_details.html?my_uuid=${person_data}`;
                             })
                         })
-
-      
 
     //     let selectbtn = document.querySelectorAll(".button");
     // selectbtn.forEach(each => {
