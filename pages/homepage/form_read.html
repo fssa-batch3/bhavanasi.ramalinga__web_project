@@ -9,28 +9,62 @@
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body>
-    <form role="form">
+ <div class="header">
+        <div id="container">
+            <nav>
+                <ul>
+                    <div class="magic">
+                        <li><a href="../../pages/homepage/rent.html"><img
+                                    src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                    height="70px" width="100%"></a></li>
+                    </div>
+                    <li><a href="#">Boys/Girls</a>
+
+                        <ul>
+                            <li><a href="../../pages/homepage/For boys.html">Boys</a></li>
+                            <li><a href="../../pages/homepage/for girls.html">Girls</a></li>
+                            <li><a href="../../pages/homepage/both.html">Both</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    </li>
+                    <li><a href="../../pages/homepage/my profile.html">My profile</a></li>
+                    <li><a href="../../pages/homepage/review.html">Reviews</a></li>
+                    <div class="searchbar">
+                        <input type="text" placeholder="search.." name="search">
+                        <i class="fa fa-search"></i>
+                    </div>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+    <form role="form"  onsubmit="login_data(e)">
         
         <div class="container">
         <label for="name"><b> pg_Name</b></label>
-        <input type="text" placeholder="pg_name" name="fname" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
+        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+" disabled><br><br>
         
        
         <label for="type"><b>Rooms categories are available and rent</b></label><br>
-        <input type="checkbox" id="one_share" name="vehicle1"   disabled>
+        <input type="checkbox" id="one_share"    disabled>
       <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing" disabled  ><br><br>
 
-      <input type="checkbox" id="two_share" name="vehicle2"   disabled>
+      <input type="checkbox" id="two_share"    disabled>
       <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" disabled><br><br>
 
-      <input type="checkbox" id="three_share" name="vehicle3" disabled>
+      <input type="checkbox" id="three_share"  disabled>
       <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" disabled><br><br>
 
-      <input type="checkbox" id="four_share" name="vehicle4" disabled >
+      <input type="checkbox" id="four_share" disabled >
       <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing" disabled ><br><br>
 
       <label for="name"><b> Deposite amount</b></label>
-      <input type="text" placeholder=""name="fname" id="amount" required><br><br>
+      <input type="text"  id="amount" required><br><br>
       
       <label for="sharing"> Notice Period </label>
       <input  id="period" required><br><br>
@@ -46,6 +80,18 @@
       <option  >Both for girls and boys</option>
     </select><br><br>
      
+    <label for="image1"> Fecilities</label>
+    <input  placeholder="url" id="image1"  ></input><br><br>
+
+
+    <label for="image"> Fecilities</label>
+    <input placeholder="url" id="image2"  ></input><br><br>
+
+    <label for="image"> Fecilities</label>
+    <input  placeholder="url" id="lastimage"  ></input><br><br>
+
+    <label for="image"> Fecilities</label>
+    <input placeholder="url" id="image4"  ></input><br><br>
 
    
     <label for="sharing"> Total Number of Beds </label>
@@ -83,7 +129,7 @@
         
         <div class="last">
           <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
-          <button type="submit"  class="registerbtn"><a href="../../pages/homepage/edit and update owners.html">submit</a></button>
+          <button type="submit"  class="registerbtn" ><a href="../../pages/homepage/edit and update owners.html">submit</a></button>
       </div>
       
 
@@ -92,42 +138,41 @@
     <script>
      
      
-    
-   let userId = JSON.parse(localStorage.getItem("userId"));
-    let users = JSON.parse(localStorage.getItem("users"));
-
-    console.log(users);
-
+     let userId = JSON.parse(localStorage.getItem('userId'));
+  let users = JSON.parse(localStorage.getItem('users'));
+  
+ 
     function login_data(e){
-      
       return e.name == userId;
     }
-     user_data = users.find(login_data);
+    
+   
+   
 
-    console.log(user_data);
+    user_data = users.find(login_data);
 
-    document.getElementById("name").value = user_data["name"];
-    document.getElementById("one_share").checked = user_data["one_share"];
-    document.getElementById("two_share").checked = user_data["two_share"];
-    document.getElementById("three_share").checked = user_data["three_share"];
-    document.getElementById("four_share").checked = user_data["four_share"];
+    document.getElementById("name").value = user_data.
+// console.log(user_data);
+//  document.getElementById("name").value =user_data["name"];
 
-               document.getElementById("food").value =user_data["food"];
-                document.getElementById("parking").value =user_data["parking"];
-                document.getElementById("fridge").value = user_data["fridge"];
-                document.getElementById("wifi").value =user_data["wifi"];
-                document.getElementById("tv").value =user_data["tv"];
-              
-             
+document.getElementById("food").value = user_data["fecilities"]["food"];
+document.getElementById("parking").value = user_data["fecilities"]["parking"];
+document.getElementById("fridge").value = user_data["fecilities"]["fridge"];
+document.getElementById("wifi").value = user_data["fecilities"]["wifi"];
+document.getElementById("tv").value = user_data["fecilities"]["tv"];
 
-
-
+// images //
+document.getElementById("image1").value = user_data["house_fecilities_image"]["image1"];
+document.getElementById("image2").value = user_data["house_fecilities_image"]["image2"];
+document.getElementById("lastimage").value = user_data["house_fecilities_image"]["lastimage"];
+document.getElementById("image4").value = user_data["house_fecilities_image"]["image4"];
+// image end //
     
 
-    document.getElementById("onesharing").value = user_data["onesharing"];
-    document.getElementById("twosharing").value = user_data["twosharing"];
-    document.getElementById("threesharing").value = user_data["threesharing"];
-    document.getElementById("foursharing").value = user_data["foursharing"];
+    document.getElementById("onesharing").value = user_data["sharing"]["onesharing"];
+    document.getElementById("twosharing").value = user_data["sharing"]["twosharing"];
+    document.getElementById("threesharing").value = user_data["sharing"]["threesharing"];
+    document.getElementById("foursharing").value = user_data["sharing"]["foursharing"];
 
 
 

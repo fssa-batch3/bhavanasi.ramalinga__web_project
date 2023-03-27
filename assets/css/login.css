@@ -10,6 +10,7 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    
 
   }
   
@@ -69,7 +70,7 @@ a:link, a:visited{
 
 
 form{
-    height:450px;
+    height:480px;
     width: 400px;
     border:3px solid #f1f1f1;
     margin-top: 100px;

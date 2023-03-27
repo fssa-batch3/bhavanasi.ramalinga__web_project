@@ -38,6 +38,13 @@
     
         <label for="psw-repeat"><b>Repeat Password</b></label>
         <input type="password" placeholder="Repeat Password" name="psw"  id="repeat" required>
+
+        <label for="cars"><b>Choose Owner/Customer</b> </label>
+                <select name="available" id="customer_or_owner" required>
+                    <option>Customer</option>
+                    <option>Owner</option>
+                    
+                </select><br><br>
         
         <label for="address"><b>Address</b></label><br>
         <textarea id ="address" required></textarea>
@@ -60,6 +67,7 @@ const signUp = e => {
              name = document.getElementById("name").value;
              phone_number = document.getElementById("phone_number").value;
              address = document.getElementById("address").value;
+             customer_or_owner = document.getElementById("customer_or_owner").value;
             let my_uuid= uuidv4();
           
 
@@ -74,7 +82,8 @@ const signUp = e => {
         }  
       confirmform();
 
-            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+     
+   let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
             let exist = user_cred.length &&
                 JSON.parse(localStorage.getItem('user_cred')).some(data =>
@@ -82,8 +91,10 @@ const signUp = e => {
                     data.phone_number.toLowerCase() == phone_number.toLowerCase()
                 );
 
+           
+
             if(!exist){
-                user_cred.push({name,email,repeat,psw,phone_number,address,my_uuid});
+                user_cred.push({name,email,repeat,psw,phone_number,address,customer_or_owner,my_uuid});
                 
                 localStorage.setItem('user_cred',JSON.stringify(user_cred));
 
@@ -97,15 +108,25 @@ const signUp = e => {
                 alert('Account created successfully');
                 location.href = "../../pages/homepage/login.html";
             }
+            
+
+            
             else {
                 alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
                 document.querySelector('form').reset();
             }
 
+            let seller_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Owner");
+            // console.log(seller_data);
             
+             localStorage.setItem("seller_data", JSON.stringify(seller_data));
 
-           
-           
+
+
+            let customer_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Customer");
+            // console.log(seller_data);
+            
+            localStorage.setItem("customer_data", JSON.stringify(customer_data));         
 }
 
 

@@ -95,7 +95,7 @@ nav ul ul ul li {
   }
   .searchbar i{
     position:relative;
-  right: 13%;
+  right: 30px;
   }
   .slide1{
     display: flex;
@@ -106,10 +106,11 @@ nav ul ul ul li {
 .border {
     border: 1px solid gray;
     border-radius: 8px;
-    height: 850px;
-    width: 1300px;
+    height: 940px;
+    width: 1315px;
     margin: 8rem 5rem 0 7rem;
     margin-bottom: 4%;
+   
 }  
 
 .pg_detail {
@@ -135,11 +136,15 @@ h4, b {
 }
 
 .sharing div {
-    border: 0.5px solid black;
+    /* border: 0.5px solid black; */
     width: 11rem;
-    height: 10rem;
+    height: 12rem;
     margin-left: 3%;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    
 }
+
 
 .time {
     display: flex;
@@ -180,6 +185,13 @@ div.click{
   display: flex;
   justify-content: space-around;
   margin-top: 4%;
+}
+
+ /* input */
+
+input{
+  /* margin-left: 40%; */
+  margin-top: 1rem;
 }
 
 
@@ -224,6 +236,15 @@ div.click{
         
        
 
+      }
+      div.faculties_image{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3%;
+      }
+      strong{
+        margin-left: 5%;
+      
       }
       .entire{
         border:1px solid;
@@ -296,9 +317,8 @@ div.click{
      h2{
       color:deeppink;
      }
-/* 
-@media screen and (max-width:800px)
-     /* { */
+ 
+ /* @media screen and (max-width:800px)  {
       
       nav{
         width:1600px;
@@ -319,7 +339,8 @@ div.click{
         width:160vh;
         margin-top: 3%;
       }
-     
+    }
+      */
  
 
 

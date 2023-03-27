@@ -30,10 +30,16 @@
     
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email"   pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="email" required>
-        
-        <label for="address"><b>Address</b></label><br>
-        <textarea type="text"name="address" id="address" required></textarea> 
+
+        <label for="cars"><b>Choose Owner/Customer</b> </label>
+                <select name="available" id="customer_or_owner" required>
+                    <option>Customer</option>
+                    <option>Owner</option></select><br><br>
        
+                     
+        <label for="address"><b>Address</b></label><br>
+        <textarea id ="address" required></textarea>
+
         <div class="last">
             <button type="button" onclick="del(event)" class="registerbtn">delete</button>
             <button type="submit"  class="registerbtn"><a href="../../pages/homepage/edit.html">Edit</a></button>
@@ -44,11 +50,17 @@
     </form>
    <script>
    let userId = JSON.parse(localStorage.getItem('userId'));
-    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+  let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+  
+  let ownerId = JSON.parse(localStorage.getItem('phone_number'));
+  let seller_data = JSON.parse(localStorage.getItem('seller_data'));
 
     function login_data(e){
       return e.email == userId;
     }
+    
+   
+   
 
     user_data = user_cred.find(login_data);
 
@@ -56,6 +68,12 @@
     document.getElementById("phone_number").value = user_data["phone_number"];
     document.getElementById("email").value = user_data["email"];
     document.getElementById("address").value = user_data["address"];
+    document.getElementById("customer_or_owner").value = user_data["customer_or_owner"];
+
+//owner data//
+    function sells_data(e){
+        return e.phone_number == ownerId;
+    }
 
 
     function del(e){

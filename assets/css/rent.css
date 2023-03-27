@@ -1,17 +1,17 @@
-@import "normalize.css";
 
+@import "normalize.css";
 
 
 *{
   font-family: 'Poppins', sans-serif;
 }
 
-	
 
 h1 {
 	font-size: 60px;
 	text-align: center;
 	color:black;
+  display: flex;
 }	
 
 
@@ -21,19 +21,16 @@ h3 a {
 }
 
 a {
-	
+	color:black;
     text-decoration: none;
 }
-
 
 
 #container {
 	margin: 0 auto;
 }
 
-p {
-	text-align: center;
-}
+
 
 nav {
 
@@ -48,13 +45,12 @@ nav ul {
     display:flex;
     align-content: center;
     justify-content: space-around;
-    height: 70px;
+    height:70px;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-  margin-right: 5%;
   height:70%;
 	}
 
@@ -97,8 +93,8 @@ nav ul ul ul li {
 	top:-60px; 
 	left:170px;
 }
-i.fa.fa-user{
-  margin-top: 1%;
+.magic{
+  margin-right: 40%;
 }
 
   .last{
@@ -106,31 +102,35 @@ i.fa.fa-user{
     justify-content: space-around;
     
   }
-   .magic{
-    margin-right: 100px;
-   }
- 
   
   
-  .btn{
+  .button{
     display:inline-block;
     background-color: #f44336;
-    color:#FFF;
+    color:white;
     padding:14px 25px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin-left:20px;
     opacity:0.9;
+    cursor:pointer;
   }
-  .btn a{
+  
+  .button a{
     color:white;
   }
-  
-  
+  .image{
+   
+    margin-right: 40px;
+    
+    margin-left: 2%;
+    margin-top: 2%;
+
+  }
   input[type="text"]{
     height:40px;
-    margin-top: 18px;
+    margin-top: 10px;
     border-radius: 22px;
   }
   .main{
@@ -144,8 +144,8 @@ i.fa.fa-user{
 
   .bar{
     display:flex;
-    border:1px solid;
-    width:60%;
+    border-style: outset;
+   width:70%;
     margin-top: 4%;
     align-items: center;
     margin-left: 17%;
@@ -155,7 +155,7 @@ i.fa.fa-user{
     display: flex;
     justify-content: flex-start;
     border:1px solid;
-    width:60%;
+    width:50%;
 
   }
   div.text{
@@ -164,7 +164,8 @@ i.fa.fa-user{
     flex-direction: column;
     justify-content: space-around;
     margin-top:1%;
-    margin-left: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
   }
   div.one{
     border-right: 1px solid;
@@ -172,7 +173,8 @@ i.fa.fa-user{
     flex-direction: column;
     justify-content: space-around;
     margin-top:1%;
-    margin-left: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
 
   }
   div.two{
@@ -181,15 +183,17 @@ i.fa.fa-user{
     flex-direction: column;
     justify-content: space-around;
     margin-top:1%;
-    margin-left: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
   }
   div.three{
-    border-right: 1px solid;
+    /* border-right: 1px solid; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin-top:1%;
-    margin-left: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
   }
   .payment{
     width:160%;
@@ -205,13 +209,8 @@ i.fa.fa-user{
     align-items: flex-start;
     flex-wrap: nowrap;
   }
-  .image{
-    
-    margin-left: 2%;
-    margin-top: 2%;
-    margin-right: 40px;
-   
-  }
+  
+  
   .link{
     display: flex;
     flex-direction: row;
@@ -220,8 +219,13 @@ i.fa.fa-user{
     align-items: center;
     justify-content: space-around;
   }
+
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+  }
   footer{
-    background-color: #eed9d9;
+    background-color: hsl(240, 49%, 84%);
     height:40vh;
     
     
@@ -230,29 +234,42 @@ i.fa.fa-user{
   }
   .search i{
     position: relative;
-    right:50px;
+    right:30px;
     
   }
   .footerone{
     margin-left: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+  
+  div.boys{
+    color:deeppink;
   }
   .button{
-    display: flex;
-    justify-content: space-around;
     
+    justify-content: space-around;
   }
-  @media  screen and (max-width:800px){
+
+  
+  @media screen and (max-width:800px)
+  {
+    .header{
+      width:280%;
+    }
+    .magic{
+      width:10%;
+      margin-right: 0%;
+    }
     .bar{
-      display:flex;
-      border:1px solid;
       width:200%;
-      margin-top: 4%;
-      align-items: center;
-      
+    }
+    footer{
+      width:280%;
     }
   }
+  
+  
   
   

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../../assets/css/applicants.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Applicant</title>
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -17,41 +22,44 @@
                 <nav>
                     <ul>
                         <div class="magic">
-                            <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="100%"></a></li>
+                            <li><a href="../../pages/homepage/rent.html"><img
+                                        src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                        height="60px" width="100%"></a></li>
                         </div>
-                        
-                        
-                     <li><a href="../../pages/homepage/Add pgs.html">Add pg </a>
-                        
-                             
+
+
+                        <li><a href="../../pages/homepage/Add pgs.html">Add pg </a>
+
+
+
                         </li>
                         <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
-                        <li><a href="../../pages/homepage/review.html" >Reviews</a></li>
-                        
-                            </ul>
+                        <li><a href="../../pages/homepage/review.html">Reviews</a></li>
 
-                        
-                    </li>             
-                      
-            </nav>
+                    </ul>
+
+
+                    </li>
+
+                </nav>
             </div>
-           
+
 
         </div>
     </header>
-    <!-- "<table>"
-        <tr>
-            <th><h2>Date</h2></th>
+
+    <!-- <tr> -->
+    <!-- <th><h2>Date</h2></th>
             <th><h2>Name</h2></th>
             <th><h2>Female/male</h2></th>
             <th><h2>Details</h2></th>
             
             <th><h2>Accept/reject</h2></th>
             <th><h2>Contact</h2></th>
-        </tr>
-         -->
-        <!-- <tr> -->
-            <!-- <td><h3>10/12/2022</h3></td>
+        </tr>  -->
+
+    <!-- <tr> -->
+    <!-- <td><h3>10/12/2022</h3></td>
             <td><h3>Sandhya</h3></td>
             <td><h3>Female</h3></td>
             <td><h3>Mobile no:8466009892,Email-id:sandhyafrsh@gmail.com,single room</h3> </td>
@@ -106,39 +114,190 @@
             <td><h3>Mobile no:2345678190,Email-id:manoharmanu23@gmail.com,triple sharing</h3></td>
             <td><h3>Reject</h3></td>
             <td><h3>Message</h3></td> -->
-        <!-- </tr> -->
+    <!-- </tr> -->
+
+
     </table>
+
+
+    <section>
+
+    </section>
+
+
     <script>
-       div_border = document.createElement("div");
-        div_border.setAttribute("class", "border");
-        console.log(div_border);
-        document.querySelector("body").append(div_border);
+      
+let owner = JSON.parse(localStorage.getItem("users"));
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const pg_id = urlParams.get('my_uuid');
+const share_type = urlParams.get('my_room_id');
 
-        div_detail = document.createElement("div");
-        div_detail.setAttribute("class", "pg_detail");
-        div_border.append(div_detail);
+let Applicant = owner.find(e => e.my_uuid == pg_id);
 
-        div_image = document.createElement("div");
-        div_image.setAttribute("class","detail")
-        div_detail.append(div_image);
+div_border = document.createElement("div");
+div_border.setAttribute("class", "border");
+document.querySelector("body").append(div_border);
 
-        img = document.createElement("img");
-        img.setAttribute("src", '');
-        img.setAttribute("alt", "photo");
-        img.setAttribute("height", "100px");
-        img.setAttribute("width", "80px");
-        div_image.append(img);
-         
-        div_address = document.createElement("div");
-        div_address.setAttribute("class", "address");
-        div_detail.append(div_address);
+div_detail = document.createElement("div");
+div_detail.setAttribute("class", "pg_detail");
+div_border.append(div_detail);
 
-        h2 = document.createElement("h2");
-        h2.innerText = ["name"];
-        div_image.append(h2);
-       
+div_image = document.createElement("div");
+div_image.setAttribute("class", "detail");
+div_detail.append(div_image);
+
+img = document.createElement("img");
+img.setAttribute("src", Applicant["image"]);
+img.setAttribute("id", "image");
+img.setAttribute("alt", "photo");
+img.setAttribute("height", "300px");
+img.setAttribute("width", "300px");
+div_image.append(img);
+
+div_address = document.createElement("div");
+div_address.setAttribute("class", "address");
+div_detail.append(div_address);
+
+h2 = document.createElement("h2");
+h2.setAttribute("class", "pg_name");
+div_image.append(h2);
+
+h2_name = document.createElement("h3");
+h2_name.setAttribute("class", "name_of_pg");
+h2_name.setAttribute("id", "name");
+h2_name.innerText = Applicant["name"];
+h2.append(h2_name);
+
+div_two = document.createElement("div");
+div_two.setAttribute("class", "moredetail");
+h2.append(div_two);
+
+h4_one = document.createElement("h4");
+h4_one.setAttribute("id", "share");
+h4_one.innerHTML = share_type;
+div_two.append(h4_one);
+
+p_two = document.createElement("p");
+p_two.setAttribute("id", "rent");
+p_two.innerText = "Monthly Rent:";
+div_two.append(p_two);
+
+b_one = document.createElement("span");
+b_one.setAttribute("id", "sharing");
+b_one.innerText = Applicant["sharing"][share_type];
+p_two.append(b_one);
+
+b_three = document.createElement("b");
+b_three.setAttribute("id", "advance");
+b_three.innerText = "Advance:";
+div_two.append(b_three);
+
+b_four = document.createElement("span");
+b_four.setAttribute("id", "amount");
+b_four.innerText = Applicant["amount"];
+b_three.append(b_four);
+
+book_button = document.createElement("button");
+book_button.setAttribute("class", "button");
+book_button.setAttribute("type", "submit");
+book_button.innerText = "Book room";
+book_button.onclick = function (event) {
+    signUp(event);
+};
+b_four.append(book_button);
+
+// accept or reject condition//
+let value = "";
+let status = Applicant["status"];
+
+if (status === 2) {
+    value = "not respond";
+}
+if (status === 1) {
+    value = "accepted";
+}
+
+if (status === 0) {
+    value = "rejected";
+}
+
+function signUp(e) {
+    e.preventDefault();
+    let my_uuid = uuidv4();
+    let room_book_request = JSON.parse(localStorage.getItem('room_book_request')) || [];
+    let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
+    let customer_id = JSON.parse(localStorage.getItem('userId'));
+    let product_id = JSON.parse(localStorage.getItem('productId'));
+
+    if (!exit) {
+        room_book_request.push({
+            "request_id" : my_uuid,
+            "customer_id": customer_id,
+            "product_id": pg_id,
+            "status" : 2,
+            "typeOfShare" : share_type,
+
+
+        });
+        localStorage.setItem('room_book_request', JSON.stringify(room_book_request));
+        console.log(localStorage.getItem('room_book_request'));
+        alert('request sent successfully');
+    } else {
+        
+    }
+}
+
+
+        // let select = document.querySelectorAll(".button")
+
+
+
+
+
+
+        // storing data as a object in local storage
+
+
+        //  function signUp(e){
+        //     e.preventDefault();
+        //     let image = document.getElementById("image").getAttribute("src");
+        // let name = document.getElementById("name").innerText;
+        // let share = document.getElementById("share").innerText;
+        // let rent = document.getElementById("rent").innerText;
+        // let sharing = document.getElementById("sharing").innerText;
+        // let advance = document.getElementById("advance").innerText;
+        // let amount = document.getElementById("amount").innerText;
+        //     // let my_uuid = uuidv4();
+
+        //     let single_share = JSON.parse(localStorage.getItem('single_share')) || [];
+        //     let exit = single_share.length &&
+        //         JSON.parse(localStorage.getItem('single_share')).some(data =>
+        //             data.name == name );
+
+        //     let customer_id = JSON.parse(localStorage.getItem('userId'));
+        //     let customer_uuid = JSON.parse(localStorage.getItem("uuid"));
+        //     if (!exit) {
+        //         single_share.push({
+        //             name, image,share,rent,sharing,advance,amount,
+        //             "customer_id" : customer_id,
+        //             "customer_uuid" : customer_uuid,
+        //         });
+        //         localStorage.setItem('single_share', JSON.stringify(single_share));
+        //         console.log(localStorage.getItem('single_share'));
+        //         document.querySelector('form').reset();
+        //         alert('request sent successfully');
+        //     }
+        // }
+
+
+
+
+
+
 
 
     </script>
 </body>
+
 </html>

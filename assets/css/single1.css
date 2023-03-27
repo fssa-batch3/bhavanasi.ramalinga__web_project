@@ -106,8 +106,8 @@ nav ul ul ul li {
 .border {
     border: 1px solid gray;
     border-radius: 8px;
-    height: 850px;
-    width: 1250px;
+    height: 950px;
+    width: 1260px;
     margin: 8rem 5rem 0 7rem;
 }  
 
@@ -182,6 +182,14 @@ button.edit{
 align-items: center;
 justify-content: center;
 }
+.faculties_image{
+  display: flex;
+justify-content: space-evenly;
+}
+strong{
+  margin-left: 7%;
+}
+
 
 .edit {  
     margin-left: 55rem;

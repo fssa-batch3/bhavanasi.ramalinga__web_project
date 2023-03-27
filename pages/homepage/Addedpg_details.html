@@ -213,6 +213,7 @@
 
         div_address = document.createElement("div");
         div_address.setAttribute("class", "address");
+       
         div_detail.append(div_address);
 
         h2 = document.createElement("h2");
@@ -223,15 +224,16 @@
         p.innerText = unique_id["address"];
         div_address.append(p);
 
-
-
         div_sharing = document.createElement("div");
         div_sharing.setAttribute("class", "sharing");
         div_address.append(div_sharing);
+               // single sharing //
 
         div_one = document.createElement("div");
+        div_one.setAttribute("id","share");
+        div_one.setAttribute("class","share_data");
+        div_one.setAttribute("data-id","onesharing")
         div_sharing.append(div_one);
-
 
         h4 = document.createElement("h4");
         h4.innerText = "single sharing";
@@ -242,7 +244,7 @@
         div_one.append(b);
 
         p_one = document.createElement("p");
-        p_one.innerText = unique_id["onesharing"];
+        p_one.innerText = unique_id["sharing"]["onesharing"];
         b.append(p_one);
 
         b_one = document.createElement("b");
@@ -250,11 +252,23 @@
         div_one.append(b_one);
 
         b_one = document.createElement("b");
-        b_one.innerText = 5000 + "/-";
+        b_one.innerText = unique_id["amount"];
         div_one.append(b_one);
+// checkbox//
+    //     selectbutton = document.createElement("input");
+    //     selectbutton.type = "checkbox";
+    // //    selectbutton.id = "single";
+    //     div_one.append(selectbutton);
+
+        
+
+
 
         //two sharing//
         div_two = document.createElement("div");
+        div_two.setAttribute("id","share1");
+        div_two.setAttribute("class","share_data");
+        div_two.setAttribute("data-id","twosharing");//1st
         div_sharing.append(div_two);
 
         h4_one = document.createElement("h4");
@@ -266,7 +280,7 @@
         div_two.append(b_two);
 
         p_two = document.createElement("p");
-        p_two.innerText = unique_id["twosharing"];
+        p_two.innerText = unique_id["sharing"]["twosharing"];//2nd
         b_two.append(p_two);
 
         b_three = document.createElement("b");
@@ -274,11 +288,23 @@
         div_two.append(b_three);
 
         b_three = document.createElement("b");
-        b_three.innerText = 5000 + "/-";
+        b_three.innerText =unique_id["amount"];
         div_two.append(b_three);
+
+
+        // checkbox//
+
+    //     selectbutton1 = document.createElement("input");
+    //     selectbutton1.type = "checkbox";
+    // //    selectbutton.id = "single";
+    // div_two.append(selectbutton1);
+
         //three sharing//
 
         div_three = document.createElement("div");
+        div_three.setAttribute("id","share2");
+        div_three.setAttribute("class","share_data");
+        div_three.setAttribute("data-id","threesharing")
         div_sharing.append(div_three);
 
         h4_two = document.createElement("h4");
@@ -290,7 +316,7 @@
         div_three.append(b_four);
 
         p_three = document.createElement("p");
-        p_three.innerText = unique_id["threesharing"];
+        p_three.innerText = unique_id["sharing"]["threesharing"];
         b_four.append(p_three);
 
         b_five = document.createElement("b");
@@ -298,11 +324,21 @@
         div_three.append(b_five);
 
         b_five = document.createElement("b");
-        b_five.innerText = 5000 + "/-";
+        b_five.innerText = unique_id["amount"];
         div_three.append(b_five);
+
+        //checkbox//
+    //     selectbutton2 = document.createElement("input");
+    //     selectbutton2.type = "checkbox";
+    // //    selectbutton.id = "single";
+    // div_three.append(selectbutton2);
+
 
         //four sharing//
         div_four = document.createElement("div");
+        div_four.setAttribute("id","share3");
+        div_four.setAttribute("class","share_data");
+        div_four.setAttribute("data-id","foursharing")
         div_sharing.append(div_four);
 
         h4_three = document.createElement("h4");
@@ -314,7 +350,7 @@
         div_four.append(b_six);
 
         para_four = document.createElement("p");
-        para_four.innerText = 5000 + "/-";
+        para_four.innerText = unique_id["sharing"]["foursharing"];
         b_six.append(para_four);
 
         b_seven = document.createElement("b");
@@ -322,37 +358,51 @@
         div_four.append(b_seven);
 
         b_seven = document.createElement("b");
-        b_seven.innerText = unique_id["foursharing"];
+        b_seven.innerText = unique_id["amount"];
         div_four.append(b_seven);
+       
+         //checkbox//
+        
+
+    //      selectbutton3 = document.createElement("input");
+         
+    //     selectbutton3.type = "checkbox";
+       
+    // //    selectbutton.id = "single";
+    // div_four.append(selectbutton2);
 
     
         // select button//
        
-        div_click = document.createElement("div");
-        div_click.setAttribute("class", "click");
-        div_address.append(div_click);
+    //     div_click = document.createElement("div");
+    //     div_click.setAttribute("class", "click");
+    //     div_address.append(div_click);
         
-        button = document.createElement("button");
-        button.setAttribute("class", "book");
-       button.innerHTML = "book";
-        div_click.append(button);
+    //     button = document.createElement("button");
+    //     button.setAttribute("class", "book");
+       
+    //    button.innerHTML = "book";
+    //     div_click.append(button);
 
         
-          button = document.createElement("button");
-        button.setAttribute("class", "book1");
-         button.innerHTML = "book";
-        div_click.append(button);
+    //       button = document.createElement("button");
+    //     button.setAttribute("class", "book1");
+       
+    //      button.innerHTML = "book";
+    //     div_click.append(button);
 
         
-        button = document.createElement("button");
-        button.setAttribute("class", "book2");
-         button.innerHTML = "book";
-        div_click.append(button);
+    //     button = document.createElement("button");
+    //     button.setAttribute("class", "book2");
+       
+    //      button.innerHTML = "book";
+    //     div_click.append(button);
 
-        button = document.createElement("button");
-        button.setAttribute("class", "book3");
-         button.innerHTML = "book ";
-        div_click.append(button);
+    //     button = document.createElement("button");
+    //     button.setAttribute("class", "book3");
+        
+    //      button.innerHTML = "book ";
+    //     div_click.append(button);
 
         //timimg//
         div_time = document.createElement("div");
@@ -390,6 +440,50 @@
         bold_three = document.createElement("p");
         bold_three.innerText = unique_id["beds"];
         para_three.append(bold_three);
+       // another fecilities//
+
+        //    // new another fecilities//
+        inside_house = document.createElement("strong");
+        inside_house.innerText="House Fecilities:";
+            div_border.append(inside_house);
+
+        div_moreimages=document.createElement("div");
+        div_moreimages.setAttribute("class","faculties_image");
+           div_border.append(div_moreimages);
+
+            image1 = document.createElement("img");
+        image1.setAttribute("src",unique_id["house_fecilities_image"]["image1"]);
+          image1.setAttribute("alt","photo");
+        image1.setAttribute("height","150px");
+        image1.setAttribute("width","180px");
+        div_moreimages .append(image1);
+
+        image2 = document.createElement("img");
+        image2.setAttribute("src",unique_id["house_fecilities_image"]["image2"]);
+          image2.setAttribute("alt","photo");
+        image2.setAttribute("height","150px");
+        image2.setAttribute("width","180px");
+        div_moreimages.append(image2);
+
+        image3 = document.createElement("img");
+        image3.setAttribute("src",unique_id["house_fecilities_image"]["lastimage"]);
+          image3.setAttribute("alt","photo");
+        image3.setAttribute("height","150px");
+        image3.setAttribute("width","180px");
+        div_moreimages.append(image3);
+
+        image4 = document.createElement("img");
+        image4.setAttribute("src",unique_id["house_fecilities_image"]["image4"]);
+          image4.setAttribute("alt","photo");
+        image4.setAttribute("height","150px");
+        image4.setAttribute("width","180px");
+        div_moreimages.append(image4);
+
+
+
+
+
+
         //facilities//
         div_facilities = document.createElement("div");
         div_facilities.setAttribute("class", "facilities");
@@ -416,7 +510,7 @@
 
         //images//
         img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["food"]);
+        img_picture.setAttribute("src", unique_id["fecilities"]["food"]);
         img_picture.setAttribute("alt", "photo");
         img_picture.setAttribute("height", "130px");
         img_picture.setAttribute("width", "120px");
@@ -424,7 +518,7 @@
 
 
         img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["wifi"]);
+        img_picture.setAttribute("src", unique_id["fecilities"]["wifi"]);
         img_picture.setAttribute("alt", "photo");
         img_picture.setAttribute("height", "130px");
         img_picture.setAttribute("width", "120px");
@@ -432,7 +526,7 @@
 
 
         img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["tv"]);
+        img_picture.setAttribute("src", unique_id["fecilities"]["tv"]);
         img_picture.setAttribute("alt", "photo");
         img_picture.setAttribute("height", "130px");
         img_picture.setAttribute("width", "120px");
@@ -441,7 +535,7 @@
 
 
         img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["parking"]);
+        img_picture.setAttribute("src", unique_id["fecilities"]["parking"]);
         img_picture.setAttribute("alt", "photo");
         img_picture.setAttribute("height", "130px");
         img_picture.setAttribute("width", "120px");
@@ -451,14 +545,31 @@
 
 
         img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fridge"]);
+        img_picture.setAttribute("src", unique_id["fecilities"]["fridge"]);
         img_picture.setAttribute("alt", "photo");
         img_picture.setAttribute("height", "130px");
         img_picture.setAttribute("width", "120px");
         div_faculties.append(img_picture);
 
         
+    //     let selectbtn = document.querySelectorAll(".book")
+    // selectbtn.forEach(each => {
+    //                         each.addEventListener("click", (event) => {
+    //                             const person_data = each.dataset.id;
+    //                             console.log(person_data)
+    //                             window.location.href = `./applicants.html?my_uuid=${person_data}`;
+    //                         })
+    //                     })
 
+                        
+                        let select = document.querySelectorAll(".share_data")
+    select.forEach(each => {
+                            each.addEventListener("click", (event) => {
+                                const person_data = each.dataset.id;
+                                console.log(person_data)
+                                window.location.href = `./applicants.html?my_uuid=${pg_id}&my_room_id=${person_data}`;
+                            })
+                        })
 
    // another images//
 

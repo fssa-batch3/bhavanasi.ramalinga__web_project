@@ -95,6 +95,28 @@ nav ul ul ul li {
 }
 .detail{
 	display: flex;
+	
+}
+h2{
+	margin-left: 10%;
+	margin-top: 5%;
+}
+h3.name_of_pg{
+	color:blue;
+}
+div.detail img{
+	margin: 3.5rem 0 0 4rem;
+}
+div.click{
+	display: flex;
+	margin-left: 60%;
+	margin-bottom: 3%;
+	justify-content:space-around;
+}
+button.button{
+	color:white;
+	background-color:black;
+	border-radius: 22px;
 }
 
 

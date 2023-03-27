@@ -1,199 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link   rel="stylesheet"  href="../../assets/css/form.css">
+    <link rel="stylesheet" href="../../assets/css/form.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
+
 <body>
-    <div class="information">
-        <div class="image">
-            <div class="more">
-                <h1>post property Add to Sell or rent online for free!</h1>
-                
-                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
-               <b> Free professional photoshot</b><br>
-                <i class="fa fa-check-circle-o" style="font-size:20px; color:green">  </i>
-               <b> Access to 15 Lac Buyers & Tenants</b><br>
-                    <i class="fa fa-check-circle-o" style="font-size:20px; color:green">  </i>
-                    <b>Get Contact Details of upto 5 Responses</b>
-            </div>
-                    <div class="image">
-            <img src="../../assets/images/seller-removebg-preview.png"alt="photo" />
+    <div class="header">
+        <div id="container">
+            <nav>
+                <ul>
+                    <div class="magic">
+                        <li><a href="../../pages/homepage/rent.html"><img
+                                    src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                    height="70px" width="100%"></a></li>
                     </div>
+                    <li><a href="#">Boys/Girls</a>
+
+                
+                    </li>
+
+
+
+                    </li>
+                    <li><a href="../../pages/homepage/form.html">Add</a></li>
+                    <li><a href="../../pages/homepage/review.html">Reviews</a></li>
+                    <div class="searchbar">
+                        <input type="text" placeholder="search.." name="search">
+                        <i class="fa fa-search"></i>
+                    </div>
+            </nav>
         </div>
-    <form role="form" onsubmit="signUp(event)">
-        
-        <div class="container">
-        <label for="name"><b> pg_Name</b></label>
-        <input type="text" placeholder="pg_name"id="name" name="fname" id="name" required><br><br>
-        
-       
-        <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
-        <!-- <input type="checkbox" id="one_share" name="vehicle1"  > -->
-      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"  ><br><br>
-
-      <!-- <input type="checkbox" id="two_share" name="vehicle2"  > -->
-      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing"><br><br>
-
-      <!-- <input type="checkbox" id="three_share" name="vehicle3" > -->
-      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
-
-      <!-- <input type="checkbox" id="four_share" name="vehicle4" > -->
-      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing" ><br><br>
 
 
-      <label for="name"><b> Deposite amount</b></label>
-      <input type="text" placeholder=""name="fname" id="amount" required><br><br>
-      
-      <label for="sharing"> Notice Period </label>
-      <input  id="period" required><br><br>
-    
-      <label for="sharing"> Closing Time </label>
-      <input  id="time" required><br><br>
-   
-<!-- 
+    </div>
+    <div class="information">
+        <div class="image" >
+            <div class="more" >
+                <h1>post property Add to Sell or rent online for free!</h1>
+
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
+                <b> Free professional photoshot</b><br>
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                <b> Access to 15 Lac Buyers & Tenants</b><br>
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                <b>Get Contact Details of upto 5 Responses</b>
+            </div>
+            <div class="image">
+                <img src="../../assets/images/seller-removebg-preview.png" alt="photo" />
+            </div>
+        </div>
+        <form role="form" onsubmit="signUp(event)">
+
+            <div class="container">
+                <label for="name"><b> pg_Name</b></label>
+                <input type="text" placeholder="pg_name" id="name" name="fname" id="name" required><br><br>
+
+
+                <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
+                <input type="checkbox" id = "single" value="single sharing">
+                <label for="sharing"   id="singleshare"> single sharing </label><input placeholder="rent" id="onesharing"><br><br>
+
+                <input type="checkbox" id = "twin" value="twin sharing">
+                <label for="sharing" id="twinshare">Twin sharing </label><input placeholder="rent" id="twosharing"><br><br>
+
+                <input type="checkbox" id = "triple" value="triple sharing">
+                <label for="sharing"  id="tripleshare"> Triple sharing </label><input placeholder="rent" id="threesharing"><br><br>
+
+                <input type="checkbox" id = "four" value="Four sharing">
+                <label for="sharing"  id="fourshare"> Four sharing </label><input placeholder="rent" id="foursharing"><br><br>
+
+
+                <label for="name"><b> Deposite amount</b></label>
+                <input type="text" placeholder="" name="fname" id="amount" required><br><br>
+
+                <label for="sharing"> Notice Period </label>
+                <input id="period" required><br><br>
+
+                <label for="sharing"> Closing Time </label>
+                <input id="time" required><br><br>
+
+                <!-- 
       <label for="sharing"> Available For</label>
       <input  id="available" required><br><br> -->
-  
-
-   
-    <label for="sharing"> Total Number of Beds </label>
-    <input  id="beds" required><br><br>
-     
-         
-    <label for="sharing"> Image url of Facilities </label>
-    <input  id="parking" name="vehicle1"  ><br><br>
-
-    
-
-      <label for="sharing"> Image url of Facilities </label>
-    <input   id="wifi" ><br><br>
-
-   
-    <label for="sharing"> Image url of Facilities</label>
-    <input   id="food" ><br><br>
-
-    
-    <label for="sharing">  Image url of Facilities</label>
-    <input  id="fridge"  ><br><br>
-
-   
-    <label for="sharing">  Image url of Facilities</label>
-    <input   id="tv" ><br><br>
-
-    <label for="pg_name"><b> Image</b></label>
-    <input type="text"  name="image" id="image" required><br><br>
 
 
 
-    <label for="address"><b> Address</b></label><br>
-    <textarea type="text"id="address" required></textarea><br>
+                <label for="sharing"> Total Number of Beds </label>
+                <input id="beds" required><br><br>
 
-    <label for="cars">Choose </label>
-    <select name="available" id="available" required>
-      <option >Boys</option>
-      <option >Girls</option>
-      <option>Both for girls and boys</option></select>
-     
-      <button type="submit" class="registerbtn">Submit</button><br>
-        
- 
-       </div>
-    </form>
-    <script>
-     const signUp = e => {           
-            e.preventDefault();
-            let name = document.getElementById("name").value;
-            
-            //    one_share= document.getElementById("one_share").checked;
-            //    two_share= document.getElementById("two_share").checked;
-            //    three_share= document.getElementById("three_share").checked;
-            //    four_share= document.getElementById("four_share").checked;
-               food= document.getElementById("food").value;
-              
-               parking= document.getElementById("parking").value;
-              
-               wifi=document.getElementById("wifi").value;
-              
-               tv=document.getElementById("tv").value;
-              fridge=document.getElementById("fridge").value;
-             
-               
+                <label for="image1"> Fecilities</label>
+                <input  placeholder="url" id="image1"  ></input><br><br>
+
+
+                <label for="image"> Fecilities</label>
+                <input placeholder="url" id="image2"  ></input><br><br>
+
+                <label for="image"> Fecilities</label>
+                <input  placeholder="url" id="lastimage"  ></input><br><br>
+
+                <label for="image"> Fecilities</label>
+                <input placeholder="url" id="image4"  ></input><br><br>
+
+                <label for="sharing"> Image url of Facilities </label>
+                <input id="parking" name="vehicle1"><br><br>
 
 
 
+                <label for="sharing"> Image url of Facilities </label>
+                <input id="wifi"><br><br>
 
 
-               onesharing=document.getElementById("onesharing").value;
-               twosharing=document.getElementById("twosharing").value;
-               threesharing=document.getElementById("threesharing").value;
-               foursharing=document.getElementById("foursharing").value;
-              
-               
-               period=document.getElementById("period").value;
-              
-               available=document.getElementById("available").value;
-               beds=document.getElementById("beds").value;
-               time=document.getElementById("time").value;
-                amount=document.getElementById("amount").value;
-
-                image=document.getElementById("image").value;
-             address = document.getElementById("address").value;
-            let my_uuid= uuidv4();
-          
+                <label for="sharing"> Image url of Facilities</label>
+                <input id="food"><br><br>
 
 
-            let users = JSON.parse(localStorage.getItem('users')) || [];
+                <label for="sharing"> Image url of Facilities</label>
+                <input id="fridge"><br><br>
 
-    let exit = users.length && 
-              JSON.parse(localStorage.getItem('users')).some(data =>
-            data.name == name);
-            if(!exit)
-            {
-                users.push({name,food,parking,wifi,tv,fridge,period,available,beds,amount,time,address,onesharing,twosharing,threesharing,image, foursharing,my_uuid});
 
-                    let checked = JSON.parse (localStorage.getItem ('checkbox'));
-                    
-                        localStorage.setItem('users',JSON.stringify(users));
-                        console.log(localStorage.getItem('users'));
-                        localStorage.setItem("userId",JSON.stringify(name));
+                <label for="sharing"> Image url of Facilities</label>
+                <input id="tv"><br><br>
 
-                document.querySelector('form').reset();
-               
+                <label for="pg_name"><b> Image</b></label>
+                <input type="text" name="image" id="image" required><br><br>
+
+
+
+                <label for="address"><b> Address</b></label><br>
+                <textarea type="text" id="address" required></textarea><br>
+
+                <label for="cars">Choose </label>
+                <select name="available" id="available" required>
+                    <option>Boys</option>
+                    <option>Girls</option>
+                    <option>Both for girls and boys</option>
+                </select>
+
+                <button type="submit" class="registerbtn">Submit</button><br>
+
+
+            </div>
+        </form>
+        <script>
+            function signUp(e) {
                 
-                alert('Account created successfully');
+                e.preventDefault();
+
+                let name = document.getElementById("name").value;
+
+                // one_share = document.getElementById("one_share").checked;
+                // two_share = document.getElementById("two_share").checked;
+                // three_share = document.getElementById("three_share").checked;
+                // four_share = document.getElementById("four_share").checked;
+                food = document.getElementById("food").value;
+
+                parking = document.getElementById("parking").value;
+
+                wifi = document.getElementById("wifi").value;
+
+                tv = document.getElementById("tv").value;
+                fridge = document.getElementById("fridge").value;
+        // more images//
+           image1 = document.getElementById("image1").value;
+         image2 = document.getElementById("image2").value;
+        lastimage = document.getElementById("lastimage").value;
+        image4 = document.getElementById("image4").value;
+
+                single = document.getElementById("single").checked;
+                twin = document.getElementById("twin").checked;
+                triple = document.getElementById("triple").checked;
+                four= document.getElementById("four").checked;
 
 
-                location.href = "../../pages/homepage/form_read.html";
-                    }
-                       
+
+
+                onesharing = document.getElementById("onesharing").value;
+                twosharing = document.getElementById("twosharing").value;
+                threesharing = document.getElementById("threesharing").value;
+                foursharing = document.getElementById("foursharing").value;
+
+
+                period = document.getElementById("period").value;
+
+                available = document.getElementById("available").value;
+                beds = document.getElementById("beds").value;
+                time = document.getElementById("time").value;
+                amount = document.getElementById("amount").value;
+
+                image = document.getElementById("image").value;
+                address = document.getElementById("address").value;
+                let my_uuid = uuidv4();
+
+
+
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+
+                let exit = users.length &&
+                    JSON.parse(localStorage.getItem('users')).some(data =>
+                        data.name == name);
+
+                        function login_data(e){return e.my_uuid == productId;
+                      }
+
+                let owner_id = JSON.parse(localStorage.getItem('userId'));
+
+
+                if (!exit) {
+                    users.push({ 
+                        name, 
+                        "fecilities" :{food, parking, wifi, tv, fridge}, 
+                        period, 
+                        available, 
+                        beds, 
+                        amount, 
+                        time, 
+                        address, 
+                        single, 
+                        twin, 
+                        triple, 
+                        four, 
+                        "owner_id" : owner_id,
+                        "sharing" : {onesharing, twosharing, threesharing, foursharing}, 
+                        image, 
+                        my_uuid,
+                        // singleshare,
+                        // twinshare,
+                        // tripleshare,
+                        // fourshare,
+                        "house_fecilities_image" : {image1,image2,lastimage,image4}});
+                        
+
+                    // let checked = JSON.parse (localStorage.getItem ('checkbox'));
+
+                    // Working_days = [];
+                    // working_days = document.querySelectorAll("input[type='checkbox']:checked");
+                    // for (i = 0; i < working_days.length; i++) {
+                    //     Working_days.push(working_days[i].value)
                     // }
-                    // else{
-                        // alert("please select check boxes")
-                    // }
-                    //  if (checked == true) 
-                    //  { 
-                    //     document.getElementById ("checkbox").checked = true; 
-                    // }
-                
-               
 
-                
-            
-           
-               
-            
 
-            
 
-           
-           
-}
+                    localStorage.setItem('users', JSON.stringify(users));
+                    console.log(localStorage.getItem('users'));
+                    localStorage.setItem("productId",JSON.stringify(my_uuid));
+                   
 
-    </script>
+                    document.querySelector('form').reset();
+
+
+                    alert('Account created successfully');
+
+
+                    location.href = "../../pages/homepage/edit and update owners.html";
+                }
+
+
+                // }
+                // else{
+                // alert("please select check boxes")
+                // }
+                //  if (checked == true) 
+                //  { 
+                //     document.getElementById ("checkbox").checked = true; 
+                // }
+
+
+            }
+
+        </script>
 </body>
+
 </html>
