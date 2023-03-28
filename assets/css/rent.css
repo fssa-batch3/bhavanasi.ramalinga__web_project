@@ -115,6 +115,7 @@ nav ul ul ul li {
     margin-left:20px;
     opacity:0.9;
     cursor:pointer;
+    justify-content: space-around;
   }
   
   .button a{
@@ -251,11 +252,7 @@ nav ul ul ul li {
   div.boys{
     color:deeppink;
   }
-  .button{
-    
-    justify-content: space-around;
-  }
-
+  
   
   @media screen and (max-width:800px)
   {

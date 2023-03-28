@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Applicant</title>
 </head>
 
@@ -52,133 +52,133 @@
 
 
     <script>
-      
-let owner = JSON.parse(localStorage.getItem("users"));
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const pg_id = urlParams.get('my_uuid');
-const share_type = urlParams.get('my_room_id');
 
-let Applicant = owner.find(e => e.my_uuid == pg_id);
+        let owner = JSON.parse(localStorage.getItem("users"));
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const pg_id = urlParams.get('my_uuid');
+        const share_type = urlParams.get('my_room_id');
 
-div_border = document.createElement("div");
-div_border.setAttribute("class", "border");
-document.querySelector("body").append(div_border);
+        let Applicant = owner.find(e => e.my_uuid == pg_id);
 
-div_detail = document.createElement("div");
-div_detail.setAttribute("class", "pg_detail");
-div_border.append(div_detail);
+        div_border = document.createElement("div");
+        div_border.setAttribute("class", "border");
+        document.querySelector("body").append(div_border);
 
-div_image = document.createElement("div");
-div_image.setAttribute("class", "detail");
-div_detail.append(div_image);
+        div_detail = document.createElement("div");
+        div_detail.setAttribute("class", "pg_detail");
+        div_border.append(div_detail);
 
-img = document.createElement("img");
-img.setAttribute("src", Applicant["image"]);
-img.setAttribute("id", "image");
-img.setAttribute("alt", "photo");
-img.setAttribute("height", "300px");
-img.setAttribute("width", "300px");
-div_image.append(img);
+        div_image = document.createElement("div");
+        div_image.setAttribute("class", "detail");
+        div_detail.append(div_image);
 
-div_address = document.createElement("div");
-div_address.setAttribute("class", "address");
-div_detail.append(div_address);
+        img = document.createElement("img");
+        img.setAttribute("src", Applicant["image"]);
+        img.setAttribute("id", "image");
+        img.setAttribute("alt", "photo");
+        img.setAttribute("height", "300px");
+        img.setAttribute("width", "300px");
+        div_image.append(img);
 
-h2 = document.createElement("h2");
-h2.setAttribute("class", "pg_name");
-div_image.append(h2);
+        div_address = document.createElement("div");
+        div_address.setAttribute("class", "address");
+        div_detail.append(div_address);
 
-h2_name = document.createElement("h3");
-h2_name.setAttribute("class", "name_of_pg");
-h2_name.setAttribute("id", "name");
-h2_name.innerText = Applicant["name"];
-h2.append(h2_name);
+        h2 = document.createElement("h2");
+        h2.setAttribute("class", "pg_name");
+        div_image.append(h2);
 
-div_two = document.createElement("div");
-div_two.setAttribute("class", "moredetail");
-h2.append(div_two);
+        h2_name = document.createElement("h3");
+        h2_name.setAttribute("class", "name_of_pg");
+        h2_name.setAttribute("id", "name");
+        h2_name.innerText = Applicant["name"];
+        h2.append(h2_name);
 
-h4_one = document.createElement("h4");
-h4_one.setAttribute("id", "share");
-h4_one.innerHTML = share_type;
-div_two.append(h4_one);
+        div_two = document.createElement("div");
+        div_two.setAttribute("class", "moredetail");
+        h2.append(div_two);
 
-p_two = document.createElement("p");
-p_two.setAttribute("id", "rent");
-p_two.innerText = "Monthly Rent:";
-div_two.append(p_two);
+        h4_one = document.createElement("h4");
+        h4_one.setAttribute("id", "share");
+        h4_one.innerHTML = share_type;
+        div_two.append(h4_one);
 
-b_one = document.createElement("span");
-b_one.setAttribute("id", "sharing");
-b_one.innerText = Applicant["sharing"][share_type];
-p_two.append(b_one);
+        p_two = document.createElement("p");
+        p_two.setAttribute("id", "rent");
+        p_two.innerText = "Monthly Rent:";
+        div_two.append(p_two);
 
-b_three = document.createElement("b");
-b_three.setAttribute("id", "advance");
-b_three.innerText = "Advance:";
-div_two.append(b_three);
+        b_one = document.createElement("span");
+        b_one.setAttribute("id", "sharing");
+        b_one.innerText = Applicant["sharing"][share_type];
+        p_two.append(b_one);
 
-b_four = document.createElement("span");
-b_four.setAttribute("id", "amount");
-b_four.innerText = Applicant["amount"];
-b_three.append(b_four);
+        b_three = document.createElement("b");
+        b_three.setAttribute("id", "advance");
+        b_three.innerText = "Advance:";
+        div_two.append(b_three);
 
-book_button = document.createElement("button");
-book_button.setAttribute("class", "button");
-book_button.setAttribute("type", "submit");
-book_button.innerText = "Book room";
-book_button.onclick = function (event) {
-    signUp(event);
-};
-b_four.append(book_button);
+        b_four = document.createElement("span");
+        b_four.setAttribute("id", "amount");
+        b_four.innerText = Applicant["amount"];
+        b_three.append(b_four);
 
-reject_button = document.createElement("button");
-reject_button.setAttribute("class", "buttons");
-reject_button.setAttribute("type", "submit");
-reject_button.innerText = "Regected";
-b_four.append(reject_button);
+        book_button = document.createElement("button");
+        book_button.setAttribute("class", "button");
+        book_button.setAttribute("type", "submit");
+        book_button.innerText = "Book room";
+        book_button.onclick = function (event) {
+            signUp(event);
+        };
+        b_four.append(book_button);
 
-// accept or reject condition//
-let value = "";
-let status = Applicant["status"];
+        reject_button = document.createElement("button");
+        reject_button.setAttribute("class", "buttons");
+        reject_button.setAttribute("type", "submit");
+        reject_button.innerText = "Regected";
+        b_four.append(reject_button);
 
-if (status === 2) {
-    value = "not respond";
-}
-if (status === 1) {
-    value = "accepted";
-}
+        // accept or reject condition//
+        let value = "";
+        let status = Applicant["status"];
 
-if (status === 0) {
-    value = "rejected";
-}
+        if (status === 2) {
+            value = "not respond";
+        }
+        if (status === 1) {
+            value = "accepted";
+        }
 
-function signUp(e) {
-    e.preventDefault();
-    let my_uuid = uuidv4();
-    let room_book_request = JSON.parse(localStorage.getItem('room_book_request')) || [];
-    let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
-    let customer_id = JSON.parse(localStorage.getItem('userId'));
-    let product_id = JSON.parse(localStorage.getItem('productId'));
+        if (status === 0) {
+            value = "rejected";
+        }
 
-    if (!exit) {
-        room_book_request.push({
-            "request_id" : my_uuid,
-            "customer_id": customer_id,
-            "product_id": pg_id,
-            "status" : 2,
-            "typeOfShare" : share_type,
+        function signUp(e) {
+            e.preventDefault();
+            let my_uuid = uuidv4();
+            let room_book_request = JSON.parse(localStorage.getItem('room_book_request')) || [];
+            let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
+            let customer_id = JSON.parse(localStorage.getItem('userId'));
+            let product_id = JSON.parse(localStorage.getItem('productId'));
+
+            if (!exit) {
+                room_book_request.push({
+                    "request_id": my_uuid,
+                    "customer_id": customer_id,
+                    "product_id": pg_id,
+                    "status": 2,
+                    "typeOfShare": share_type,
 
 
-        });
-        localStorage.setItem('room_book_request', JSON.stringify(room_book_request));
-        console.log(localStorage.getItem('room_book_request'));
-        alert('request sent successfully');
-    } else {
-        
-    }
-}
+                });
+                localStorage.setItem('room_book_request', JSON.stringify(room_book_request));
+                console.log(localStorage.getItem('room_book_request'));
+                alert('request sent successfully');
+            } else {
+
+            }
+        }
 
 
 

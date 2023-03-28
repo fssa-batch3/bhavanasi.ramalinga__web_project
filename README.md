@@ -36,6 +36,8 @@ Click the "login" button.
 Expected Result:
 The user is redirected to the user profile page.
 
+<h3>Edit profile page</h3>
+
 
 <h3>View Payment Guest houses</h3>Completed
 Scenario 3: Successfully view Payment Guest houses/items

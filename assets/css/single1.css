@@ -152,6 +152,7 @@ h4, b {
 
 strong {
     font-size: 25px;
+    margin-left: 7%;
 }
 
 .faculties {
@@ -185,9 +186,6 @@ justify-content: center;
 .faculties_image{
   display: flex;
 justify-content: space-evenly;
-}
-strong{
-  margin-left: 7%;
 }
 
 
