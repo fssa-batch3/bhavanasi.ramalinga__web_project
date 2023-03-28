@@ -49,28 +49,32 @@
         <div class="last">
             <button type="button" onclick="del(event)" class="registerbtn">delete</button>
             <button type="submit" class="registerbtn"><a href="../../pages/homepage/edit.html">Edit</a></button>
-            <button  class="registerbtn" onclick="back ()"> Back </button> 
+            <button type="button" class="registerbtn" id="back"> Back </button> 
         </div> 
 
     </div>
 </form>
 <script>
-    let userId = JSON.parse(localStorage.getItem('userId'));
-    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+    // let userId = JSON.parse(localStorage.getItem('userId'));
+    // let user_cred = JSON.parse(localStorage.getItem('user_cred'));
 
     //   let ownerId = JSON.parse(localStorage.getItem('phone_number'));
     //   let seller_data = JSON.parse(localStorage.getItem('seller_data'));
 
-    function login_data(e) {
-        return e.email == userId;
+     
+    let userId = JSON.parse(localStorage.getItem('userId'));
+    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+
+    console.log(user_cred);
+
+    function login_data(e){
+      return e.email == userId;
     }
+     user_data = user_cred.find(login_data);
 
+    console.log(user_data);
 
-
-
-    user_data = user_cred.find(login_data);
-
-    // console.log(user_data);
+    
 
     document.getElementById("name").value = user_data["name"];
     document.getElementById("phone_number").value = user_data["phone_number"];
@@ -90,11 +94,18 @@
     // }
 
 
-    function back () {
+    let backBtn = document.querySelector("#back");
+    backBtn.addEventListener("click", back)
+    function back() {
+        // e.preventDefault()
 
+        let findData = user_cred.filter(data=>
+        data.email == user_data["email"] )
 
-        if ( seller_data["customer_or_owner"] == "Owner" ) {
-        window.location.href = "../products/seller.html";
+        console.log(findData)
+
+        if ( findData[0]["customer_or_owner"] == "Owner" ) {
+            window.location.href = "../products/seller_product.html";
 
         }
         else {
@@ -107,9 +118,9 @@
 
     // console.log(function back(){});
 
-    //owner data//
-    // function sells_data(e) {
-    //     return e.phone_number == ownerId;
+    // owner data//
+    // function login_data(e, userId) {
+    // return e.email == userId;
     // }
 
 
