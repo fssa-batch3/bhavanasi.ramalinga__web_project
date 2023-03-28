@@ -17,97 +17,61 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 
  Scenario 1: Successfully create an account
  * steps:
-
  a.Navigate to the registration page.
-
  b.Enter the required informationsuch as name, 
-
- email, phonenumber, password , Address and 
- 
+ email, phonenumber, password , Address and  
   reset the password.
-
  c.Click the "Register" button.
-
  * Expected Result:
  * The user is redirected to the login page.
 
 
-<h3>Login account</h3> Completed
+<h3>Login account</h3> 
+  Completed
 Scenario 2: Successfully login in to account
-
 Steps:
-
 Navigate to the login page.
-
 Enter the required information such as email, and password.
-
 Click the "login" button.
-
 Expected Result:
-
 The user is redirected to the user profile page.
 
 
 <h3>View Payment Guest houses</h3>Completed
-
-
 Scenario 3: Successfully view Payment Guest houses/items
-
 Steps:
-
 Log in as a buyer.
-
 Navigate to the payment Guest houses listing page.
-
 View the list of available products/items.
-
 Expected Result:
-
 The user can view the list of available 
-
 payment Guest houses/items.
 
+
 <h3>View payment Guest houses /item details<h3> Completed
-
 Scenario 1: Successfully payment Guest houses 
-
 view /item details
-
 Steps:
-
 Log in as a buyer.
-
 Navigate to the payment Guest houses listing 
 page.
-
 Select a payment Guest house/item to view its details.
-
 Expected Result:
-
 The user can view the details of the selected payment Guest house /item.
 
-<h3>Buy a product/item</h3> Yet to start
 
+<h3>Buy a payment Guest house/item</h3> Yet to start
 Scenario 1: Successfully purchase a payment Guest house sharing /item
 Steps:
 Log in as a buyer.
-
-Navigate to the product listing page.
-
-Select a product/item to view its details.
-
+Navigate to the payment Guest house listing page.
+Select a  payment Guest house /item to view its details.
 Click the "Book room" button.
 
-
-
 * Expected Result:
-
 The user is redirected to the order confirmation page.
-
 An order confirmation email is sent to the user's email address.
-
 The payment guest house /item's stock is 
-
 reduced by the purchased quantity.
 
 
@@ -115,6 +79,7 @@ reduced by the purchased quantity.
 // seller//
 
 <h2>Create an account</h2>Completed
+
 Scenario 1: Successfully create an account
 Steps:
 Navigate to the registration page.
