@@ -1,9 +1,8 @@
 
-if ( localStorage.getItem("users") ) {
-    return;
-}
-else {
-    localStorage.setItem("users", JSON.stringify(
+let products = localStorage.getItem("users");
+if(!products){
+    localStorage.setItem("users",JSON.stringify(
+
         
 [{"name":"sarasu ladies pg","fecilities":{"food":"https://iili.io/HXMbdX4.png","parking":"https://iili.io/HXMtHan.png","wifi":"https://iili.io/HXMtAwx.png","tv":"https://iili.io/HXVHLLG.png","fridge":"https://iili.io/HXMDt1I.png"},"period":"1 month","available":"Boys","beds":"50","amount":"5000/-","time":"11:00pm","address":" 27, Rani Ammal St, Periyar Nagar, Tharamani, Chennai, Tamil Nadu 600113","single":false,"twin":false,"triple":false,"four":false,"owner_id":"vasumeenu2004@gmail.com","sharing":{"onesharing":"8000/-","twosharing":"7000","threesharing":"6000","foursharing":"5000"},"image":"https://i.ibb.co/CmWbQNn/2.jpg","my_uuid":"8eb13e50-e943-47f6-9b71-c7bbac662333","house_fecilities_image":{"image1":"https://iili.io/HhzX8Ex.jpg","image2":"https://iili.io/HhzSkAv.jpg","lastimage":"https://iili.io/HhzUTJa.jpg","image4":"https://iili.io/HhCkGyP.jpg"}},
 {"name":"Prabhakaran's Paying Guest","fecilities":{"food":"https://i.ibb.co/X3LSTXV/cooking.jpg","parking":"https://iili.io/HXMtHan.png","wifi":"https://iili.io/HXMtAwx.png","tv":"https://iili.io/HXVHLLG.png","fridge":"https://iili.io/HXMDt1I.png"},"period":"1 month","available":"Boys","beds":"50","amount":"4500/-","time":"11:00pm","address":" 63, 4th Main Rd, CBI Colony, Perungudi, Chennai, Tamil Nadu 600096","single":false,"twin":false,"triple":false,"four":false,"owner_id":"vasumeenu2004@gmail.com","sharing":{"onesharing":"8000/-","twosharing":"7500/-","threesharing":"6000/-","foursharing":"5500/-"},"image":"https://i.ibb.co/0sscNLn/background.jpg","my_uuid":"74388615-263b-406b-8b7f-226af28bd4b4","house_fecilities_image":{"image1":"https://i.ibb.co/27y8tf6/balkeni7.jpg","image2":"https://i.ibb.co/1rzBJJS/balkeni3.jpg","lastimage":"https://iili.io/HhzUTJa.jpg","image4":"https://iili.io/HhCkGyP.jpg"}},
