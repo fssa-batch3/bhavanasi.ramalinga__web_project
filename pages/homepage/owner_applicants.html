@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../../assets/css/applicants.css">
+    <link rel="stylesheet" href="../../assets/css/owner_applicants.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,176 +39,74 @@
 
         </div>
     </header>
-    <!-- "<table>"
-        <tr>
-            <th><h2>Date</h2></th>
-            <th><h2>Name</h2></th>
-            <th><h2>Female/male</h2></th>
-            <th><h2>Details</h2></th>
-            
-            <th><h2>Accept/reject</h2></th>
-            <th><h2>Contact</h2></th>
-        </tr>
-         -->
-        <!-- <tr> -->
-            <!-- <td><h3>10/12/2022</h3></td>
-            <td><h3>Sandhya</h3></td>
-            <td><h3>Female</h3></td>
-            <td><h3>Mobile no:8466009892,Email-id:sandhyafrsh@gmail.com,single room</h3> </td>
-            <td><h3>Accept</h3></td>
-            <td><h3>Message</h3></td>
-        </tr>
+   
+
+   <div class="section">
+    <div class="sections">
+        <h2>Name of the pg</h2>
+        <h2>selected sharing room</h2>
+        <h2>Customer email</h2>
+        <h2>owner response</h2>
         
-        <tr>
-            <td><h3>20/12/2022</h3></td>
-            <td><h3>Ayesha</h3></td>
-            <td><h3>Female</h3></td>
-            <td><h3>mobile no:8765433209,Email-id:ayesharobert@gmail.com, Double room</h3> </td>
-            <td><h3>Reject</h3></td>
-            <td><h3>Message</h3></td>
-        </tr>
-        <tr>
-            <td><h3>25/11/2022</h3></td>
-            <td><h3>Sindhu</h3></td>
-            <td><h3>Female</h3></td>
-            <td><h3>Mobile no:953515496264,Email-id:sindhuchinnamchetti@gmail.com,Four sharing room</h3> </td>
-            <td><h3>Accept</h3></td>
-            <td><h3>message</h3></td>
-        </tr>
-        <tr>
-            <td><h3>10/11/2022</h3></td>
-            <td><h3>Lokesh</h3></td>
-            <td><h3>Male</h3></td>
-            <td><h3>Mobile no:9032739892,Email-id:lokesh.manipir@gmila.com,triple sharing</h3></td>
-            <td><h3>Accept</h3></td>
-            <td><h3>Message</h3></td>
-        </tr>
-        <tr>
-            <td><h3>4/11/2022</h3></td>
-            <td><h3>madhu</h3></td>
-            <td><h3>Male</h3></td>
-            <td><h3>mobile no:8515496264,Email-id:madhu.lokesh@gmail.com,single sharing</h3></td>
-            <td><h3>Reject</h3></td>
-            <td><h3>message</h3></td>
-        </tr>
-        <tr>
-            <td><h3>7/11/2022</h3></td>
-            <td><h3>sudha</h3></td>
-            <td><h3>MAle</h3></td>
-            <td><h3>Mobile no:9876543210,Email-id:sudhamurthi12@gmail.com,double sharing</h3></td>
-            <td><h3>Accept</h3></td>
-            <td><h3>Message</h3></td>
-        </tr>
-        <tr>
-            <td><h3>2/11/2022</h3></td>
-            <td><h3>manohar</h3></td>
-            <td><h3>MAle</h3></td>
-            <td><h3>Mobile no:2345678190,Email-id:manoharmanu23@gmail.com,triple sharing</h3></td>
-            <td><h3>Reject</h3></td>
-            <td><h3>Message</h3></td> -->
-        <!-- </tr> -->
-
-
-    </table>
-
-
-    <section>
-
-    </section>
+    </div>
+   </div>
 
 
     <script>
- let owner = JSON.parse(localStorage.getItem("users"));
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const pg_id = urlParams.get('my_uuid');
-        
+ 
 
-        let seller_selection= owner.find(e => e.my_uuid == pg_id);
-        console.log(seller_selection)
+     let seller_section=JSON.parse(localStorage.getItem("room_book_request"));
+
     
-
-
        
       
        div_border = document.createElement("div");
         div_border.setAttribute("class", "border");
         console.log(div_border);
-        document.querySelector("body").append(div_border);
+        document.querySelector(".section").append(div_border);
 
-        div_detail = document.createElement("div");
-        div_detail.setAttribute("class", "pg_detail");
-        div_border.append(div_detail);
-
-        div_image = document.createElement("div");
-        div_image.setAttribute("class","detail")
-        div_detail.append(div_image);
-
-        img = document.createElement("img");
-        img.setAttribute("src", seller_selection["image"] );
-        img.setAttribute("alt", "photo");
-        img.setAttribute("height", "300px");
-        img.setAttribute("width", "300px");
-        div_image.append(img);
-         
-        div_address = document.createElement("div");
-        div_address.setAttribute("class", "address");
-        div_detail.append(div_address);
-
-        h2 = document.createElement("h2");
-        h2.setAttribute("class","pg_name"); 
-        
-        div_image.append(h2);
+       
  
         h2_name = document.createElement("h3");
         h2_name.setAttribute("class","name_of_pg");
-        h2_name.innerText ="name";
-        h2.append(h2_name);
+        h2_name.innerText ="Name";
+        div_border.append(h2_name);
 
         div_two = document.createElement("div");
         div_two.setAttribute("class","moredetail")
-        h2.append(div_two);
+        div_border.append(div_two);
 
         h4_one = document.createElement("h4");
         h4_one.innerHTML="share_type";
         div_two.append(h4_one);
 
-        p_two = document.createElement("p");
-        p_two.innerText = "Monthly Rent:";
-        div_two.append(p_two);
-
-        b_one = document.createElement("para");
-        b_one.innerText = "sharing";
-        p_two.append(b_one);
-
-        b_three = document.createElement("b");
-        b_three.innerText = "Advance:";
-        div_two.append(b_three);
-
-        b_three = document.createElement("b");
-        b_three.innerText ="amount";
-        div_two.append(b_three);
+        email=document.createElement("h4");
+        email.setAttribute("class","email");
+        email.innerHTML="email";
+        div_border.append(email);
         
-           
-       
+
+
         div_click = document.createElement("div");
         div_click.setAttribute("class", "click");
        
-        div_address.append(div_click);
+        div_border.append(div_click);
        
       
         
         button = document.createElement("button");
-        button.setAttribute("class", "book");
+        
        button.innerHTML = "Accept";
         div_click.append(button);
 
         
           button = document.createElement("button");
-        button.setAttribute("class", "book1");
          button.innerHTML = "Reject";
         div_click.append(button);
-      
+
+       
+
+     
   
      
     </script>

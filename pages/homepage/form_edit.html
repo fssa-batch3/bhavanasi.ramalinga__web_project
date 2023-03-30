@@ -10,82 +10,120 @@
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body>
+  <header>
+  <div class="header">
+    <div id="container">
+        <nav>
+            <ul>
+                <div class="magic">
+                    <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
+            
+             
+             <li><a href="#">Boys/Girls</a>
+                
+                <ul>
+                    <li><a href="../../pages/homepage/updated Boys.html">Boys</a></li>
+                    <li><a href="../../pages/homepage/updated for girls.html">Girls</a></li>
+                    <li><a href="../../pages/homepage/updated for both.html">Both</a></li>
+                </ul>        
+                </li>
+                <li><a href="../../pages/homepage/review.html">Reviews</a></li>
+                <li><a href="#">Add pgs</a></li>
+                <div class="search"> 
+                  <input type="text" placeholder="search.."name="search">
+                  <i style="font-size:24px" class="fa">&#xf002;</i>
+                  </div> 
+            </ul> 
+            </li>
+            
+                
+           
+    </nav>
+    </div>
+   
+
+</div>
+</header>
     <form role="form">
+      <div class="readform">
         
         <div class="container">
-        <label for="name"><b> pg_Name</b></label>
+          
+        <label for="name"><b> 1.pg_Name</b></label>
         <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" ><br><br>
         
        
-        <label for="type"><b>Rooms categories are available and rent</b></label><br>
+        <label for="type"><b>2.Rooms categories are available and rent</b></label><br>
         
-      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"   ><br><br>
+      <label for="sharing"><b>single sharing</b> </label><input  placeholder="rent" id="onesharing"   ><br><br>
 
      
-      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" ><br><br>
+      <label for="sharing"><b>Twin sharing</b> </label><input  placeholder="rent" id="twosharing" ><br><br>
 
       
-      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
+      <label for="sharing"> <b>Triple sharing</b>  </label><input  placeholder="rent"id="threesharing" ><br><br>
 
       
-      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing"  ><br><br>
+      <label for="sharing"><b>Four sharing</b> </label><input  placeholder="rent"id="foursharing"  ><br><br>
 
-      <label for="name"><b> Deposite amount</b></label>
+      <label for="name"><b> 3.Deposite amount</b></label>
       <input type="text" placeholder=""name="fname" id="amount" required><br><br>
       
-      <label for="sharing"> Notice Period </label>
+      <label for="sharing"><b>4. Notice Period</b></label>
       <input  id="period" required><br><br>
     
-      <label for="sharing"> Closing Time </label>
+      <label for="sharing"><b>5. Closing Time </b></label>
       <input  id="time" required><br><br>
    
 
-      <label for="sharing"> Available For</label>
+      <label for="sharing"><b>6.Available For</b></label>
       <input  id="available" required><br><br>
   
-      <label for="image1"> Fecilities</label>
+      <label for="image1"><b>Fecilities</b></label>
       <input  placeholder="url" id="image1"  ></input><br><br>
 
 
-       <label for="image"> Fecilities</label>
+       <label for="image"><b>Fecilities</b></label>
        <input placeholder="url" id="image2"  ></input><br><br>
 
-        <label for="image"> Fecilities</label>
+        <label for="image"><b> Fecilities</b></label>
          <input  placeholder="url" id="lastimage"  ></input><br><br>
 
-         <label for="image1"> Fecilities</label>
+         <label for="image1"><b>Fecilities</b></label>
           <input placeholder="url" id="image4"  ></input><br><br>
-
-   
-    <label for="sharing"> Total Number of Beds </label>
+        </div>
+   <div class="section">
+    <label for="sharing"><b>7.No.of Beds</b> </label>
     <input  id="beds" required><br><br>
      
 
-    <label for="sharing">parking</label>
+    <label for="sharing"><b>8.parking</b></label>
     <input  id="parking" name="vehicle1"  ><br><br>
 
     
 
-      <label for="sharing">wifi </label>
+      <label for="sharing"><b>9.wifi</b></label>
     <input   id="wifi" ><br><br>
 
    
-    <label for="sharing"> Food</label>
+    <label for="sharing"><b>10.Food</b></label>
     <input   id="food" ><br><br>
 
     
-    <label for="sharing"> fridge</label>
+    <label for="sharing"><b>11.fridge</b></label>
     <input  id="fridge"  ><br><br>
 
    
-    <label for="sharing">TV</label>
+    <label for="sharing"><b>12.TV</b></label>
     <input   id="tv" ><br><br>
 
-      <label for="pg_name"><b>Image</b></label>
+      <label for="pg_name"><b>13.Image</b></label>
         <input type="text"  name="image" id="image" ><br><br>
 
-         <label for="address"><b> Address</b></label><br>
+         <label for="address"><b>14. Address</b></label><br>
         <textarea type="text"id="address" ></textarea><br>
+   </div>
+      </div>
         
         <div class="last">
             <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
@@ -185,31 +223,5 @@ window.location.href="../products/seller_product.html"
 
 }
 
-// function del(e){
-// e.preventDefault();
-// if(confirm("Are you sure delete your account?")){
-
-// let userId = JSON.parse(localStorage.getItem("name"));
-// let users = JSON.parse(localStorage.getItem("users"));
-
-// function login_data(e){
- 
-// return e.name == name;
-// }
-
-// user_data = users.find(login_data);
-
-
-// const indexOfUser = users.indexOf(user_data);
-// console.log(indexOfUser);
-// users.splice(indexOfUser, 1);
-// // console.log(indexOfUser);  
-// localStorage.setItem("users", JSON.stringify(users));   
-// window.location.href="./edit and update owners.html";
-// }
-// // localStorage.
-// }
-
-
-    </script>
+ </script>
 

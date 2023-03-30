@@ -166,17 +166,11 @@
           div_room_details.setAttribute("class", "room-details");
           div_bar.append(div_room_details);
 
-          //<div class="onwards"></div>
-          // div_onwards = document.createElement("div");
-          // div_onwards.setAttribute("class", "onwards");
-          // div_onwards.innerText = pg_list[i];
-          // div_room_details.append(div_onwards);
-
+         
           //<div class="para"> </div>
 
           div_para = document.createElement("div");
           div_para.setAttribute("class", "para");
-          // div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
           div_room_details.append(div_para);
 
 
@@ -271,8 +265,6 @@
                               window.location.href = `../../pages/homepage/Addedpg_details.html?my_uuid=${person_data}`;
                           })
                })
-
-
        }
        
        function Logout(e){
@@ -282,8 +274,6 @@
                 window.location.href="/index.html";
 
                }
-
-
        
     </script> 
    </body>

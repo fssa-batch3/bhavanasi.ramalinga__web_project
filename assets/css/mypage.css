@@ -19,11 +19,17 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  img{
+  div.photo img{
     border-radius: 50px;
     margin-left: 40%;
+    width:25%;
   }
+  body{
+    background-image: url("../../assets/images/hostel.png");
+    background-size: cover;
+    backdrop-filter: blur(5px);
 
+  }
   
  
   .container {
@@ -31,6 +37,7 @@
     background-color: white;
     border:3px solid #f1f1f1;
      width: 450px;
+     height:80%;
     margin-left: 35%;
     margin-bottom: 5%;
     margin-top:3%;

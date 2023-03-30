@@ -12,8 +12,25 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
   
   Problem Statement:  https://docs.google.com/document/d/1ntBDIb7b6MuuokPxy0d16ny68queBof0/edit?usp=sharing&ouid=110266946290568336809&rtpof=true&sd=true
 
-  <h3>Buyer</h3>
-  <h3>Create an account</h3> Completed
+  ### User Crud:
+  1.Create account
+  2.Login  account
+  3.Read profile 
+  4.Edit profile
+  5.Delete profile
+
+  ### seller crud;
+  1.Create account
+  2.Login  account
+  3.Read profile 
+  4.Edit profile
+  5.Delete profile
+ ### 
+
+
+
+  ### Buyer
+  ### Create an account  Completed
 
  Scenario 1: Successfully create an account
  * steps:
@@ -26,8 +43,8 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
  * The user is redirected to the login page.
 
 
-<h3>Login account</h3> 
-  Completed
+### Login account Completed
+
 Scenario 2: Successfully login in to account
 Steps:
 Navigate to the login page.
@@ -36,10 +53,32 @@ Click the "login" button.
 Expected Result:
 The user is redirected to the user profile page.
 
-<h3>Edit profile page</h3>
+ ### View account details (Completed)
+
+Scenario 1: Successfully view account details
+Steps:
+Log in as a seller.
+Navigate to the account page.
+View the account details such as name, email, and address.
+Expected Result:
+The user can view their account details.
 
 
-<h3>View Payment Guest houses</h3>Completed
+### Edit account details Completed
+Scenario 1: Successfully edit account details
+Steps:
+Log in as a seller.
+Navigate to the account page.
+Click the "Edit Account" button.
+Update the account details.
+Click the "Edit" button.
+Expected Result:
+The user's account details are updated.
+
+
+
+
+### View Payment Guest houses 
 Scenario 3: Successfully view Payment Guest houses/items
 Steps:
 Log in as a buyer.
@@ -50,7 +89,7 @@ The user can view the list of available
 payment Guest houses/items.
 
 
-<h3>View payment Guest houses /item details<h3> Completed
+### View payment Guest houses /item details  (Completed)
 Scenario 1: Successfully payment Guest houses 
 view /item details
 Steps:
@@ -62,7 +101,7 @@ Expected Result:
 The user can view the details of the selected payment Guest house /item.
 
 
-<h3>Buy a payment Guest house/item</h3> Yet to start
+### Buy a payment Guest house/item (Yet to start)
 Scenario 1: Successfully purchase a payment Guest house sharing /item
 Steps:
 Log in as a buyer.
@@ -80,7 +119,7 @@ reduced by the purchased quantity.
 
 // seller//
 
-<h2>Create an account</h2>Completed
+### Create an account (Completed)
 
 Scenario 1: Successfully create an account
 Steps:
@@ -91,7 +130,7 @@ Expected Result:
 The user is redirected to the login page.
 An email verification link is sent to the user's email address.
 
-<h2>View account details</h2>Completed
+### View account details (Completed)
 
 Scenario 1: Successfully view account details
 Steps:
@@ -102,7 +141,7 @@ Expected Result:
 The user can view their account details.
 
 
-<h2>Edit account details</h2>Completed
+### Edit account details Completed
 Scenario 1: Successfully edit account details
 Steps:
 Log in as a seller.
@@ -115,7 +154,7 @@ The user's account details are updated.
 
 
 
-<h2>View list of orders</h2>Completed
+### View list of orders (Completed)
 Scenario 1: Successfully view list of orders
 Steps:
 Log in as a seller.
@@ -125,7 +164,7 @@ Expected Result:
 The seller can view the list of orders.
 
 
-<h2>View order details</h2>Yet to start
+### View order details (Yet to start)
 Scenario 1: Successfully view order details
 Steps:
 Log in as a seller.
@@ -134,4 +173,3 @@ Select an order to view.
 Click the "View Order" button.
 Expected Result:
 The seller can view the details of the selected order.
-

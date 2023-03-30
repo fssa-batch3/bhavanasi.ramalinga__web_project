@@ -60,7 +60,7 @@
         const share_type = urlParams.get('my_room_id');
 
         let Applicant = owner.find(e => e.my_uuid == pg_id);
-
+      
         div_border = document.createElement("div");
         div_border.setAttribute("class", "border");
         document.querySelector("body").append(div_border);
@@ -139,20 +139,26 @@
         reject_button.innerText = "Regected";
         b_four.append(reject_button);
 
+        
+
         // accept or reject condition//
         let value = "";
-        let status = Applicant["status"];
+let status = Applicant["status"];
 
-        if (status === 2) {
-            value = "not respond";
-        }
-        if (status === 1) {
-            value = "accepted";
-        }
+if (status === 2) {
+    value = "not respond";
+}
+if (status === 1) {
+    value = "accepted";
+}
+if (status === 0) {
+    value = "rejected";
+}
 
-        if (status === 0) {
-            value = "rejected";
-        }
+
+
+
+        //booking data storing//
 
         function signUp(e) {
             e.preventDefault();
@@ -176,6 +182,7 @@
                 console.log(localStorage.getItem('room_book_request'));
                 alert('request sent successfully');
             } else {
+                localStorage.setItem('')
 
             }
         }
