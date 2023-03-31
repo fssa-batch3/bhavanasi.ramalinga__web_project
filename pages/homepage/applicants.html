@@ -57,9 +57,19 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const pg_id = urlParams.get('my_uuid');
-        const share_type = urlParams.get('my_room_id');
+        const selected_room = urlParams.get('my_room_id');
 
         let Applicant = owner.find(e => e.my_uuid == pg_id);
+        
+
+        // getting name of pg//
+        
+   
+
+      
+        
+
+
       
         div_border = document.createElement("div");
         div_border.setAttribute("class", "border");
@@ -99,10 +109,10 @@
         div_two.setAttribute("class", "moredetail");
         h2.append(div_two);
 
-        h4_one = document.createElement("h4");
-        h4_one.setAttribute("id", "share");
-        h4_one.innerHTML = share_type;
-        div_two.append(h4_one);
+        sharing_room = document.createElement("h4");
+        sharing_room.setAttribute("id", "share");
+        sharing_room.innerHTML = selected_room;
+        div_two.append(sharing_room);
 
         p_two = document.createElement("p");
         p_two.setAttribute("id", "rent");
@@ -111,7 +121,7 @@
 
         b_one = document.createElement("span");
         b_one.setAttribute("id", "sharing");
-        b_one.innerText = Applicant["sharing"][share_type];
+        b_one.innerText = Applicant["sharing"][selected_room];
         p_two.append(b_one);
 
         b_three = document.createElement("b");
@@ -133,16 +143,10 @@
         };
         b_four.append(book_button);
 
-        reject_button = document.createElement("button");
-        reject_button.setAttribute("class", "buttons");
-        reject_button.setAttribute("type", "submit");
-        reject_button.innerText = "Regected";
-        b_four.append(reject_button);
-
-        
+      
 
         // accept or reject condition//
-        let value = "";
+let value = "";
 let status = Applicant["status"];
 
 if (status === 2) {
@@ -167,6 +171,7 @@ if (status === 0) {
             let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
             let customer_id = JSON.parse(localStorage.getItem('userId'));
             let product_id = JSON.parse(localStorage.getItem('productId'));
+           
 
             if (!exit) {
                 room_book_request.push({
@@ -175,7 +180,7 @@ if (status === 0) {
                     "product_id": pg_id,
                     "status": 2,
                     "typeOfShare": share_type,
-
+                    "pgname" : Applicant["name"],
 
                 });
                 localStorage.setItem('room_book_request', JSON.stringify(room_book_request));

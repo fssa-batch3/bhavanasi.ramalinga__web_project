@@ -248,6 +248,7 @@
     selectbtn.forEach(each => {
                             each.addEventListener("click", (event) => {
                                 const person_data = each.dataset.id;
+                                
                                 console.log(person_data)
                                 window.location.href = `../../pages/homepage/Addedpg_details.html?my_uuid=${person_data}`;
                             })

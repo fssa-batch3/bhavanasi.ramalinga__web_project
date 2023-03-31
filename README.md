@@ -25,7 +25,12 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
   3.Read profile 
   4.Edit profile
   5.Delete profile
- ### 
+
+ ### product crud
+ 1.Create product
+ 2.Edit product
+ 3.Delete product
+ 4.Read product
 
 
 

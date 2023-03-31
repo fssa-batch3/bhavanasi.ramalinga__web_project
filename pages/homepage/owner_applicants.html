@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../../assets/css/owner_applicants.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>Applicant</title>
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -17,98 +21,128 @@
                 <nav>
                     <ul>
                         <div class="magic">
-                            <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="100%"></a></li>
+                            <li><a href="../../pages/homepage/rent.html"><img
+                                        src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                        height="60px" width="100%"></a></li>
                         </div>
-                        
-                        
-                     <li><a href="../../pages/homepage/form.html">Add pg </a>
-                        
-                             
+
+
+                        <li><a href="../../pages/homepage/form.html">Add pg </a>
+
+
                         </li>
                         <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
-                        <li><a href="../../pages/homepage/mypg.html" >my pg</a></li>
-                        
-                            </ul>
+                        <li><a href="../../pages/homepage/mypg.html">my pg</a></li>
 
-                        
-                    </li>             
-                      
-            </nav>
+                    </ul>
+
+
+                    </li>
+
+                </nav>
             </div>
-           
+
 
         </div>
     </header>
-   
 
-   <div class="section">
-    <div class="sections">
-        <h2>Name of the pg</h2>
-        <h2>selected sharing room</h2>
-        <h2>Customer email</h2>
-        <h2>owner response</h2>
-        
+
+    <div class="section">
+        <div class="sections">
+            <h2>Name of the pg</h2>
+            <h2>selected sharing room</h2>
+            <h2>Customer email</h2>
+            <h2>owner response</h2>
+
+        </div>
     </div>
-   </div>
 
 
     <script>
- 
-
-     let seller_section=JSON.parse(localStorage.getItem("room_book_request"));
-
-    
-       
-      
-       div_border = document.createElement("div");
-        div_border.setAttribute("class", "border");
-        console.log(div_border);
-        document.querySelector(".section").append(div_border);
-
-       
- 
-        h2_name = document.createElement("h3");
-        h2_name.setAttribute("class","name_of_pg");
-        h2_name.innerText ="Name";
-        div_border.append(h2_name);
-
-        div_two = document.createElement("div");
-        div_two.setAttribute("class","moredetail")
-        div_border.append(div_two);
-
-        h4_one = document.createElement("h4");
-        h4_one.innerHTML="share_type";
-        div_two.append(h4_one);
-
-        email=document.createElement("h4");
-        email.setAttribute("class","email");
-        email.innerHTML="email";
-        div_border.append(email);
-        
 
 
-        div_click = document.createElement("div");
-        div_click.setAttribute("class", "click");
-       
-        div_border.append(div_click);
-       
-      
-        
-        button = document.createElement("button");
-        
-       button.innerHTML = "Accept";
-        div_click.append(button);
+        let seller_section = JSON.parse(localStorage.getItem("room_book_request"));
 
-        
-          button = document.createElement("button");
-         button.innerHTML = "Reject";
-        div_click.append(button);
 
-       
 
-     
-  
-     
+        for (let i = 0; i < seller_section.length; i++) {
+            div_border = document.createElement("div");
+            div_border.setAttribute("class", "border");
+            console.log(div_border);
+            document.querySelector(".section").append(div_border);
+
+
+
+            h2_name = document.createElement("h3");
+            h2_name.setAttribute("class", "name_of_pg");
+            h2_name.innerText = seller_section[i]["pgname"];
+            div_border.append(h2_name);
+
+            div_two = document.createElement("div");
+            div_two.setAttribute("class", "moredetail")
+            div_border.append(div_two);
+
+            sharing_room = document.createElement("h4");
+            sharing_room.innerHTML = seller_section[i]["typeOfShare"];
+            div_two.append(sharing_room);
+
+            email = document.createElement("h4");
+            email.setAttribute("class", "email");
+            email.innerHTML = seller_section[i]["customer_id"];
+            div_border.append(email);
+
+
+
+            div_click = document.createElement("div");
+            div_click.setAttribute("class", "click");
+
+            div_border.append(div_click);
+
+
+
+            button = document.createElement("button");
+            button.setAttribute("class", "button");
+            button.setAttribute("data-id", seller_section[i]["request_id"]);
+           button.innerHTML = "Accept";
+            div_click.append(button);
+
+
+            button = document.createElement("button");
+            button.innerHTML = "Reject";
+            div_click.append(button);
+
+        }
+
+        let customer = JSON.parse(localStorage.getItem("room_book_request"))
+            console.log(customer);
+
+            let filteredUseravailable = customer.filter(e => e.request_id == "data-id");
+            console.log(filteredUseravailable);
+
+
+
+
+            let selectbtn = document.querySelectorAll(".button")
+            selectbtn.forEach(each => {
+                each.addEventListener("click", (event) => {
+                    const person_data = each.dataset.id;
+
+                    const queryString = window.location.search;
+                    const urlParams = new URLSearchParams(queryString);
+                    const my_uuid = urlParams.get('request_id');
+                    let edited = JSON.parse(localStorage.getItem("room_book_request"));
+                    localStorage.setItem("room_book_request", JSON.stringify(edited));
+
+                    console.log(person_data)
+                    // window.location.href = `../../html?request_id=${person_data}`;
+                })
+            })
+          
+
+
+
+
     </script>
 </body>
+
 </html>
