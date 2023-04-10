@@ -25,4 +25,23 @@ if(!products){
     ));
 }
 
+let seller_data = localStorage.getItem("seller_data");
+if(!seller_data){
+    localStorage.setItem("seller_data",JSON.stringify(
+[
+{"name":"sandy","email":"sandy@gmail.com","repeat":"6543","psw":"6543","phone_number":"0987654123","address":"kadapa","customer_or_owner":"Owner","my_uuid":"13d1cc39-abba-4770-9ca5-bf5147427a9e"},
+{"name":"sanjay","email":"sanjay@gmail.com","repeat":"4567","psw":"4567","phone_number":"6543217890","address":"kadapa","customer_or_owner":"Owner","my_uuid":"45acdd11-93f2-49b7-be5e-36c01436ceb5"},
+{"name":"saranga","email":"saranga@gmail.com","repeat":"123","psw":"123","phone_number":"1029384756","address":"kadapa","customer_or_owner":"Owner","my_uuid":"0536a468-88e1-42d8-93e6-db8299fc3b83"},
+{"name":"alagappan","email":"alagappan@gmail.com","repeat":"123","psw":"123","phone_number":"1092837654","address":"kadpa","customer_or_owner":"Owner","my_uuid":"d8558075-396b-4d8a-8ad3-c0af680e656d"},
+{"name":"anna","email":"anna@123gmail.com","repeat":"123","psw":"123","phone_number":"2345678190","address":"kadapa","customer_or_owner":"Owner","my_uuid":"ba898bff-ee74-4d1d-bc82-fc5314134bba"},
+{"name":"saroja","email":"saraja@gmail.com","repeat":"123","psw":"123","phone_number":"2213456789","address":"kadapa","customer_or_owner":"Owner","my_uuid":"16932ae8-2b31-4b37-ad6e-2c7e29e2c470"},
+{"name":"manas","email":"manas@gmail.com","repeat":"123","psw":"123","phone_number":"1324456789","address":"kadapa","customer_or_owner":"Owner","my_uuid":"41eb9829-fa31-4fd5-85de-4900d8e1ac24"},
+{"name":"mana","email":"mana@gmail.com","repeat":"123","psw":"123","phone_number":"0987654332","address":"kadapa","customer_or_owner":"Owner","my_uuid":"f89aa6f0-43ec-4a41-9785-a44e51614240"},
+{"name":"bavani","email":"bavani@gmail.com","repeat":"123","psw":"123","phone_number":"1123456788","address":"kadapa,andhra pardesh ","customer_or_owner":"Owner","my_uuid":"5a83e574-6cbe-4b37-9f50-d590f0e65f5e"},
+{"name":"manisha","email":"manisha@gmail.com","repeat":"123","psw":"123","phone_number":"0987654433","address":"kadapa","customer_or_owner":"Owner","my_uuid":"ca786ab2-3338-4b2e-9df0-3eae8174727f","phoe_number":"0987654433"},
+{"name":"bagya","email":"bagya@gmail.com","repeat":"123","psw":"123","phone_number":"9876543219","address":"kadapa","customer_or_owner":"Owner","my_uuid":"ea618413-d7c5-41b9-b6a3-a8760d8c88c5"}
+]
+       
 
+        ));
+    }

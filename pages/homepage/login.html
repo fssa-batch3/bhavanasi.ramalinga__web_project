@@ -4,7 +4,7 @@
   <html lang="en">
     <head>
     <title>document</title>
-    <link   rel="stylesheet"  href="../../assets/css/login.css">
+    <link   rel="stylesheet" href="../../assets/css/login.css">
     
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
                     <option>Owner</option></select><br><br>
        
         
-    <br><button class="button"    type="button" onclick="signIn(event)"  >login</button>
+    <br><button class="button"    type="button" onclick="signIn(event)">login</button>
 
     </div>
 </form>
@@ -47,7 +47,9 @@ const signIn= e =>{
        let  psw = document.getElementById('psw').value;
 
       const  user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-      // const  seller_data = JSON.parse(localStorage.getItem('seller_data')) || [];
+    
+
+      const  seller_data = JSON.parse(localStorage.getItem('seller_data')) || [];
 
       let value = document.getElementById("customer_or_owner").value;
        if(value == "Customer"){
@@ -68,6 +70,7 @@ const signIn= e =>{
        }
        if(value == "Owner"){
         const exist = user_cred.length &&
+      
        JSON.parse(localStorage.getItem('seller_data')).some(data =>
        data.email.toLowerCase() == email &&
            data.psw  == psw); 
@@ -83,10 +86,10 @@ const signIn= e =>{
 
         localStorage.setItem('userId',JSON.stringify(email));
                 alert("Your Login is Successful");
-                location.href = "../products/seller_product.html";
+                location.href = "./my profile.html";
             }
  
-       }
+      //  }
       
       
 
@@ -94,6 +97,9 @@ const signIn= e =>{
        
        e.preventDefault();
    }
+
+  };
+
  </script>
 </body>
 </html>

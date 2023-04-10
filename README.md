@@ -33,7 +33,6 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
  4.Read product
 
 
-
   ### Buyer
   ### Create an account  Completed
 
@@ -69,7 +68,7 @@ Expected Result:
 The user can view their account details.
 
 
-### Edit account details Completed
+### Edit account details (Completed)
 Scenario 1: Successfully edit account details
 Steps:
 Log in as a seller.
@@ -135,6 +134,18 @@ Expected Result:
 The user is redirected to the login page.
 An email verification link is sent to the user's email address.
 
+
+### Login account Completed
+
+Scenario 2: Successfully login in to account
+Steps:
+Navigate to the login page.
+Enter the required information such as email, and password.
+Click the "login" button.
+Expected Result:
+
+
+
 ### View account details (Completed)
 
 Scenario 1: Successfully view account details
@@ -146,7 +157,7 @@ Expected Result:
 The user can view their account details.
 
 
-### Edit account details Completed
+### Edit account details (Completed)
 Scenario 1: Successfully edit account details
 Steps:
 Log in as a seller.
@@ -157,14 +168,21 @@ Click the "Edit" button.
 Expected Result:
 The user's account details are updated.
 
-
-
-### View list of orders (Completed)
+### UPload the payment guest house (completed)
 Scenario 1: Successfully view list of orders
 Steps:
 Log in as a seller.
-Navigate to the orders page.
-View the list of orders.
+Fill the form Payment Guest page.
+Expected Result:
+The seller can view the list of products.
+
+
+### View list of Payment Guest house (Completed)
+Scenario 1: Successfully view list of orders
+Steps:
+Log in as a seller.
+Navigate to the Payment Guest page.
+View the list of Payment Guest.
 Expected Result:
 The seller can view the list of orders.
 
