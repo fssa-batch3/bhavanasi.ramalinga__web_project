@@ -45,3 +45,15 @@ if(!seller_data){
 
         ));
     }
+
+    let booked_data = localStorage.getItem("room_book_request");
+    if(!booked_data){
+        localStorage.setItem("booked_data",JSON.stringify(
+            [{"request_id":"94de6254-2201-431a-8889-79f02f424c9a","customer_id":"maya@gmail.com","product_id":"74388615-263b-406b-8b7f-226af28bd4b4","status":2,"typeOfShare":"threesharing","pgname":"Prabhakaran's Paying Guest"},
+            {"request_id":"7a43f6a9-ebf4-4ec4-bf2b-9fb2b9a9c42d","customer_id":"maya@gmail.com","product_id":"74388615-263b-406b-8b7f-226af28bd4b4","status":2,"typeOfShare":"threesharing","pgname":"Prabhakaran's Paying Guest"},
+            {"request_id":"29635b08-10b3-4054-a378-98b43b7406e4","customer_id":"maya@gmail.com","product_id":"74388615-263b-406b-8b7f-226af28bd4b4","status":2,"typeOfShare":"threesharing","pgname":"Prabhakaran's Paying Guest"},
+            {"request_id":"eb021005-b5ce-464b-a1d2-027c4a1720a3","customer_id":"maya@gmail.com","product_id":"1a37bf1d-b243-43e9-b143-5b40a17add49","status":2,"typeOfShare":"onesharing","pgname":"Chennai Paying Guest"}]
+        ));
+    }
+   
+    
