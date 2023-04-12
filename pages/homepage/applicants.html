@@ -33,6 +33,7 @@
 
                         </li>
                         <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
+                        <ol> <li onclick="Logout(event)"><h4>Logout</h4></li></ol>
                         <li><a href="../../pages/homepage/review.html">Reviews</a></li>
 
                     </ul>
@@ -217,7 +218,13 @@ if (status === 0) {
 
      
 
+        function Logout(e){
+                alert("are you sure to logout");
+               
+                localStorage.removeItem("userId")
+                window.location.href="/index.html";
 
+               }
 
 
 
