@@ -115,6 +115,7 @@ nav ul ul ul li {
     margin-left:20px;
     opacity:0.9;
     cursor:pointer;
+    justify-content: space-around;
   }
   
   .button a{
@@ -222,7 +223,7 @@ nav ul ul ul li {
 
   .buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   footer{
     background-color: hsl(240, 49%, 84%);
@@ -247,11 +248,7 @@ nav ul ul ul li {
   div.boys{
     color:deeppink;
   }
-  .button{
-    
-    justify-content: space-around;
-  }
-
+ 
   
   @media screen and (max-width:800px)
   {

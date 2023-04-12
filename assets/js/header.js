@@ -1,88 +1,150 @@
-let origin = window.location.origin;
-let logo_path = origin + "/homepage/rent.html";
-let logo =  origin + "/assets/images/Screenshot__17_-removebg-preview.png";
-let both_gender_pg = origin + "../../pages/products/updated for both.html";
-let boys_pg = origin + "../../pages/products/updated Boys.html";
-let girls_pg = origin + "../../pages/products/updated gilrs";
-let profile = origin + "../../pages/products/my profile.html";
-let orders = origin + "../../pages/products/owner_appicants.html";
-let reviews = origin + "../../pages/homepage/review.html";
-let form = origin + "../pages/homepage/form.html"
+let  origin = window.location.origin;
+let logo_path = origin + "/pages/homepage/rent.html";
+let logo =  origin + "/assets/images/Screenshot__17_-removebg-preview.png ";
+let girls = origin + "/pages/homepage/updated for girls.html";
+let boys = origin + "/pages/homepage/updated Boys.html";
+let both_gender = origin + "/pages/orders/updated for both.html";
+let profile = origin + "/pages/homepage/my profile.html";
+let register = origin + "/pages/homepage/register.html";
+let login = origin + "/pages/homepage/login.html";
+let reviews = origin + "/pages/homepage/review.html"
 
-
-let customer_page =
-`<div class="header">
-<div id="container">
-    <nav>
-        <ul>
-        <div class="magic">
-<a href= "${logo_path}"> <img class="logo" src= "${logo}" alt="logo" /> </a></div>
-
-<li><a href="#">Boys/Girls</a>
-                          <ul>
- 
-        <li><a href = "${both_gender_pg}"><span class="Both"> Both Gender </span> </a> </li>
-        <li> <a href= "${boys_pg}"><span class="Boys"> Boys PG </span> </a></li>
-      </ul>
-  
-  <div class="menu">
-    
-   <ul>
-           <li> <a href = "${girls_pg}"><span class="girls"> Girls PG </span> </a></li>
-           <li> <a href= "${profile}"> <i class="fa-solid fa-circle-user"></i></a></li>
-    </ul>
-     </div>
- </div>
-`;
-
-let seller_page = 
-`
-<a href= "${logo_path}"> <img class="logo" src="${logo}" alt="logo" /> </a>
-
-  <div class="nav">
-     
-        <li><a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a></li>
-       
-        <li><a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a></li>
-        <li onclick="Logout(event)"><h4>Logout</h4></li>
-     
+let before_login =
+  `
+  <header>
+  <div class="one">
+      <img src="${logo}"  alt="photo"  height="70px" width="70px" /></div>
+     <div class="dropdown">
+      <span>Login/Register</span>
+          <div class="dropdownlist">
+              <div><a href="${register}">Register</a></div>
+              <div><a href="${login}">Login </a></div>
+          </div>
   </div>
-  <div class="menu">
-    
-    <i class="fa-solid fa-bars"></i>               
-     <div class="menu-list">
-             <a href="${form}"><span class="form">Form</span></a>
-             <a href="${reviews}"><span class="reviews">Reviews</span></a>
-             <a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a>
-            <span class="login" onclick = "logout()"> Log out </span> 
-    
-     </div>
- </div>
+</header>
+`
+
+let after_login =
+  `<header>
+  <div class="header">
+            <div id="container">
+                <nav>
+                    <ul>
+                        <div class="magic">
+                            <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
+                        
+                     <li><a href="#">Boys/Girls</a>
+                        
+                        <ul>
+                            <li><a href="../../pages/products/updated Boys.html">Boys</a></li>
+                            <li><a href="../../pages/homepage/updated for girls.html">Girls</a></li>
+                            <li><a href="../../pages/homepage/updated for both.html">Both</a></li>
+                        </ul>        
+                        </li>
+                        <li><a href="#">pg owners</a>
+                        
+                        <ul>
+                            <li><a href="../../pages/homepage/form.html"> Add pg</a></li>
+                            
+                            
+                       </ul>
+                     
+                   
+                    <li><a href="../../pages/homepage/review.html">reviews</a></li>
+                      
+                   
+                       <ol> <li onclick="Logout(event)"><h4>Logout</h4></li></ol>
+                     
+                    
+                   <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
+                    
+                       <div class="search"> 
+                       <input type="text" placeholder="search.."name="search">
+                       <i class="fa fa-search"></i>
+                       </div>
+            </nav>
+            </div>
+           
+
+        </div>
+        </header>
 `;
 
-
-      function header() {
-
-            let userId = JSON.parse(localStorage.getItem("uniqueID"));
-            let userlogin = document.getElementById("userLogin");
-
-            if (!userId) {
-            userlogin.innerHTML = customer_page;
-            }
-            else {
-            userlogin.innerHTML = seller_page;
-            }
+// let seller_page =
+//   `
+//   <header>
+// <div class="header">
+// <div id="container">
+//     <nav>
+//         <ul>
+//         <div class="magic">
 
 
-      }
+
+//   <li><a href="${origin}/pages/homepage/form.html"> Add pg</a></li>
+                            
+ 
+// <li><a href="${origin}/pages/homepage/review.html">reviews</a></li>
+                      
+                   
+// <ol> <li onclick="Logout(event)"><h4>Logout</h4></li></ol>
 
 
-      
-      function Logout(e){
-        alert("are you sure to logout");
-       
-        localStorage.removeItem("userId")
-        window.location.href="/index.html";
+// <li><a href="${origin}/pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
 
-       }
-    
+// <div class="search"> 
+// <input type="text" placeholder="search.."name="search">
+// <i class="fa fa-search"></i>
+// </div>
+// </nav>
+// </div>
+
+
+// </div> 
+// </header>
+// `;
+
+let userId = JSON.parse(localStorage.getItem("userId"));
+console.log(userId);
+if (userId) {
+  // console.log(after_login);
+  document.body.insertAdjacentHTML("afterbegin", after_login);
+  const logoutBtn = document.querySelector("#logout");
+    logoutBtn?.addEventListener("click", () => {
+        localStorage.removeItem("userId");
+        document.body.innerHTML = header_before_login
+      });
+
+}else {
+  document.body.insertAdjacentHTML("beforebegin",before_login );
+  const logoutBtn = document.querySelector("#logout");
+  logoutBtn?.removeEventListener("click", () =>
+  document.body.innerHTML = header_after_login);
+  localStorage.removeItem("userId");
+
+};
+
+// function header() {
+
+//       let userId = JSON.parse(localStorage.getItem("uniqueID"));
+//       let userlogin = document.getElementById("userLogin");
+
+//       if (!userId) {
+//       userlogin.innerHTML = before_login;
+//       }
+//       else {
+//       userlogin.innerHTML = after_login;
+//       }
+
+
+// }
+
+
+
+// function Logout(e) {
+//   alert("are you sure to logout");
+
+//   localStorage.removeItem("userId")
+//   window.location.href = "/index.html";
+
+// }

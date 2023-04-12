@@ -28,8 +28,7 @@
                         </div>
 
 
-                        <li><a href="../../pages/homepage/booked_list.html">Booked pgs</a>
-
+                        <li><a href="../../pages/homepage/Add pgs.html">Add pg </a>
 
 
 
@@ -54,23 +53,15 @@
 
     <script>
 
-        let owner = JSON.parse(localStorage.getItem("users"));
-
-
+        let roomBookRequest = JSON.parse(localStorage.getItem("room_book_request"));
         const queryString = window.location.search;
         console.log(queryString);
         const urlParams = new URLSearchParams(queryString);
-        const pg_id = urlParams.get('my_uuid');
+        const pg_id = urlParams.get('product_id');
         console.log(pg_id);
         const selected_room = urlParams.get('my_room_id');
         console.log(selected_room);
-        // const queryString = window.location.search;
-        // const urlParams = new URLSearchParams(queryString);
-        // const pg_id = urlParams.get('my_uuid');
-        // const selected_room = urlParams.get('my_room_id');
-
-        let Applicant = owner.find(e => e.my_uuid == pg_id);
-
+        let Applicant = roomBookRequest.find(e => e.product_id == pg_id);
 
         // getting name of pg//
 
@@ -87,7 +78,7 @@
         div_detail.append(div_image);
 
         let img = document.createElement("img");
-        img.setAttribute("src", Applicant["image"]);
+        img.setAttribute("src", roomBookRequest["image"]);
         img.setAttribute("id", "image");
         img.setAttribute("alt", "photo");
         img.setAttribute("height", "300px");
@@ -105,7 +96,7 @@
         let sharing_name = document.createElement("h3");
         sharing_name.setAttribute("class", "name_of_pg");
         sharing_name.setAttribute("id", "name");
-        sharing_name.innerText = Applicant["name"];
+        sharing_name.innerText = roomBookRequest["name"];
         h2.append(sharing_name);
 
         let div_two = document.createElement("div");
@@ -124,7 +115,7 @@
 
         let b_one = document.createElement("span");
         b_one.setAttribute("id", "sharing");
-        b_one.innerText = Applicant["sharing"][selected_room];
+        b_one.innerText = roomBookRequest["sharing"][selected_room];
         monthly_rent.append(b_one);
 
         let advance_three = document.createElement("b");
@@ -134,91 +125,8 @@
 
         let b_four = document.createElement("span");
         b_four.setAttribute("id", "amount");
-        b_four.innerText = Applicant["amount"];
+        b_four.innerText = roomBookRequest["amount"];
         advance_three.append(b_four);
-
-        let book_button = document.createElement("button");
-        book_button.setAttribute("class", "button");
-        book_button.setAttribute("type", "submit");
-        book_button.innerText = "Book room";
-        book_button.onclick = function (event) {
-            signUp(event);
-        };
-        b_four.append(book_button);
-
-  let value=""
-
-  let status = Applicant;
-
-
-
-  console.log(status)
-
-if (status === 2) {
-    value = "not respond";
-}
-if (status === 1) {
-    value = "accepted";
-}
-if (status === 0) {
-    value = "rejected";
-}
-
-        let statusDev = document.createElement("p");
-        statusDev.setAttribute("id", "status");
-        statusDev.innerText= value;
-        b_four.append(statusDev);
-
-
-      
-    // // your code to handle status update logic here
-
-   
-
-
-
- 
-   
-
-
-
-
-        //booking data storing//
-
-        function signUp(e) {
-            e.preventDefault();
-            let my_uuid = uuidv4();
-            let room_book_request = JSON.parse(localStorage.getItem('room_book_request')) || [];
-            let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
-            let customer_id = JSON.parse(localStorage.getItem('userId'));
-            let product_id = JSON.parse(localStorage.getItem('productId'));
-
-
-            if (!exit) {
-                room_book_request.push({
-                    "request_id": my_uuid,
-                    "customer_id": customer_id,
-                    "product_id": pg_id,
-                    "status": 2,
-                    "typeOfShare": selected_room,
-                    "pgname": Applicant["name"],
-
-                });
-                localStorage.setItem('room_book_request', JSON.stringify(room_book_request));
-                console.log(localStorage.getItem('room_book_request'));
-                alert('request sent successfully');
-            } else {
-                localStorage.setItem('')
-
-            }
-        }
-
-
-
-        // responses come here//
-
-     
-
 
 
 

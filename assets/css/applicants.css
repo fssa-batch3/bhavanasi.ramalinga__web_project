@@ -115,10 +115,17 @@ div.click{
 	justify-content:space-around;
 }
 button.button{
+	padding:12px 23px;
+	background-color: black;
 	color:white;
-	background-color:black;
-	border-radius: 22px;
-	margin-left:3%
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left:20px;
+    opacity:0.9;
+    cursor:pointer;
+    justify-content: space-around;
+	
 }
 button.buttons{
 	margin-left: 10%;

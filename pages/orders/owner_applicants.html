@@ -101,46 +101,80 @@
 
 
             button = document.createElement("button");
-            button.setAttribute("class", "button");
+            button.setAttribute("class", "button_accept");
+            button.setAttribute("type", "button");
             button.setAttribute("data-id", seller_section[i]["request_id"]);
-           button.innerHTML = "Accept";
+            button.innerHTML = "Accept";
             div_click.append(button);
 
 
             button = document.createElement("button");
+            button.setAttribute("class", "button_reject");
+            button.setAttribute("type", "button");
+            button.setAttribute("data-id", seller_section[i]["request_id"]);
             button.innerHTML = "Reject";
             div_click.append(button);
 
+            
         }
 
         let customer = JSON.parse(localStorage.getItem("room_book_request"))
-            console.log(customer);
+        console.log(customer);
 
-            let filteredUseravailable = customer.filter(e => e.request_id == "data-id");
-            console.log(filteredUseravailable);
-
-
+        let filteredUseravailable = customer.filter(e => e.request_id == "data-id");
+        console.log(filteredUseravailable);
 
 
-            let selectbtn = document.querySelectorAll(".button")
-            selectbtn.forEach(each => {
-                each.addEventListener("click", (event) => {
-                    const person_data = each.dataset.id;
 
-                    const queryString = window.location.search;
-                    const urlParams = new URLSearchParams(queryString);
-                    const my_uuid = urlParams.get('request_id');
-                    let edited = JSON.parse(localStorage.getItem("room_book_request"));
-                    localStorage.setItem("room_book_request", JSON.stringify(edited));
 
-                    console.log(person_data)
-                    // window.location.href = `../../html?request_id=${person_data}`;
-                })
+        let selectbtn = document.querySelectorAll(".button_accept")
+        selectbtn.forEach(each => {
+            each.addEventListener("click", (event) => {
+                const person_data = each.dataset.id;
+
+                console.log(person_data)
+
+                // response for accept//
+                let room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+
+                function getting_data(e) {
+                    return e.request_id == person_data;
+                }
+
+                let user_data = room_book_request.find(getting_data);
+
+                console.log(user_data);
+
+                user_data["status"] = 1;
+                localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+
+               
             })
-          
+        })
 
 
+         // response for reject//
+                
+         let selectb = document.querySelectorAll(".button_reject")
+        selectb.forEach(each => {
+            each.addEventListener("click", (event) => {
+                const person_data = each.dataset.id;
 
+                console.log(person_data)
+                let room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+
+                function rejectdata(e) {
+                    return e.request_id == person_data;
+                }
+                let seller_data = room_book_request.find(rejectdata);
+
+                console.log(seller_data);
+
+                seller_data["status"] = 0;
+                localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+     
+            })
+        })
 
     </script>
 </body>
