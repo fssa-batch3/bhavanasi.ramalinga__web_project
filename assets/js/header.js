@@ -41,14 +41,7 @@ let after_login =
                             <li><a href="../../pages/homepage/updated for both.html">Both</a></li>
                         </ul>        
                         </li>
-                        <li><a href="#">pg owners</a>
-                        
-                        <ul>
-                            <li><a href="../../pages/homepage/form.html"> Add pg</a></li>
-                            
-                            
-                       </ul>
-                     
+                                            
                    
                     <li><a href="../../pages/homepage/review.html">reviews</a></li>
                       

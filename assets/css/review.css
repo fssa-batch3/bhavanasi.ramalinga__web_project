@@ -171,6 +171,8 @@ a:link, a:visited{
     background-color: green;
     width:80px;
     margin-left: 100px;
+    padding:12px 20px;
+    color:white;
 }
 span.fa.fa-star.checked{
     color:orange;

@@ -54,15 +54,15 @@
     <script>
 
         let roomBookRequest = JSON.parse(localStorage.getItem("room_book_request"));
-        const queryString = window.location.search;
-        console.log(queryString);
-        const urlParams = new URLSearchParams(queryString);
-        const pg_id = urlParams.get('product_id');
-        console.log(pg_id);
-        const selected_room = urlParams.get('my_room_id');
-        console.log(selected_room);
-        let Applicant = roomBookRequest.find(e => e.product_id == pg_id);
-
+        console.log(roomBookRequest);
+        let products =JSON.parse(localStorage.getItem("users"));
+        let product_id = JSON.parse(localStorage.getItem("productId"));
+    
+        
+      
+        // conosle.log(product_id);
+        let filterdata = products.find(e => e.my_uuid == product_id);
+       
         // getting name of pg//
 
         let div_border = document.createElement("div");
@@ -78,7 +78,7 @@
         div_detail.append(div_image);
 
         let img = document.createElement("img");
-        img.setAttribute("src", roomBookRequest["image"]);
+        img.setAttribute("src", filterdata["image"]);
         img.setAttribute("id", "image");
         img.setAttribute("alt", "photo");
         img.setAttribute("height", "300px");
@@ -96,7 +96,7 @@
         let sharing_name = document.createElement("h3");
         sharing_name.setAttribute("class", "name_of_pg");
         sharing_name.setAttribute("id", "name");
-        sharing_name.innerText = roomBookRequest["name"];
+        sharing_name.innerText = filterdata["name"];
         h2.append(sharing_name);
 
         let div_two = document.createElement("div");
@@ -132,6 +132,7 @@
 
 
     </script>
+    
 </body>
 
 </html>
