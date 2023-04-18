@@ -21,18 +21,20 @@
                 <nav>
                     <ul>
                         <div class="magic">
-                            <li><a href="../../pages/homepage/rent.html"><img
-                                        src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
-                                        height="60px" width="100%"></a></li>
+                            <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                        height="60px" width="100%">
                         </div>
 
 
                         <li><a href="../../pages/homepage/form.html">Add pg </a>
-
-
+                        <li><a href="../orders/owner_applicants.html">user request</a></li>
+                        <li><a href="../products/seller_product.html">Seller product</a></li>
+                          
+                       <li><a href="../../pages/homepage/my profile.html"><i class="fa fa-user" style="font-size:48px;color:white"></i></a></i></li>
+                
                         </li>
-                        <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
-                        <li><a href="../../pages/homepage/mypg.html">my pg</a></li>
+
+                      
 
                     </ul>
 
@@ -49,10 +51,10 @@
 
     <div class="section">
         <div class="sections">
-            <h2>Name of the pg</h2>
-            <h2>selected sharing room</h2>
-            <h2>Customer email</h2>
-            <h2>owner response</h2>
+            <h1>Name of the pg</h1>
+            <h1>selected sharing room</h2>
+                <h1>Customer email</h2>
+                    <h1>owner response</h1>
 
         </div>
     </div>
@@ -62,10 +64,23 @@
 
 
         let seller_section = JSON.parse(localStorage.getItem("room_book_request"));
+        console.log(seller_section);
+        let product = JSON.parse(localStorage.getItem("users"));
+
+        let customers = JSON.parse(localStorage.getItem("userId"));
+
+
+        let sellerdata = product.filter(e => e.owner_id == customers);
+        console.log(sellerdata);
+
+        let bookeddata = seller_section.filter(e =>
+        sellerdata.some(s=> s.my_uuid === e.product_id) );
+
+        console.log(bookeddata);
 
 
 
-        for (let i = 0; i < seller_section.length; i++) {
+        for (let i = 0; i < bookeddata.length; i++) {
             div_border = document.createElement("div");
             div_border.setAttribute("class", "border");
             console.log(div_border);
@@ -73,22 +88,22 @@
 
 
 
-            h2_name = document.createElement("h3");
+            h2_name = document.createElement("h2");
             h2_name.setAttribute("class", "name_of_pg");
-            h2_name.innerText = seller_section[i]["pgname"];
+            h2_name.innerText = bookeddata[i]["pgname"];
             div_border.append(h2_name);
 
             div_two = document.createElement("div");
             div_two.setAttribute("class", "moredetail")
             div_border.append(div_two);
 
-            sharing_room = document.createElement("h4");
-            sharing_room.innerHTML = seller_section[i]["typeOfShare"];
+            sharing_room = document.createElement("h2");
+            sharing_room.innerHTML = bookeddata[i]["typeOfShare"];
             div_two.append(sharing_room);
 
-            email = document.createElement("h4");
+            email = document.createElement("h2");
             email.setAttribute("class", "email");
-            email.innerHTML = seller_section[i]["customer_id"];
+            email.innerHTML = bookeddata[i]["customer_id"];
             div_border.append(email);
 
 
@@ -103,7 +118,7 @@
             button = document.createElement("button");
             button.setAttribute("class", "button_accept");
             button.setAttribute("type", "button");
-            button.setAttribute("data-id", seller_section[i]["request_id"]);
+            button.setAttribute("data-id", bookeddata[i]["request_id"]);
             button.innerHTML = "Accept";
             div_click.append(button);
 
@@ -111,11 +126,11 @@
             button = document.createElement("button");
             button.setAttribute("class", "button_reject");
             button.setAttribute("type", "button");
-            button.setAttribute("data-id", seller_section[i]["request_id"]);
+            button.setAttribute("data-id", bookeddata[i]["request_id"]);
             button.innerHTML = "Reject";
             div_click.append(button);
 
-            
+
         }
 
         let customer = JSON.parse(localStorage.getItem("room_book_request"))
@@ -145,17 +160,17 @@
 
                 console.log(user_data);
 
-                user_data["status"] = 1;
+                user_data["status"] = 2;
                 localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
 
-               
+
             })
         })
 
 
-         // response for reject//
-                
-         let selectb = document.querySelectorAll(".button_reject")
+        // response for reject//
+
+        let selectb = document.querySelectorAll(".button_reject")
         selectb.forEach(each => {
             each.addEventListener("click", (event) => {
                 const person_data = each.dataset.id;
@@ -172,7 +187,7 @@
 
                 seller_data["status"] = 0;
                 localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
-     
+
             })
         })
 

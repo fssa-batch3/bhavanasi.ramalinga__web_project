@@ -119,6 +119,7 @@ img{
   h2{
  margin-left: 8%;
  margin-top: 3%;
+ color:black
   }
   .explore h1{
     margin-bottom: 5%;
@@ -219,13 +220,7 @@ footer{
   color: white;
  }
  /* hover */
- .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
- }
  @media screen and (max-width:800px)
  {
   header{

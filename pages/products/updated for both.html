@@ -17,31 +17,23 @@
 <body>
   <header>
     <div class="header">
-                <div id="container">
-                    <nav>
-                        <ul>
-                            <div class="magic">
-                                <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
-                        
-                         
-                         <li><a href="#">Boys/Girls</a>
+      <div id="container">
+        <nav>
+            <ul>
+                <div class="magic">
+                    <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
+                
+           
+                    <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
+                    <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
+                    <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
+              
+                                    
                             
-                            <ul>
-                                <li><a href="../../pages/homepage/updated Boys.html">Boys</a></li>
-                                <li><a href="../../pages/homepage/updated for girls.html">Girls</a></li>
-                                <li><a href="../../pages/homepage/updated for both.html">Both</a></li>
-                            </ul>        
-                            </li>
-                            <li><a href="../../pages/homepage/review.html">Reviews</a></li>
-                            <li><a href="../../pages/homepage/form.html">Add pgs</a></li>
-                            <div class="search"> 
-                                <input type="text" placeholder="search.."name="search">
-                                <i class="fa fa-search"></i>
-                                </div>
-                            
-                            
-                        </ul> 
-                        </li>
+            
+           <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
+            
+              
                         
                             
                        
@@ -96,7 +88,7 @@
     
       const users = JSON.parse(localStorage.getItem("users"));
 
-       let filteredUseravailable = users.filter(e => e.available == "both girls and boys" );
+       let filteredUseravailable = users.filter(e => e.available == "Both for girls and boys" );
 
          for (i = 0; i<filteredUseravailable.length; i++) {
             let div_bar;
@@ -252,7 +244,7 @@
                                 const person_data = each.dataset.id;
                                 
                                 console.log(person_data)
-                                window.location.href = `../../pages/homepage/Addedpg_details.html?my_uuid=${person_data}`;
+                                window.location.href = `../products/Addedpg_details.html?my_uuid=${person_data}`;
                             })
                         })
 

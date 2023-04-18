@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Applicant</title>
 </head>
@@ -26,15 +28,15 @@
                         </div>
 
 
-                        <li><a href="../../pages/homepage/booked_list.html">Booked pgs</a>
-
-
-
-
-                        </li>
+                        <li><a href="../orders/booked_list.html">Booked pgs</a></li>
+                        
+                    <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
+                    <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
+                    <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
+              
                         <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
-                        <ol> <li onclick="Logout(event)"><h4>Logout</h4></li></ol>
-                        <li><a href="../../pages/homepage/review.html">Reviews</a></li>
+                        
+                       
 
                     </ul>
 
@@ -111,7 +113,7 @@
         div_two.setAttribute("class", "moredetail");
         h2.append(div_two);
 
-        let sharing_room = document.createElement("h4");
+        let sharing_room = document.createElement("h3");
         sharing_room.setAttribute("id", "share");
         sharing_room.innerHTML = selected_room;
         div_two.append(sharing_room);
@@ -142,43 +144,53 @@
         book_button.innerText = "Book room";
         book_button.onclick = function (event) {
             signUp(event);
+           
         };
         b_four.append(book_button);
 
-  let value=""
 
-  let status = Applicant;
+        
 
-
-
-  console.log(status)
-
-if (status === 2) {
-    value = "not respond";
-}
-if (status === 1) {
-    value = "accepted";
-}
-if (status === 0) {
-    value = "rejected";
-}
-
-        let statusDev = document.createElement("p");
-        statusDev.setAttribute("id", "status");
-        statusDev.innerText= value;
-        b_four.append(statusDev);
+    let data = JSON.parse(localStorage.getItem("room_book_request"));
+    let sharing_id = JSON.parse(localStorage.getItem("request_id"));
+    // console.log(sharing_id);
+    const queryStringging = window.location.search;
+        console.log(queryStringging);
+        const urlParamss = new URLSearchParams(queryString);
+        const product = urlParams.get('my_uuid');
+    let request = data.find(e => e.my_uuid == sharing_id );
 
 
+   
+
+
+        // let value = "";
+        // let status =" ";
+        // // let status = request["status"];
+        // // console.log(my_uuid);
+
+        // console.log(request);
+       
+        // // let request_id = JSON.parse(localStorage.getItem("status"));
+        // // filterdata = data.find(e =>e.request_id = request_id);
+        
       
-    // // your code to handle status update logic here
+        // if (request["status"] === 1) {
+        //     value = "Not seen";
+        // } else if (request["status"] === 2) {
+        //     value = "Accepted";
+        // } else if (request["status"] === 0) {
+        //     value = "Rejected";
+        // }
+        
 
-   
 
-
-
- 
-   
-
+        // let statusDev = document.createElement("p");
+        // statusDev.setAttribute("id", "status");
+       
+        // statusDev.innerText = value;
+        // b_four.append(statusDev);
+  
 
 
 
@@ -191,14 +203,14 @@ if (status === 0) {
             let exit = room_book_request.length && room_book_request.some(data => data.my_uuid === pg_id);
             let customer_id = JSON.parse(localStorage.getItem('userId'));
             let product_id = JSON.parse(localStorage.getItem('productId'));
-
+           
 
             if (!exit) {
                 room_book_request.push({
                     "request_id": my_uuid,
                     "customer_id": customer_id,
                     "product_id": pg_id,
-                    "status": 2,
+                    "status": 1,
                     "typeOfShare": selected_room,
                     "pgname": Applicant["name"],
 
@@ -216,15 +228,15 @@ if (status === 0) {
 
         // responses come here//
 
-     
 
-        function Logout(e){
-                alert("are you sure to logout");
-               
-                localStorage.removeItem("userId")
-                window.location.href="/index.html";
 
-               }
+        function Logout(e) {
+            alert("are you sure to logout");
+
+            localStorage.removeItem("userId")
+            window.location.href = "/index.html";
+
+        }
 
 
 

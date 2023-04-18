@@ -15,7 +15,39 @@
 <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body>
+<header>
+  <div class="header">
+    <div id="container">
+        <nav>
+            <ul>
+                <div class="magic">
+                    <li><a href="../../pages/homepage/rent.html"><img
+                                src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
+                                height="60px" width="100%"></a></li>
+                </div>
 
+
+              
+                
+            <li><a href="">Boys pgs</a></li>
+            <li><a href="">Girls pgs</a></li>
+            <li><a href="">Both Gender living pg</a></li>
+      
+                <li><a href="">PRofile</a></li>
+                
+               
+
+            </ul>
+
+
+            </li>
+
+        </nav>
+    </div>
+
+
+</div>
+</header>
 
 <form role="form" onsubmit="signUp(event)">
         <div class="container">
@@ -41,12 +73,13 @@
 
         <label for="cars"><b>Choose Owner/Customer</b> </label>
                 <select name="available" id="customer_or_owner" required>
+                  <option>Choose</option>
                     <option>Customer</option>
                     <option>Owner</option>
                     
                 </select><br><br>
         
-        <label for="address"><b>Address</b></label><br>
+        <label for="address"     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"><b>Address</b></label><br>
         <textarea id ="address" required></textarea>
    
         <button type="submit" class="registerbtn">Register</button>

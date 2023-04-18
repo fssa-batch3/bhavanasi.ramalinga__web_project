@@ -41,6 +41,7 @@ nav a {
 	font-size:20px;
 	line-height: 60px;
 	text-decoration:none;
+ 
 }
 
 nav a:hover { 
@@ -73,8 +74,9 @@ nav ul ul ul li {
 	top:-60px; 
 	left:170px;
 }
+
 .magic{
-  margin-right: 30%;
+  margin-right: 10%;
 }
 
   .last{
@@ -87,16 +89,9 @@ nav ul ul ul li {
   
   
   
-  input[type="text"]{
-    height:40px;
-    margin-top: 15px;
-    border-radius:22px;
-    
-  }
-  .searchbar i{
-    position:relative;
-  right: 30px;
-  }
+ 
+ 
+  
   .slide1{
     display: flex;
     margin-right: 30%;
