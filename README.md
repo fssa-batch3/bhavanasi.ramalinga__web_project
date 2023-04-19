@@ -108,7 +108,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Login as a buyer.
 - Navigate to the payment Guest houses listing 
 - page.
-- The user can click the view button .
+- The user can click the "view more" button .
 - Expected Result:
 - The user can view the details of the selected payment Guest house .
 
@@ -136,7 +136,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully purchase a payment Guest house sharing.
 - Steps:
 - Log in as a buyer.
-- Click the "booked pgs" button top of the nav bar in buy pg.
+- Click the "my page" top of the nav bar.
 * Expected Result:
 - To see your results what the seller responded to your request.
 

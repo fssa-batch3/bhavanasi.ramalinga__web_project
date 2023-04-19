@@ -8,42 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
     <title>Booked_pgs</title>
 </head>
 
 <body>
     <header>
-        <div class="header">
-            <div id="container">
-                <nav>
-                    <ul>
-                        <div class="magic">
-                            <li><img  src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="100%"></a></li>
-                        </div> </li>
-                       
-                        <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
-                        <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
-                        <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>                        
-                    
-                   <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:48px;color:red"></i></i></a>
-                    
-                      
-                        <li><a href="../../pages/homepage/review.html">Reviews</a></li>
-
-                    </ul>
-
-
-                    </li>
-
-                </nav>
-            </div>
-
-
-        </div>
+       
     </header>
     <div class="section"></div>
 
@@ -130,13 +102,17 @@
             statusDev.innerText = value;
             equaldata.append(statusDev);
             
+            let dateandtime = document.createElement("b");
+            dateandtime.setAttribute("id","demo");
+            sharing_room.append(dateandtime);
+
            
             button_del = document.createElement("button");
             button_del.setAttribute("type", "submit");
             button_del.setAttribute("class", "delete"); 
             button_del.setAttribute("data-del", filterdata[i]["my_uuid"]);
             // button_del.setAttribute("onclick", "del()")
-           button_del.innerHTML = "Delete";
+           button_del.innerHTML = "Remove";
            div_two.append(button_del);
 
 
@@ -165,21 +141,14 @@
         })
     })
    
-     
+     //time and date//
 
-
-
-
-
-
-
-
-
-
-
+     const d = new Date();
+let text = d.toLocaleDateString();
+document.getElementById("demo").innerHTML = text;
 
     </script>
-
+  <script src="./assets/js/default.js"></script>
 </body>
 
 </html>

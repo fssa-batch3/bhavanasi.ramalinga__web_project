@@ -13,44 +13,54 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     <title>Applicant</title>
+   
 </head>
 
 <body>
     <header>
-        <div class="header">
-            <div id="container">
-                <nav>
-                    <ul>
-                        <div class="magic">
-                            <li><a href="../../pages/homepage/rent.html"><img
-                                        src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
-                                        height="60px" width="100%"></a></li>
-                        </div>
-
-
-                        <li><a href="../orders/booked_list.html">Booked pgs</a></li>
-                        
-                    <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
-                    <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
-                    <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
-              
-                        <li><a href="../../pages/homepage/my profile.html">PRofile</a></li>
-                        
-                       
-
-                    </ul>
-
-
-                    </li>
-
-                </nav>
-            </div>
-
-
-        </div>
+      
     </header>
 
-
+    <div class="section"></div>
+    <footer>
+        <div class="section"></div>
+        <footer>
+        <div clas="foot">
+        </div>
+    <div class="footer1">
+        <div class="footerone">
+        <h2> About Sound bricks</h2>
+       <h4> Soundbricks is a full stack service provider for all real estate needs, with 15+<br>
+         services including home loans, pay rent, packers and movers, legal assistance, property valuation,<br> 
+       </h3></div>
+        <div class="foot">
+           <h2>Real Estate in India</h2><br>
+          <h4>Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+          
+        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+          New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br></h4>
+        </div> 
+     </div>
+     <div class="link"> 
+        <i class="fa fa-instagram" style="font-size:48px;"> </i>
+               <i class="fa fa-facebook-f" style="font-size:36px"></i>
+               <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+            </div>
+    
+     <div class="buttons">
+       
+        
+        <div>Terms&conditions</div>
+       <div> Blog</div>
+       <div>Careers</div>
+       <div> Testimonials</div>
+       <div> Feedback</div>
+       <div> Unsubscribe</div>
+       <div> Help centeer</div>
+       <div> Sales Enquiry</div>
+       <div> Buy our services</div>
+     </div>
+    </footer>
 
 
     <script>
@@ -58,12 +68,12 @@
         let owner = JSON.parse(localStorage.getItem("users"));
 
 
-        const queryString = window.location.search;
-        console.log(queryString);
-        const urlParams = new URLSearchParams(queryString);
-        const pg_id = urlParams.get('my_uuid');
+        let searching = window.location.search;
+        console.log(searching);
+        const newurl = new URLSearchParams(searching);
+        const pg_id = newurl.get('my_uuid');
         console.log(pg_id);
-        const selected_room = urlParams.get('my_room_id');
+        const selected_room = newurl.get('my_room_id');
         console.log(selected_room);
         // const queryString = window.location.search;
         // const urlParams = new URLSearchParams(queryString);
@@ -77,7 +87,7 @@
 
         let div_border = document.createElement("div");
         div_border.setAttribute("class", "border");
-        document.querySelector("body").append(div_border);
+        document.querySelector(".section").append(div_border);
 
         let div_detail = document.createElement("div");
         div_detail.setAttribute("class", "pg_detail");
@@ -103,11 +113,11 @@
         h2.setAttribute("class", "pg_name");
         div_image.append(h2);
 
-        let sharing_name = document.createElement("h3");
-        sharing_name.setAttribute("class", "name_of_pg");
-        sharing_name.setAttribute("id", "name");
-        sharing_name.innerText = Applicant["name"];
-        h2.append(sharing_name);
+        let Name_ofthepg = document.createElement("h3");
+        Name_ofthepg.setAttribute("class", "name_of_pg");
+        Name_ofthepg.setAttribute("id", "name");
+        Name_ofthepg.innerText = Applicant["name"];
+        h2.append(Name_ofthepg);
 
         let div_two = document.createElement("div");
         div_two.setAttribute("class", "moredetail");
@@ -115,7 +125,7 @@
 
         let sharing_room = document.createElement("h3");
         sharing_room.setAttribute("id", "share");
-        sharing_room.innerHTML = selected_room;
+        sharing_room.innerText = selected_room;
         div_two.append(sharing_room);
 
         let monthly_rent = document.createElement("p");
@@ -141,6 +151,7 @@
         let book_button = document.createElement("button");
         book_button.setAttribute("class", "button");
         book_button.setAttribute("type", "submit");
+       
         book_button.innerText = "Book room";
         book_button.onclick = function (event) {
             signUp(event);
@@ -148,6 +159,7 @@
         };
         b_four.append(book_button);
 
+       
 
         
 
@@ -162,6 +174,12 @@
 
 
    
+
+   
+
+
+
+
 
 
         // let value = "";
@@ -241,6 +259,7 @@
 
 
     </script>
+    <script src="../../assets/js/header.js"></script>
 </body>
 
 </html>

@@ -79,7 +79,30 @@ header{
 img{
     
     border-radius: 8%;
+    position: relative;
+  display: inline-block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  cursor: pointer;
+ 
    
+}
+.container:hover .image {
+  opacity: 0.3;
+}
+.image {
+  transition: transform 0.5s ease;
+}
+
+.container:hover .image {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+
+
+.container:hover .middle {
+  opacity: 1;
 }
 
 
@@ -119,7 +142,19 @@ img{
   h2{
  margin-left: 8%;
  margin-top: 3%;
- color:black
+ 
+ color:black;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ margin-bottom: 30%;
+ 
+
+
+  }
+  h3{
+    color:black;
   }
   .explore h1{
     margin-bottom: 5%;
@@ -216,10 +251,10 @@ footer{
  }
  .container{
   position:relative;
-  text-align: center;
-  color: white;
+   text-align: center;
+  /* color: white; */ 
  }
- /* hover */
+ 
 
  @media screen and (max-width:800px)
  {

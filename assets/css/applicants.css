@@ -3,24 +3,15 @@
   }
   
 
-/* td,th{
-    border:1px solid #252424;
-    text-align: left;
-    padding:10px;
+  #container {
+	margin: 0 auto;
 }
-.magic{
-    margin-right: 70%;
-}
-table{
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 3%;
-}
-tr:nth-child(odd) {
-    background-color:#dddddd;
 
-} */
+p#rent {
+	text-align: center;
+	margin-right: 30%;
+}
+
 nav {
 
 	background-color: #E64A19;
@@ -35,14 +26,12 @@ nav ul {
     align-content: center;
     justify-content: space-around;
     height:70px;
-    align-items: center;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-    
-    
+  height:70%;
 	}
 
 nav a {
@@ -50,9 +39,9 @@ nav a {
 	padding:0 10px;	
 	color:#FFF;
 	font-size:20px;
-	
+	line-height: 60px;
 	text-decoration:none;
-    
+ 
 }
 
 nav a:hover { 
@@ -86,11 +75,23 @@ nav ul ul ul li {
 	left:170px;
 }
 
+.magic{
+  margin-right: 10%;
+}
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+    
+    
+  }
+
 .border{
 	border:1px solid;
 	border-radius: 8px;
 	height:40%;
-	width:70%;
+	width:60%;
 	margin: 8rem 5rem 0 7rem;
 }
 .detail{
@@ -130,11 +131,36 @@ button.button{
 button.buttons{
 	margin-left: 10%;
 }
-h4{
-	color:white;
-	cursor: pointer;
+.footerone h4{
+	
+	margin-top: 10%;
+	 /* cursor: pointer; */
 }
 
+.link{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+  footer{
+    background-color: hsl(240, 49%, 84%);
+    height:40vh;
+	margin-top: 10%;
+  }
+  div.footer1{
+	display: flex;
+	justify-content: space-around;
+  }
+
+  
 
 @media screen and  (max-width: 900px){
 

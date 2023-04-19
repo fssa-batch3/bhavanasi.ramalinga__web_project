@@ -137,6 +137,8 @@ h4, b {
     margin-left: 3%;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    transform: perspective(1000px);
+    transition: transform 0.5s ease;
     
 }
 
@@ -271,6 +273,11 @@ input{
         height:20vh;
         
      }
+    
+      
+      .sharing div:hover {
+      transform: perspective(1000px) translateZ(100px);
+      }
      .sidebar{
       margin-left: 7%
      }

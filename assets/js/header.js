@@ -37,8 +37,7 @@ let after_login =
                             <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
                             <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
                             <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
-                      
-                                            
+                            <li><a href="../orders/booked_list.html">My page</a></li>                                   
                                     
                     
                    <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
@@ -123,10 +122,10 @@ if (userId) {
 
 
 
-// function Logout(e) {
-//   alert("are you sure to logout");
+function Logout(e) {
+  alert("are you sure to logout");
 
-//   localStorage.removeItem("userId")
-//   window.location.href = "/index.html";
+  localStorage.removeItem("userId")
+  window.location.href = "/index.html";
 
-// }
+}
