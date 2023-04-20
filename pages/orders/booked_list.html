@@ -15,7 +15,7 @@
 
 <body>
     <header>
-       
+        <script src="/assets/js/header.js"></script>
     </header>
     <div class="section"></div>
 
@@ -43,6 +43,7 @@
             console.log(div_border);
             document.querySelector(".section").append(div_border);
 
+           
 
             // let div_detail = document.createElement("div");
             // div_detail.setAttribute("class", "pg_detail");
@@ -102,15 +103,16 @@
             statusDev.innerText = value;
             equaldata.append(statusDev);
             
-            let dateandtime = document.createElement("b");
-            dateandtime.setAttribute("id","demo");
-            sharing_room.append(dateandtime);
+           let dateandyear = document.createElement("h4");
+           dateandyear.setAttribute("class","monthanddate");
+           dateandyear.innerText = filterdata[i]["dateAndTime"];
+           sharing_room.append(dateandyear);
 
            
             button_del = document.createElement("button");
             button_del.setAttribute("type", "submit");
             button_del.setAttribute("class", "delete"); 
-            button_del.setAttribute("data-del", filterdata[i]["my_uuid"]);
+            button_del.setAttribute("data-del", filterdata[i]["request_id"]);
             // button_del.setAttribute("onclick", "del()")
            button_del.innerHTML = "Remove";
            div_two.append(button_del);
@@ -118,11 +120,14 @@
 
 
         };
+
+
         let del_pgs = document.querySelectorAll("button.delete");
     del_pgs.forEach(function (check) {
         check.addEventListener("click", function () {
             let unique_id = this.dataset.del;
             localStorage.setItem("request_id", JSON.stringify(unique_id));
+            console.log(unique_id);
 
             if (confirm("Are you sure to delete this pg?")){
                 let id = JSON.parse(localStorage.getItem("request_id"));
@@ -131,6 +136,8 @@
                 console.log(requests);
                 let pg_check = requests.find(e => e.request_id == id);
                 console.log(pg_check);
+                // let indexOfPg = requests.indexOf(pg_check);
+                // console.log(indexOfPg);
                 let pgs = requests.indexOf(pg_check); 
                 requests.splice(pgs, 1);
                 console.log(pgs);
@@ -141,14 +148,11 @@
         })
     })
    
-     //time and date//
-
-     const d = new Date();
-let text = d.toLocaleDateString();
-document.getElementById("demo").innerHTML = text;
+     
+  
 
     </script>
-  <script src="./assets/js/default.js"></script>
+ 
 </body>
 
 </html>

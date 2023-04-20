@@ -3,13 +3,13 @@
   }
   
 
-  #container {
+ 
+#container {
 	margin: 0 auto;
 }
 
-p#rent {
+p {
 	text-align: center;
-	margin-right: 30%;
 }
 
 nav {
@@ -78,7 +78,11 @@ nav ul ul ul li {
 .magic{
   margin-right: 10%;
 }
-
+.fa.fa-user{
+	margin-top: 10px;
+	color:white;
+	font-size:36px;
+  }
   .last{
     display: flex;
     justify-content: space-around;
@@ -86,6 +90,13 @@ nav ul ul ul li {
     
     
   }
+   
+  .slide1{
+    display: flex;
+    margin-right: 30%;
+    margin-top: 8%;
+  }
+  
 
 .border{
 	border:1px solid;
@@ -158,6 +169,11 @@ button.buttons{
   div.footer1{
 	display: flex;
 	justify-content: space-around;
+  }
+  ul{
+	display: flex;
+	justify-content: space-around;
+	
   }
 
   

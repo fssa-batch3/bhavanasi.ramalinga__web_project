@@ -89,11 +89,11 @@
     <script>
 
 const pg_updates = JSON.parse(localStorage.getItem("users"));
-
+console.log(pg_updates);
 
 
         
-        for (i = 0; i<pg_updates.length; i++) {
+        for ( let i = 0; i<pg_updates.length; i++) {
 
         div_border = document.createElement("div");
             div_border.setAttribute("class", "border");

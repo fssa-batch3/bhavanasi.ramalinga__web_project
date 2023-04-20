@@ -21,6 +21,15 @@ tr:nth-child(odd) {
     background-color:#dddddd;
 
 } */
+
+#container {
+	margin: 0 auto;
+}
+
+p {
+	text-align: center;
+}
+
 nav {
 
 	background-color: #E64A19;
@@ -35,14 +44,12 @@ nav ul {
     align-content: center;
     justify-content: space-around;
     height:70px;
-    align-items: center;
 	}
 	
 nav ul li {
 	display:inline-block;
 	background-color: #E64A19;
-    
-    
+  height:70%;
 	}
 
 nav a {
@@ -50,9 +57,9 @@ nav a {
 	padding:0 10px;	
 	color:#FFF;
 	font-size:20px;
-	
+	line-height: 60px;
 	text-decoration:none;
-    
+ 
 }
 
 nav a:hover { 
@@ -86,6 +93,23 @@ nav ul ul ul li {
 	left:170px;
 }
 
+.magic{
+  margin-right: 10%;
+}
+.fa.fa-user{
+	margin-top: 10px;
+	color:white;
+	font-size:36px;
+  }
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+    
+    
+  }
+
 .border{
 	border:1px solid;
 	border-radius: 8px;
@@ -106,7 +130,7 @@ h3.name_of_pg{
 }
 div.data{
 	display: flex;
-	justify-content: space-around;
+	
 }
 
 

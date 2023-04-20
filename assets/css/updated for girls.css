@@ -99,6 +99,11 @@ nav ul ul ul li {
 .magic{
   margin-right: 10%;
 }
+.fa.fa-user{
+  margin-top: 10px;
+  color:white;
+  font-size:36px;
+}
 
   .last{
     display: flex;

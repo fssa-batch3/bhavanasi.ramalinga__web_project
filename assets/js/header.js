@@ -15,7 +15,7 @@ let before_login =
   <div class="one">
       <img src="${logo}"  alt="photo"  height="70px" width="70px" /></div>
      <div class="dropdown">
-      <span>Login/Register</span>
+      <span>Login</span>
           <div class="dropdownlist">
               <div><a href="${register}">Register</a></div>
               <div><a href="${login}">Login </a></div>
@@ -31,7 +31,7 @@ let after_login =
                 <nav>
                     <ul>
                         <div class="magic">
-                            <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
+                            <li><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></li></div>
                         
                    
                             <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
@@ -40,7 +40,7 @@ let after_login =
                             <li><a href="../orders/booked_list.html">My page</a></li>                                   
                                     
                     
-                   <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
+                   <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user"a></i></li>
                     
                       
             </nav>

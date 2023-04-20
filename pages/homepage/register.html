@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Register</title>
   <link rel="stylesheet" href="../../assets/css/resister.css">
   <link rel="main page"
     href="file:///C:/Users/BhavanasiSoundarya/Desktop/hundred%20day%20project/hundred%20day%20project/main%20page.html#">
@@ -26,19 +26,12 @@
         <nav>
           <ul>
             <div class="magic">
-              <li><a href="../../pages/homepage/rent.html"><img
-                    src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px"
-                    width="100%"></a></li>
+              <li><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="100%"></li>
             </div>
 
-
-
-
-            <li><a href="">Boys pgs</a></li>
-            <li><a href="">Girls pgs</a></li>
-            <li><a href="">Both Gender living pg</a></li>
-
-            <li><a href="">PRofile</a></li>
+            <li><a href="../homepage/register.html">Register</a></li>
+            <li><a href="../homepage/login.html">Login</a></li>
+           
 
 
 
@@ -80,7 +73,7 @@
       <input type="password" placeholder="Repeat Password" name="psw" id="repeat" required>
 
       <label for="cars"><b>Choose Owner/Customer</b> </label>
-      <select name="available" id="customer_or_owner" required="true">
+      <select name="available" id="customer_or_owner" required>
         <option>Choose</option>
         <option>Customer</option>
         <option>Owner</option>
@@ -113,66 +106,81 @@
 
 
 
+
+
+
+      function confirmform() {
+        if (psw != repeat) {
+          alert('Password not Matched');
+          repeat.value = reset();
+        }
+        else {
+          alert("password matched");
+        }
+
+      }
+
+      if (customer_or_owner === "" || (customer_or_owner !== "Owner" && customer_or_owner !== "Customer")) {
+        alert("Please select either Owner or Seller");
+        return false;
+      }
+
       
 
 
-        function confirmform() {
-          if (psw != repeat) {
-            alert('Password not Matched');
-            repeat.value = reset();
-          }
-          else {
-            alert("password matched");
-          }
-        }
+
+      // select option//
 
 
 
-        let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+      //
+      let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
-        let exist = user_cred.length &&
-          JSON.parse(localStorage.getItem('user_cred')).some(data =>
-            data.email.toLowerCase() == email.toLowerCase() ||
-            data.phone_number.toLowerCase() == phone_number.toLowerCase()
-          );
-
-
-
-        if (!exist) {
-          user_cred.push({ name, email, repeat, psw, phone_number, address, customer_or_owner, my_uuid });
-
-          localStorage.setItem('user_cred', JSON.stringify(user_cred));
-
-          console.log(localStorage.getItem('user_cred'));
-
-          document.querySelector('form').reset();
-          document.getElementById('email').focus();
-          document.getElementById('phone_number').focus();
-
-
-          alert('Account created successfully');
-          location.href = "../../pages/homepage/login.html";
-        }
+      let exist = user_cred.length &&
+        JSON.parse(localStorage.getItem('user_cred')).some(data =>
+          data.email.toLowerCase() == email.toLowerCase() ||
+          data.phone_number.toLowerCase() == phone_number.toLowerCase()
+        );
 
 
 
-        else {
-          alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
-          document.querySelector('form').reset();
-        }
+      if (!exist) {
+        user_cred.push({ name, email,  psw, phone_number, address, customer_or_owner, my_uuid });
 
-        let seller_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Owner");
-        // console.log(seller_data);
+        localStorage.setItem('user_cred', JSON.stringify(user_cred));
 
-        localStorage.setItem("seller_data", JSON.stringify(seller_data));
+        console.log(localStorage.getItem('user_cred'));
+
+        document.querySelector('form').reset();
+        document.getElementById('email').focus();
+        document.getElementById('phone_number').focus();
 
 
-
-        let customer_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Customer");
-        // console.log(seller_data);
-
-        localStorage.setItem("customer_data", JSON.stringify(customer_data));
+        alert('Account created successfully');
+        location.href = "../../pages/homepage/login.html";
       }
+
+
+
+      else {
+        alert('Sorry the User already exists! \n Try with a new Email or Phone Number.');
+        document.querySelector('form').reset();
+      }
+
+      let seller_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Owner");
+      // console.log(seller_data);
+
+      localStorage.setItem("seller_data", JSON.stringify(seller_data));
+
+
+
+      let customer_data = JSON.parse(localStorage.getItem("user_cred")).filter(e => e.customer_or_owner == "Customer");
+      // console.log(seller_data);
+
+      localStorage.setItem("customer_data", JSON.stringify(customer_data));
+    }
+
+
 
 
   </script>

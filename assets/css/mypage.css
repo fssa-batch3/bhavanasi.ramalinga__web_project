@@ -90,7 +90,11 @@ nav ul ul ul li {
   margin-right: 40%;
 }
 
- 
+.fa.fa-user{
+  margin-top: 10px;
+  color:white;
+  font-size:36px;
+}
 
 #overlay {
   position: fixed;

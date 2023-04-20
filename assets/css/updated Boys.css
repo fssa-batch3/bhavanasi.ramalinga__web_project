@@ -102,6 +102,11 @@ nav ul ul ul li {
     justify-content: space-around;
     
   }
+  .fa.fa-user{
+    margin-top: 10px;
+    color:white;
+    font-size:36px;
+  }
   
   
   .button{
