@@ -134,6 +134,13 @@ form{
     margin-bottom: 20px;
     
 }
+.fa.fa-user{
+  margin-top: 10px;
+  color:white;
+  font-size:36px;
+}
+
+
 .container {
     padding: 19px;
   }

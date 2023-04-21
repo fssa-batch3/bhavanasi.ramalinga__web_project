@@ -1,6 +1,7 @@
-let  origin = window.location.origin;
+let origin = window.location.origin;
+
 let logo_path = origin + "/pages/homepage/rent.html";
-let logo =  origin + "/assets/images/Screenshot__17_-removebg-preview.png ";
+let logo = origin + "/assets/images/Screenshot__17_-removebg-preview.png ";
 let girls = origin + "/pages/homepage/updated for girls.html";
 let boys = origin + "/pages/homepage/updated Boys.html";
 let both_gender = origin + "/pages/orders/updated for both.html";
@@ -25,85 +26,100 @@ let before_login =
 `
 
 let after_login =
-  `<header>
-  <div class="header">
-            <div id="container">
-                <nav>
-                    <ul>
-                        <div class="magic">
-                            <li><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></li></div>
-                        
-                   
-                            <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
-                            <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
-                            <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
-                            <li><a href="../orders/booked_list.html">My page</a></li>                                   
-                                    
-                    
-                   <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user"a></i></li>
-                    
-                      
-            </nav>
+  `
+  <header>
+    <div class="header">
+      <div id="container">
+        <nav>
+          <ul>
+            <div class="magic">
+              <li>
+                <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%">
+              </li>
             </div>
-           
+            <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
+            <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
+            <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
+            <li><a href="../orders/booked_list.html">My page</a></li>                                           
+            <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user"></i></a></li>
+          </ul>         
+        </nav>
+      </div>
+    </div>
+  </header>
+`
 
-        </div>
-        </header>
+let seller_page =
+  `
+  <header>
+  <div class="header">
+    <div id="container">
+      <nav>
+        <ul>
+          <li>
+            <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%">
+          </li>
+          <li><a href="../../pages/products/form.html">Add pg</a></li>
+          <li><a href="../orders/owner_applicants.html">User request</a></li>
+          <li><a href="../products/seller_product.html">My page</a></li>
+          <li><a href="../../pages/homepage/my profile.html"><i class="fa fa-user"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> 
+</header>
 `;
 
-// let seller_page =
-//   `
-//   <header>
-// <div class="header">
-// <div id="container">
-//     <nav>
-//         <ul>
-//         <div class="magic">
-
-
-
-//   <li><a href="${origin}/pages/homepage/form.html"> Add pg</a></li>
-                            
- 
-// <li><a href="${origin}/pages/homepage/review.html">reviews</a></li>
-                      
-                   
-// <ol> <li onclick="Logout(event)"><h4>Logout</h4></li></ol>
-
-
-// <li><a href="${origin}/pages/homepage/my profile.html"> <i class="fa fa-user" style="font-size:36px;color:white"></a></i></li>
-
-// <div class="search"> 
-// <input type="text" placeholder="search.."name="search">
-// <i class="fa fa-search"></i>
-// </div>
-// </nav>
-// </div>
-
-
-// </div> 
-// </header>
-// `;
-
 let userId = JSON.parse(localStorage.getItem("userId"));
-console.log(userId);
+let typeOfCus = ""
+// console.log(userId);
 if (userId) {
-  // console.log(after_login);
-  document.body.insertAdjacentHTML("afterbegin", after_login);
-  const logoutBtn = document.querySelector("#logout");
-    logoutBtn?.addEventListener("click", () => {
+  user_data = JSON.parse(localStorage.getItem("user_cred"));
+
+  let gettingemail = user_data.filter(e => e.email == userId);
+
+  // console.log(type);
+  let filtetering = gettingemail[0]["customer_or_owner"];
+  // console.log(typeOfCus);
+
+
+
+
+    if (filtetering == "Customer") {
+
+      // console.log(after_login);
+      document.body.insertAdjacentHTML("afterbegin", after_login);
+      const logoutBtn = document.querySelector("#logout");
+      logoutBtn?.addEventListener("click", () => {
         localStorage.removeItem("userId");
         document.body.innerHTML = header_before_login
       });
 
-}else {
-  document.body.insertAdjacentHTML("beforebegin",before_login );
+    }
+    else if (filtetering == "Owner") {
+
+
+      document.body.insertAdjacentHTML("afterbegin", seller_page);
+      const logoutBtn = document.querySelector("#logout");
+      logoutBtn?.addEventListener("click", () => {
+        localStorage.removeItem("userId");
+        document.body.innerHTML = header_before_login
+      });
+    }
+
+}
+
+else {
+
+
+  document.body.insertAdjacentHTML("beforebegin", before_login);
   const logoutBtn = document.querySelector("#logout");
   logoutBtn?.removeEventListener("click", () =>
-  document.body.innerHTML = header_after_login);
+    document.body.innerHTML = header_after_login);
   localStorage.removeItem("userId");
 
-};
+}
+
 
 // function header() {
 

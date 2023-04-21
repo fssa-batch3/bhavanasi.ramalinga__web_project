@@ -6,120 +6,90 @@
     <meta charset="UTF-8">   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Form_edit</title>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="header">
-        <div id="container">
-            <nav>
-                <ul>
-                    <div class="magic">
-                        <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
-                                    height="60px" width="100%">
-                    </div>
-
-
-                    <li><a href="../../pages/products/form.html">Add pg </a>
-                    <li><a href="../orders/owner_applicants.html">user request</a></li>
-                    <li><a href="../products/seller_product.html">Seller product</a></li>
-                      
-                   <li><a href="../../pages/homepage/my profile.html"><i class="fa fa-user" style="font-size:48px;color:white"></i></a></i></li>
-            
-                    </li>
-
-                  
-
-                </ul>
-
-
-                </li>
-
-            </nav>
-        </div>
-
-
-    </div>
-</header>
+  
     <form role="form">
       <div class="readform">
         
         <div class="container">
           
         <label for="name"><b> 1.pg_Name</b></label>
-        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" ><br><br>
+        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
         
        
         <label for="type"><b>2.Rooms categories are available and rent</b></label><br>
         
-      <label for="sharing"><b>single sharing</b> </label><input  placeholder="rent" id="onesharing"   ><br><br>
+      <label for="sharing"><b>single sharing</b> </label><input  type="number" id="onesharing"  pattern="[0-9]+" required ><br><br>
 
      
-      <label for="sharing"><b>Twin sharing</b> </label><input  placeholder="rent" id="twosharing" ><br><br>
+      <label for="sharing"><b>Twin sharing</b> </label><input  type="number" id="twosharing"  pattern="[0-9]+" required><br><br>
 
       
-      <label for="sharing"> <b>Triple sharing</b>  </label><input  placeholder="rent"id="threesharing" ><br><br>
+      <label for="sharing"> <b>Triple sharing</b>  </label><input  type="number"id="threesharing"  pattern="[0-9]+" required><br><br>
 
       
-      <label for="sharing"><b>Four sharing</b> </label><input  placeholder="rent"id="foursharing"  ><br><br>
+      <label for="sharing"><b>Four sharing</b> </label><input  type="number"id="foursharing"  pattern="[0-9]+" required><br><br>
 
       <label for="name"><b> 3.Deposite amount</b></label>
-      <input type="text" placeholder=""name="fname" id="amount" required><br><br>
+      <input type="number" name="fname" id="amount"  pattern="[0-9]+" required><br><br>
       
       <label for="sharing"><b>4. Notice Period</b></label>
-      <input  id="period" required><br><br>
+      <input  id="period" placeholder="example:1 month before" required ><br><br>
     
       <label for="sharing"><b>5. Closing Time </b></label>
-      <input  id="time" required><br><br>
+      <input  id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required ><br><br>
    
 
       <label for="sharing"><b>6.Available For</b></label>
-      <input  id="available" required><br><br>
+      <input  id="available" disabled ><br><br>
   
-      <label for="image1"><b>Fecilities</b></label>
-      <input  placeholder="url" id="image1"  ></input><br><br>
+      <label for="image1"><b>Facilities</b></label>
+      <input  type="url" id="image1" required ></input><br><br>
 
 
-       <label for="image"><b>Fecilities</b></label>
-       <input placeholder="url" id="image2"  ></input><br><br>
+       <label for="image"><b>Facilities</b></label>
+       <input type="url" id="image2" required ></input><br><br>
 
-        <label for="image"><b> Fecilities</b></label>
-         <input  placeholder="url" id="lastimage"  ></input><br><br>
+        <label for="image"><b> Facilities</b></label>
+         <input  type="url" id="lastimage" required></input><br><br>
 
-         <label for="image1"><b>Fecilities</b></label>
-          <input placeholder="url" id="image4"  ></input><br><br>
+         <label for="image1"><b>Facilities</b></label>
+          <input type="url" id="image4" required ></input><br><br>
         </div>
    <div class="section">
     <label for="sharing"><b>7.No.of Beds</b> </label>
-    <input  id="beds" required><br><br>
+    <input  type="number"id="beds" required placeholder="example: 60 beds"><br><br>
      
 
-    <label for="sharing"><b>8.parking</b></label>
-    <input  id="parking" name="vehicle1"  ><br><br>
+    <label for="sharing"><b>8.facilities</b></label>
+    <input  type="url" id="parking" name="vehicle1"required  ><br><br>
 
     
 
-      <label for="sharing"><b>9.wifi</b></label>
-    <input   id="wifi" ><br><br>
+      <label for="sharing"><b>9.facilities</b></label>
+    <input   type="url" id="wifi" required><br><br>
 
    
-    <label for="sharing"><b>10.Food</b></label>
-    <input   id="food" ><br><br>
+    <label for="sharing"><b>10.facilities</b></label>
+    <input  type="url" id="food" required ><br><br>
 
     
-    <label for="sharing"><b>11.fridge</b></label>
-    <input  id="fridge"  ><br><br>
+    <label for="sharing"><b>11.facilities</b></label>
+    <input  type="url" id="fridge" required ><br><br>
 
    
-    <label for="sharing"><b>12.TV</b></label>
-    <input   id="tv" ><br><br>
+    <label for="sharing"><b>12.facilities</b></label>
+    <input   type="url"id="tv" required><br><br>
 
       <label for="pg_name"><b>13.Image</b></label>
-        <input type="text"  name="image" id="image" ><br><br>
+        <input type ="url"   id="image" disabled><br><br>
 
          <label for="address"><b>14. Address</b></label><br>
-        <textarea type="text"id="address" ></textarea><br>
+        <textarea type="text"id="address" required></textarea><br>
    </div>
       </div>
         
@@ -129,6 +99,7 @@
           
       </div>
     </form>
+    <srcipt src="/assets/js/header.js"></srcipt>
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);

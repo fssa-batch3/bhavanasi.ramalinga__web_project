@@ -50,9 +50,10 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 
 - Scenario 2: Successfully login in to account
  - Steps:
-   1. Navigate to the login page.
-   2. Enter the required information such as email, and password 
-   3. and again choose the option Customer.
+   1. click the "Login" button on the top of the nav bar and select Login button.
+   2. Navigate to the login page.
+   3. Enter the required information such as email, and password 
+   4. and again choose the option Customer.
 - Expected Result:
   - The user is redirected to the user profile page.
 
@@ -64,7 +65,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
     2. Navigate to the account page.
     3. View the account details such as name, email, and address.
     4. click the edit button.
-   5. and Click the logout button to come out of the website.
+    4. and Click the logout button to come out of the website.
 - Expected Result:
   - The user can view their account details.
 
@@ -149,7 +150,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 // seller//
 
 
-  ### Create an account  Completed
+  ### Create an account  (Completed)
 
  - Scenario 1: Successfully create an account
   - steps:
@@ -161,13 +162,14 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
     - The user is redirected to the login page.
 
 
-### Login account Completed
+### Login account (Completed)
 
 - Scenario 2: Successfully login in to account
  - Steps:
-   1. Navigate to the login page.
-   2. Enter the required information such as email, and password 
-   3. and again choose the option Owner.
+   1. click the "Login" button on the top of the nav bar and select Login button.
+   2. Navigate to the login page.
+   3. Enter the required information such as email, and password 
+   4. and again choose the option Owner.
 - Expected Result:
   - The user is redirected to the user profile page.
 
@@ -176,10 +178,9 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully view account details
   - Steps:
     1. Log in as a Owner.
+    2. click the "Profile Icon" button on the top of the nav bar .
     2. Navigate to the account page.
-    3. View the account details such as name, email, and address.
-    4. click the edit button.
-   5. and Click the logout button to come out of the website.
+    3. View the account details .
 - Expected Result:
   - The user can view their account details.
 
@@ -188,7 +189,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully edit account details
   - Steps:
     1. Log in as a Owner.
-    2. Navigate to the account page.
+    2.  click the "Profile Icon" button on the top of the nav bar.
     3. Click the "Edit Account" button.
     4. Update the account details such as name and address.
     5. Click the "submit" button.
@@ -200,23 +201,24 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully logout accout.
    - steps:
      1. Log in as a Owner.
-     2. Navigate to the profile.
-     3. Click the profile Icon On top of the nav bar.
-     4. Click the Logout button to logout of the website.
+     2. Click the "profile Icon" button On top of the nav bar.
+     3. Navigate to the profile.
+     4. Click the Logout button.
 - Expected Results:
-  - The user come to the Home page.
+  - The user come to the Home page and user successfully logout.
 
 
 ### UPload the payment guest house (completed)
 - Scenario 1: Successfully view the form.
    - Steps:
      1. Login as a Owner.
+     * The Owner redirected to the form page.
      2. First enter the PG name.
      3. Then click the checkbox what category of sharing you have in your PG.
      4. Then enter the respective rent for selected sharing
      5. Then enter the Deposite (Advance) amount for your PG.
-     6. Then enter the Notice period.(This is the date )
-     7. Then enter the Closing time of PG.
+     6. Then enter the Notice period.(This is the how many days before user need to book your pg)
+     7. Then enter the Closing time of PG.(Enter timing of closing game at night)
      8. Then enter the Total number of Beds.
      9. Then type the Facilities image url. (Example: wifi, tv, parking, food, fridge, washing machine)
     10. Then type the Other facilities image url.(Example: Dining hall, Balcony, )

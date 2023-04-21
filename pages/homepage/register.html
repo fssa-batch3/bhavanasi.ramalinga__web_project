@@ -58,7 +58,7 @@
 
 
       <label for="phone"><b>phone_number</b></label>
-      <input type="text" placeholder="phone_number" name="tel" pattern="[0-9].{9}" id="phone_number" required>
+      <input type="text" placeholder="phone_number" name="tel" pattern="[0-9].{9}" id="phone_number" required><br><br>
 
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email"
@@ -104,8 +104,8 @@
       customer_or_owner = document.getElementById("customer_or_owner").value;
       let my_uuid = uuidv4();
 
-
-
+     
+     
 
 
 
@@ -129,11 +129,7 @@
 
 
 
-      // select option//
-
-
-
-      //
+     
       let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
       let exist = user_cred.length &&
@@ -148,7 +144,7 @@
         user_cred.push({ name, email,  psw, phone_number, address, customer_or_owner, my_uuid });
 
         localStorage.setItem('user_cred', JSON.stringify(user_cred));
-
+        
         console.log(localStorage.getItem('user_cred'));
 
         document.querySelector('form').reset();

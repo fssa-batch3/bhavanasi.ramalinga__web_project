@@ -1,135 +1,142 @@
+<!DOCTYPE html>
 
-  <!DOCTYPE html>
-  
-  <html lang="en">
-    <head>
-    <title>document</title>
-    <link   rel="stylesheet" href="../../assets/css/login.css">
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<html lang="en">
+
+<head>
+  <title>document</title>
+  <link rel="stylesheet" href="../../assets/css/login.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
 </head>
+
 <body>
   <header>
     <div class="header">
       <div id="container">
-          <nav>
-              <ul>
-                  <div class="magic">
-                      <li><a href="../../pages/homepage/rent.html"><img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px" width="100%"></a></li></div>
-              
-               
-            
-                     <li><a href="../homepage/register.html">Register</a></li>
-                     
-                 
-                  <li><a href="../homepage/login.html">Login</a></li>
-                 
-                 
-                  
-                  
-              </ul> 
-              </li>
-              
-                  
-             
-      </nav>
+        <nav>
+          <ul>
+            <div class="magic">
+              <li><a href="../../pages/homepage/rent.html"><img
+                    src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="70px"
+                    width="100%"></a></li>
+            </div>
+
+
+
+            <li><a href="../homepage/register.html">Register</a></li>
+
+
+            <li><a href="../homepage/login.html">Login</a></li>
+
+
+
+
+          </ul>
+          </li>
+
+
+
+        </nav>
       </div>
-     
 
-  </div>
-  </header>
-  <form  role="form" role="form" onsubmit = "signIn(event)" >
-<h2>Login Form</h2>
-<p> please fill in this form to login.</p>
-
-  <div class="avathar">
-    <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar">
-  </div>
-   
-  <div class="container" >
-    <label for="uid"><b>User Email-id</b></label>
-    <input type="text" placeholder="Enter Email-id" id="email" required="true" />
-
-   <br> <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="psw" required="true"/></br>
-
-    <label for="cars"><b>Choose Owner/Customer</b> </label>
-                <select name="available" id="customer_or_owner" required>
-                  <option>Choose</option>
-                    <option>Customer</option>
-                    <option>Owner</option></select><br><br>
-       
-        
-    <br><button class="button"    type="button" onclick="signIn(event)">login</button>
 
     </div>
-</form>
-<script >
+  </header>
+  <form role="form" role="form" onsubmit="signIn(event)">
+    <h2>Login Form</h2>
+    <p> please fill in this form to login.</p>
+
+    <div class="avathar">
+      <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar">
+    </div>
+
+    <div class="container">
+      <label for="uid"><b>User Email-id</b></label>
+      <input type="text" placeholder="Enter Email-id" id="email" required="true" />
+
+      <br> <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="psw" required="true" /></br>
+
+      <label for="cars"><b>Choose Owner/Customer</b> </label>
+      <select name="available" id="customer_or_owner" required>
+        <option>Choose</option>
+        <option>Customer</option>
+        <option>Owner</option>
+      </select><br><br>
 
 
-const signIn= e =>{
-  e.preventDefault();
-        let email = document.getElementById('email').value;
-       let  psw = document.getElementById('psw').value;
+      <br><button class="button" type="button" onclick="signIn(event)">login</button>
 
-      const  user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-    
+    </div>
+  </form>
+  <script>
 
-      const  seller_data = JSON.parse(localStorage.getItem('seller_data')) || [];
+
+    const signIn = e => {
+      e.preventDefault();
+      let email = document.getElementById('email').value;
+      let psw = document.getElementById('psw').value;
+
+      const user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+
+
+      const seller_data = JSON.parse(localStorage.getItem('seller_data')) || [];
 
       let value = document.getElementById("customer_or_owner").value;
-       if(value == "Customer"){
+      if (value == "Customer") {
         const exist = user_cred.length &&
-       JSON.parse(localStorage.getItem('user_cred')).some(data =>
-       data.email.toLowerCase() == email &&
-           data.psw  == psw); 
-       if(!exist){
-           alert("Incorrect login credentials...");
-           document.querySelector('form').reset();
-       }
-       else{
-        localStorage.setItem("userId",JSON.stringify(email));
-           alert("Your login in successful ..");
-           location.href = "./my profile.html";
-       }
-       
-       }
-       if(value == "Owner"){
+          JSON.parse(localStorage.getItem('user_cred')).some(data =>
+            data.email.toLowerCase() == email &&
+            data.psw == psw);
+        if (!exist) {
+          alert("Incorrect login credentials...");
+          document.querySelector('form').reset();
+        }
+        else {
+          localStorage.setItem("userId", JSON.stringify(email));
+          alert("Your login in successful ..");
+          location.href = "./my profile.html";
+        }
+
+      }
+      if (value == "Owner") {
         const exist = user_cred.length &&
-      
-       JSON.parse(localStorage.getItem('seller_data')).some(data =>
-       data.email.toLowerCase() == email &&
-           data.psw  == psw); 
-    
-    
 
-           
-       if(!exist){
-           alert("Incorrect login credentials...");
-           document.querySelector('form').reset();
-       }
-       else{
+          JSON.parse(localStorage.getItem('seller_data')).some(data =>
+            data.email.toLowerCase() == email &&
+            data.psw == psw);
 
-        localStorage.setItem('userId',JSON.stringify(email));
-                alert("Your Login is Successful");
-                location.href = "./my profile.html";
-            }
- 
-      //  }
-      
-      
 
-        
-       
-       e.preventDefault();
-   }
 
-  };
 
- </script>
+        if (!exist) {
+          alert("Incorrect login credentials...");
+          document.querySelector('form').reset();
+        }
+        else {
+
+          localStorage.setItem('userId', JSON.stringify(email));
+          alert("Your Login is Successful");
+          location.href = "./my profile.html";
+        }
+
+        //  }
+
+
+
+
+
+      }
+
+    };
+
+  </script>
 </body>
+
 </html>

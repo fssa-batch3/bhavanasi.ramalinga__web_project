@@ -6,46 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Form</title>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div id="container">
-                <nav>
-                    <ul>
-                        <div class="magic">
-                            <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo"
-                                        height="60px" width="100%">
-                        </div>
 
-
-                        <li><a href="../../pages/products/form.html">Add pg </a>
-                        <li><a href="../orders/owner_applicants.html">user request</a></li>
-                        <li><a href="../products/seller_product.html">Seller product</a></li>
-                          
-                       <li><a href="../../pages/homepage/my profile.html"><i class="fa fa-user" style="font-size:48px;color:white"></i></a></i></li>
-                
-                        </li>
-
-                      
-
-                    </ul>
-
-
-                    </li>
-
-                </nav>
-            </div>
-
-
-        </div>
-    </header>
     <div class="information">
-        <div class="image" >
-            <div class="more" >
+        <div class="image">
+            <div class="more">
                 <h1>post property Add to Sell or rent online for free!</h1>
 
                 <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
@@ -63,31 +34,35 @@
 
             <div class="container">
                 <label for="name"><b> pg_Name</b></label>
-                <input type="text" placeholder="pg_name" id="name" name="fname" id="name" required><br><br>
+                <input type="text" placeholder="pg_name" pattern="^(?!\s)[a-zA-Z\s]+$" name="fname" id="name"
+                    required><br><br>
 
 
                 <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
-                <input type="checkbox" id = "single" value="single sharing">
-                <label for="sharing"   id="singleshare"> single sharing </label><input placeholder="rent" id="onesharing"><br><br>
 
-                <input type="checkbox" id = "twin" value="twin sharing">
-                <label for="sharing" id="twinshare">Twin sharing </label><input placeholder="rent" id="twosharing"><br><br>
-
-                <input type="checkbox" id = "triple" value="triple sharing">
-                <label for="sharing"  id="tripleshare"> Triple sharing </label><input placeholder="rent" id="threesharing"><br><br>
-
-                <input type="checkbox" id = "four" value="Four sharing">
-                <label for="sharing"  id="fourshare"> Four sharing </label><input placeholder="rent" id="foursharing"><br><br>
+                <label for="sharing" id="singleshare"> single sharing </label><input placeholder="rent" id="onesharing"
+                    pattern="[0-9]+" required><br><br>
 
 
-                <label for="name"><b> Deposite amount</b></label>
-                <input type="text" placeholder="" name="fname" id="amount" required><br><br>
+                <label for="sharing" id="twinshare">Twin sharing </label><input placeholder="rent" pattern="[0-9]+"
+                    id="twosharing" required><br><br>
 
+
+                <label for="sharing" id="tripleshare"> Triple sharing </label><input placeholder="rent" pattern="[0-9]+"
+                    id="threesharing" required><br><br>
+
+
+                <label for="sharing" id="fourshare"> Four sharing </label><input placeholder="rent" id="foursharing"
+                    pattern="[0-9]+" required><br><br>
+
+
+                <label for="number"><b>Deposited amount:</b></label>
+                <input type="text" id="amount" name="number" pattern="[0-9]+" required><br><br>
                 <label for="sharing"> Notice Period </label>
-                <input id="period" required><br><br>
+                <input type="text" id="period" placeholder="example 10 days" required><br><br>
 
-                <label for="sharing"> Closing Time </label>
-                <input id="time" required><br><br>
+                <label for="sharing">Closing Time:</label>
+                <input type="text" id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required><br><br>
 
                 <!-- 
       <label for="sharing"> Available For</label>
@@ -96,43 +71,43 @@
 
 
                 <label for="sharing"> Total Number of Beds </label>
-                <input id="beds" required><br><br>
+                <input type="number" id="beds" required><br><br>
 
                 <label for="image1"> Fecilities</label>
-                <input  placeholder="url" id="image1"  ></input><br><br>
+                <input type="url" id="image1" required></input><br><br>
 
 
                 <label for="image"> Fecilities</label>
-                <input placeholder="url" id="image2"  ></input><br><br>
+                <input type="url" id="image2" required></input><br><br>
 
                 <label for="image"> Fecilities</label>
-                <input  placeholder="url" id="lastimage"  ></input><br><br>
+                <input type="url" id="lastimage" required></input><br><br>
 
                 <label for="image"> Fecilities</label>
-                <input placeholder="url" id="image4"  ></input><br><br>
+                <input type="url" id="image4" required></input><br><br>
 
-                <label for="sharing"> Image url of Facilities </label>
-                <input id="parking" name="vehicle1"><br><br>
-
-
-
-                <label for="sharing"> Image url of Facilities </label>
-                <input id="wifi"><br><br>
+                <label for="sharing"> Facilities </label>
+                <input type="url" id="parking" required><br><br>
 
 
-                <label for="sharing"> Image url of Facilities</label>
-                <input id="food"><br><br>
+
+                <label for="sharing">Facilities </label>
+                <input type="url" id="wifi" required><br><br>
 
 
-                <label for="sharing"> Image url of Facilities</label>
-                <input id="fridge"><br><br>
+                <label for="sharing"> Facilities</label>
+                <input type="url" id="food" required><br><br>
 
 
-                <label for="sharing"> Image url of Facilities</label>
-                <input id="tv"><br><br>
+                <label for="sharing"> Facilities</label>
+                <input type="url" id="fridge" required><br><br>
+
+
+                <label for="sharing"> Facilities</label>
+                <input type="url" id="tv" required><br><br>
 
                 <label for="pg_name"><b> Image</b></label>
-                <input type="text" name="image" id="image" required><br><br>
+                <input type="url" name="image" id="image" required><br><br>
 
 
 
@@ -152,9 +127,13 @@
 
             </div>
         </form>
+
+        <script src="/assets/js/header.js"></script>
+
+
         <script>
             function signUp(e) {
-                
+
                 e.preventDefault();
 
                 let name = document.getElementById("name").value;
@@ -171,13 +150,13 @@
 
                 tv = document.getElementById("tv").value;
                 fridge = document.getElementById("fridge").value;
-        // more images//
-           image1 = document.getElementById("image1").value;
-         image2 = document.getElementById("image2").value;
-        lastimage = document.getElementById("lastimage").value;
-        image4 = document.getElementById("image4").value;
+                // more images//
+                image1 = document.getElementById("image1").value;
+                image2 = document.getElementById("image2").value;
+                lastimage = document.getElementById("lastimage").value;
+                image4 = document.getElementById("image4").value;
 
-               
+
 
 
 
@@ -201,63 +180,77 @@
 
 
 
+
+
                 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-                let exit = users.length &&
-                    JSON.parse(localStorage.getItem('users')).some(data =>
-                        data.name == name);
-
-                        function login_data(e){return e.my_uuid == productId;
-                      }
-
-                let owner_id = JSON.parse(localStorage.getItem('userId'));
-
-
-                if (!exit) {
-                    users.push({ 
-                        name, 
-                        "fecilities" :{food, parking, wifi, tv, fridge}, 
-                        period, 
-                        available, 
-                        beds, 
-                        amount, 
-                        time, 
-                        address, 
-                       
-                        "owner_id" : owner_id,
-                        "sharing" : {onesharing, twosharing, threesharing, foursharing}, 
-                        image, 
-                        my_uuid,
-                        // singleshare,
-                        // twinshare,
-                        // tripleshare,
-                        // fourshare,
-                        "house_fecilities_image" : {image1,image2,lastimage,image4}});
-                        
-
-                    // let checked = JSON.parse (localStorage.getItem ('checkbox'));
-
-                    // Working_days = [];
-                    // working_days = document.querySelectorAll("input[type='checkbox']:checked");
-                    // for (i = 0; i < working_days.length; i++) {
-                    //     Working_days.push(working_days[i].value)
-                    // }
-
-
-
-                    localStorage.setItem('users', JSON.stringify(users));
-                    console.log(localStorage.getItem('users'));
-                    localStorage.setItem("productId",JSON.stringify(my_uuid));
-                   
-
-                    document.querySelector('form').reset();
-
-
-                    alert('Account created successfully');
-
-
-                    location.href = "../products/seller_product.html";
+                if (available === "Choose") {
+                    alert("Please select either Boys, Girls, or Both for girls and boys");
+                    return false; 
                 }
+              
+                    let exit = users.length &&
+                        JSON.parse(localStorage.getItem('users')).some(data =>
+                            data.name == name);
+
+                    function login_data(e) {
+                        return e.my_uuid == productId;
+                    }
+
+
+
+                    let owner_id = JSON.parse(localStorage.getItem('userId'));
+
+
+                    if (!exit) {
+                        users.push({
+                            name,
+                            "fecilities": { food, parking, wifi, tv, fridge },
+                            period,
+                            available,
+                            beds,
+                            amount,
+                            time,
+                            address,
+
+                            "owner_id": owner_id,
+                            "sharing": { onesharing, twosharing, threesharing, foursharing },
+                            image,
+                            my_uuid,
+                            // singleshare,
+                            // twinshare,
+                            // tripleshare,
+                            // fourshare,
+                            "house_fecilities_image": { image1, image2, lastimage, image4 }
+                        });
+
+
+                        // let checked = JSON.parse (localStorage.getItem ('checkbox'));
+
+                        // Working_days = [];
+                        // working_days = document.querySelectorAll("input[type='checkbox']:checked");
+                        // for (i = 0; i < working_days.length; i++) {
+                        //     Working_days.push(working_days[i].value)
+                        // }
+
+
+
+                        localStorage.setItem('users', JSON.stringify(users));
+                        console.log(localStorage.getItem('users'));
+                        localStorage.setItem("productId", JSON.stringify(my_uuid));
+
+
+                        document.querySelector('form').reset();
+
+
+                        alert('Account created successfully');
+
+
+                        location.href = "../products/seller_product.html";
+                    }
+
+                }
+
 
 
                 // }
@@ -270,7 +263,7 @@
                 // }
 
 
-            }
+            
 
         </script>
 </body>
