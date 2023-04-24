@@ -58,7 +58,7 @@
 
 
       <label for="phone"><b>phone_number</b></label>
-      <input type="text" placeholder="phone_number" name="tel" pattern="[0-9].{9}" id="phone_number" required><br><br>
+      <input type="tel" placeholder="phone_number" name="tel" pattern="[6-9]{1}[0-9]{9}" id="phone_number" required><br><br>
 
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email"
@@ -66,11 +66,11 @@
         id="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"
+      <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         id="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw" id="repeat" required>
+        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters<br>
+      <label for="psw-repeat"><b>confirm Password</b></label>
+      <input type="password" placeholder="Repeat Password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" id="repeat" required>
 
       <label for="cars"><b>Choose Owner/Customer</b> </label>
       <select name="available" id="customer_or_owner" required>
@@ -81,7 +81,7 @@
       </select><br><br>
 
       <label for="address"><b>Address</b></label><br>
-      <textarea id="address" required></textarea>
+      <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+" id="address" required></textarea>
 
       <button type="submit" class="registerbtn">Register</button>
 
@@ -100,7 +100,7 @@
       psw = document.getElementById("psw").value;
       name = document.getElementById("name").value;
       phone_number = document.getElementById("phone_number").value;
-      address = document.getElementById("address").value;
+      address = document.getElementById("address").value.trim().split(/\s+/g).join(' ');
       customer_or_owner = document.getElementById("customer_or_owner").value;
       let my_uuid = uuidv4();
 
@@ -124,9 +124,16 @@
         alert("Please select either Owner or Seller");
         return false;
       }
-
-      
-
+                   
+      function validate() {
+            let val = document.getElementById('address').value;
+            if (/^\s*$/g.test(val) || val.indexOf('\n') != -1) {
+                alert('Write your address properly');
+                val=reset();
+            }
+        }
+         validate();
+        
 
 
      

@@ -40,29 +40,29 @@
 
                 <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
 
-                <label for="sharing" id="singleshare"> single sharing </label><input placeholder="rent" id="onesharing"
-                    pattern="[0-9]+" required><br><br>
+                <label for="sharing"> single sharing </label><input type="number" placeholder="rent" id="onesharing"
+                    pattern="[0-9]+" min="3000" max="30000" required><br><br>
 
 
-                <label for="sharing" id="twinshare">Twin sharing </label><input placeholder="rent" pattern="[0-9]+"
-                    id="twosharing" required><br><br>
+                <label for="sharing" >Twin sharing </label><input type="number"placeholder="rent" pattern="[0-9]+"
+                    id="twosharing"min="3000" max="30000" required><br><br>
 
 
-                <label for="sharing" id="tripleshare"> Triple sharing </label><input placeholder="rent" pattern="[0-9]+"
-                    id="threesharing" required><br><br>
+                <label for="sharing"> Triple sharing </label><input type="number" placeholder="rent" pattern="[0-9]+"
+                    id="threesharing"min="3000" max="30000" required><br><br>
 
 
-                <label for="sharing" id="fourshare"> Four sharing </label><input placeholder="rent" id="foursharing"
-                    pattern="[0-9]+" required><br><br>
+                <label for="sharing"> Four sharing </label><input type="number"placeholder="rent" id="foursharing"
+                    pattern="[0-9]+" min="3000" max="30000"required><br><br>
 
 
                 <label for="number"><b>Deposited amount:</b></label>
-                <input type="text" id="amount" name="number" pattern="[0-9]+" required><br><br>
+                <input type="number" id="amount" name="number" pattern="[0-9]+" min="4000" max="10000" required><br><br>
                 <label for="sharing"> Notice Period </label>
-                <input type="text" id="period" placeholder="example 10 days" required><br><br>
+                <input type="text" id="period" placeholder="example: 10 days " min="10 days" max="30 days" required><br><br>
 
                 <label for="sharing">Closing Time:</label>
-                <input type="text" id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required><br><br>
+                <input type="text" id="time" placeholder="Example:11:00 PM" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required><br><br>
 
                 <!-- 
       <label for="sharing"> Available For</label>
@@ -71,48 +71,48 @@
 
 
                 <label for="sharing"> Total Number of Beds </label>
-                <input type="number" id="beds" required><br><br>
+                <input type="number" id="beds" min="20" max="200" required><br><br>
 
-                <label for="image1"> Fecilities</label>
+                <label for="image1"> Facilities Image url </label>
                 <input type="url" id="image1" required></input><br><br>
 
 
-                <label for="image"> Fecilities</label>
+                <label for="image"> Facilities Image url</label>
                 <input type="url" id="image2" required></input><br><br>
 
-                <label for="image"> Fecilities</label>
+                <label for="image"> Facilities Image url</label>
                 <input type="url" id="lastimage" required></input><br><br>
 
-                <label for="image"> Fecilities</label>
+                <label for="image"> Facilities Image url</label>
                 <input type="url" id="image4" required></input><br><br>
 
-                <label for="sharing"> Facilities </label>
+                <label for="sharing"> Facilities Image url </label>
                 <input type="url" id="parking" required><br><br>
 
 
 
-                <label for="sharing">Facilities </label>
+                <label for="sharing">Facilities Image url </label>
                 <input type="url" id="wifi" required><br><br>
 
 
-                <label for="sharing"> Facilities</label>
+                <label for="sharing"> Facilities Image url</label>
                 <input type="url" id="food" required><br><br>
 
 
-                <label for="sharing"> Facilities</label>
+                <label for="sharing"> Facilities Image url</label>
                 <input type="url" id="fridge" required><br><br>
 
 
-                <label for="sharing"> Facilities</label>
+                <label for="sharing"> Facilities Image url</label>
                 <input type="url" id="tv" required><br><br>
 
-                <label for="pg_name"><b> Image</b></label>
+                <label for="pg_name"><b> Image of bed or room url</b></label>
                 <input type="url" name="image" id="image" required><br><br>
 
 
 
                 <label for="address"><b> Address</b></label><br>
-                <textarea type="text" id="address" required></textarea><br>
+                <textarea type="text" id="address" pattern=" /^[a-zA-Z0-9,-/]+$/"required></textarea><br>
 
                 <label for="cars">Choose </label>
                 <select name="available" id="available" required>
@@ -175,19 +175,30 @@
                 amount = document.getElementById("amount").value;
 
                 image = document.getElementById("image").value;
-                address = document.getElementById("address").value;
+                address = document.getElementById("address").value.trim().split(/\s+/g).join(' ');
                 let my_uuid = uuidv4();
 
-
+                if (available === "Choose") {
+                alert("Please select either Boys, Girls, or Both for girls and boys");
+                return false; 
+              }
+                        
+                function validate() {
+            let val = document.getElementById('address').value;
+            if (/^\s*$/g.test(val) || val.indexOf('\n') != -1) {
+                alert('Write your address properly');
+                val=reset();
+            }
+        }
+         validate();
+        
 
 
 
                 let users = JSON.parse(localStorage.getItem('users')) || [];
 
-                if (available === "Choose") {
-                    alert("Please select either Boys, Girls, or Both for girls and boys");
-                    return false; 
-                }
+               
+
               
                     let exit = users.length &&
                         JSON.parse(localStorage.getItem('users')).some(data =>
@@ -224,17 +235,6 @@
                             "house_fecilities_image": { image1, image2, lastimage, image4 }
                         });
 
-
-                        // let checked = JSON.parse (localStorage.getItem ('checkbox'));
-
-                        // Working_days = [];
-                        // working_days = document.querySelectorAll("input[type='checkbox']:checked");
-                        // for (i = 0; i < working_days.length; i++) {
-                        //     Working_days.push(working_days[i].value)
-                        // }
-
-
-
                         localStorage.setItem('users', JSON.stringify(users));
                         console.log(localStorage.getItem('users'));
                         localStorage.setItem("productId", JSON.stringify(my_uuid));
@@ -253,14 +253,6 @@
 
 
 
-                // }
-                // else{
-                // alert("please select check boxes")
-                // }
-                //  if (checked == true) 
-                //  { 
-                //     document.getElementById ("checkbox").checked = true; 
-                // }
 
 
             

@@ -65,7 +65,6 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
     2. Navigate to the account page.
     3. View the account details such as name, email, and address.
     4. click the edit button.
-    4. and Click the logout button to come out of the website.
 - Expected Result:
   - The user can view their account details.
 
@@ -74,9 +73,9 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully edit account details
   - Steps:
     1. Log in as a Customer.
-    2. Navigate to the account page.
+    2. click the "PRofile Icon"  Navigate to the account page .
     3. Click the "Edit Account" button.
-    4. Update the account details such as name and address.
+    4. Update the account details such as name, phone number and address.
     5. Click the "submit" button.
 - Expected Result:
     - The user's account details are updated.
@@ -87,21 +86,21 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
    - steps:
      1. Log in as a Customer.
      2. Navigate to the profile.
-     3. Click the profile Icon On top of the nav bar.
+     3. Click the "profile Icon" On top of the nav bar.
      4. Click the Logout button to logout of the website.
 - Expected Results:
   - The user come to the Home page.
 
 
-### View Payment Guest houses List
+### View Payment Guest houses List(completed)
 - Scenario 3: Successfully view Payment Guest houses/items
   - Steps:
     1. Log in as a buyer.
     2. Navigate to the payment Guest houses listing page.
-    3. View the list of available products/items.
-    4. Select a payment Guest house which categery you want like boys pg 
+    3. View the list of available PGs/items.
+    4. Select a payment Guest house which categery you want like boys pg.
     5. or girls pg or Both living pg that option on the top of the nav bar.
-    6. logout button on the top of the corner of the nav bar
+    6. And  see the list of PGs.
 - Expected Result:
    - The user can view details of the pg 
    - payment Guest houses/items.
@@ -112,6 +111,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 - Scenario 1: Successfully payment Guest houses  view /item details
    - Steps:
      1. Login as a buyer.
+     2. Select the which PG details do you like to book or to see details.
      2. Navigate to the payment Guest houses listing  page.
      3. The user can click the "view more" button .
 - Expected Result:
@@ -122,11 +122,11 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
    - steps:
      1. Login as a buyer.
      2. Navigate to the paying Guest house details.
-     3. click the box which sharing room you want to book.
+     3. click the box which sharing room do you want to book.
 - Expected result:
    - The user can see the selected room.
 
-### Buy a payment Guest house/item (Yet to start)
+### Buy a payment Guest house/item (Completed)
 - Scenario 1: Successfully purchase a payment Guest house sharing
   - Steps:
     1. Log in as a buyer.
@@ -136,7 +136,7 @@ The following are Low Fedility, User Flow and Problem Statement Of my project.
 -  Expected Result:
    - You will see the message that you successfully sended request.
 
-### View list of booking pg and responses(yet to start)
+### View list of booking pg and responses(Completed)
 - Scenario 1: Successfully purchase a payment Guest house sharing.
    - Steps:
      1. Log in as a buyer.
