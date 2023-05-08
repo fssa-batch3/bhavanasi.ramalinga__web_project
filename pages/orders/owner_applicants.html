@@ -1,212 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="../../assets/css/owner_applicants.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <title>Applicant</title>
-</head>
+    <head>
+        <link rel="stylesheet" href="../../assets/css/owner_applicants.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <title>Applicant</title>
+    </head>
 
-<body>
-    
+    <body>
 
-    <div class="section">
-        <div class="sections">
-            <h2>Date of booking</h2>
-            <h2>Name of the pg</h2>
-            <h2>selected sharing room</h2>
-            <h2>Customer email</h2>
-            <h2>owner response</h2>
+        <div class="section">
+            <div class="sections">
+                <h2>Date of booking</h2>
+                <h2>Name of the pg</h2>
+                <h2>selected sharing room</h2>
+                <h2>Customer email</h2>
+                <h2>owner response</h2>
 
+            </div>
         </div>
-    </div>
-<footer>
+        <footer>
     
-  <div class="section"></div>
-  <footer>
-      <div clas="foot">
-      </div>
-      <div class="footer1">
-          <div class="footerone">
-              <h2> About Sound Bricks</h2>
-              <h3> Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-                  services including home loans, pay rent, packers and movers, legal assistance, property
-                  valuation,<br>
-              </h3>
-          </div>
-          <div class="foot">
-              <h2>Real Estate in India</h2><br>
-              <h3>Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+            <div class="section"></div>
+            <footer>
+                <div clas="foot">
+                </div>
+                <div class="footer1">
+                    <div class="footerone">
+                        <h2> About Sound Bricks</h2>
+                        <h3>
+                            Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
+                            services including home loans, pay rent, packers and movers, legal assistance, property
+                            valuation,<br>
+                        </h3>
+                    </div>
+                    <div class="foot">
+                        <h2>Real Estate in India</h2>
+                        <br>
+                        <h3>
+                            Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
 
-                  in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                  New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br></h3>
-          </div>
-      </div>
-      <div class="link">
-          <i class="fa fa-instagram" style="font-size:48px;"> </i>
-          <i class="fa fa-facebook-f" style="font-size:36px"></i>
-          <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-      </div>
+                            in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+                            New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
+                        </h3>
+                    </div>
+                </div>
+                <div class="link">
+                    <i class="fa fa-instagram" style="font-size:48px;"> </i>
+                    <i class="fa fa-facebook-f" style="font-size:36px"></i>
+                    <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+                </div>
 
-      <div class="buttons">
+                <div class="buttons">
  
- 
-          <span>Terms&conditions</span>
-         <span> Blog</span>
-         <span>Careers</span>
-         <span> Testimonials</span>
-         <span> Feedback</span>
-         <span> Unsubscribe</span>
-         <span> Help centeer</span>
-         <span> Sales Enquiry</span>
-         <span> Buy our services</span>
+                    <span>Terms&conditions</span>
+                    <span> Blog</span>
+                    <span>Careers</span>
+                    <span> Testimonials</span>
+                    <span> Feedback</span>
+                    <span> Unsubscribe</span>
+                    <span> Help centeer</span>
+                    <span> Sales Enquiry</span>
+                    <span> Buy our services</span>
          
-       </div>
-</footer>
-<script src="/assets/js/header.js"></script>
-    <script>
-
-
-        let seller_section = JSON.parse(localStorage.getItem("room_book_request"));
+                </div>
+            </footer>
+            <script src="/assets/js/header.js"></script>
+            <script>const seller_section = JSON.parse(localStorage.getItem("room_book_request"));
         console.log(seller_section);
-        let product = JSON.parse(localStorage.getItem("users"));
+        const product = JSON.parse(localStorage.getItem("pgdetails"));
 
-        let customers = JSON.parse(localStorage.getItem("userId"));
+        const customers = JSON.parse(localStorage.getItem("userId"));
 
-
-        let sellerdata = product.filter(e => e.owner_id == customers);
+        const sellerdata = product.filter((e) => e.owner_id == customers);
         console.log(sellerdata);
 
-        let bookeddata = seller_section.filter(e =>
-        sellerdata.some(s=> s.my_uuid === e.product_id) );
+        const bookeddata = seller_section.filter((e) =>
+     sellerdata.some((s) => s.my_uuid === e.product_id)
+    );
 
         console.log(bookeddata);
 
-
+        
+        if (bookeddata.length === 0) {
+     const noDataMessage = document.createElement("h2");
+     noDataMessage.setAttribute("class","message");
+     noDataMessage.innerText = "No user booked  your Paying guest";
+    document.querySelector(".section").append(noDataMessage);
+    } else {
 
         for (let i = 0; i < bookeddata.length; i++) {
-            div_border = document.createElement("div");
-            div_border.setAttribute("class", "border");
-            console.log(div_border);
-            document.querySelector(".section").append(div_border);
+          const div_border = document.createElement("div");
+          div_border.setAttribute("class", "border");
+          console.log(div_border);
+          document.querySelector(".section").append(div_border);
 
-           dateandyear = document.createElement("h2");
-           dateandyear.setAttribute("class","monthanddate");
-           dateandyear.innerHTML = bookeddata[i]["dateAndTime"];
-           div_border.append(dateandyear);
+          const dateandyear = document.createElement("h2");
+          dateandyear.setAttribute("class", "monthanddate");
+          dateandyear.innerHTML = bookeddata[i].dateAndTime;
+          div_border.append(dateandyear);
 
+         const  h2_name = document.createElement("h2");
+          h2_name.setAttribute("class", "name_of_pg");
+          h2_name.innerText = bookeddata[i].pgname;
+          div_border.append(h2_name);
 
-            h2_name = document.createElement("h2");
-            h2_name.setAttribute("class", "name_of_pg");
-            h2_name.innerText = bookeddata[i]["pgname"];
-            div_border.append(h2_name);
+          const div_two = document.createElement("div");
+          div_two.setAttribute("class", "moredetail");
+          div_border.append(div_two);
 
-            div_two = document.createElement("div");
-            div_two.setAttribute("class", "moredetail")
-            div_border.append(div_two);
+          const sharing_room = document.createElement("h2");
+          sharing_room.innerHTML = bookeddata[i].typeOfShare;
+          div_two.append(sharing_room);
 
-            sharing_room = document.createElement("h2");
-            sharing_room.innerHTML = bookeddata[i]["typeOfShare"];
-            div_two.append(sharing_room);
+          const email = document.createElement("h2");
+          email.setAttribute("class", "email");
+          email.innerHTML = bookeddata[i].customer_id;
+          div_border.append(email);
 
-            email = document.createElement("h2");
-            email.setAttribute("class", "email");
-            email.innerHTML = bookeddata[i]["customer_id"];
-            div_border.append(email);
+         const div_click = document.createElement("div");
+          div_click.setAttribute("class", "click");
+          div_border.append(div_click);
 
+          const button = document.createElement("button");
+          button.setAttribute("class", "button_accept");
+          button.setAttribute("type", "button");
+          button.setAttribute("data-id", bookeddata[i].request_id);
+          button.innerHTML = "Accept";
+          div_click.append(button);
 
-
-            div_click = document.createElement("div");
-            div_click.setAttribute("class", "click");
-
-            div_border.append(div_click);
-
-
-
-            button = document.createElement("button");
-            button.setAttribute("class", "button_accept");
-            button.setAttribute("type", "button");
-            button.setAttribute("data-id", bookeddata[i]["request_id"]);
-            button.innerHTML = "Accept";
-            div_click.append(button);
-
-
-            button = document.createElement("button");
-            button.setAttribute("class", "button_reject");
-            button.setAttribute("type", "button");
-            button.setAttribute("data-id", bookeddata[i]["request_id"]);
-            button.innerHTML = "Reject";
-            div_click.append(button);
-
-
+         const rejectbutton = document.createElement("button");
+         rejectbutton.setAttribute("class", "button_reject");
+         rejectbutton.setAttribute("type", "button");
+         rejectbutton.setAttribute("data-id", bookeddata[i].request_id);
+         rejectbutton.innerHTML = "Reject";
+          div_click.append(rejectbutton);
         }
+    }
 
-        let customer = JSON.parse(localStorage.getItem("room_book_request"))
+        const customer = JSON.parse(localStorage.getItem("room_book_request"));
         console.log(customer);
 
-        let filteredUseravailable = customer.filter(e => e.request_id == "data-id");
+        const filteredUseravailable = customer.filter((e) => e.request_id == "data-id");
         console.log(filteredUseravailable);
 
+        const selectbtn = document.querySelectorAll(".button_accept");
+        selectbtn.forEach((each) => {
+          each.addEventListener("click", (event) => {
+            const person_data = each.dataset.id;
 
+            console.log(person_data);
 
+            // response for accept//
+            const room_book_request = JSON.parse(
+      localStorage.getItem("room_book_request")
+    );
 
-        let selectbtn = document.querySelectorAll(".button_accept")
-        selectbtn.forEach(each => {
-            each.addEventListener("click", (event) => {
-                const person_data = each.dataset.id;
+    function getting_data(e) {
+              return e.request_id == person_data;
+            }
 
-                console.log(person_data)
+            const user_data = room_book_request.find(getting_data);
 
-                // response for accept//
-                let room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+            console.log(user_data);
 
-                function getting_data(e) {
-                    return e.request_id == person_data;
-                }
-
-                let user_data = room_book_request.find(getting_data);
-
-                console.log(user_data);
-
-                user_data["status"] = 2;
-                localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
-
-
-            })
-        })
-
+            user_data.status = 2;
+            localStorage.setItem(
+      "room_book_request",
+      JSON.stringify(room_book_request)
+            );
+          });
+});
 
         // response for reject//
 
-        let selectb = document.querySelectorAll(".button_reject")
-        selectb.forEach(each => {
-            each.addEventListener("click", (event) => {
-                const person_data = each.dataset.id;
+        const selectb = document.querySelectorAll(".button_reject");
+        selectb.forEach((each) => {
+          each.addEventListener("click", (event) => {
+            const person_data = each.dataset.id;
 
-                console.log(person_data)
-                let room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+            console.log(person_data);
+            const room_book_request = JSON.parse(
+      localStorage.getItem("room_book_request")
+    );
 
-                function rejectdata(e) {
-                    return e.request_id == person_data;
-                }
-                let seller_data = room_book_request.find(rejectdata);
+    function rejectdata(e) {
+              return e.request_id == person_data;
+            }
+            const seller_data = room_book_request.find(rejectdata);
 
-                console.log(seller_data);
+            console.log(seller_data);
 
-                seller_data["status"] = 0;
-                localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
-
-            })
-        })
-       
-
+            seller_data.status = 0;
+            localStorage.setItem(
+      "room_book_request",
+      JSON.stringify(room_book_request)
+    );
+  });
+        });
     </script>
 </body>
 

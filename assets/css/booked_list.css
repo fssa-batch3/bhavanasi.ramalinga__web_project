@@ -33,6 +33,10 @@ p {
 nav {
 
 	background-color: #E64A19;
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index:1;
 }
 
 nav ul {
@@ -109,20 +113,24 @@ nav ul ul ul li {
     
     
   }
+  .section{
+	margin-top:10%;
+  }
 
 .border{
+	display: flex;
 	border:1px solid;
 	border-radius: 8px;
 	height:40%;
-	width:30%;
-	margin: 8rem 5rem 0 7rem;
+	width:50%;
+	margin: 2rem 20rem  3rem;
 }
 .detail{
 	display: flex;
 	
 }
 h2{
-	margin-left: 10%;
+
 	margin-top: 5%;
 }
 h3.name_of_pg{
@@ -132,13 +140,21 @@ div.data{
 	display: flex;
 	
 }
+img#image{
+	width:40%;
+	margin:2rem 3rem 0 1rem;;
+  }
+  .moredetail.h4{
+	color:none;
+  }
 
 
 
 button.delete{
 	display:inline-block;
-    background-color: black;
+    background-color: green;
     color:white;
+	border:none;
     padding:14px 25px;
     text-align: center;
     text-decoration: none;
@@ -149,6 +165,38 @@ button.delete{
     justify-content: space-around;
 	
 }
+footer{
+        
+	background-color: skyblue;
+	margin-top: 10%;
+	padding-bottom: 4%;
+ }
+ .footerone{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ }
+ .footer2{
+	margin-bottom: 4%;
+	margin-top: 8%;
+ }
+ .footer1{
+  display: flex;
+	margin-top: 3%;
+	margin-left: 3%;
+	
+ }
+ .link{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+ }
+ 
+ .buttons{
+  display: flex;
+  justify-content: space-around;
+ }
+
 
 
 

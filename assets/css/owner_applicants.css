@@ -35,6 +35,10 @@ a {
 nav {
 
 	background-color: #E64A19;
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index:1;
 }
 
 nav ul {
@@ -115,8 +119,8 @@ nav ul ul ul li {
 	justify-content: space-around;
 	color:black;
 }
-h1{
-	color:blueviolet;
+.section h2{
+	font-size: 30px;
 }
 
 div.click{
@@ -133,13 +137,22 @@ button{
 	font-size: large;
 	
 }
+.section{
+	margin-top: 6%;
+}
 .sections{
 	display: flex;
 	justify-content: space-around;
+	
+}
+
+h2.message{
+	margin:10rem 30rem 10rem;
+	color:red;
 }
 footer{
         
-	background-color: skyblue;
+	background-color:antiquewhite;
 	margin-top: 10%;
 	padding-bottom: 4%;
  }

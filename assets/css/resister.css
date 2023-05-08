@@ -15,6 +15,10 @@ p {
 nav {
 
 	background-color: #E64A19;
+  position: fixed;
+  top:0;
+  width: 100%;
+ 
 }
 
 nav ul {
@@ -111,12 +115,12 @@ nav ul ul ul li {
      width: 450px;
     margin-left: 35%;
     margin-bottom: 5%;
-    margin-top:3%;
+    margin-top:7%;
 
   }
   
   /* Full-width input fields */
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password],input[type=email],textarea#address {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;

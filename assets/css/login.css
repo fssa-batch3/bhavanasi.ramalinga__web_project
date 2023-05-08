@@ -58,6 +58,9 @@ a {
 nav {
 
 	background-color: #E64A19;
+  position: fixed;
+  top:0;
+  width:100%;
 }
 
 nav ul {

@@ -1,383 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../assets/css/Addedpg_details.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/Addedpg_details.css">
-
-    <title>single pg</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-        
-</head>
-<header>
-
-</header>
-<body>
-   
-
-
-
-  <div class="section"></div>
-    <footer>
-        <div clas="foot">
-        </div>
-        <div class="footer1">
-            <div class="footerone">
-                <h2> About Sound Bricks</h2>
-                <h3> Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-                    services including home loans, pay rent, packers and movers, legal assistance, property
-                    valuation,<br>
-                </h3>
-            </div>
-            <div class="foot">
-                <h2>Real Estate in India</h2><br>
-                <h3>Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
-
-                    in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                    New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br></h3>
-            </div>
-        </div>
-        <div class="link">
-            <i class="fa fa-instagram" style="font-size:48px;"> </i>
-            <i class="fa fa-facebook-f" style="font-size:36px"></i>
-            <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-        </div>
-
-        <div class="buttons">
-   
-   
-            <span>Terms&conditions</span>
-           <span> Blog</span>
-           <span>Careers</span>
-           <span> Testimonials</span>
-           <span> Feedback</span>
-           <span> Unsubscribe</span>
-           <span> Help centeer</span>
-           <span> Sales Enquiry</span>
-           <span> Buy our services</span>
+        <title>pgdetails</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        >
+    </head>
+    <header></header>
+    <body>
+        <div class="section"></div>
+        <footer>
            
-         </div>
-    </footer>
- -->
+            <div class="footer1">
+                <div class="footerone">
+                    <h2>About Sound Bricks</h2>
+                    <h3>
+                        Magicbricks is a full stack service provider for all real estate
+                        needs, with 15+<br >
+                        services including home loans, pay rent, packers and movers, legal
+                        assistance, property valuation,<br >
+                    </h3>
+                </div>
+                <div class="foot">
+                    <h2>Real Estate in India</h2>
+                    <br >
+                    <h3>
+                        Property in Delhi NCR Property in Mumbai Property in Chennai
+                        Property in Pune Property<br >
+
+                        in Noida Property in Gurgaon Property in Bangalore Property in
+                        Ahmedabad<br >
+                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in
+                        Mumbai<br >
+                    </h3>
+                </div>
+            </div>
+            <div class="link">
+                <i class="fa fa-instagram" style="font-size: 48px"> </i>
+                <i class="fa fa-facebook-f" style="font-size: 36px"></i>
+                <i class="fa fa-youtube-play" style="font-size: 48px; color: red"></i>
+            </div>
+
+            <div class="buttons">
+                <span>Terms&conditions</span>
+                <span> Blog</span>
+                <span>Careers</span>
+                <span> Testimonials</span>
+                <span> Feedback</span>
+                <span> Unsubscribe</span>
+                <span> Help centeer</span>
+                <span> Sales Enquiry</span>
+                <span> Buy our services</span>
+            </div>
+        </footer>
+
+        <script>
+      const single_details = JSON.parse(localStorage.getItem("pgdetails"));
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const pg_id = urlParams.get("my_uuid");
+      console.log(pg_id);
+      const unique_id = single_details.find((e) => e.my_uuid == pg_id);
+      console.log(unique_id);
 
 
 
+      const div_border = document.createElement("div");
+      div_border.setAttribute("class", "border");
+      console.log(div_border);
+      document.querySelector(".section").append(div_border);
 
-    <script>
-
-        let single_details = JSON.parse(localStorage.getItem("users"));
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const pg_id = urlParams.get('my_uuid');
-        console.log(pg_id)
-        let unique_id = single_details.find(e => e.my_uuid == pg_id);
-        console.log(unique_id)
+      const div_detail = document.createElement("div");
+      div_detail.setAttribute("class", "pg_detail");
+      div_border.append(div_detail);
 
     
-        div_border = document.createElement("div");
-        div_border.setAttribute("class", "border");
-        console.log(div_border);
-        document.querySelector(".section").append(div_border);
 
-        div_detail = document.createElement("div");
-        div_detail.setAttribute("class", "pg_detail");
-        div_border.append(div_detail);
+      const div_image = document.createElement("div");
+      div_detail.append(div_image);
 
-        div_image = document.createElement("div");
-        div_detail.append(div_image);
+      const img = document.createElement("img");
+      img.setAttribute("src", unique_id.image);
+      img.setAttribute("alt", "photo");
+      img.setAttribute("height", "400px");
+      img.setAttribute("width", "450px");
+      div_image.append(img);
 
-        img = document.createElement("img");
-        img.setAttribute("src", unique_id["image"]);
-        img.setAttribute("alt", "photo");
-        img.setAttribute("height", "400px");
-        img.setAttribute("width", "450px");
-        div_image.append(img);
+        const sideimage = document.createElement("div");
+      sideimage.setAttribute("class","sideimages");
+      div_detail.append(sideimage);
 
-        div_address = document.createElement("div");
-        div_address.setAttribute("class", "address");
+      const div_address = document.createElement("div");
+    div_address.setAttribute("class", "address");
+    div_address.innerHTML = '<i class="fa fa-home" style="font-size:36px"></i>';
+    div_detail.append(div_address);
+
+      const h2 = document.createElement("h2");
+      h2.innerText = unique_id.name;
+      div_address.append(h2);
+
+      const p = document.createElement("p");
+      p.innerText = unique_id.address;
+      div_address.append(p);
+
+      const div_sharing = document.createElement("div");
+      div_sharing.setAttribute("class", "sharing");
+      div_border.append(div_sharing);
+
+       // single sharing //
+
+
+
+      const singleshare = document.createElement("div");
+      singleshare.setAttribute("class","singleshare");
+      div_sharing.append(singleshare);
+
+   
+
+       const singleshareimage = document.createElement("img");
+       singleshareimage.setAttribute("src",unique_id.image);
+        singleshareimage.setAttribute("height","60%");
+        singleshareimage.setAttribute("width","40%");
+        singleshare.append(singleshareimage);
+     
+
+      
+
+      const div_one = document.createElement("div");
+      div_one.setAttribute("id", "share");
+      div_one.setAttribute("class", "share_data");
+      div_one.setAttribute("data-id", "Onesharing");
+      singleshare.append(div_one);
+
+     
+
+      const h4 = document.createElement("h4");
+      h4.innerText = "Single sharing";
+      div_one.append(h4);
+
+      const bold = document.createElement("b");
+      bold.setAttribute("class", "month");
+      bold.innerText = "Monthly Rent:";
+      div_one.append(bold);
+
+      const p_one = document.createElement("p");
+      p_one.innerText = unique_id.sharing.Onesharing;
+      bold.append(p_one);
+
+      const b_one = document.createElement("b");
+      b_one.setAttribute("class", "advance");
+      b_one.innerText = "Advance:";
+
+      div_one.append(b_one);
+
+      const amount = document.createElement("b");
+      amount.innerText = unique_id.amount;
+      div_one.append(amount);
+
+      //two sharing//
+
+      const twoshare = document.createElement("div");
+      twoshare.setAttribute("class","singleshare");
+      twoshare.setAttribute("id","sharring");
+      div_sharing.append(twoshare);
+
+   
+
+        const twoshareimage = document.createElement("img");
+        twoshareimage.setAttribute("src",unique_id.image);
+        twoshareimage.setAttribute("height","60%");
+        twoshareimage.setAttribute("width","40%");
+        twoshare.append(twoshareimage);
+
+      const div_two = document.createElement("div");
+      div_two.setAttribute("id", "share1");
+      div_two.setAttribute("class", "share_data");
+      div_two.setAttribute("data-id", "Twosharing"); //1st
+      twoshare.append(div_two);
+
+      const h4_one = document.createElement("h4");
+      h4_one.innerText = "Twin sharing";
+      div_two.append(h4_one);
+
+      const b_two = document.createElement("b");
+      b_two.setAttribute("class", "month");
+      b_two.innerText = "Monthly Rent:";
+      div_two.append(b_two);
+
+      const p_two = document.createElement("p");
+      p_two.innerText = unique_id.sharing.Twosharing; //2nd
+      b_two.append(p_two);
+
+      const b_three = document.createElement("b");
+      b_three.setAttribute("class", "advance");
+      b_three.innerText = "Advance:";
+      div_two.append(b_three);
+
+      const anotheramount = document.createElement("b");
+      anotheramount.innerText = unique_id.amount;
+      div_two.append(anotheramount);
+
+      //three sharing//
+      const threeshare = document.createElement("div");
+      threeshare.setAttribute("class","shares");
+      div_border.append(threeshare);
+
+       const threeshareimage = document.createElement("div");
        
-        div_detail.append(div_address);
+       threeshareimage.setAttribute("class","singleshare");
+       threeshareimage.setAttribute("id","sharring");
+       threeshare.append(threeshareimage);
 
-        h2 = document.createElement("h2");
-        h2.innerText = unique_id["name"];
-        div_address.append(h2);
+   
 
-        p = document.createElement("p");
-        p.innerText = unique_id["address"];
-        div_address.append(p);
+        const threeimage = document.createElement("img");
+        threeimage.setAttribute("src",unique_id.image);
+        threeimage.setAttribute("height","60%");
+        threeimage.setAttribute("width","40%");
+        threeshareimage.append(threeimage);
 
-        div_sharing = document.createElement("div");
-        div_sharing.setAttribute("class", "sharing");
-        div_address.append(div_sharing);
-               // single sharing //
 
-        div_one = document.createElement("div");
-        div_one.setAttribute("id","share");
-        div_one.setAttribute("class","share_data");
-        div_one.setAttribute("data-id","onesharing")
-        div_sharing.append(div_one);
+        const div_three = document.createElement("div");
+        div_three.setAttribute("id", "share2");
+        div_three.setAttribute("class", "share_data");
+        div_three.setAttribute("data-id", "Threesharing");
+        threeshareimage.append(div_three);
 
-        h4 = document.createElement("h4");
-        h4.innerText = "Single sharing";
-        div_one.append(h4);
-
-        b = document.createElement("b");
-        b.innerText = "Monthly Rent:";
-        div_one.append(b);
-
-        p_one = document.createElement("p");
-        p_one.innerText = unique_id["sharing"]["onesharing"];
-        b.append(p_one);
-
-        b_one = document.createElement("b");
-        b_one.innerText = "Advance:";
-        div_one.append(b_one);
-
-        b_one = document.createElement("b");
-        b_one.innerText = unique_id["amount"];
-        div_one.append(b_one);
-
-        //two sharing//
-        div_two = document.createElement("div");
-        div_two.setAttribute("id","share1");
-        div_two.setAttribute("class","share_data");
-        div_two.setAttribute("data-id","twosharing");//1st
-        div_sharing.append(div_two);
-
-        h4_one = document.createElement("h4");
-        h4_one.innerText = "Twin sharing";
-        div_two.append(h4_one);
-
-        b_two = document.createElement("b");
-        b_two.innerText = "Monthly Rent:";
-        div_two.append(b_two);
-
-        p_two = document.createElement("p");
-        p_two.innerText = unique_id["sharing"]["twosharing"];//2nd
-        b_two.append(p_two);
-
-        b_three = document.createElement("b");
-        b_three.innerText = "Advance:";
-        div_two.append(b_three);
-
-        b_three = document.createElement("b");
-        b_three.innerText =unique_id["amount"];
-        div_two.append(b_three);
-
-       //three sharing//
-
-        div_three = document.createElement("div");
-        div_three.setAttribute("id","share2");
-        div_three.setAttribute("class","share_data");
-        div_three.setAttribute("data-id","threesharing")
-        div_sharing.append(div_three);
-
-        h4_two = document.createElement("h4");
+        const h4_two = document.createElement("h4");
         h4_two.innerText = "Three sharing";
         div_three.append(h4_two);
 
-        b_four = document.createElement("b");
+        const b_four = document.createElement("b");
+        b_four.setAttribute("class", "month");
         b_four.innerText = " Monthly Rent:";
         div_three.append(b_four);
 
-        p_three = document.createElement("p");
-        p_three.innerText = unique_id["sharing"]["threesharing"];
+        const p_three = document.createElement("p");
+        p_three.innerText = unique_id.sharing.Threesharing;
         b_four.append(p_three);
 
-        b_five = document.createElement("b");
+        const b_five = document.createElement("b");
+        b_five.setAttribute("class", "advance");
         b_five.innerText = "Advance:";
         div_three.append(b_five);
 
-        b_five = document.createElement("b");
-        b_five.innerText = unique_id["amount"];
-        div_three.append(b_five);
+        const amountdetail = document.createElement("b");
+        amountdetail.innerText = unique_id.amount;
+        div_three.append(amountdetail);
 
-              //four sharing//
-        div_four = document.createElement("div");
-        div_four.setAttribute("id","share3");
-        div_four.setAttribute("class","share_data");
-        div_four.setAttribute("data-id","foursharing")
-        div_sharing.append(div_four);
-
-        h4_three = document.createElement("h4");
-        h4_three.innerText = "Four sharing";
-        div_four.append(h4_three);
-
-        b_six = document.createElement("b");
-        b_six.innerText = "Monthly Rent:";
-        div_four.append(b_six);
-
-        para_four = document.createElement("p");
-        para_four.innerText = unique_id["sharing"]["foursharing"];
-        b_six.append(para_four);
-
-        b_seven = document.createElement("b");
-        b_seven.innerText = "Advance:";
-        div_four.append(b_seven);
-
-        b_seven = document.createElement("b");
-        b_seven.innerText = unique_id["amount"];
-        div_four.append(b_seven);
-        // with Ac room//
-        //  singlesharewithac = document.createElement("h4");
-        //  singlesharewithac.setAttribute("class","sharing-data");
-        //  singlesharewithac.innerText = "Acc";
-        //  div_address .append(singlesharewithac);
-           //timimg//
-        div_time = document.createElement("div");
-        div_time.setAttribute("class", "time");
-        div_address.append(div_time);
-
-        para = document.createElement("b");
-        para.innerText = "Notice to Book the PG before:";
-        div_time.append(para);
-
-        bold = document.createElement("p");
-        bold.innerText = unique_id["period"];
-        para.append(bold);
-
-        para_one = document.createElement("b");
-        para_one.innerText = "PG Closing Time :";
-        div_time.append(para_one);
-
-        bold_one = document.createElement("p");
-        bold_one.innerText = unique_id["time"];
-        para_one.append(bold_one);
-
-        para_two = document.createElement("b");
-        para_two.innerText = "Available For:";
-        div_time.append(para_two);
-
-        bold_two = document.createElement("p");
-        bold_two.innerText = unique_id["available"];
-        para_two.append(bold_two);
-
-        para_three = document.createElement("b");
-        para_three.innerText = "No.of beds:";
-        div_time.append(para_three);
-
-        bold_three = document.createElement("p");
-        bold_three.innerText = unique_id["beds"];
-        para_three.append(bold_three);
-       // another fecilities//
-
-        //    // new another fecilities//
-        inside_house = document.createElement("strong");
-        inside_house.innerText="House Fecilities:";
-            div_border.append(inside_house);
-
-        div_moreimages=document.createElement("div");
-        div_moreimages.setAttribute("class","faculties_image");
-           div_border.append(div_moreimages);
-
-            image1 = document.createElement("img");
-        image1.setAttribute("src",unique_id["house_fecilities_image"]["image1"]);
-          image1.setAttribute("alt","photo");
-        image1.setAttribute("height","150px");
-        image1.setAttribute("width","180px");
-        div_moreimages .append(image1);
-
-        image2 = document.createElement("img");
-        image2.setAttribute("src",unique_id["house_fecilities_image"]["image2"]);
-          image2.setAttribute("alt","photo");
-        image2.setAttribute("height","150px");
-        image2.setAttribute("width","180px");
-        div_moreimages.append(image2);
-
-        image3 = document.createElement("img");
-        image3.setAttribute("src",unique_id["house_fecilities_image"]["lastimage"]);
-          image3.setAttribute("alt","photo");
-        image3.setAttribute("height","150px");
-        image3.setAttribute("width","180px");
-        div_moreimages.append(image3);
-
-        image4 = document.createElement("img");
-        image4.setAttribute("src",unique_id["house_fecilities_image"]["image4"]);
-          image4.setAttribute("alt","photo");
-        image4.setAttribute("height","150px");
-        image4.setAttribute("width","180px");
-        div_moreimages.append(image4);
-
-
-        //facilities//
-        div_facilities = document.createElement("div");
-        div_facilities.setAttribute("class", "facilities");
-        div_border.append(div_facilities);
-
-        strong = document.createElement("strong");
-        strong.innerText = "Facilities:";
-        div_facilities.append(strong);
-
-
-        div_faculties = document.createElement("div");
-        div_faculties.setAttribute("class", "faculties");
-        div_facilities.append(div_faculties);
-
-        //images//
-        img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fecilities"]["food"]);
-        img_picture.setAttribute("alt", "photo");
-        img_picture.setAttribute("height", "130px");
-        img_picture.setAttribute("width", "120px");
-        div_faculties.append(img_picture);
-
-
-        img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fecilities"]["wifi"]);
-        img_picture.setAttribute("alt", "photo");
-        img_picture.setAttribute("height", "130px");
-        img_picture.setAttribute("width", "120px");
-        div_faculties.append(img_picture);
-
-
-        img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fecilities"]["tv"]);
-        img_picture.setAttribute("alt", "photo");
-        img_picture.setAttribute("height", "130px");
-        img_picture.setAttribute("width", "120px");
-        div_faculties.append(img_picture);
+      //four sharing//
 
 
 
-        img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fecilities"]["parking"]);
-        img_picture.setAttribute("alt", "photo");
-        img_picture.setAttribute("height", "130px");
-        img_picture.setAttribute("width", "120px");
-        div_faculties.append(img_picture);
+     const fourshareimage = document.createElement("div");
+     fourshareimage.setAttribute("class","singleshare");
+     threeshare.append(fourshareimage);
+
+      const fourshareimagedetail = document.createElement("img");
+      fourshareimagedetail.setAttribute("src",unique_id.image);
+      fourshareimagedetail.setAttribute("height","60%");
+      fourshareimagedetail.setAttribute("width","40%");
+      fourshareimage.append(fourshareimagedetail);
 
 
+      const div_four = document.createElement("div");
+      div_four.setAttribute("id", "share3");
+      div_four.setAttribute("class", "share_data");
+      div_four.setAttribute("data-id", "Foursharing");
+      fourshareimage.append(div_four);
+
+      const h4_three = document.createElement("h4");
+      h4_three.innerText = "Four sharing";
+      div_four.append(h4_three);
+
+      const b_six = document.createElement("b");
+      b_six.setAttribute("class", "month");
+      b_six.innerText = "Monthly Rent:";
+      div_four.append(b_six);
+
+      const para_four = document.createElement("p");
+      para_four.innerText = unique_id.sharing.Foursharing;
+      b_six.append(para_four);
+
+      const b_seven = document.createElement("b");
+      b_seven.setAttribute("class", "advance");
+      b_seven.innerText = "Advance:";
+      div_four.append(b_seven);
+
+      const amountmore = document.createElement("b");
+      amountmore.innerText = unique_id.amount;
+      div_four.append(amountmore);
+
+      // with Ac room//
+ 
+       const acrooms =document.createElement("div");
+       acrooms.setAttribute("class","acrooms");
+       div_border.append(acrooms);
+
+      const div_class = document.createElement("div");
+      div_class.setAttribute("class", "singleshare");
+      acrooms.append(div_class);
+
+      const acroom_image = document.createElement("img");
+      acroom_image.setAttribute("src",unique_id.image);
+      acroom_image.setAttribute("width","40%");
+      acroom_image.setAttribute("height","60%");
+      div_class.append(acroom_image);
+
+      const sharingofpg = document.createElement("div");
+      sharingofpg.setAttribute("id", "share4");
+      sharingofpg.setAttribute("class", "share_data");
+      sharingofpg.setAttribute("data-id", "Singleshare_AC");
+      div_class.append(sharingofpg);
+
+      const singlesharewithac = document.createElement("h4");
+      singlesharewithac.innerText = "Single share with AC";
+      sharingofpg.append(singlesharewithac);
+
+      const monthofrent = document.createElement("b");
+      monthofrent.innerText = "Monthly Rent:";
+      sharingofpg.append(monthofrent);
+
+      const singlefourshare = document.createElement("p");
+      singlefourshare.innerText = unique_id.sharing.Singleshare_AC;
+
+      monthofrent.append(singlefourshare);
+
+      const advanceofpg = document.createElement("b");
+      advanceofpg.innerText = "Advance :";
+      sharingofpg.append(advanceofpg);
+
+      const amountofacroom = document.createElement("b");
+      amountofacroom.innerText = unique_id.amount;
+      sharingofpg.append(amountofacroom);
+
+      // second AC romm//
+
+      const div_twinroom = document.createElement("div");
+      div_twinroom.setAttribute("class", "singleshare");
+      acrooms.append(div_twinroom);
+
+      const twinacroom_image = document.createElement("img");
+      twinacroom_image.setAttribute("src",unique_id.image);
+      twinacroom_image.setAttribute("width","40%");
+      twinacroom_image.setAttribute("height","60%");
+      div_twinroom.append(twinacroom_image);
+
+      const roomwithac = document.createElement("div");
+      roomwithac.setAttribute("id","share5");
+      roomwithac.setAttribute("class", "share_data");
+      roomwithac.setAttribute("data-id","Twinshare_AC");
+      div_twinroom.append(roomwithac);
+
+      const twosharingpg = document.createElement("h4");    
+      twosharingpg.innerText = "Twin share with AC";
+      roomwithac.append(twosharingpg);
+
+      const monthofamountpg = document.createElement("b");
+      monthofamountpg.innerText = "Monthly Rent:";
+      roomwithac.append(monthofamountpg);
+
+      const twinshareofpgwithac = document.createElement("p");
+      twinshareofpgwithac.innerText = unique_id.sharing.Twinshare_AC;
+      monthofamountpg.append(twinshareofpgwithac);
+
+      const advancewithacroom = document.createElement("b");
+      advancewithacroom.innerText = "Advance :";
+      roomwithac.append(advancewithacroom);
+
+      const sixshare = document.createElement("b");
+      sixshare.innerText = unique_id.amount;
+      roomwithac.append(sixshare);
+
+      //timimg//
+      const rulesandregulation = document.createElement("h3");
+      rulesandregulation.innerText = "Rules and regulation :";
+     div_border.append(rulesandregulation);
+
+      const div_time = document.createElement("div");
+      div_time.setAttribute("class", "time");
+      div_border.append(div_time);
 
 
-        img_picture = document.createElement("img");
-        img_picture.setAttribute("src", unique_id["fecilities"]["fridge"]);
-        img_picture.setAttribute("alt", "photo");
-        img_picture.setAttribute("height", "130px");
-        img_picture.setAttribute("width", "120px");
-        div_faculties.append(img_picture);
+      const para = document.createElement("b");
+      para.innerText = " Book the PG before:";
+      div_time.append(para);
 
-        
+      const pgclosingtime = document.createElement("p");
+      pgclosingtime.innerText = unique_id.period;
+      para.append(pgclosingtime);
 
-                        
-                        let select = document.querySelectorAll(".share_data")
-    select.forEach(each => {
-                            each.addEventListener("click", (event) => {
-                                const person_data = each.dataset.id;
-                                console.log(person_data)
-                                window.location.href = `./applicants.html?my_uuid=${pg_id}&my_room_id=${person_data}`;
-                            })
-                        })
+      const para_one = document.createElement("b");
+      para_one.innerText = "PG Closing Time :";
+      div_time.append(para_one);
+
+      const bold_one = document.createElement("p");
+      bold_one.innerText = unique_id.time;
+      para_one.append(bold_one);
+
+      const para_two = document.createElement("b");
+      para_two.innerText = "Available For:";
+      div_time.append(para_two);
+
+      const bold_two = document.createElement("p");
+      bold_two.innerText = unique_id.available;
+      para_two.append(bold_two);
+
+      const para_three = document.createElement("b");
+      para_three.innerText = "No.of beds:";
+      div_time.append(para_three);
+
+      const bold_three = document.createElement("p");
+      bold_three.innerText = unique_id.beds;
+      para_three.append(bold_three);
+      // another fecilities//
+
+      //    // new another fecilities//
+
+      const inside_house = document.createElement("h3");
+      inside_house.innerText = "House Facilities:";
+      div_border.append(inside_house);
+
+      const div_moreimages = document.createElement("div");
+      div_moreimages.setAttribute("class", "faculties_image");
+      div_border.append(div_moreimages);
+   // first image//
+      const div_facilityimage = document.createElement("div");
+      div_facilityimage.setAttribute("class","imagename");
+      div_moreimages.append(div_facilityimage);
+
+      const image1 = document.createElement("img");
+      image1.setAttribute("src", unique_id.house_fecilities_image.image1);
+      image1.setAttribute("alt", "photo");
+      image1.setAttribute("height", "150px");
+      image1.setAttribute("width", "180px");
+      div_facilityimage.append(image1);
+
+      const facilityfirstname = document.createElement("b");
+      facilityfirstname.innerText = unique_id.imagename.firstname;
+      div_facilityimage.append(facilityfirstname);
+   // second image //
+      const div_facilitytwo = document.createElement("div");
+      div_facilitytwo.setAttribute("class","image2");
+      div_moreimages.append(div_facilitytwo);
+
+      const image2 = document.createElement("img");
+      image2.setAttribute("src", unique_id.house_fecilities_image.image2);
+      image2.setAttribute("alt", "photo");
+      image2.setAttribute("height", "150px");
+      image2.setAttribute("width", "180px");
+      div_facilitytwo.append(image2);
+
+      const facilitysecondname = document.createElement("b");
+      facilitysecondname.innerText = unique_id.imagename.secondname;
+      div_facilitytwo.append(facilitysecondname);
+     // third image//
+      const div_facilitythree = document.createElement("div");
+      div_facilitythree.setAttribute("class","image3");
+      div_moreimages.append(div_facilitythree);
+
+      const image3 = document.createElement("img");
+      image3.setAttribute("src", unique_id.house_fecilities_image.image4);
+      image3.setAttribute("alt", "photo");
+      image3.setAttribute("height", "150px");
+      image3.setAttribute("width", "180px");
+      div_facilitythree.append(image3);
+
+      const facilitythirdname = document.createElement("b");
+      facilitythirdname.innerText = unique_id.imagename.thirdname;
+      div_facilitythree.append(facilitythirdname);
+
+     // four image //
+      const div_facilityfour = document.createElement("div");
+      div_facilityfour.setAttribute("class","image4");
+      div_moreimages.append(div_facilityfour);
+
+      const image4 = document.createElement("img");
+      image4.setAttribute("src", unique_id.house_fecilities_image.lastimage);
+      image4.setAttribute("alt", "photo");
+      image4.setAttribute("height", "150px");
+      image4.setAttribute("width", "180px");
+      div_facilityfour.append(image4);
+
+      const faciityfourthname = document.createElement("b");
+      faciityfourthname.innerText = unique_id.imagename.fourthname;
+      div_facilityfour.append(faciityfourthname);    
 
 
+       //facilities more//
+      const div_facilities = document.createElement("div");
+      div_facilities.setAttribute("class", "facilities");
+      div_border.append(div_facilities);
+
+      strong = document.createElement("strong");
+      strong.innerText = "Facilities:";
+      div_facilities.append(strong);
+
+      const div_faculties = document.createElement("div");
+      div_faculties.setAttribute("class", "faculties");
+      div_border.append(div_faculties);
+
+      //images//
+      const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","cooking");
+      div_faculties.append(cooking_image);
+
+      const img_picture = document.createElement("img");
+      img_picture.setAttribute("src", unique_id.fecilities.food);
+      img_picture.setAttribute("alt", "photo");
+      img_picture.setAttribute("height", "130px");
+      img_picture.setAttribute("width", "120px");
+      cooking_image.append(img_picture);
+
+      
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = unique_id.imagename.fifthname;
+      cooking_image.append(facilityfifthname);
+
+      // another image//
+
+        const fridge_image = document.createElement("div");
+        fridge_image.setAttribute("class","fridge");
+        div_faculties.append(fridge_image);
+
+      const img_pictureone = document.createElement("img");
+      img_pictureone.setAttribute("src", unique_id.fecilities.wifi);
+      img_pictureone.setAttribute("alt", "photo");
+      img_pictureone.setAttribute("height", "130px");
+      img_pictureone.setAttribute("width", "120px");
+      fridge_image.append(img_pictureone);
+
+      const facilitysixname = document.createElement("b");
+      facilitysixname.innerText = unique_id.imagename.ninethname;
+      fridge_image.append(facilitysixname);
+
+      // another image //
+
+      const tv_image = document.createElement("div");
+      tv_image.setAttribute("class","tv_image");
+      div_faculties.append(tv_image);
+
+      const img_picturetwo = document.createElement("img");
+      img_picturetwo.setAttribute("src", unique_id.fecilities.tv);
+      img_picturetwo.setAttribute("alt", "photo");
+      img_picturetwo.setAttribute("height", "130px");
+      img_picturetwo.setAttribute("width", "120px");
+      tv_image.append(img_picturetwo);
+      
+      const facilityseventhname = document.createElement("b");
+      facilityseventhname.innerText = unique_id.imagename.eigthname;
+      tv_image.append(facilityseventhname);
+
+
+ // another image //
+        const parking_image = document.createElement("div");
+        parking_image.setAttribute("class","parking_image");
+        div_faculties.append(parking_image);
+
+      const img_picturethree = document.createElement("img");
+      img_picturethree.setAttribute("src", unique_id.fecilities.parking);
+      img_picturethree.setAttribute("alt", "photo");
+      img_picturethree.setAttribute("height", "130px");
+      img_picturethree.setAttribute("width", "120px");
+      parking_image.append(img_picturethree);
+
+      const facilityeightname = document.createElement("b");
+      facilityeightname.innerText = unique_id.imagename.seventhname;
+      parking_image.append(facilityeightname);
+
+   // last image //
+        const fridge = document.createElement("div");
+        fridge.setAttribute("class","fridge");
+        div_faculties.append(fridge);
+
+      const img_picturefour = document.createElement("img");
+      img_picturefour.setAttribute("src", unique_id.fecilities.fridge);
+      img_picturefour.setAttribute("alt", "photo");
+      img_picturefour.setAttribute("height", "130px");
+      img_picturefour.setAttribute("width", "120px");
+      fridge.append(img_picturefour);
+
+      const facilityninethname = document.createElement("b");
+      facilityninethname.innerText = unique_id.imagename.sixthname;
+      fridge.append(facilityninethname);
+
+      
+   
+
+      const select = document.querySelectorAll(".share_data");
+      select.forEach((each) => {
+        each.addEventListener("click", function selectObject() {
+          const person_data = each.dataset.id;
+          console.log(person_data);
+          window.location.href = `./applicants.html?my_uuid=${pg_id}&&my_room_id=${person_data}`;
+        });
+      });
     </script>
-<script src="../../assets/js/header.js"></script>   
-</body>
-
+        <script src="../../assets/js/header.js"></script>
+    </body>
 </html>

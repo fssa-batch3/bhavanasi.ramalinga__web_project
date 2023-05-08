@@ -1,262 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="../../assets/css/form.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <link rel="stylesheet" href="../../assets/css/form.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Form</title>
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Form</title>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <div class="information">
-        <div class="image">
-            <div class="more">
-                <h1>post property Add to Sell or rent online for free!</h1>
-
-                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
-                <b> Free professional photoshot</b><br>
-                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
-                <b> Access to 15 Lac Buyers & Tenants</b><br>
-                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
-                <b>Get Contact Details of upto 5 Responses</b>
-            </div>
+        <div class="information">
             <div class="image">
-                <img src="../../assets/images/seller-removebg-preview.png" alt="photo" />
+                <div class="more">
+                    <h2>post property Add to Sell or rent online for free!</h2>
+
+                    <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
+                    <b> Free professional photoshot</b>
+                    <br>
+                    <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                    <b> Access to 15 Lac Buyers & Tenants</b>
+                    <br>
+                    <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                    <b>Get Contact Details of upto 5 Responses</b>
+                </div>
+                <div class="image">
+                    <img src="../../assets/images/seller-removebg-preview.png" alt="photo">
+                </div>
             </div>
-        </div>
-        <form role="form" onsubmit="signUp(event)">
-
-            <div class="container">
-                <label for="name"><b> pg_Name</b></label>
-                <input type="text" placeholder="pg_name" pattern="^(?!\s)[a-zA-Z\s]+$" name="fname" id="name"
-                    required><br><br>
-
-
-                <label for="type"><b>Rooms categories are available and rent</b></label><br><br>
-
-                <label for="sharing"> single sharing </label><input type="number" placeholder="rent" id="onesharing"
-                    pattern="[0-9]+" min="3000" max="30000" required><br><br>
-
-
-                <label for="sharing" >Twin sharing </label><input type="number"placeholder="rent" pattern="[0-9]+"
-                    id="twosharing"min="3000" max="30000" required><br><br>
-
-
-                <label for="sharing"> Triple sharing </label><input type="number" placeholder="rent" pattern="[0-9]+"
-                    id="threesharing"min="3000" max="30000" required><br><br>
-
-
-                <label for="sharing"> Four sharing </label><input type="number"placeholder="rent" id="foursharing"
-                    pattern="[0-9]+" min="3000" max="30000"required><br><br>
-
-
-                <label for="number"><b>Deposited amount:</b></label>
-                <input type="number" id="amount" name="number" pattern="[0-9]+" min="4000" max="10000" required><br><br>
-                <label for="sharing"> Notice Period </label>
-                <input type="text" id="period" placeholder="example: 10 days " min="10 days" max="30 days" required><br><br>
-
-                <label for="sharing">Closing Time:</label>
-                <input type="text" id="time" placeholder="Example:11:00 PM" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required><br><br>
-
-                <!-- 
-      <label for="sharing"> Available For</label>
-      <input  id="available" required><br><br> -->
-
-
-
-                <label for="sharing"> Total Number of Beds </label>
-                <input type="number" id="beds" min="20" max="200" required><br><br>
-
-                <label for="image1"> Facilities Image url </label>
-                <input type="url" id="image1" required></input><br><br>
-
-
-                <label for="image"> Facilities Image url</label>
-                <input type="url" id="image2" required></input><br><br>
-
-                <label for="image"> Facilities Image url</label>
-                <input type="url" id="lastimage" required></input><br><br>
-
-                <label for="image"> Facilities Image url</label>
-                <input type="url" id="image4" required></input><br><br>
-
-                <label for="sharing"> Facilities Image url </label>
-                <input type="url" id="parking" required><br><br>
-
-
-
-                <label for="sharing">Facilities Image url </label>
-                <input type="url" id="wifi" required><br><br>
-
-
-                <label for="sharing"> Facilities Image url</label>
-                <input type="url" id="food" required><br><br>
-
-
-                <label for="sharing"> Facilities Image url</label>
-                <input type="url" id="fridge" required><br><br>
-
-
-                <label for="sharing"> Facilities Image url</label>
-                <input type="url" id="tv" required><br><br>
-
-                <label for="pg_name"><b> Image of bed or room url</b></label>
-                <input type="url" name="image" id="image" required><br><br>
-
-
-
-                <label for="address"><b> Address</b></label><br>
-                <textarea type="text" id="address" pattern=" /^[a-zA-Z0-9,-/]+$/"required></textarea><br>
-
-                <label for="cars">Choose </label>
-                <select name="available" id="available" required>
-                    <option>Choose</option>
-                    <option>Boys</option>
-                    <option>Girls</option>
-                    <option>Both for girls and boys</option>
-                </select>
-
-                <button type="submit" class="registerbtn">Submit</button><br>
-
-
-            </div>
-        </form>
-
-        <script src="/assets/js/header.js"></script>
-
-
-        <script>
-            function signUp(e) {
-
-                e.preventDefault();
-
-                let name = document.getElementById("name").value;
-
-                // one_share = document.getElementById("one_share").checked;
-                // two_share = document.getElementById("two_share").checked;
-                // three_share = document.getElementById("three_share").checked;
-                // four_share = document.getElementById("four_share").checked;
-                food = document.getElementById("food").value;
-
-                parking = document.getElementById("parking").value;
-
-                wifi = document.getElementById("wifi").value;
-
-                tv = document.getElementById("tv").value;
-                fridge = document.getElementById("fridge").value;
-                // more images//
-                image1 = document.getElementById("image1").value;
-                image2 = document.getElementById("image2").value;
-                lastimage = document.getElementById("lastimage").value;
-                image4 = document.getElementById("image4").value;
-
-
-
-
-
-
-                onesharing = document.getElementById("onesharing").value;
-                twosharing = document.getElementById("twosharing").value;
-                threesharing = document.getElementById("threesharing").value;
-                foursharing = document.getElementById("foursharing").value;
-
-
-                period = document.getElementById("period").value;
-
-                available = document.getElementById("available").value;
-                beds = document.getElementById("beds").value;
-                time = document.getElementById("time").value;
-                amount = document.getElementById("amount").value;
-
-                image = document.getElementById("image").value;
-                address = document.getElementById("address").value.trim().split(/\s+/g).join(' ');
-                let my_uuid = uuidv4();
-
-                if (available === "Choose") {
-                alert("Please select either Boys, Girls, or Both for girls and boys");
-                return false; 
-              }
-                        
-                function validate() {
-            let val = document.getElementById('address').value;
-            if (/^\s*$/g.test(val) || val.indexOf('\n') != -1) {
-                alert('Write your address properly');
-                val=reset();
-            }
-        }
-         validate();
-        
-
-
-
-                let users = JSON.parse(localStorage.getItem('users')) || [];
-
+            <form role="form" onsubmit="signUp(event)">
+
+                <div class="container">
+                    <div class="pgdetails">
+                        <label for="name">
+                            <b> pg_Name</b>
+                        </label>
+                        <br>
+                        <input type="text" placeholder="pg_name" pattern="^(?!\s)[a-zA-Z\s]+$" name="fname" id="name"
+                            required>
+                        <br>
+                        <br>
                
+                        <label for="sharing">
+                            <b>Single sharing Rent</b>
+                            <br> 
+                        </label>
+                        <input type="number" placeholder="Monthly rent" id="Onesharing"
+                            pattern="[0-9]+" min="3000" max="30000" required>
+                        <br>
+                        <br>
 
-              
-                    let exit = users.length &&
-                        JSON.parse(localStorage.getItem('users')).some(data =>
-                            data.name == name);
+                        <label for="sharing">
+                            <b>Twin sharing Rent</b>
+                            <br>
+                        </label>
+                        <input type="number"placeholder=" Monthlyrent" pattern="[0-9]+"
+                            id="Twosharing"min="3000" max="30000" required>
+                        <br>
+                        <br>
 
-                    function login_data(e) {
-                        return e.my_uuid == productId;
-                    }
+                        <label for="sharing">
+                            <b>Triple sharing Rent</b>
+                            <br>
+                        </label>
+                        <input type="number" placeholder="Monthly rent" pattern="[0-9]+"
+                            id="Threesharing"min="3000" max="30000" required>
+                        <br>
+                        <br>
 
+                        <label for="sharing">
+                            <b>Four sharing</b>
+                            <br>
+                        </label>
+                        <input type="number"placeholder="Monthly rent" id="Foursharing"
+                            pattern="[0-9]+" min="3000" max="30000"required>
+                        <br>
+                        <br>
+                    
+                        <label for="sharing">
+                            <b>Single sharing(With AC)</b>
+                            <br>
+                        </label>
+                        <input type="number"placeholder="Monthly rent" id="singleshareac"
+                            pattern="[0-9]+" min="3000" max="30000"required>
+                        <br>
+                        <br>
+                
+                        <label for="sharing">
+                            <b>Twin sharing(with AC)</b>
+                            <br>
+                        </label>
+                        <input type="number"placeholder="Monthly rent" id="twoshareac"
+                            pattern="[0-9]+" min="3000" max="30000"required>
+                        <br>
+                        <br>
 
+                        <label for="number">
+                            <b>Deposited amount:</b>
+                        </label>
+                        <br>
+                        <input type="number" id="amount" name="number" pattern="[0-9]+" min="4000" max="10000" required>
+                        <br>
+                        <br>
+                        <label for="sharing">
+                            <b>Notice Period</b>
+                        </label>
+                        <br>
+                        <input type="text" id="period" placeholder="example: 10 days " min="10 days" max="30 days" required>
+                        <br>
+                        <br>
 
-                    let owner_id = JSON.parse(localStorage.getItem('userId'));
+                        <label for="sharing">
+                            <b>Closing Time:</b>
+                        </label>
+                        <br>
+                        <input type="text" id="time" placeholder="Example:11:00 PM" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
+                        <br>
+                        <br>
 
+                        <!-- 
+                            <label for="sharing"> Available For</label>
+                            <input  id="available" required><br><br> -->
 
-                    if (!exit) {
-                        users.push({
-                            name,
-                            "fecilities": { food, parking, wifi, tv, fridge },
-                            period,
-                            available,
-                            beds,
-                            amount,
-                            time,
-                            address,
+                        <label for="sharing">
+                            <b>Total Number of Beds</b>
+                        </label>
+                        <br>
+                        <input type="number" id="beds" min="20" max="200" required>
+                        <br>
+                        <br>
 
-                            "owner_id": owner_id,
-                            "sharing": { onesharing, twosharing, threesharing, foursharing },
-                            image,
-                            my_uuid,
-                            // singleshare,
-                            // twinshare,
-                            // tripleshare,
-                            // fourshare,
-                            "house_fecilities_image": { image1, image2, lastimage, image4 }
-                        });
+                        <label for="image1">
+                            <b>Facility Image url(kitchen)</b> 
+                        </label>
+                        <br>
+                        <input type="url" id="image1" required>
+</input><br>
+                        <br>
+               
+                        <lable for="facilityname">
+                            <b>Above Facility url Name </b>
+                        </lable>
+                        <br>
+                        <input type="text" id="firstname" pattern="^(?!\s)[a-zA-Z\s]+$"required>
+</input><br>
+                        <br>
 
-                        localStorage.setItem('users', JSON.stringify(users));
-                        console.log(localStorage.getItem('users'));
-                        localStorage.setItem("productId", JSON.stringify(my_uuid));
+                        <label for="image">
+                            <b>Facility Image url(Terrus)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="image2" required>
+</input><br>
+                        <br>
 
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="secondname" pattern="^(?!\s)[a-zA-Z\s]+$"required>
+</input><br>
+                        <br>
 
-                        document.querySelector('form').reset();
+                        <label for="image">
+                            <b>Facilities Image url (Balkeni)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="image4" required>
+</input><br>
+                        <br>
 
-
-                        alert('Account created successfully');
-
-
-                        location.href = "../products/seller_product.html";
-                    }
-
-                }
-
-
-
-
-
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="thirdname" pattern="^(?!\s)[a-zA-Z\s]+$"required>
+</input><br>
+                        <br>
+           
+                    </div>
+                    <div class="anotherfecilities">
             
+                        <label for="sharing">
+                            <b>Facilities Image url (w.m)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="lastimage" required>
+                        <br>
+                        <br>
+            
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="fourthname" pattern="^(?!\s)[a-zA-Z\s]+$"required>
+</input><br>
+                        <br>
 
+                        <label for="sharing">
+                            <b>Facilities Image url(food)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="food" required>
+                        <br>
+                        <br>
+
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="fifthname" pattern="^(?!\s)[a-zA-Z\s]+$" required>
+</input><br>
+                        <br>
+
+                        <label for="sharing">
+                            <b>Facilities Image url(fridge)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="fridge" required>
+                        <br>
+                        <br>
+
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+ </label>
+                        <br>
+                        <input type="text" id="sixthname" pattern="^(?!\s)[a-zA-Z\s]+$" required>
+</input><br>
+                        <br>
+
+                        <label for="image">
+                            <b>Facilities Image url(parking)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="parking" required>
+</input><br>
+                        <br>
+                   
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="seventhname" pattern="^(?!\s)[a-zA-Z\s]+$" required>
+</input><br>
+                        <br>
+
+                        <label for="sharing">
+                            <b>Facilities Image url(tv)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="tv" required>
+                        <br>
+                        <br>
+
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="eigthname" pattern="^(?!\s)[a-zA-Z\s]+$" required>
+</input><br>
+                        <br>
+
+                        <label for="sharing">
+                            <b> Image url(wifi)</b>
+                        </label>
+                        <br>
+                        <input type="url" id="wifi" required>
+                        <br>
+                        <br>
+
+                        <label for="image">
+                            <b>Above Facility url Name</b>
+                        </label>
+                        <br>
+                        <input type="text" id="ninethname" pattern="^(?!\s)[a-zA-Z\s]+$" required>
+</input><br>
+                        <br>
+
+                        <label for="pg_name">
+                            <b>Image of bed or room url</b>
+                        </label>
+                        <br>
+                        <input type="url" name="image" id="image" required>
+                        <br>
+                        <br>
+
+                        <label for="address">
+                            <b> Address</b>
+                        </label>
+                        <br>
+                        <textarea type="text" id="address"required></textarea>
+                        <br>
+
+                        <label for="cars">
+                            <b>Choose</b>
+                        </label>
+                        <select name="available" id="available" required>
+                            <option>Choose</option>
+                            <option>Boys</option>
+                            <option>Girls</option>
+                            <option>Both for girls and boys</option>
+                        </select>
+
+                        <button type="submit" class="registerbtn">Submit</button>
+                        <br>
+
+                    </div>
+                </div>
+            </form>
+
+            <script src="/assets/js/header.js"></script>
+
+            <script>
+            function signUp(e) {
+  e.preventDefault();
+
+              const name = document.getElementById("name").value;
+
+              // one_share = document.getElementById("one_share").checked;
+              // two_share = document.getElementById("two_share").checked;
+              // three_share = document.getElementById("three_share").checked;
+              // four_share = document.getElementById("four_share").checked;
+              const food = document.getElementById("food").value;
+
+              const parking = document.getElementById("parking").value;
+
+              const wifi = document.getElementById("wifi").value;
+
+              const tv = document.getElementById("tv").value;
+              const fridge = document.getElementById("fridge").value;
+              // more images//
+              const image1 = document.getElementById("image1").value;
+              const image2 = document.getElementById("image2").value;
+              const lastimage = document.getElementById("lastimage").value;
+              const image4 = document.getElementById("image4").value;
+              const firstname = document.getElementById("firstname").value;
+              const secondname = document.getElementById("secondname").value;
+              const thirdname = document.getElementById("thirdname").value;
+              const fourthname = document.getElementById("fourthname").value;
+              const fifthname = document.getElementById("fifthname").value;
+              const sixthname = document.getElementById("sixthname").value;
+              const seventhname = document.getElementById("seventhname").value;
+              const eigthname = document.getElementById("eigthname").value;
+              const ninethname = document.getElementById("ninethname").value;
+              const Singleshare_AC = document.getElementById("singleshareac").value;
+              const Twinshare_AC = document.getElementById("twoshareac").value;
+              const Onesharing = document.getElementById("Onesharing").value;
+              const Twosharing = document.getElementById("Twosharing").value;
+              const Threesharing = document.getElementById("Threesharing").value;
+              const Foursharing = document.getElementById("Foursharing").value;
+
+  const period = document.getElementById("period").value;
+
+              const available = document.getElementById("available").value;
+              const beds = document.getElementById("beds").value;
+              const time = document.getElementById("time").value;
+              const amount = document.getElementById("amount").value;
+
+              const image = document.getElementById("image").value;
+              const address = document
+    .getElementById("address").value.trim()
+    .split(/\s+/g)
+    .join(" ");
+              const my_uuid = uuidv4();
+
+              if (available === "Choose") {
+                alert("Please select either Boys, Girls, or Both for girls and boys");
+                return false;
+              }
+            
+              function validate() {
+                let val = document.getElementById("address").value;
+                if (/^\s*$/g.test(val)) {
+                  alert("Write your address properly");
+                //   val = reset();
+                   return false;
+    }
+  }
+  validate();
+
+  const pgdetails = JSON.parse(localStorage.getItem("pgdetails")) || [];
+
+              const exit =
+    pgdetails.length &&
+    JSON.parse(localStorage.getItem("pgdetails")).some(
+      (data) => data.name == name
+    );
+
+  function login_data(e) {
+                return e.my_uuid == productId;
+              }
+
+              const owner_id = JSON.parse(localStorage.getItem("userId"));
+
+  if (!exit) {
+                pgdetails.push({
+                  name,
+                  fecilities: { food, parking, wifi, tv, fridge },
+                  period,
+                  available,
+                  beds,
+                  amount,
+                  time,
+                  address,
+                  imagename: {
+                    firstname,
+                    secondname,
+                    thirdname,
+                    fourthname,
+                    fifthname,
+                    sixthname,
+                    seventhname,
+                    eigthname,
+                    ninethname,
+                            },
+                    owner_id,
+                                sharing: {
+                        Onesharing,
+                        Twosharing,
+                        Threesharing,
+                        Foursharing,
+                        Singleshare_AC,
+                        Twinshare_AC,
+                                },
+                    image,
+                  my_uuid,
+                  // singleshare,
+                  // twinshare,
+                  // tripleshare,
+                  // fourshare,
+                  house_fecilities_image: { image1, image2, lastimage, image4 },
+                });
+
+                localStorage.setItem("pgdetails", JSON.stringify(pgdetails));
+                console.log(localStorage.getItem("pgdetails"));
+                localStorage.setItem("productId", JSON.stringify(my_uuid));
+
+    document.querySelector("form").reset();
+
+    alert("PG successfully");
+
+    location.href = "../products/seller_product.html";
+              }
+}
         </script>
 </body>
 

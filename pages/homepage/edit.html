@@ -1,100 +1,100 @@
  <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="../../assets/css/edit.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Edit</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <header>
-        <script src="../../assets/js/header.js"></script>   
-    </header>
+    <head>
+        <link rel="stylesheet" href="../../assets/css/edit.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Edit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <script src="../../assets/js/header.js"></script>   
+        </header>
     
-    <form class="edit" onsubmit="update(event)">
-        <div class="container">
-            <div class="photo">
+        <form class="edit" onsubmit="update(event)">
+            <div class="container">
+                <div class="photo">
         
-        <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar"   height="140vh" width="15%">
-            </div>
-        <label for="name"><b> Name</b></label>
-        <input type="text" placeholder="Name" name="fname" pattern="^(?!\s)[a-zA-Z\s]+$"id="name" required="true"  >
+                    <img src="../../assets/images/avathar.jpg" alt="Avathar" class="avathar" height="140vh" width="15%">
+                </div>
+                <label for="name">
+                    <b> Name</b>
+                </label>
+                <input type="text" placeholder="Name" name="fname" pattern="^(?!\s)[a-zA-Z\s]+$"id="name" required="true">
         
-        
-        <label for="phone"><b>phone_number</b></label>
-        <input type="text" placeholder="phone_number" name="tel" pattern="[0-9].{9}" id="phone_number" required>  
+                <label for="phone">
+                    <b>phone_number</b>
+                </label>
+                <input type="text" placeholder="phone_number" name="tel" pattern="[6-9]{1}[0-9]{9}" id="phone_number" required>  
     
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email"   pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="email" disabled>
+                <label for="email">
+                    <b>Email</b>
+                </label>
+                <input type="text" placeholder="Enter Email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" id="email" disabled>
         
-        <label for="cars"><b>Choose Owner/Customer</b> </label>
-        <select name="available" id="customer_or_owner" disabled>
-            <option>Customer</option>
-            <option>Owner</option></select><br><br>
+                <label for="cars">
+                    <b>Choose Owner/Customer</b> 
+                </label>
+                <select name="available" id="customer_or_owner" disabled>
+                    <option>Customer</option>
+                    <option>Owner</option>
+                </select>
+                <br>
+                <br>
 
-        <label for="address"  ><b>Address</b></label><br>
-        <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"name="address" id="address" required></textarea> 
-         <div class="last">  
-        <button type="submit"  >submit</button>
+                <label for="address">
+                    <b>Address</b>
+                </label>
+                <br>
+                <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"name="address" id="address" required></textarea> 
+                <div class="last">  
+                    <button type="submit">submit</button>
         
-         </div>
-
+                </div>
             
             </div>
         </form>
-    
 
-    <script>
-        
-       
-        // let userId = JSON.parse(localStorage.getItem('userId'));
-    let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+        <script>
+               // let userId = JSON.parse(localStorage.getItem('userId'));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
-    console.log(user_cred);
+console.log(user_cred);
 
-    function login_data(e){
-      return e.email == userId;
-    }
-     user_data = user_cred.find(login_data);
+function login_data(e) {
+  return e.email == userId;
+}
+user_data = user_cred.find(login_data);
 
-    console.log(user_data);
+console.log(user_data);
 
-    document.getElementById("name").value = user_data["name"];
-    document.getElementById("phone_number").value = user_data["phone_number"];
-    document.getElementById("email").value = user_data["email"];
-    document.getElementById("address").value = user_data["address"];
-    document.getElementById("customer_or_owner").value = user_data["customer_or_owner"];
-    function update(e){
+document.getElementById("name").value = user_data.name;
+document.getElementById("phone_number").value = user_data.phone_number;
+document.getElementById("email").value = user_data.email;
+document.getElementById("address").value = user_data.address;
+document.getElementById("customer_or_owner").value =
+  user_data.customer_or_owner;
+function update(e) {
+  e.preventDefault();
 
-        e.preventDefault();
+  const up_name = document.getElementById("name").value;
+  const up_address = document.getElementById("address").value;
+  const up_phone_number = document.getElementById("phone_number").value;
+  const customer_or_owner = document.getElementById("customer_or_owner").value;
 
-        let up_name = document.getElementById("name").value
-        let up_address = document.getElementById("address").value
-        let up_phone_number = document.getElementById("phone_number").value
-        let customer_or_owner = document.getElementById("customer_or_owner").value
+  user_data.name = up_name;
+  user_data.address = up_address;
+  user_data.phone_number = up_phone_number;
+  user_data.customer_or_owner = customer_or_owner;
 
-        user_data["name"] = up_name;
-        user_data["address"] = up_address;
-        user_data["phone_number"] =up_phone_number;
-        user_data["customer_or_owner"] = customer_or_owner;
+  localStorage.setItem("user_cred", JSON.stringify(user_cred));
 
-        localStorage.setItem("user_cred", JSON.stringify(user_cred));
-
-
-
-
-        window.location.href="./my profile.html"
-
-    }
-   
+  window.location.href = "./my profile.html";
+}
     </script>
-    
         
-</body>
+    </body>
 </html> 
-
-
- 

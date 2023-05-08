@@ -1,87 +1,93 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
     <head>
-    <link   rel="stylesheet"  href="../../assets/css/viewcontact.css">
+        <link rel="stylesheet" href="../../assets/css/viewcontact.css">
     
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
 
 form {border: 3px solid #f1f1f1;}
 
 </style>
-<title>Document</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-<form>
-<h2>For boys and girls</h2>
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <form>
+            <h2>For boys and girls</h2>
 
-<form role="form" onsubmit="users(event)">
+            <form role="form" onsubmit="users(event)">
   
-  <div class="container">
-    <label for="Name"><b>Name</b></label>
-    <input type="text" placeholder="Enter name"  pattern="[a-z]+" id="name" required>
-     <label for="F/M"><b>female/male</b></label>
-     <input type="text" placeholder="male/female" id="gender"required >
-   <br> <label for="Email"><b>Email-id</b></label>
-    <input type="text" placeholder="Enter- id" id="email" required ></br>
+                <div class="container">
+                    <label for="Name">
+                        <b>Name</b>
+                    </label>
+                    <input type="text" placeholder="Enter name" pattern="[a-z]+" id="name" required>
+                    <label for="F/M">
+                        <b>female/male</b>
+                    </label>
+                    <input type="text" placeholder="male/female" id="gender"required>
+                    <br>
+                    <label for="Email">
+                        <b>Email-id</b>
+                    </label>
+                    <input type="text" placeholder="Enter- id" id="email" required></br>
 
-    <br> <label for="psw"><b>Phone-number</b></label>
-    <input type="text" placeholder="phone-number" id="phone" required></br>
-      <br> <label for="sharing"><b>You are interested in:</b></label><br>
-      <br> <label for="psw"><b>single/double/triple /four Sharing  room :</b></label>
-    <input type="text" placeholder="  enter sharing room" id="sharing" required></br><br>
+                    <br>
+                    <label for="psw">
+                        <b>Phone-number</b>
+                    </label>
+                    <input type="text" placeholder="phone-number" id="phone" required></br>
+                    <br>
+                    <label for="sharing">
+                        <b>You are interested in:</b>
+                    </label>
+                    <br>
+                    <br>
+                    <label for="psw">
+                        <b>single/double/triple /four Sharing  room :</b>
+                    </label>
+                    <input type="text" placeholder="  enter sharing room" id="sharing" required>
+</br><br>
                 
-         <button type="submit"  class="registerbtn">contact</a></button>
-       
+                    <button type="submit" class="registerbtn">contact</a></button>
     
-     </div>
-    
- 
+                </div>
   
     </div>
-</form>
-<script>
-  const users = e => {           
-            e.preventDefault();
-            let name = document.getElementById("name").value;
-            gender = document.getElementById("gender").value;
-            email = document.getElementById("email").value;
-            phone = document.getElementById("phone").value;
-            sharing = document.getElementById("sharing").value;
-            let my_uuid= uuidv4();
-          
+            </form>
+            <script>
+  const users = (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    gender = document.getElementById("gender").value;
+    email = document.getElementById("email").value;
+    phone = document.getElementById("phone").value;
+    sharing = document.getElementById("sharing").value;
+    const my_uuid = uuidv4();
 
+    const contact = JSON.parse(localStorage.getItem("contact")) || [];
 
- 
-            let contact = JSON.parse(localStorage.getItem('contact')) || [];
+  const exit =
+  contact.length &&
+      JSON.parse(localStorage.getItem("contact")).some(
+        (data) => data.name == name
+    );
 
-let exit = contact.length && 
-          JSON.parse(localStorage.getItem('contact')).some(data =>
-        data.name == name);
-        
-          contact.push({name,gender,email,phone,sharing,my_uuid});
+    contact.push({ name, gender, email, phone, sharing, my_uuid });
 
-               
-                
-                    localStorage.setItem('contact',JSON.stringify(contact));
-                    console.log(localStorage.getItem('contact'));
-                    localStorage.setItem("userId",JSON.stringify(name));
+    localStorage.setItem("contact", JSON.stringify(contact));
+    console.log(localStorage.getItem("contact"));
+    localStorage.setItem("userId", JSON.stringify(name));
 
-            document.querySelector('form').reset();
-           
-                alert('Account created successfully');
+    document.querySelector("form").reset();
+  
+    alert("Account created successfully");
 
-
-                location.href = ".html";
-                    }
-                  
-             
-            
-                  
-                       
+    location.href = ".html";
+  };
 </script>
 
 </body>

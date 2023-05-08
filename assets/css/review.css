@@ -28,9 +28,9 @@ a {
 	margin: 0 auto;
 }
 
-p {
+/* p {
 	text-align: center;
-}
+} */
 
 nav {
 
@@ -122,8 +122,9 @@ nav ul ul ul li {
 }
 div.right{
     border:1px solid;
-    height:50vh;
+    height:70vh;
     margin-top: 5%;
+    width:40vh;
     background-color: bisque;
     
 }
@@ -149,23 +150,22 @@ div.clean{
     margin-left: 3%;
     margin-right: 3%;
 }
-.two2{
-    margin-left: 3%;
-    margin-right: 3%;
-}
+
 div.right1{
     margin-left: 5%;
 
 }
-
-a:link, a:visited{
-    color:white;
-    padding:14px;
-    text-align: right;
-    display: inline-block;
-    border-radius: 20px;
-    text-decoration: none;
+.star{
+  font-size: 2rem;
+  color:#ff9800;
+  background-color: unset;
+  border:none;
 }
+.star_rating{
+    user-select: none;
+}
+
+
 .Button{
     margin-top: 20px;
     background-color: green;
@@ -207,6 +207,8 @@ div.review{
 input[type="text"] {
     margin-top: 7px;
     margin-bottom: 7px;
+    padding:12px 15px;
+   
 }
 
 .button{

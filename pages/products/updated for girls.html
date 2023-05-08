@@ -1,230 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For girls</title>
-    <link rel="stylesheet" href="../../assets/css/updated for girls.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>For girls</title>
+        <link rel="stylesheet" href="../../assets/css/updated for girls.css">
    
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-</head>
-<body>
-  <header>
-    <script src="/assets/js/header.js"></script>
-   </header>
+    </head>
+    <body>
+        <header>
+            <script src="/assets/js/header.js"></script>
+        </header>
    
-<div class="section"></div>
-<footer>
-    <div clas="foot">
-    </div>
-<div class="footer1">
-    <div class="footerone">
-    <h2> About Sound bricks</h2>
-   <h4> Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-     services including home loans, pay rent, packers and movers, legal assistance, property valuation,<br> 
+        <div class="section"></div>
+        <footer>
+            <div clas="foot">
+            </div>
+            <div class="footer1">
+                <div class="footerone">
+                    <h2> About Sound bricks</h2>
+                    <h4>
+                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
+                        services including home loans, pay rent, packers and movers, legal assistance, property valuation,<br> 
    </h3></div>
-    <div class="foot">
-       <h2>Real Estate in India</h2><br>
-      <h4>Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+                        <div class="foot">
+                            <h2>Real Estate in India</h2>
+                            <br>
+                            <h4>
+                                Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
       
-    in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-      New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br></h4>
-    </div> 
+                                in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+                                New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
+                            </h4>
+                        </div> 
  </div>
- <div class="link"> 
-    <i class="fa fa-instagram" style="font-size:48px;"> </i>
-           <i class="fa fa-facebook-f" style="font-size:36px"></i>
-           <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-        </div>
+                        <div class="link"> 
+                            <i class="fa fa-instagram" style="font-size:48px;"> </i>
+                            <i class="fa fa-facebook-f" style="font-size:36px"></i>
+                            <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+                        </div>
 
-        <div class="buttons">
+                        <div class="buttons">
    
-   
-          <span>Terms&conditions</span>
-         <span> Blog</span>
-         <span>Careers</span>
-         <span> Testimonials</span>
-         <span> Feedback</span>
-         <span> Unsubscribe</span>
-         <span> Help centeer</span>
-         <span> Sales Enquiry</span>
-         <span> Buy our services</span>
+                            <span>Terms&conditions</span>
+                            <span> Blog</span>
+                            <span>Careers</span>
+                            <span> Testimonials</span>
+                            <span> Feedback</span>
+                            <span> Unsubscribe</span>
+                            <span> Help centeer</span>
+                            <span> Sales Enquiry</span>
+                            <span> Buy our services</span>
          
-       </div>
+                        </div>
 </footer>
 
+                        <script>
+          const users = JSON.parse(localStorage.getItem("pgdetails"));
 
-  <script>
-    
-      const users = JSON.parse(localStorage.getItem("users"));
+const filteredUseravailable = users.filter((e) => e.available == "Girls");
+console.log(filteredUseravailable);
 
-       let filteredUseravailable = users.filter(e => e.available == "Girls" );
-       console.log(filteredUseravailable)
+for (i = 0; i < filteredUseravailable.length; i++) {
+  let div_bar;
+  let div_image;
+  let img_picture;
+  let div_room_details;
+  let div_onwards;
+  let div_para;
+  let page_a;
+  let line_p;
+  let one_b;
+  let div_payment;
+  let div_rent;
+  let div_text;
+  let rate_p;
+  let div_one;
+  let rate1_p;
+  let div_two;
+  let rate2_p;
+  let div_three;
+  let rate3_p;
+  let div_content;
+  let rate4_b;
+  let div_button;
 
-         for (i = 0; i<filteredUseravailable.length; i++) {
-            let div_bar;
-            let div_image;
-            let img_picture;
-            let div_room_details;
-            let div_onwards;
-            let div_para;
-            let page_a;
-            let line_p;
-            let one_b;
-            let div_payment;
-            let div_rent;
-            let div_text;
-            let rate_p;
-            let div_one;
-            let rate1_p;
-            let div_two;
-            let rate2_p;
-            let div_three;
-            let rate3_p;
-            let div_content;
-            let rate4_b;
-            let div_button;
+  div_bar = document.createElement("div");
+  div_bar.setAttribute("class", "bar");
+  console.log(div_bar);
+  document.querySelector(".section").append(div_bar);
 
-           
+  // <div class= "image" >
+  div_image = document.createElement("div");
+  div_image.setAttribute("class", "image");
+  div_bar.append(div_image);
 
-            div_bar = document.createElement("div");
-            div_bar.setAttribute("class", "bar");
-            console.log(div_bar);
-            document.querySelector(".section").append(div_bar);
+  // <img> //
 
-            // <div class= "image" >
-            div_image = document.createElement("div");
-            div_image.setAttribute("class", "image");
-            div_bar.append(div_image);
+  img_picture = document.createElement("img");
+  img_picture.setAttribute("src", filteredUseravailable[i].image);
+  img_picture.setAttribute("alt", "image");
+  img_picture.setAttribute("height", "280px");
+  img_picture.setAttribute("width", "300px");
+  div_image.append(img_picture);
 
-            // <img> //
+  //<div class="room-details"> </div>
+  div_room_details = document.createElement("div");
+  div_room_details.setAttribute("class", "room-details");
+  div_bar.append(div_room_details);
 
-            img_picture = document.createElement("img");
-            img_picture.setAttribute ("src", filteredUseravailable[i]["image"]);
-            img_picture.setAttribute("alt", "image");
-            img_picture.setAttribute("height", "280px");
-            img_picture.setAttribute("width", "300px");
-            div_image.append(img_picture);
+  //<div class="onwards"></div>
+  // div_onwards = document.createElement("div");
+  // div_onwards.setAttribute("class", "onwards");
+  // div_onwards.innerText = pg_list[i];
+  // div_room_details.append(div_onwards);
 
-            //<div class="room-details"> </div>
-            div_room_details = document.createElement("div");
-            div_room_details.setAttribute("class", "room-details");
-            div_bar.append(div_room_details);
+  //<div class="para"> </div>
 
-            //<div class="onwards"></div>
-            // div_onwards = document.createElement("div");
-            // div_onwards.setAttribute("class", "onwards");
-            // div_onwards.innerText = pg_list[i];
-            // div_room_details.append(div_onwards);
+  div_para = document.createElement("div");
+  div_para.setAttribute("class", "para");
+  // div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
+  div_room_details.append(div_para);
 
-            //<div class="para"> </div>
+  line_p = document.createElement("p");
+  div_para.append(line_p);
 
-            div_para = document.createElement("div");
-            div_para.setAttribute("class", "para");
-            // div_para.setAttribute("data-id",filteredUseravailable[i]["my_uuid"]);
-            div_room_details.append(div_para);
+  one_b = document.createElement("b");
+  one_b.innerText = filteredUseravailable[i].name;
+  line_p.append(one_b);
 
+  page_a = document.createElement("a");
+  page_a.setAttribute("href", filteredUseravailable[i].name);
+  one_b.append(page_a);
 
+  //    <div class="payment">
+  div_payment = document.createElement("div");
+  div_payment.setAttribute("class", "payment");
+  div_room_details.append(div_payment);
 
-            line_p = document.createElement("p");
-            div_para.append(line_p);
+  // div class="rent">
 
-            one_b = document.createElement("b");
-            one_b.innerText = filteredUseravailable[i]["name"];
-            line_p.append(one_b);
+  div_rent = document.createElement("div");
+  div_rent.setAttribute("class", "rent");
+  div_payment.append(div_rent);
 
-            page_a = document.createElement("a")
-            page_a.setAttribute("href",filteredUseravailable[i]["name"]);
-            one_b.append(page_a);
+  // <div class="text">
+  div_text = document.createElement("div");
+  div_text.setAttribute("class", "text");
+  div_text.innerText = " single sharing ";
+  div_rent.append(div_text);
 
-            //    <div class="payment">
-            div_payment = document.createElement("div");
-            div_payment.setAttribute("class", "payment");
-            div_room_details.append(div_payment);
+  rate_p = document.createElement("p");
+  rate_p.innerText = filteredUseravailable[i].sharing.onesharing;
+  div_text.append(rate_p);
 
-            // div class="rent">
+  div_one = document.createElement("div");
+  div_one.setAttribute("class", "one");
+  div_one.innerText = " twin sharing ";
+  div_rent.append(div_one);
 
-            div_rent = document.createElement("div");
-            div_rent.setAttribute("class", "rent");
-            div_payment.append(div_rent);
+  rate1_p = document.createElement("p");
+  rate1_p.innerText = filteredUseravailable[i].sharing.twosharing;
+  div_one.append(rate1_p);
 
-            // <div class="text">
-            div_text = document.createElement("div");
-            div_text.setAttribute("class", "text");
-            div_text.innerText = " single sharing ";
-            div_rent.append(div_text);
+  div_two = document.createElement("div");
+  div_two.setAttribute("class", "two");
+  div_two.innerText = " triple sharing ";
+  div_rent.append(div_two);
 
-            rate_p = document.createElement("p");
-            rate_p.innerText = filteredUseravailable[i]["sharing"]["onesharing"];
-            div_text.append(rate_p);
+  rate2_p = document.createElement("p");
+  rate2_p.innerText = filteredUseravailable[i].sharing.threesharing;
+  div_two.append(rate2_p);
 
-            div_one = document.createElement("div");
-            div_one.setAttribute("class", "one");
-            div_one.innerText = " twin sharing ";
-            div_rent.append(div_one);
+  div_three = document.createElement("div");
+  div_three.setAttribute("class", "three");
+  div_three.innerText = " four sharing ";
+  div_rent.append(div_three);
 
-            rate1_p = document.createElement("p");
-            rate1_p.innerText = filteredUseravailable[i]["sharing"]["twosharing"];
-            div_one.append(rate1_p);
+  rate3_p = document.createElement("p");
+  rate3_p.innerText = filteredUseravailable[i].sharing.foursharing;
+  div_three.append(rate3_p);
 
-            div_two = document.createElement("div");
-            div_two.setAttribute("class", "two");
-            div_two.innerText = " triple sharing ";
-            div_rent.append(div_two);
+  //    <div class="content">
+  div_content = document.createElement("div");
+  div_content.setAttribute("class", "content");
+  div_payment.append(div_content);
 
-            rate2_p = document.createElement("p");
-            rate2_p.innerText = filteredUseravailable[i]["sharing"]["threesharing"];
-            div_two.append(rate2_p);
+  rate4_b = document.createElement("p");
+  rate4_b.innerText = filteredUseravailable[i].address;
+  div_content.append(rate4_b);
 
-            div_three = document.createElement("div");
-            div_three.setAttribute("class", "three");
-            div_three.innerText = " four sharing ";
-            div_rent.append(div_three);
+  //    <div class="button">
 
-            rate3_p = document.createElement("p");
-            rate3_p.innerText = filteredUseravailable[i]["sharing"]["foursharing"];
-            div_three.append(rate3_p);
+  div_button = document.createElement("div");
+  div_button.setAttribute("class", "button");
+  div_button.setAttribute("data-id", filteredUseravailable[i].my_uuid);
+  div_button.innerHTML = "View more >>";
+  div_content.append(div_button);
+}
 
-
-            //    <div class="content">
-            div_content = document.createElement("div");
-            div_content.setAttribute("class", "content");
-            div_payment.append(div_content);
-
-            rate4_b = document.createElement("p");
-            rate4_b.innerText = filteredUseravailable[i]["address"];
-            div_content.append(rate4_b);
-
-
-
-
-      //    <div class="button">
-
-            div_button = document.createElement("div");
-            div_button.setAttribute("class", "button");
-            div_button.setAttribute("data-id", filteredUseravailable[i]["my_uuid"]);
-            div_button.innerHTML = "View more >>";
-            div_content.append(div_button);
-      }
-
-
-      let selectbtn = document.querySelectorAll(".button")
-    selectbtn.forEach(each => {
-                            each.addEventListener("click", (event) => {
-                                const person_data = each.dataset.id;
-                                console.log(person_data)
-                                window.location.href = `../products/Addedpg_details.html?my_uuid=${person_data}`;
-                            })
-                        })
-
+const selectbtn = document.querySelectorAll(".button");
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
+    console.log(person_data);
+    window.location.href = `../products/Addedpg_details.html?my_uuid=${person_data}`;
+  });
+});
   </script>
-
-
 
     </body>
     </html>

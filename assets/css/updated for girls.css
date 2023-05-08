@@ -37,6 +37,8 @@ a {
 nav {
 
 	background-color: #E64A19;
+  position: fixed;
+  top:0;
 }
 
 nav ul {

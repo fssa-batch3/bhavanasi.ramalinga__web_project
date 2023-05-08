@@ -1,17 +1,18 @@
-let origin = window.location.origin;
 
-let logo_path = origin + "/pages/homepage/rent.html";
-let logo = origin + "/assets/images/Screenshot__17_-removebg-preview.png ";
-let girls = origin + "/pages/homepage/updated for girls.html";
-let boys = origin + "/pages/homepage/updated Boys.html";
-let both_gender = origin + "/pages/orders/updated for both.html";
-let profile = origin + "/pages/homepage/my profile.html";
-let register = origin + "/pages/homepage/register.html";
-let login = origin + "/pages/homepage/login.html";
-let reviews = origin + "/pages/homepage/review.html"
 
-let before_login =
-  `
+const { origin } = window.location;
+
+const logo_path = `${origin}/pages/homepage/rent.html`;
+const logo = `${origin}/assets/images/Screenshot__17_-removebg-preview.png `;
+const girls = `${origin}/pages/homepage/updated for girls.html`;
+const boys = `${origin}/pages/homepage/updated Boys.html`;
+const both_gender = `${origin}/pages/orders/updated for both.html`;
+const profile = `${origin}/pages/homepage/my profile.html`;
+const register = `${origin}/pages/homepage/register.html`;
+const login = `${origin}/pages/homepage/login.html`;
+const reviews = `${origin}/pages/homepage/review.html`;
+
+const before_login = `
   <header>
   <div class="one">
       <img src="${logo}"  alt="photo"  height="70px" width="70px" /></div>
@@ -23,10 +24,9 @@ let before_login =
           </div>
   </div>
 </header>
-`
+`;
 
-let after_login =
-  `
+const after_login = `
   <header>
     <div class="header">
       <div id="container">
@@ -47,10 +47,9 @@ let after_login =
       </div>
     </div>
   </header>
-`
+`;
 
-let seller_page =
-  `
+const seller_page = `
   <header>
   <div class="header">
     <div id="container">
@@ -70,56 +69,43 @@ let seller_page =
 </header>
 `;
 
-let userId = JSON.parse(localStorage.getItem("userId"));
-let typeOfCus = ""
+const userId = JSON.parse(localStorage.getItem("userId"));
+const typeOfCus = "";
 // console.log(userId);
 if (userId) {
   user_data = JSON.parse(localStorage.getItem("user_cred"));
 
-  let gettingemail = user_data.filter(e => e.email == userId);
+  const gettingemail = user_data.filter((e) => e.email == userId);
 
   // console.log(type);
-  let filtetering = gettingemail[0]["customer_or_owner"];
+  const filtetering = gettingemail[0].customer_or_owner;
   // console.log(typeOfCus);
 
-
-
-
-    if (filtetering == "Customer") {
-
-      // console.log(after_login);
-      document.body.insertAdjacentHTML("afterbegin", after_login);
-      const logoutBtn = document.querySelector("#logout");
-      logoutBtn?.addEventListener("click", () => {
-        localStorage.removeItem("userId");
-        document.body.innerHTML = header_before_login
-      });
-
-    }
-    else if (filtetering == "Owner") {
-
-
-      document.body.insertAdjacentHTML("afterbegin", seller_page);
-      const logoutBtn = document.querySelector("#logout");
-      logoutBtn?.addEventListener("click", () => {
-        localStorage.removeItem("userId");
-        document.body.innerHTML = header_before_login
-      });
-    }
-
-}
-
-else {
-
-
+  if (filtetering == "Customer") {
+    // console.log(after_login);
+    document.body.insertAdjacentHTML("afterbegin", after_login);
+    const logoutBtn = document.querySelector("#logout");
+    logoutBtn?.addEventListener("click", () => {
+      localStorage.removeItem("userId");
+      document.body.innerHTML = header_before_login;
+    });
+  } else if (filtetering == "Owner") {
+    document.body.insertAdjacentHTML("afterbegin", seller_page);
+    const logoutBtn = document.querySelector("#logout");
+    logoutBtn?.addEventListener("click", () => {
+      localStorage.removeItem("userId");
+      document.body.innerHTML = header_before_login;
+    });
+  }
+} else {
   document.body.insertAdjacentHTML("beforebegin", before_login);
   const logoutBtn = document.querySelector("#logout");
-  logoutBtn?.removeEventListener("click", () =>
-    document.body.innerHTML = header_after_login);
+  logoutBtn?.removeEventListener(
+    "click",
+    () => (document.body.innerHTML = header_after_login)
+  );
   localStorage.removeItem("userId");
-
 }
-
 
 // function header() {
 
@@ -133,15 +119,11 @@ else {
 //       userlogin.innerHTML = after_login;
 //       }
 
-
 // }
-
-
 
 function Logout(e) {
   alert("are you sure to logout");
 
-  localStorage.removeItem("userId")
+  localStorage.removeItem("userId");
   window.location.href = "/index.html";
-
 }

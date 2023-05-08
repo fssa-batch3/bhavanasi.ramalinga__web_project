@@ -1,18 +1,28 @@
 
-*{font-family: 'Poppins', sans-serif;}
+
 /* header start */
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color:black;
+  display: flex;
+}	
+
+
 
 h3 a {
 	color:black;
 }
 
 a {
-  display: flex;
-  color:white;
-  justify-content: center;
-  text-decoration: none;
-	
-   
+	color:black;
+    text-decoration: none;
 }
 
 
@@ -86,6 +96,102 @@ nav ul ul ul li {
 .magic{
   margin-right: 40%;
 }
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
+
+h3 a {
+	color:black;
+}
+
+a {
+  display: flex;
+  color:white;
+  justify-content: center;
+  text-decoration: none;
+	
+   
+}
+
+
+#container {
+	margin: 0 auto;
+}
+
+
+
+nav {
+
+	background-color: #E64A19;
+  position: fixed;
+  top:0;
+  width:100%;
+  
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: space-around;
+    height:70px;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #E64A19;
+  height:70%;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color:none; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px;
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+.magic{
+  margin-right: 40%;
+}
 /* header end */
 input[type=text], input[type=password] {
     width: 80%;
@@ -97,31 +203,25 @@ input[type=text], input[type=password] {
 
   }
 
- .search input{
-  height: 40px;
-  margin-top:10px;
-  border-radius:22px;
+ .fa.fa-user{
+  font-size: 35px;
  }
- .search i {
-  position:relative;
-  right:30px;
- }
-
 form{
   padding: 16px;
   background-color: white;
   border:3px solid #f1f1f1;
-   width: 450px;
+   width: 480px;
    height:80%;
-  margin-left: 35%;
-  margin-bottom: 5%;
-  margin-top:3%;
+  margin: 8rem 35rem ;
+  /* margin-bottom: 5%;
+  margin-top:3%; */
 }
  .readform{
   display: flex;
   align-content: space-around;
   margin-top: 8%;
  }
+ 
 
   span.psw {
     float: right;
@@ -146,3 +246,36 @@ form{
   .last{
     display: flex;
   }
+  footer{
+        
+    background-color: skyblue;
+    margin-top: 10%;
+    padding-bottom: 4%;
+ }
+ .footerone{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ }
+ .footer2{
+    margin-bottom: 4%;
+    margin-top: 8%;
+ }
+ .footer1{
+  display: flex;
+    margin-top: 3%;
+    margin-left: 3%;
+    
+ }
+ .link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+ h2{
+  color:deeppink;
+ }
+ .buttons{
+  display: flex;
+  justify-content: space-around;
+ }

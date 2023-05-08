@@ -1,207 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     
-    <link   rel="stylesheet"    href="../../assets/css/form_read.css">
-    <meta charset="UTF-8">   
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Form_edit</title>
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
-<body>
+        <link rel="stylesheet" href="../../assets/css/form_read.css">
+        <meta charset="UTF-8">   
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Form_edit</title>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    </head>
+    <body>
+        <header>
+
+        </header>
   
-    <form role="form" onsubmit="update(event)" >
-      <div class="readform">
+        <form role="form" onsubmit="update(event)">
+            <div class="readform">
         
-        <div class="container">
+                <div class="container">
           
-        <label for="name"><b> 1.pg_Name</b></label>
-        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
-        
+                    <label for="name">
+                        <b> 1.pg_Name</b>
+                    </label>
+                    <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled>
+                    <br>
+                    <br>
        
-        <label for="type"><b>2.Rooms categories are available and rent</b></label><br>
+                    <label for="type">
+                        <b>2.Rooms categories are available and rent</b>
+                    </label>
+                    <br>
         
-      <label for="sharing"><b>single sharing</b> </label><input  type="number" id="onesharing"  min="3000" max="30000"  pattern="[0-9]+" required ><br><br>
-
+                    <label for="sharing">
+                        <b>single sharing</b> 
+                    </label>
+                    <input type="number" id="Onesharing" min="1000" max="30000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
      
-      <label for="sharing"><b>Twin sharing</b> </label><input  type="number" id="twosharing"  min="3000" max="30000"  pattern="[0-9]+" required><br><br>
-
+                    <label for="sharing">
+                        <b>Twin sharing</b> 
+                    </label>
+                    <input type="number" id="Twosharing" min="1000" max="30000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
       
-      <label for="sharing"> <b>Triple sharing</b>  </label><input  type="number"id="threesharing"  min="3000" max="30000"  pattern="[0-9]+" required><br><br>
-
+                    <label for="sharing">
+                        <b>Triple sharing</b>  
+                    </label>
+                    <input type="number"id="Threesharing" min="3000" max="30000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
       
-      <label for="sharing"><b>Four sharing</b> </label><input  type="number"id="foursharing"  min="3000" max="30000"  pattern="[0-9]+" required><br><br>
+                    <label for="sharing">
+                        <b>Four sharing</b> 
+                    </label>
+                    <input type="number"id="Foursharing" min="3000" max="30000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
 
-      <label for="name"><b> 3.Deposite amount</b></label>
-      <input type="number" name="fname" id="amount" min="4000" max="10000" pattern="[0-9]+" required><br><br>
+                    <label for="name">
+                        <b> 3.Deposite amount</b>
+                    </label>
+                    <input type="number" name="fname" id="amount" min="4000" max="10000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
       
-      <label for="sharing"><b>4. Notice Period</b></label>
-      <input  id="period" placeholder="example:10 days " min="10 days " max="30 days " required ><br><br>
+                    <label for="sharing">
+                        <b>4. Notice Period</b>
+                    </label>
+                    <input id="period" placeholder="example:10 days " min="10 days " max="30 days " required>
+                    <br>
+                    <br>
     
-      <label for="sharing"><b>5. Closing Time </b></label>
-      <input  id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required ><br><br>
-   
+                    <label for="sharing">
+                        <b>5. Closing Time </b>
+                    </label>
+                    <input id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
+                    <br>
+                    <br>
 
-      <label for="sharing"><b>6.Available For</b></label>
-      <input  id="available" disabled ><br><br>
+                    <label for="sharing">
+                        <b>6.Available For</b>
+                    </label>
+                    <input id="available" disabled>
+                    <br>
+                    <br>
   
-      <label for="image1"><b>Facilities</b></label>
-      <input  type="url" id="image1" required ></input><br><br>
+                    <label for="image1">
+                        <b>Facilities ((kitchen))</b>
+                    </label>
+                    <input type="url" id="image1" required>
+</input><br>
+                    <br>
 
+                    <label for="image">
+                        <b>Facilities(Tv)</b>
+                    </label>
+                    <input type="url" id="image2" required>
+</input><br>
+                    <br>
 
-       <label for="image"><b>Facilities</b></label>
-       <input type="url" id="image2" required ></input><br><br>
+                    <label for="image">
+                        <b> Facilities(balkeni)</b>
+                    </label>
+                    <input type="url" id="lastimage" required>
+</input><br>
+                    <br>
 
-        <label for="image"><b> Facilities</b></label>
-         <input  type="url" id="lastimage" required></input><br><br>
+                    <label for="image1">
+                        <b>Facilities(terrus)</b>
+                    </label>
+                    <input type="url" id="image4" required>
+</input><br>
+                    <br>
+                </div>
+                <div class="section">
+                    <label for="sharing">
+                        <b>7.No.of Beds</b> 
+                    </label>
+                    <input type="number"id="beds" required placeholder="example: 60 beds" min="20" max="200">
+                    <br>
+                    <br>
 
-         <label for="image1"><b>Facilities</b></label>
-          <input type="url" id="image4" required ></input><br><br>
-        </div>
-   <div class="section">
-    <label for="sharing"><b>7.No.of Beds</b> </label>
-    <input  type="number"id="beds" required placeholder="example: 60 beds"  min="20" max="200"><br><br>
-     
+                    <label for="sharing">
+                        <b>8.facilities(fridge)</b>
+                    </label>
+                    <input type="url" id="parking" name="vehicle1"required>
+                    <br>
+                    <br>
 
-    <label for="sharing"><b>8.facilities</b></label>
-    <input  type="url" id="parking" name="vehicle1"required  ><br><br>
-
-    
-
-      <label for="sharing"><b>9.facilities</b></label>
-    <input   type="url" id="wifi" required><br><br>
-
+                    <label for="sharing">
+                        <b>9.facilities(food)</b>
+                    </label>
+                    <input type="url" id="wifi" required>
+                    <br>
+                    <br>
    
-    <label for="sharing"><b>10.facilities</b></label>
-    <input  type="url" id="food" required ><br><br>
-
+                    <label for="sharing">
+                        <b>10.facilities ((w.m))</b>
+                    </label>
+                    <input type="url" id="food" required>
+                    <br>
+                    <br>
     
-    <label for="sharing"><b>11.facilities</b></label>
-    <input  type="url" id="fridge" required ><br><br>
-
+                    <label for="sharing">
+                        <b>11.facilities(wifi)</b>
+                    </label>
+                    <input type="url" id="fridge" required>
+                    <br>
+                    <br>
    
-    <label for="sharing"><b>12.facilities</b></label>
-    <input   type="url"id="tv" required><br><br>
+                    <label for="sharing">
+                        <b>12.facilities(water purified)</b>
+                    </label>
+                    <input type="url"id="tv" required>
+                    <br>
+                    <br>
 
-      <label for="pg_name"><b>13.Image</b></label>
-        <input type ="url"   id="image" disabled><br><br>
+                    <label for="pg_name">
+                        <b>13.Image</b>
+                    </label>
+                    <input type ="url" id="image" disabled>
+                    <br>
+                    <br>
 
-         <label for="address"><b>14. Address</b></label><br>
-        <textarea type="text"id="address" required></textarea><br>
-   </div>
-      </div>
+                    <label for="address">
+                        <b>14. Address</b>
+                    </label>
+                    <br>
+                    <textarea type="text"id="address" required></textarea>
+                    <br>
+                </div>
+            </div>
         
-        <div class="last">
-            <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
-          <button type="submit"   class="registerbtn">submit</button>
+            <div class="last">
+                <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
+                <button type="submit" class="registerbtn">submit</button>
           
-      </div>
-    </form>
-    <srcipt src="/assets/js/header.js"></srcipt>
-    <script>
+            </div>
+        </form>
+        <footer>
+            <div clas="foot">
+            </div>
+            <div class="footer1">
+                <div class="footerone">
+                    <h2> About Sound Bricks</h2>
+                    <h3>
+                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
+                        services including home loans, pay rent, packers and movers, legal assistance, property
+                        valuation,<br>
+                    </h3>
+                </div>
+                <div class="foot">
+                    <h2>Real Estate in India</h2>
+                    <br>
+                    <h3>
+                        Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+
+                        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
+                    </h3>
+                </div>
+            </div>
+            <div class="link">
+                <i class="fa fa-instagram" style="font-size:48px;"> </i>
+                <i class="fa fa-facebook-f" style="font-size:36px"></i>
+                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+            </div>
+
+            <div class="buttons">
+ 
+                <span>Terms&conditions</span>
+                <span> Blog</span>
+                <span>Careers</span>
+                <span> Testimonials</span>
+                <span> Feedback</span>
+                <span> Unsubscribe</span>
+                <span> Help centeer</span>
+                <span> Sales Enquiry</span>
+                <span> Buy our services</span>
+         
+            </div>
+        </footer>
+        <script src="../../assets/js/header.js"></script>
+        <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const my_uuid = urlParams.get('my_uuid');
-        let users = JSON.parse(localStorage.getItem("users"));
+        const my_uuid = urlParams.get("my_uuid");
+        const details = JSON.parse(localStorage.getItem("pgdetails"));
 
-    
-   function login_data(e){
-      
-      return e.my_uuid == my_uuid;
-    }
-     let user_data = users.find(login_data);
-     console.log(users)
-
-     document.getElementById("name").value = user_data["name"];
-document.getElementById("onesharing").value = user_data["sharing"]["onesharing"];
-    document.getElementById("twosharing").value = user_data["sharing"]["twosharing"];
-    document.getElementById("threesharing").value = user_data["sharing"]["threesharing"];
-    document.getElementById("foursharing").value = user_data["sharing"]["foursharing"];
-   document.getElementById("beds").value = user_data["beds"];
-   document.getElementById("time").value = user_data["time"];
-   document.getElementById("period").value = user_data["period"];
-   document.getElementById("available").value = user_data["available"];
-    document.getElementById("image").value = user_data["image"];
-    document.getElementById("address").value = user_data["address"];
-    document.getElementById("amount").value = user_data["amount"];
-     
-   document.getElementById("parking").value = user_data["fecilities"]["parking"];
-   document.getElementById("tv").value = user_data["fecilities"]["tv"];
-   document.getElementById("wifi").value = user_data["fecilities"]["wifi"];
-   document.getElementById("food").value = user_data["fecilities"]["food"];
-   document.getElementById("fridge").value = user_data["fecilities"]["fridge"]; 
-   // more images //
-   document.getElementById("image1").value = user_data["house_fecilities_image"]["image1"];
-   document.getElementById("image2").value = user_data["house_fecilities_image"]["image2"];
-   document.getElementById("lastimage").value = user_data["house_fecilities_image"]["lastimage"];
-   document.getElementById("image4").value = user_data["house_fecilities_image"]["image4"];
-
-    function update(e){
-
-e.preventDefault();
-
-let up_name = document.getElementById("name").value
-let up_address = document.getElementById("address").value.trim().split(/\s+/g).join(' ')
-let up_onesharing = document.getElementById("onesharing").value
-let up_twosharing = document.getElementById("twosharing").value
-let up_threesharing = document.getElementById("threesharing").value
-let up_foursharing = document.getElementById("foursharing").value
-let up_image = document.getElementById("image").value
-let up_beds = document.getElementById("beds").value
-let up_parking = document.getElementById("parking").value
-let up_tv = document.getElementById("tv").value
-let up_wifi = document.getElementById("wifi").value
-let up_food = document.getElementById("food").value
-let up_fridge = document.getElementById("fridge").value
-let up_available = document.getElementById("available").value
-let up_image1 = document.getElementById("image1").value
-let up_image2 = document.getElementById("image2").value
-let up_lastimage = document.getElementById("lastimage").value
-let up_image4 = document.getElementById("image4").value
-let up_period = document.getElementById("period").value
-let up_time = document.getElementById("time").value
-let up_amount = document.getElementById("amount").value
-
-user_data["name"] = up_name;
-user_data["address"] = up_address;
-user_data["beds"] = up_beds;
-user_data["sharing"]["onesharing"] = up_onesharing;
-user_data["sharing"]["twosharing"] = up_twosharing;
-user_data["sharing"]["threesharing"] = up_threesharing;
-user_data["sharing"]["foursharing"] = up_foursharing;
-user_data ["image"] = up_image;
-user_data["fecilities"]["parking"] = up_parking;
-user_data["fecilities"]["tv"] = up_tv;
-user_data["fecilities"]["wifi"] = up_wifi;
-user_data["fecilities"]["food"] = up_food;
-user_data["fecilities"]["fridge"] = up_fridge;
-user_data["available"] = up_available;
-user_data["house_fecilities_image"]["image1"] = up_image1;
-user_data["house_fecilities_image"]["image2"] = up_image2;
-user_data["house_fecilities_image"]["lastimage"] = up_lastimage;
-user_data["house_fecilities_image"]["image4"] =  up_image4;
-user_data["period"] = up_period;
-user_data["time"] = up_time;
-user_data["amount"] =up_amount;
-
-
- function validate() {
-            let val = document.getElementById('address').value;
-            if (/^\s*$/g.test(val) || val.indexOf('\n') != -1) {
-                alert('Write your address properly');
-                val=reset();
-            }
-        }
-         validate();
-
-
-localStorage.setItem("users", JSON.stringify(users));
-
-window.location.href="../products/seller_product.html"
-
+function login_data(e) {
+  return e.my_uuid == my_uuid;
 }
+const user_data = details.find(login_data);
+console.log(details);
 
+document.getElementById("name").value = user_data.name;
+document.getElementById("Onesharing").value = user_data.sharing.Onesharing;
+document.getElementById("Twosharing").value = user_data.sharing.Twosharing;
+document.getElementById("Threesharing").value = user_data.sharing.Threesharing;
+document.getElementById("Foursharing").value = user_data.sharing.Foursharing;
+
+document.getElementById("beds").value = user_data.beds;
+document.getElementById("time").value = user_data.time;
+document.getElementById("period").value = user_data.period;
+document.getElementById("available").value = user_data.available;
+document.getElementById("image").value = user_data.image;
+document.getElementById("address").value = user_data.address;
+document.getElementById("amount").value = user_data.amount;
+// document.getElementById("secondname").value = user_data["secondname"];
+
+document.getElementById("parking").value = user_data.fecilities.parking;
+document.getElementById("tv").value = user_data.fecilities.tv;
+document.getElementById("wifi").value = user_data.fecilities.wifi;
+document.getElementById("food").value = user_data.fecilities.food;
+document.getElementById("fridge").value = user_data.fecilities.fridge;
+// more images //
+document.getElementById("image1").value =
+  user_data.house_fecilities_image.image1;
+document.getElementById("image2").value =
+  user_data.house_fecilities_image.image2;
+document.getElementById("lastimage").value =
+  user_data.house_fecilities_image.lastimage;
+document.getElementById("image4").value =
+  user_data.house_fecilities_image.image4;
+
+function update(e) {
+  e.preventDefault();
+
+  const up_name = document.getElementById("name").value;
+  const up_address = document
+    .getElementById("address")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+  const up_Onesharing = document.getElementById("Onesharing").value;
+  const up_Twosharing = document.getElementById("Twosharing").value;
+  const up_Threesharing = document.getElementById("Threesharing").value;
+  const up_Foursharing = document.getElementById("Foursharing").value;
+  const up_image = document.getElementById("image").value;
+  const up_beds = document.getElementById("beds").value;
+  const up_parking = document.getElementById("parking").value;
+  const up_tv = document.getElementById("tv").value;
+  const up_wifi = document.getElementById("wifi").value;
+  const up_food = document.getElementById("food").value;
+  const up_fridge = document.getElementById("fridge").value;
+  const up_available = document.getElementById("available").value;
+  const up_image1 = document.getElementById("image1").value;
+  const up_image2 = document.getElementById("image2").value;
+  const up_lastimage = document.getElementById("lastimage").value;
+  const up_image4 = document.getElementById("image4").value;
+  const up_period = document.getElementById("period").value;
+  const up_time = document.getElementById("time").value;
+  const up_amount = document.getElementById("amount").value;
+  // let up_secondname = document.getElementById("secondname").value
+
+  user_data.name = up_name;
+  user_data.address = up_address;
+  user_data.beds = up_beds;
+  user_data.sharing.Onesharing = up_Onesharing;
+  user_data.sharing.Twosharing = up_Twosharing;
+  user_data.sharing.Threesharing = up_Threesharing;
+  user_data.sharing.Foursharing = up_Foursharing;
+  user_data.image = up_image;
+  user_data.fecilities.parking = up_parking;
+  user_data.fecilities.tv = up_tv;
+  user_data.fecilities.wifi = up_wifi;
+  user_data.fecilities.food = up_food;
+  user_data.fecilities.fridge = up_fridge;
+  user_data.available = up_available;
+  user_data.house_fecilities_image.image1 = up_image1;
+  user_data.house_fecilities_image.image2 = up_image2;
+  user_data.house_fecilities_image.lastimage = up_lastimage;
+  user_data.house_fecilities_image.image4 = up_image4;
+  user_data.period = up_period;
+  user_data.time = up_time;
+  user_data.amount = up_amount;
+  // user_data["secondname"] = up_secondname;
+
+  function validate() {
+            let val = document.getElementById("address").value;
+            if (/^\s*$/g.test(val) || val.indexOf("\n") != -1) {
+              alert("Write your address properly");
+              val = reset();
+            }
+          }
+          validate();
+
+  localStorage.setItem("pgdetails", JSON.stringify(details));
+
+  window.location.href = "../products/seller_product.html";
+}
  </script>
-
+  
+    </body>
+</html>

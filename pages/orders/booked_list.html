@@ -1,158 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="../../assets/css/booked_list.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <head>
+        <link rel="stylesheet" href="../../assets/css/booked_list.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    
-    <title>Booked_pgs</title>
-</head>
+        <title>Booked_pgs</title>
+    </head>
 
-<body>
-    <header>
-        <script src="/assets/js/header.js"></script>
-    </header>
-    <div class="section"></div>
+    <body>
+   
+        <div class="section"></div>
+   
+        <footer>
+            <div clas="foot">
+            </div>
+            <div class="footer1">
+                <div class="footerone">
+                    <h2> About Sound Bricks</h2>
+                    <h3>
+                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
+                        services including home loans, pay rent, packers and movers, legal assistance, property
+                        valuation,<br>
+                    </h3>
+                </div>
+                <div class="foot">
+                    <h2>Real Estate in India</h2>
+                    <br>
+                    <h3>
+                        Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
 
+                        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
+                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
+                    </h3>
+                </div>
+            </div>
+            <div class="link">
+                <i class="fa fa-instagram" style="font-size:48px;"> </i>
+                <i class="fa fa-facebook-f" style="font-size:36px"></i>
+                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
+            </div>
 
+            <div class="buttons">
+   
+                <span>Terms&conditions</span>
+                <span> Blog</span>
+                <span>Careers</span>
+                <span> Testimonials</span>
+                <span> Feedback</span>
+                <span> Unsubscribe</span>
+                <span> Help centeer</span>
+                <span> Sales Enquiry</span>
+                <span> Buy our services</span>
+           
+            </div>
+        </footer>
 
-    <script>
-
-        let roomBookRequest = JSON.parse(localStorage.getItem("room_book_request"));
+       
+        <script>const roomBookRequest = JSON.parse(localStorage.getItem("room_book_request"));
         console.log(roomBookRequest);
 
-        let customer = JSON.parse(localStorage.getItem("userId"));
-
-
+        const customer = JSON.parse(localStorage.getItem("userId"));
+        // image//
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const pg_id = urlParams.get("my_uuid");
+        console.log(pg_id);
 
         // conosle.log(product_id);
-        let filterdata = roomBookRequest.filter(e => e.customer_id == customer);
+        const filterdata = roomBookRequest.filter((e) => e.customer_id == customer);
         console.log(filterdata);
 
 
-
-        for (i = 0; i < filterdata.length; i++) {
-
-            let div_border = document.createElement("div");
-            div_border.setAttribute("class", "border");
-            console.log(div_border);
-            document.querySelector(".section").append(div_border);
-
-           
-
-            // let div_detail = document.createElement("div");
-            // div_detail.setAttribute("class", "pg_detail");
-            // div_border.append(div_detail);
-
-            let div_image = document.createElement("div");
-            div_image.setAttribute("class", "detail");
-            div_border.append(div_image);
+        if (filterdata.length === 0) {
+     const noDataMessage = document.createElement("h2");
+      noDataMessage.innerText = "No room bookings found for this customer";
+    document.querySelector(".section").append(div_border);
+    } else {
+ 
 
 
+        for (let i = 0; i < filterdata.length; i++) {
+  const div_border = document.createElement("div");
+          div_border.setAttribute("class", "border");
+          console.log(div_border);
+          document.querySelector(".section").append(div_border);
 
+          const img = document.createElement("img");
+          img.setAttribute("src", filterdata[i].image);
+          img.setAttribute("id", "image");
+          img.setAttribute("alt", "photo");
+          img.setAttribute("height", "300px");
+          img.setAttribute("width", "300px");
+          div_border.append(img);
 
-            let h2 = document.createElement("h2");
-            h2.setAttribute("class", "pg_name");
-            div_image.append(h2);
+          // let div_detail = document.createElement("div");
+          // div_detail.setAttribute("class", "pg_detail");
+          // div_border.append(div_detail);
 
-            let sharing_name = document.createElement("h3");
-            sharing_name.setAttribute("class", "name_of_pg");
-            sharing_name.setAttribute("id", "name");
-            sharing_name.innerText = filterdata[i]["pgname"];
-            h2.append(sharing_name);
+          const div_image = document.createElement("div");
+          div_image.setAttribute("class", "detail");
+          div_border.append(div_image);
 
-            let div_two = document.createElement("div");
-            div_two.setAttribute("class", "moredetail");
-            h2.append(div_two);
+  const h2 = document.createElement("h2");
+          h2.setAttribute("class", "pg_name");
+          div_image.append(h2);
 
+          const sharing_name = document.createElement("h3");
+          sharing_name.setAttribute("class", "name_of_pg");
+          sharing_name.setAttribute("id", "name");
+          sharing_name.innerText = filterdata[i].pgname;
+          h2.append(sharing_name);
 
-            let sharing_room = document.createElement("h4");
-            sharing_room.setAttribute("id", "share");
-            sharing_room.innerHTML = filterdata[i]["typeOfShare"];
-            div_two.append(sharing_room);
+          const div_two = document.createElement("div");
+          div_two.setAttribute("class", "moredetail");
+          h2.append(div_two);
 
-           let equaldata = document.createElement("div");
-           equaldata.setAttribute("class","data");
-           sharing_room.append(equaldata);
+  const sharing_room = document.createElement("h4");
+          sharing_room.setAttribute("id", "share");
+          sharing_room.innerHTML = filterdata[i].typeOfShare;
+          div_two.append(sharing_room);
 
-            let monthly_rent = document.createElement("p");
-            monthly_rent.setAttribute("id", "rent");
-            monthly_rent.innerText = "status:";
-            equaldata.append(monthly_rent);
+          const equaldata = document.createElement("div");
+          equaldata.setAttribute("class", "data");
+          sharing_room.append(equaldata);
 
+          const monthly_rent = document.createElement("p");
+          monthly_rent.setAttribute("id", "rent");
+          monthly_rent.innerText = "status:";
+          equaldata.append(monthly_rent);
 
+  let value = "";
+          const { status } = filterdata[i];
 
-            let value = "";
-            let status = filterdata[i]["status"];
+          if (status === 1) {
+            value = "Waiting for Approvel";
+          } else if (status === 2) {
+            value = "Accepted";
+          } else if (status === 0) {
+            value = "Rejected";
+          }
 
-            if (status === 1) {
-                value = "Not seen";
-            } else if (status === 2) {
-                value = "Accepted";
-            } else if (status === 0) {
-                value = "Rejected";
-            }
+          const statusDev = document.createElement("p");
+          statusDev.setAttribute("id", "status");
+          statusDev.innerText = value;
+          equaldata.append(statusDev);
 
-            let statusDev = document.createElement("p");
-            statusDev.setAttribute("id", "status");
-            statusDev.innerText = value;
-            equaldata.append(statusDev);
-            
-           let dateandyear = document.createElement("h4");
-           dateandyear.setAttribute("class","monthanddate");
-           dateandyear.innerText = filterdata[i]["dateAndTime"];
-           sharing_room.append(dateandyear);
+          const bookingdate = document.createElement("h3");
+          bookingdate.innerText = "Booking Date:";
+          sharing_room.append(bookingdate);
+        
+          const dateandyear = document.createElement("h4");
+          dateandyear.setAttribute("class", "monthanddate");
+          dateandyear.innerText = filterdata[i].dateAndTime;
+          sharing_room.append(dateandyear);
 
-           
-            button_del = document.createElement("button");
-            button_del.setAttribute("type", "submit");
-            button_del.setAttribute("class", "delete"); 
-            button_del.setAttribute("data-del", filterdata[i]["request_id"]);
-            // button_del.setAttribute("onclick", "del()")
-           button_del.innerHTML = "Remove";
-           div_two.append(button_del);
+          button_del = document.createElement("button");
+          button_del.setAttribute("type", "submit");
+          button_del.setAttribute("class", "delete");
+          button_del.setAttribute("data-del", filterdata[i].request_id);
+          // button_del.setAttribute("onclick", "del()")
+          button_del.innerHTML = "Remove";
+          div_two.append(button_del);
+        }
+      }
+       
 
-
-
-        };
-
-
-        let del_pgs = document.querySelectorAll("button.delete");
-    del_pgs.forEach(function (check) {
-        check.addEventListener("click", function () {
-            let unique_id = this.dataset.del;
+        const del_pgs = document.querySelectorAll("button.delete");
+del_pgs.forEach(function (check) {
+          check.addEventListener("click", function () {
+            const unique_id = this.dataset.del;
             localStorage.setItem("request_id", JSON.stringify(unique_id));
             console.log(unique_id);
 
-            if (confirm("Are you sure to delete this pg?")){
-                let id = JSON.parse(localStorage.getItem("request_id"));
-                console.log(id);
-                let requests = JSON.parse(localStorage.getItem("room_book_request"));
-                console.log(requests);
-                let pg_check = requests.find(e => e.request_id == id);
-                console.log(pg_check);
-                // let indexOfPg = requests.indexOf(pg_check);
-                // console.log(indexOfPg);
-                let pgs = requests.indexOf(pg_check); 
-                requests.splice(pgs, 1);
-                console.log(pgs);
-                localStorage.setItem("room_book_request", JSON.stringify(requests));
-                location.reload()
+            if (confirm("Are you sure to delete this pg?")) {
+              const id = JSON.parse(localStorage.getItem("request_id"));
+              console.log(id);
+              const requests = JSON.parse(localStorage.getItem("room_book_request"));
+              console.log(requests);
+              const pg_check = requests.find((e) => e.request_id == id);
+              console.log(pg_check);
+              // let indexOfPg = requests.indexOf(pg_check);
+              // console.log(indexOfPg);
+              const pgs = requests.indexOf(pg_check);
+              requests.splice(pgs, 1);
+              console.log(pgs);
+              localStorage.setItem("room_book_request", JSON.stringify(requests));
+              location.reload();
             }
-
-        })
-    })
-   
-     
-  
-
+  });
+});
     </script>
- 
-</body>
+  <script src="/assets/js/header.js"></script>
+    </body>
 
 </html>
