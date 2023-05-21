@@ -40,13 +40,13 @@
         if (filterdata.length === 0) {
      const noDataMessage = document.createElement("h2");
       noDataMessage.innerText = "No room bookings found for this customer";
-    document.querySelector(".section").append(div_border);
+    document.querySelector(".section").append(noDataMessage);
     } else {
  
 
 
         for (let i = 0; i < filterdata.length; i++) {
-  const div_border = document.createElement("div");
+        const div_border = document.createElement("div");
           div_border.setAttribute("class", "border");
           console.log(div_border);
           document.querySelector(".section").append(div_border);

@@ -49,6 +49,17 @@ if (findData && Array.isArray(findData.share_data)) {
   console.log("Invalid or missing data in local storage");
    }
 
+   const filterdata = findData.filter((e) => e.customer_id == customer);
+        console.log(filterdata);
+
+
+        if (filterdata.length === 0) {
+     const noDataMessage = document.createElement("h2");
+      noDataMessage.setAttribute("class","message")
+      noDataMessage.innerText = "Sorry , You Did not Added any pg";
+    document.querySelector(".section").append(noDataMessage);
+    } else {
+
 
   for (let i = 0; i < findData.length; i++) {
     const div_border = document.createElement("div");
@@ -227,6 +238,7 @@ if (findData && Array.isArray(findData.share_data)) {
     } else {
       console.log("Invalid or missing data in local storage");
     }
+  }
       
 
       // another image//
