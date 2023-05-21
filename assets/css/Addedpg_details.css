@@ -8,99 +8,7 @@
     margin: 0 auto;
   }
 
-  p {
-    text-align: center;
-  }
-
-  nav {
-
-    background-color: #E64A19;
-    position: fixed;
-    top:0;
-    width:100%;
-    z-index: 1;
-  }
-
-  nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-      display:flex;
-      align-content: center;
-      justify-content: space-around;
-      height:70px;
-    }
-    
-  nav ul li {
-    display:inline-block;
-    background-color: #E64A19;
-    height:70%;
-    }
-
-  nav a {
-    display:block;
-    padding:0 10px;	
-    color:#FFF;
-    font-size:20px;
-    line-height: 60px;
-    text-decoration:none;
-  
-  }
-
-  nav a:hover { 
-    background-color:none; 
-  }
-
-
-  nav ul ul {
-    display: none;
-    position: absolute; 
-    top: 60px;
-  }
-    
-
-  nav ul li:hover > ul {
-    display:inherit;
-  }
-    
-
-  nav ul ul li {
-    width:170px;
-    float:none;
-    display:list-item;
-    position: relative;
-  }
-
-
-  nav ul ul ul li {
-    position: relative;
-    top:-60px; 
-    left:170px;
-  }
-
-  .magic{
-    margin-right: 10%;
-  }
-  .fa.fa-user{
-    margin-top: 10px;
-    color:white;
-    font-size:36px;
-  }
-
-    .last{
-      display: flex;
-      justify-content: space-around;
-      
-      
-      
-    }
-    
-    
-    
-  
-  
-    
+ 
     .slide1{
       display: flex;
       margin-right: 30%;
@@ -127,17 +35,32 @@
   }
 
   .address {
-      margin: 2%;
-      align-content: center;
-  }
-  .fa.fa-home{
-    margin-top: 10px;
+      /* margin:5.5rem 2rem 2rem 2rem; */
+    margin: auto;
+      
   }
 
-  .sharing,.shares{
+ b.number{
+    margin-top: 30%;
+  
+  } 
+
+  span.fa.fa-star {
+    color:orange;
+    font-size: 25px;
+  }
+  
+
+  .sharing{
      
-      margin-top: 3rem;
-      display: flex;
+      /* margin-top: 3rem; */
+      display: grid;
+    grid-template-columns: repeat(2, 700px);
+    /* justify-content: space-evenly; */
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    /* margin: 40px 0px 0px 0px; */
+     
   }
   
   .share.share_data{
@@ -149,12 +72,49 @@
   }
  
   b.advance{
-    margin-left: 10px;
+    margin-left: 1px;
+  }
+  .address h2{
+    color:rgb(248, 8, 200);
+    margin-top: 1px;
+    padding-bottom: 20px;
+  }
+  .address button{
+    background-color: #094067;
+    color:white;
+    padding:12px 15px;
+    margin-top: 10px;
+  }
+  
+  .icons-container {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+   margin-top: 6%;
+   margin-left: 5%;
+   padding-right: 4%;
+   
+  }
+  i.fa.fa-home {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-around;
+  }
+  i.fa.fa-phone{
+    margin-top: 20px;
+  }
+  i.fa.fa-address-card-o{
+    margin-top: 13px;
   }
 
-  b.month{
-    margin-left: 10px;;
+  
+ .address p{
+    margin-bottom:25px;
   }
+ 
+ 
+
+  
   div.faculties_image div{
     display: flex;
     flex-direction: column;
@@ -168,37 +128,21 @@
 
 
   .singleshare{
+   margin-left:10px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
      
-      width: 45rem;
-      height: 17rem;
-      margin-left: 3%;
-      cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-      transform: perspective(1000px);
-      transition: transform 0.5s ease;
-
-      margin: 20px;
       
    }
-   img{
-    margin: 4rem 4rem 0rem 4rem;
+   .data{
+    margin:3rem 3rem 3rem 4rem;
+    
    }
-  /* .acrooms div{
-     margin:1rem; 
-     width: 20rem;
-      height: 12rem;
-      margin-left: 3%;
-      cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-      transform: perspective(1000px);
-      transition: transform 0.5s ease;
-      justify-content: space-around;
-      
+   .singleshare img{
+    margin: 2rem 2rem 2rem 2rem;
+   }
 
-  }  */
-  div.share_data{
-    margin-top: 6%;
-  }
+  
+ 
   .acrooms{
     display: flex;
   }
@@ -222,51 +166,51 @@
      
   }
 
-  strong {
-      font-size: 25px;
-  }
-
+  
   .faculties {
       display: flex;
     justify-content: space-around;
-    margin-bottom: 10px;
-     
+    margin-bottom: 10%;
+   
   }
   div.faculties div{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
   
   }
 div.faculties b{
-  margin-left: 30px;
+ display: flex;
+ justify-content: center;
   margin-top: 20px;
+ 
 }
+
   h3{
     color:blue;
     font-size: 25px;
   }
 
-  .button {
-      color: white;
-      background-color: red;
-      border: none;
-      height: 40px;
-    
-      margin-top: 2rem;
-      display:flex;
-  align-items: center;
-  justify-content: center;
+  
+  button.view{
+       /* margin-left: -14%; */
+       margin: auto;
+       /* margin-top: 8%; */
+       /* margin-right: 15px; */
+       padding: 1rem 1rem;
+       cursor: pointer;
+       background-color: #094067;
+       color: white;
+       /* margin-bottom: 10px; */
+       width: 168px;
+
+
   }
 
   .edit {  
       margin-left: 55rem;
   }
-  div.click{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 4%;
-  }
+  
 
   /* input */
 
@@ -355,61 +299,12 @@ div.faculties b{
   }
 
     
-    .singleshare:hover ,.acrooms div:hover {
+    .singleshare:hover  {
     transform: perspective(1000px) translateZ(100px);
     }
-  .sidebar{
-    margin-left: 7%
-  }
-  .slides{
-      display: flex;
-      margin-left: 3%;
-  }
-  .one{
-    display: flex;
-    flex-direction: column;
-  }
+  
+
  
-
-  footer{
-      
-      background-color: skyblue;
-      margin-top: 10%;
-      padding-bottom: 4%;
-  }
-  .footerone{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .footer1 h3{
-    color:black;
-  }
-  .footer2{
-      margin-bottom: 4%;
-      margin-top: 8%;
-  }
-  .footer1{
-    display: flex;
-      margin-top: 3%;
-      margin-left: 3%;
-     
-      
-  }
-  .link{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-  }
-  h2{
-    color:deeppink;
-    font-size: 40px;
-  }
-  .buttons{
-    display: flex;
-    justify-content: space-around;
-  }
-
   /* @media screen and (max-width:800px)  {
     
     nav{

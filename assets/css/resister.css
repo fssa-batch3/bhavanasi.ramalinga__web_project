@@ -14,7 +14,7 @@ p {
 
 nav {
 
-	background-color: #E64A19;
+	background-color:#094067;
   position: fixed;
   top:0;
   width: 100%;
@@ -34,7 +34,7 @@ nav ul {
 	
 nav ul li {
 	display:inline-block;
-	background-color: #E64A19;
+	background-color:#094067;
   height:70%;
 	}
 
@@ -127,6 +127,13 @@ nav ul ul ul li {
     display: inline-block;
     border: none;
     background: #f1f1f1;
+  }
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
   }
   
   input[type=text]:focus, input[type=password]:focus {

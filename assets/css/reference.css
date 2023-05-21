@@ -35,7 +35,7 @@ a {
 
 nav {
 
-	background-color: #E64A19;
+	background-color:#094067;
 }
 
 nav ul {
@@ -51,7 +51,7 @@ nav ul {
 	
 nav ul li {
 	display:inline-block;
-	background-color: #E64A19;
+	background-color: #094067;
   margin-right: 5%;
   height:70%;
 	}
@@ -111,7 +111,7 @@ nav ul ul ul li {
   
   .btn{
     display:inline-block;
-    background-color: #f44336;
+    background-color: #094067;
     color:#FFF;
     padding:14px 25px;
     text-align: center;

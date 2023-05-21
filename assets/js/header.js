@@ -16,12 +16,11 @@ const before_login = `
   <header>
   <div class="one">
       <img src="${logo}"  alt="photo"  height="70px" width="70px" /></div>
-     <div class="dropdown">
-      <span>Login</span>
+   
           <div class="dropdownlist">
               <div><a href="${register}">Register</a></div>
               <div><a href="${login}">Login </a></div>
-          </div>
+      
   </div>
 </header>
 `;
@@ -41,7 +40,8 @@ const after_login = `
             <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
             <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
             <li><a href="../orders/booked_list.html">My page</a></li>                                           
-            <li><a href="../../pages/homepage/my profile.html"> <i class="fa fa-user"></i></a></li>
+            <li><a href="../../pages/homepage/my profile.html"> My profile</a></li>
+            
           </ul>         
         </nav>
       </div>
@@ -61,7 +61,7 @@ const seller_page = `
           <li><a href="../../pages/products/form.html">Add pg</a></li>
           <li><a href="../orders/owner_applicants.html">User request</a></li>
           <li><a href="../products/seller_product.html">My page</a></li>
-          <li><a href="../../pages/homepage/my profile.html"><i class="fa fa-user"></i></a></li>
+          <li><a href="../../pages/homepage/my profile.html">My profile</i></a></li>
         </ul>
       </nav>
     </div>

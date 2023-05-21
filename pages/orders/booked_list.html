@@ -3,6 +3,8 @@
 
     <head>
         <link rel="stylesheet" href="../../assets/css/booked_list.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,49 +19,7 @@
    
         <div class="section"></div>
    
-        <footer>
-            <div clas="foot">
-            </div>
-            <div class="footer1">
-                <div class="footerone">
-                    <h2> About Sound Bricks</h2>
-                    <h3>
-                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-                        services including home loans, pay rent, packers and movers, legal assistance, property
-                        valuation,<br>
-                    </h3>
-                </div>
-                <div class="foot">
-                    <h2>Real Estate in India</h2>
-                    <br>
-                    <h3>
-                        Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
-
-                        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
-                    </h3>
-                </div>
-            </div>
-            <div class="link">
-                <i class="fa fa-instagram" style="font-size:48px;"> </i>
-                <i class="fa fa-facebook-f" style="font-size:36px"></i>
-                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-            </div>
-
-            <div class="buttons">
-   
-                <span>Terms&conditions</span>
-                <span> Blog</span>
-                <span>Careers</span>
-                <span> Testimonials</span>
-                <span> Feedback</span>
-                <span> Unsubscribe</span>
-                <span> Help centeer</span>
-                <span> Sales Enquiry</span>
-                <span> Buy our services</span>
-           
-            </div>
-        </footer>
+        
 
        
         <script>const roomBookRequest = JSON.parse(localStorage.getItem("room_book_request"));
@@ -123,7 +83,7 @@
 
   const sharing_room = document.createElement("h4");
           sharing_room.setAttribute("id", "share");
-          sharing_room.innerHTML = filterdata[i].typeOfShare;
+          sharing_room.innerHTML = filterdata[i].selected_room;
           div_two.append(sharing_room);
 
           const equaldata = document.createElement("div");
@@ -158,7 +118,7 @@
           const dateandyear = document.createElement("h4");
           dateandyear.setAttribute("class", "monthanddate");
           dateandyear.innerText = filterdata[i].dateAndTime;
-          sharing_room.append(dateandyear);
+          bookingdate.append(dateandyear);
 
           button_del = document.createElement("button");
           button_del.setAttribute("type", "submit");
@@ -166,7 +126,7 @@
           button_del.setAttribute("data-del", filterdata[i].request_id);
           // button_del.setAttribute("onclick", "del()")
           button_del.innerHTML = "Remove";
-          div_two.append(button_del);
+          dateandyear.append(button_del);
         }
       }
        
@@ -197,6 +157,7 @@ del_pgs.forEach(function (check) {
 });
     </script>
   <script src="/assets/js/header.js"></script>
+  <script src="/assets/js/footer.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,47 @@
+footer{
+        
+	background-color:antiquewhite;
+	margin-top: 10%;
+	padding-bottom: 4%;
+ }
+ .footerone{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ }
+ .footer2{
+	margin-bottom: 4%;
+	margin-top: 8%;
+ }
+ .footer1{
+  display: flex;
+	margin-top: 3%;
+	margin-left: 3%;
+	
+ }
+ .link{
+	display: flex;
+	flex-direction: row;
+	
+ }
+ .link  i.fa.fa-instagram,i.fa.fa-youtube-play{
+margin-top: 40px;
+justify-items: center;
+ }
+ /* h2{
+  color:deeppink;
+ } */
+ .buttons{
+  display: flex;
+  justify-content: space-around;
+ }
+  .link h2{
+	color:purple;
+	margin-top:45px;
+	margin-left: 40px;
+ }
+ i.fa.fa-facebook-f{
+	margin-top: 50px;
+ }
+ 
+

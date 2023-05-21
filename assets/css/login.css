@@ -57,7 +57,7 @@ a {
 
 nav {
 
-	background-color: #E64A19;
+	background-color:#094067;
   position: fixed;
   top:0;
   width:100%;
@@ -76,7 +76,7 @@ nav ul {
 	
 nav ul li {
 	display:inline-block;
-	background-color: #E64A19;
+	background-color: #094067;
   height:70%;
 	}
 

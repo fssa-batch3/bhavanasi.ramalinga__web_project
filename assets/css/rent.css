@@ -30,99 +30,23 @@ a {
 	margin: 0 auto;
 }
 
-
-
-nav {
-
-	background-color: #E64A19;
-  position: fixed;
-  top:0;
-  width:100%;
-  z-index: 1;
+span.fa.fa-star {
+  color:orange;
+  font-size: 25px;
 }
 
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
-    justify-content: space-around;
-    height:70px;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-  height:70%;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
-}
-
-nav a:hover { 
-	background-color:none; 
-}
-
-
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-.magic{
-  margin-right: 10%;
-}
-.fa.fa-user{
-  margin-top: 10px;
-  color:white;
-  font-size:36px;
-}
-
-  .last{
-    display: flex;
-    justify-content: space-around;
-    
-  }
   
   
   .button{
     display:inline-block;
-    background-color: #f44336;
+    background-color: #094067 ;
     color:white;
     padding:14px 25px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin-left:20px;
-    opacity:0.9;
+    margin-left:350px;
+    width:157px;
     cursor:pointer;
     justify-content: space-around;
   }
@@ -133,15 +57,17 @@ nav ul ul ul li {
   .image{
    
    margin:2rem 2rem 2rem;
+   margin-left: 10%;
 
   }
+   /* animation */
+   
   b{
-    font-size: 20px;
+    font-size: 25px;
+    color:rgb(4, 71, 133);
+    margin-top: 10px;
   }
-  h4{
-    color:white;
-    cursor: pointer;
-  }
+  
   input[type="text"]{
     height:40px;
     margin-top: 10px;
@@ -151,9 +77,8 @@ nav ul ul ul li {
     display: flex;
     flex-direction: column;
   }
-  .footer1{
-    display: flex;
-    
+  div.para{
+    margin-top: 40px;
   }
 
   .bar{
@@ -167,62 +92,36 @@ nav ul ul ul li {
     margin-bottom: 5%;
     margin-top: 10%;
   }
-  .bar:hover {
-    transform: perspective(1000px) translateZ(100px);
-  }
+ 
   .rent{
+    display: grid;
+    margin: 1rem ;
+   grid-template-columns: repeat(3,180px);
+   
+
+  }
+  .para p{
+    margin-left: 10px;
+  }
+  div.name rent{
     display: flex;
+    justify-content: center;
+  }
+  
+  div.name{
+    border:1px solid black; 
+     font-size: 15px; 
+     margin:2px;
+    
+  }
+  div.name p{
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    
    
-   border: 1px solid; 
-  margin-right: 40%;
-  width:50%;
-
   }
   
-  div.text{
-    border-right:1px solid;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top:1%;
-    margin-left: 3%;
-  
-   font-size: 20px; 
-  }
-  
-  
-  div.one{
-    border-right: 1px solid;
-  
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top:1%;
-    margin-left: 3%;
-    font-size: 18px;
-
-  }
-  div.two{
-    border-right: 1px solid;
-   
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top:1%;
-    margin-left: 3%;
-   
-    font-size: 20px;
-  }
-  div.three{
-  
-   
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top:1%;
-    margin-left: 3%;
-   
-    font-size: 20px;
-  }
-  .payment{
-    width:160%;
-  }
   div.number{
     display: flex;
     margin-top: 1%;
@@ -236,42 +135,7 @@ nav ul ul ul li {
   }
   
   
-  .link{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .buttons{
-    display: flex;
-    justify-content: space-between;
-  }
-  footer{
-    background-color: hsl(240, 49%, 84%);
-    height:40vh;
-    
-    
-    
-   
-  }
-  .search i{
-    position: relative;
-    right:30px;
-    
-  }
-  .footerone{
-    margin-left: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
   
-  div.boys{
-    color:deeppink;
-  }
   
   
   /* @media screen and (max-width:800px)
