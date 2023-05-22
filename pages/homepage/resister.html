@@ -19,6 +19,8 @@
                     <label for="email">
                         <b>First_Name</b>
                     </label>
+                    
+                      <i aria-hidden="true" class="fa fa-envelope"></i>
                     <input type="text" placeholder="First_Name" name="name" id="Name" required>
     
                     <label for="email">
@@ -101,81 +103,3 @@ function saveData() {
   }
 }
 
-//   const user_data = localStorage.getItem("users");
-//   let users = user_data ? JSON.parse(user_data): [];
-//   function register(){
-//   const name = document.getElementById("name").value
-//   const last = document.getElementById("last").value
-//  const phone_number = document.getElementById("phone_number").value
-//    const email = document.getElementById("email").value;
-//    const psw = document.getElementById("psw").value;
-//   const repeat = document.getElementById("repeat").value
-//    users.push({name,last,email,phone_number,psw,repeat});
-//    localStorage.setItem("users",JSON.stringify(users));
-//    alert("register sucessfully ")
-//   window.location.href = "./login.html"
-
-//   }
-// function register(){
-// const name = document.getElementById("name").value
-// const last = document.getElementById("Last").value
-// const email = document.getElementById("email").value
-// const psw = document.getElementById("psw").value
-// const repeat = document.getElementById("repeat").value
-
-// console.log(name)
-// console.log(last)
-// console.log(email)
-// console.log(psw)
-// console.log(repeat)
-
-// localStorage.setItem("name",name);
-// localStorage.setItem("Last",last);
-// localStorage.setItem("email",email);
-// localStorage.setItem("psw",psw);
-// localStorage.setItem("repeat",repeat);
-  </script> 
-</body>
-</html> -->
-
-function saveData()
-{
-let name,last,psw,email,repeat,phone_number;
-name = document.getElementById("name").value;
-last = document.getElementById("last").value;
-psw = document.getElementById("psw").value;
-email = document.getElementById("email").value;
-repeat = document.getElementById("repeat").value;
-phone_number = document.getElementById("phone_number").value;
-
-let user_records = new Array();
-user_records = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-if(user_records.some((v)=>{return v.psw !== repeat }))
-{
-  
-alert("Your details successfully registed ");
-window.location.href = "./login.html"
-
-// }else if( last.value.length == 0 && phone_number.value.length == 0){
-//     alert('Please fill your Details');
-// // }else if(new_password.value.length == 0){
-//     alert('Please create new password');
-// }else if(psw.value.length == 0){
-//     alert('Please re-enter password');
-// }else if(psw.value != repeat.value){
-//     alert('Please Check the password');
-// }else
-
-user_records.push({
-"name":name,
-"last":last,
-"psw":psw,
-"email":email,
-"repeat":repeat,
-"phone_number":phone_number
-
-})
-localStorage.setItem("users",JSON.stringify(user_records));
-}
-
-}

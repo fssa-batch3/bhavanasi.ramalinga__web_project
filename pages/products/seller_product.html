@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../assets/css/single1.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
     
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -18,458 +20,228 @@
 
             </div>
         <div class="section"></div>
-        <footer>
-            <div clas="foot">
-            </div>
-            <div class="footer1">
-                <div class="footerone">
-                    <h2> About Sound Bricks</h2>
-                    <h3>
-                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-                        services including home loans, pay rent, packers and movers, legal assistance, property valuation,<br> 
-                    </h3></div>
-                <div class="foot">
-                    <h2>Real Estate in India</h2>
-                    <br>
-                    <h3>
-                        Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
-          
-                        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
-                    </h3>
-                </div> 
-            </div> 
-            <div class="link"> 
-                <i class="fa fa-instagram" style="font-size:48px;"> </i>
-                <i class="fa fa-facebook-f" style="font-size:36px"></i>
-                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-            </div>
-    
-            <div class="last">
-       
-                <div>site map</div>
-                <div>Terms&conditions</div>
-                <div> Blog</div>
-                <div>Careers</div>
-                <div> Testimonials</div>
-                <div> Feedback</div>
-                <div> Unsubscribe</div>
-                <div> Help centeer</div>
-                <div> Sales Enquiry</div>
-                <div> Buy our services</div>
-            </div>
-        </footer> 
         
-        <script src="/assets/js/header.js"></script> 
+       
+      
+<script>
+ const filteredUseravailable = JSON.parse(localStorage.getItem("pgdetails"));
+      console.log(filteredUseravailable);
 
-        <script>
-const product_upload = JSON.parse(localStorage.getItem("pgdetails"));
-console.log(product_upload);
-// let userId = JSON.parse(localStorage.getItem('userId'));
+      const seller_id = JSON.parse(localStorage.getItem("userId"));
+    console.log(seller_id);
 
-console.log(userId);
+// const findData = filteredUseravailable.find((e) => {
+//   return Array.isArray(e.pg_details) && e.pg_details.every(item => item.owner_id !== seller_id);
+ 
+// });
 
-const findData = product_upload.filter((data) => data.owner_id == userId);
+// console.log(findData);
 
+const findData = filteredUseravailable.filter((e) => e.pg_details.owner_id === seller_id);
 console.log(findData);
 
+if (findData && Array.isArray(findData.share_data)) {
+  // Access the array details within the object
+  const share_data = findData.share_data;
 
-if (findData.length === 0) {
+  console.log(share_data);
+  } else {
+  console.log("Invalid or missing data in local storage");
+   }
+
+   const filterdata = findData.filter((e) => e.customer_id == customer);
+        console.log(filterdata);
+
+
+        if (filterdata.length === 0) {
      const noDataMessage = document.createElement("h2");
-     noDataMessage.setAttribute("class","message");
-      noDataMessage.innerText = "You did not Add any Paying Guest";
+      noDataMessage.setAttribute("class","message")
+      noDataMessage.innerText = "Sorry , You Did not Added any pg";
     document.querySelector(".section").append(noDataMessage);
     } else {
 
 
-
-for (let i = 0; i < findData.length; i++) {
-  // if(product_upload[i].email === userId){
-
-  const div_border = document.createElement("div");
-  div_border.setAttribute("class", "border");
-  console.log(div_border);
-  document.querySelector(".section").append(div_border);
-
-  const div_detail = document.createElement("div");
-  div_detail.setAttribute("class", "pg_detail");
-  div_border.append(div_detail);
-
-  const div_image = document.createElement("div");
-  div_detail.append(div_image);
-
-  const img = document.createElement("img");
-  img.setAttribute("src", findData[i].image);
-  img.setAttribute("alt", "photo");
-  img.setAttribute("height", "400px");
-  img.setAttribute("width", "450px");
-  div_image.append(img);
-
- const div_address = document.createElement("div");
-  div_address.setAttribute("class", "address");
-  div_detail.append(div_address);
-
-  const h2 = document.createElement("h2");
-  h2.innerText = findData[i].name;
-  div_address.append(h2);
-
- const  p = document.createElement("p");
-  p.innerText = findData[i].address;
-  div_address.append(p);
-
- const  div_sharing = document.createElement("div");
-  div_sharing.setAttribute("class", "sharing");
-  div_address.append(div_sharing);
-
-  //     div_one = document.createElement("div");
-  //    div_sharing.append(div_one);
-
-  // single sharing //
-
-  const div_one = document.createElement("div");
-  div_one.setAttribute("id", "share");
-  div_one.setAttribute("data-id", "onesharing");
-  div_sharing.append(div_one);
-
- const h4 = document.createElement("h4");
-  h4.innerText = "single sharing";
-  div_one.append(h4);
-
-  const b = document.createElement("b");
-  b.innerText = "Monthly Rent:";
-  div_one.append(b);
-
- const p_one = document.createElement("p");
-  p_one.innerHTML = findData[i].sharing.Onesharing;
-  b.append(p_one);
-
-  const b_one = document.createElement("b");
-  b_one.innerText = "Advance:";
-  div_one.append(b_one);
-
-  const advanceamount = document.createElement("b");
-  advanceamount.innerText = findData[i].amount;
-  div_one.append(advanceamount);
-  // checkbox//
-  //     selectbutton = document.createElement("input");
-  //     selectbutton.type = "checkbox";
-  // //    selectbutton.id = "single";
-  //     div_one.append(selectbutton);
-
-  //two sharing//
-  const div_two = document.createElement("div");
-  div_two.setAttribute("id", "share1");
-  div_two.setAttribute("data-id", "twosharing");
-  div_sharing.append(div_two);
-
- const h4_one = document.createElement("h4");
-  h4_one.innerText = "Twin sharing";
-  div_two.append(h4_one);
-
- const b_two = document.createElement("b");
-  b_two.innerText = "Monthly Rent:";
-  div_two.append(b_two);
-
- const p_two = document.createElement("p");
-  p_two.innerText = findData[i].sharing.Twosharing;
-  b_two.append(p_two);
-
- const b_three = document.createElement("b");
-  b_three.innerText = "Advance:";
-  div_two.append(b_three);
-
- const twoshareadvance = document.createElement("b");
- twoshareadvance.innerText = findData[i].amount;
-  div_two.append(twoshareadvance);
-
-  // checkbox//
-
-  //     selectbutton1 = document.createElement("input");
-  //     selectbutton1.type = "checkbox";
-  // //    selectbutton.id = "single";
-  // div_two.append(selectbutton1);
-
-  //three sharing//
-
-  const div_three = document.createElement("div");
-  div_three.setAttribute("id", "share2");
-  div_three.setAttribute("data-id", "threesharing");
-  div_sharing.append(div_three);
-
- const  h4_two = document.createElement("h4");
-  h4_two.innerText = "Three sharing";
-  div_three.append(h4_two);
-
-  const b_four = document.createElement("b");
-  b_four.innerText = " Monthly Rent:";
-  div_three.append(b_four);
-
-  const p_three = document.createElement("p");
-  p_three.innerText = findData[i].sharing.Threesharing;
-  b_four.append(p_three);
-
- const  b_five = document.createElement("b");
-  b_five.innerText = "Advance:";
-  div_three.append(b_five);
-
-  const threeshareadvance = document.createElement("b");
-  threeshareadvance.innerText = findData[i].amount;
-  div_three.append(threeshareadvance);
-
-  //four sharing//
-  const div_four = document.createElement("div");
-  div_four.setAttribute("id", "share3");
-  div_four.setAttribute("data-id", "foursharing");
-  div_sharing.append(div_four);
-
- const  h4_three = document.createElement("h4");
-  h4_three.innerText = "four sharing";
-  div_four.append(h4_three);
-
-  const b_six = document.createElement("b");
-  b_six.innerText = "MonthlyRent:";
-  div_four.append(b_six);
-
- const para_four = document.createElement("p");
-  para_four.innerText = findData[i].sharing.Foursharing;
-  b_six.append(para_four);
-
-  const b_seven = document.createElement("b");
-  b_seven.innerText = "Advance:";
-  div_four.append(b_seven);
-
-  const fourshareadvance = document.createElement("b");
-  fourshareadvance.innerText = findData[i].amount;
-  div_four.append(fourshareadvance);
-
-  // with Ac room//
-  const acroomsavailable = document.createElement("div");
-  acroomsavailable.setAttribute("class", "acavailable");
-  div_address.append(acroomsavailable);
-
-  const acrooms = document.createElement("div");
-  acrooms.setAttribute("id", "share4");
-  acrooms.setAttribute("class", "share_data");
-  acrooms.setAttribute("data-id", "roomwithac");
-  acroomsavailable.append(acrooms);
-
-  const singlesharewithac = document.createElement("h4");
-
-  singlesharewithac.innerText = "SinglesharewithAC";
-  acrooms.append(singlesharewithac);
-
-  const monthlyrent = document.createElement("b");
-  monthlyrent.innerText = "Monthly Rent:";
-  acrooms.append(monthlyrent);
-
-  const acroomshare = document.createElement("p");
-  acroomshare.innerText = findData[i].sharing.Singleshare_AC;
-  monthlyrent.append(acroomshare);
-
- const advance = document.createElement("b");
- advance.innerText = "Advance:";
-  acrooms.append(advance);
-
-  const boldsentence = document.createElement("b");
-  boldsentence.innerText = findData[i].amount;
-  acrooms.append(boldsentence);
-
-  // with AC room//
-
-  const sharings = document.createElement("div");
-  sharings.setAttribute("id", "share5");
-  sharings.setAttribute("class", "sharingwithac");
-  sharings.setAttribute("data-id", "shreac");
-  acroomsavailable.append(sharings);
-
-  const twoharewithac = document.createElement("h4");
-
-  twoharewithac.innerText = "Twin share with AC";
-  sharings.append(twoharewithac);
-
-  const monthrent = document.createElement("b");
-  monthrent.innerText = "Monthly Rent:";
-  sharings.append(monthrent);
-
-  const monthrate = document.createElement("p");
-  monthrate.innerText = findData[i].sharing.Twinshare_AC;
-  monthrent.append(monthrate);
-
-  const b_advance = document.createElement("b");
-  b_advance.innerText = "Advance:";
-  sharings.append(b_advance);
-
- const twoshareacadvance = document.createElement("b");
- twoshareacadvance.innerText = findData[i].amount;
-  sharings.append(twoshareacadvance);
-
-  //timimg//
- const div_time = document.createElement("div");
-  div_time.setAttribute("class", "time");
-  div_border.append(div_time);
-
-  const para = document.createElement("b");
-  para.innerText = "Notice period for Booking days before:";
-  div_time.append(para);
-
-  const bold = document.createElement("p");
-  bold.innerText = findData[i].period;
-  para.append(bold);
-
-  const para_one = document.createElement("b");
-  para_one.innerText = "Closing Time :";
-  div_time.append(para_one);
-
-  const bold_one = document.createElement("p");
-  bold_one.innerText = findData[i].time;
-  para_one.append(bold_one);
-
-  const para_two = document.createElement("b");
-  para_two.innerText = "Available For:";
-  div_time.append(para_two);
-
- const bold_two = document.createElement("p");
-  bold_two.innerText = findData[i].available;
-  para_two.append(bold_two);
-
- const para_three = document.createElement("b");
-  para_three.innerText = "No.of beds:";
-  div_time.append(para_three);
-
- const bold_three = document.createElement("p");
-  bold_three.innerText = findData[i].beds;
-  para_three.append(bold_three);
-
-  //    // new another fecilities//
-  const inside_house = document.createElement("strong");
-  inside_house.innerText = "House Fecilities:";
-  div_border.append(inside_house);
-
-  const div_moreimages = document.createElement("div");
-  div_moreimages.setAttribute("class", "faculties_image");
-  div_border.append(div_moreimages);
-
- const image1 = document.createElement("img");
-  image1.setAttribute("src", findData[i].house_fecilities_image.image1);
-  image1.setAttribute("alt", "photo");
-  image1.setAttribute("height", "150px");
-  image1.setAttribute("width", "160px");
-  div_moreimages.append(image1);
-
-  const image2 = document.createElement("img");
-  image2.setAttribute("src", findData[i].house_fecilities_image.image2);
-  image2.setAttribute("alt", "photo");
-  image2.setAttribute("height", "150px");
-  image2.setAttribute("width", "160px");
-  div_moreimages.append(image2);
-
-  const image4 = document.createElement("img");
-  image4.setAttribute("src", findData[i].house_fecilities_image.image4);
-  image4.setAttribute("alt", "photo");
-  image4.setAttribute("height", "150px");
-  image4.setAttribute("width", "160px");
-  div_moreimages.append(image4);
-
-  const image3 = document.createElement("img");
-  image3.setAttribute("src", findData[i].house_fecilities_image.lastimage);
-  image3.setAttribute("alt", "photo");
-  image3.setAttribute("height", "150px");
-  image3.setAttribute("width", "160px");
-  div_moreimages.append(image3);
-
-  // facilities names//
- const facilitiesfirstnames = document.createElement("div");
-  facilitiesfirstnames.setAttribute("class", "facility");
-  div_border.append(facilitiesfirstnames);
-
-  const facilityfirstname = document.createElement("b");
-  facilityfirstname.innerText = findData[i].imagename.firstname;
-  facilitiesfirstnames.append(facilityfirstname);
-
-  const facilitysecondname = document.createElement("b");
-  facilitysecondname.innerText = findData[i].imagename.secondname;
-  facilitiesfirstnames.append(facilitysecondname);
-
-  const facilitythirdname = document.createElement("b");
-  facilitythirdname.innerText = findData[i].imagename.thirdname;
-  facilitiesfirstnames.append(facilitythirdname);
-
- const facilityfourthname = document.createElement("b");
-  facilityfourthname.innerText = findData[i].imagename.fourthname;
-  facilitiesfirstnames.append(facilityfourthname);
-
-  //facilities//
-  const div_facilities = document.createElement("div");
-  div_facilities.setAttribute("class", "facilities");
-  div_border.append(div_facilities);
-
- const strong = document.createElement("strong");
-  strong.innerText = "Facilities:";
-  div_facilities.append(strong);
-
+  for (let i = 0; i < findData.length; i++) {
+    const div_border = document.createElement("div");
+    div_border.setAttribute("class", "border");
+    console.log(div_border);
+    document.querySelector(".section").append(div_border);
+
+    const div_detail = document.createElement("div");
+    div_detail.setAttribute("class", "pg_detail");
+    div_border.append(div_detail);
+
+    const div_image = document.createElement("div");
+    div_detail.append(div_image);
+
+    const img = document.createElement("img");
+    img.setAttribute("src", findData[i].pg_details.image);
+    img.setAttribute("alt", "photo");
+    img.setAttribute("height", "400px");
+    img.setAttribute("width", "450px");
+    div_image.append(img);
+
+    const div_address = document.createElement("div");
+    div_address.setAttribute("class", "address");
+    div_detail.append(div_address);
+
+    const h2 = document.createElement("h2");
+    h2.innerText = findData[i].pg_details.name;
+    div_address.append(h2);
+
+    const p = document.createElement("p");
+    p.innerText = findData[i].pg_details.address;
+    div_address.append(p);
+
+    const div_sharing = document.createElement("div");
+    div_sharing.setAttribute("class", "sharing");
+    div_address.append(div_sharing);
+
+    // single sharing //
+    if ( findData &&Array.isArray(findData[i].share_data)) {
+      const arrayshare_data = findData[i].share_data;
+
+      for (let j = 0; j < arrayshare_data.length; j++) {
+        const singleshare = document.createElement("div");
+        singleshare.setAttribute("id", "share");
+        singleshare.setAttribute("class", "Single Sharing");
+        div_sharing.append(singleshare);
+
+      
+        const div_one = document.createElement("div");
+        div_one.setAttribute("class", "data");
+        singleshare.append(div_one);
+
+        const h4 = document.createElement("h4");
+        h4.innerText = arrayshare_data[j].name;
+        div_one.append(h4);
+
+        const bold = document.createElement("b");
+        bold.setAttribute("class", "month");
+        bold.innerText = "Monthly Rent:";
+        div_one.append(bold);
+
+        const p_one = document.createElement("p");
+        p_one.innerText = arrayshare_data[j].rent + "/-";
+        bold.append(p_one);
+
+
+        
+
+       
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+
+
+    
+    const div_facilities = document.createElement("div");
+   div_facilities.setAttribute("class", "facilities");
+   div_detail.append(div_facilities);
+
+ 
  const div_faculties = document.createElement("div");
   div_faculties.setAttribute("class", "faculties");
   div_facilities.append(div_faculties);
   //images//
- const img_picture = document.createElement("img");
-  img_picture.setAttribute("src", findData[i].fecilities.food);
-  img_picture.setAttribute("alt", "photo");
-  img_picture.setAttribute("height", "130px");
-  img_picture.setAttribute("width", "120px");
-  div_faculties.append(img_picture);
+  const rulesandregulation = document.createElement("h3");
+      rulesandregulation.innerText = "Rules and regulation :";
+      div_border.append(rulesandregulation);
 
-  const img_pictureone = document.createElement("img");
-  img_pictureone.setAttribute("src", findData[i].fecilities.fridge);
-  img_pictureone.setAttribute("alt", "photo");
-  img_pictureone.setAttribute("height", "130px");
-  img_pictureone.setAttribute("width", "120px");
-  div_faculties.append(img_pictureone);
+      const div_time = document.createElement("div");
+      div_time.setAttribute("class", "time");
+      div_border.append(div_time);
 
-  const img_picturetwo = document.createElement("img");
-  img_picturetwo.setAttribute("src", findData[i].fecilities.parking);
-  img_picturetwo.setAttribute("alt", "photo");
-  img_picturetwo.setAttribute("height", "130px");
-  img_picturetwo.setAttribute("width", "120px");
-  div_faculties.append(img_picturetwo);
 
-  img_picture = document.createElement("img");
-  img_picture.setAttribute("src", findData[i].fecilities.tv);
-  img_picture.setAttribute("alt", "photo");
-  img_picture.setAttribute("height", "130px");
-  img_picture.setAttribute("width", "120px");
-  div_faculties.append(img_picture);
+      const para = document.createElement("b");
+      para.innerText = " Book the PG before:";
+      div_time.append(para);
 
-  img_picture = document.createElement("img");
-  img_picture.setAttribute("src", findData[i].fecilities.wifi);
-  img_picture.setAttribute("alt", "photo");
-  img_picture.setAttribute("height", "130px");
-  img_picture.setAttribute("width", "120px");
-  div_faculties.append(img_picture);
+      const pgclosingtime = document.createElement("p");
+      pgclosingtime.innerText = findData[i].pg_details.period;
+      para.append(pgclosingtime);
 
-  // next five fecilities //
-  const anothersetofnames = document.createElement("div");
-  anothersetofnames.setAttribute("class", "setofnames");
-  div_border.append(anothersetofnames);
+      const para_one = document.createElement("b");
+      para_one.innerText = "PG Closing Time :";
+      div_time.append(para_one);
 
-  facilityfifthname = document.createElement("b");
-  facilityfifthname.innerText = findData[i].imagename.fifthname;
-  anothersetofnames.append(facilityfifthname);
+      const bold_one = document.createElement("p");
+      bold_one.innerText = findData[i].pg_details.time;
+      para_one.append(bold_one);
 
-  facilitysixname = document.createElement("b");
-  facilitysixname.innerText = findData[i].imagename.sixthname;
-  anothersetofnames.append(facilitysixname);
+      const para_two = document.createElement("b");
+      para_two.innerText = "Available For:";
+      div_time.append(para_two);
 
-  facilityseventhname = document.createElement("b");
-  facilityseventhname.innerText = findData[i].imagename.seventhname;
-  anothersetofnames.append(facilityseventhname);
+      const bold_two = document.createElement("p");
+      bold_two.innerText = findData[i].pg_details.available;
+      para_two.append(bold_two);
 
-  facilityeightname = document.createElement("b");
-  facilityeightname.innerText = findData[i].imagename.eigthname;
-  anothersetofnames.append(facilityeightname);
+      const para_three = document.createElement("b");
+      para_three.innerText = "No.of beds:";
+      div_time.append(para_three);
 
-  facilityninethname = document.createElement("b");
-  facilityninethname.innerText = findData[i].imagename.ninethname;
-  anothersetofnames.append(facilityninethname);
+      const bold_three = document.createElement("p");
+      bold_three.innerText = findData[i].pg_details.beds;
+      para_three.append(bold_three);
+
+      const sharing_room_advance = document.createElement("b");
+      sharing_room_advance.setAttribute("class", "advance");
+      sharing_room_advance.innerText = "For all sharing rooms Advance:";
+
+      div_time.append(sharing_room_advance);
+
+      const sharing_amount = document.createElement("p");
+      sharing_amount.innerText = findData[i].pg_details.advance;
+      sharing_room_advance.append(sharing_amount);
+
+     
+       //facilities more//
+      const div_facility = document.createElement("div");
+      div_facility.setAttribute("class", "facilities");
+      div_border.append(div_facility);
+
+      strong = document.createElement("h3");
+      strong.innerText = "Facilities:";
+      div_facility.append(strong);
+
+      const div_facultieses = document.createElement("div");
+      div_facultieses.setAttribute("class", "faculties");
+      div_border.append(div_facultieses);
+
+      //images//
+      if ( findData &&Array.isArray(findData[i].facilities_data)) {
+      const facilities = findData[i].facilities_data;
+
+      for (let k = 0; k< facilities.length; k++) {
+        const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","fivefacilities");
+      div_facultieses.append(cooking_image);
+
+      const img_picture = document.createElement("img");
+      img_picture.setAttribute("src", facilities[k].image);
+      img_picture.setAttribute("alt", "photo");
+      img_picture.setAttribute("height", "100px");
+      img_picture.setAttribute("width", "120px");
+      cooking_image.append(img_picture);
+
+      
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = facilities[k].name;
+      cooking_image.append(facilityfifthname);
+
+        
+
+       
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+  }
+      
+
+      // another image//
 
   //button//
 
@@ -492,14 +264,12 @@ for (let i = 0; i < findData.length; i++) {
   button_del.innerHTML = "Delete";
   div_last.append(button_del);
 
-  // buttons = document.createElement("div");
-  // buttons.setAttribute("class", "button");
 
-  // // button.setAttribute("type","submit")
-  // buttons.innerHTML = "Delete";
-  // div_last.append(buttons);
-}
-    }
+  }
+
+
+
+  //facilities// 
 
 const selectbtn = document.querySelectorAll(".edit");
 selectbtn.forEach((each) => {
@@ -602,17 +372,9 @@ del_pgs.forEach(function (check) {
 //   };
 // }
     </script> 
-   
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/header.js"></script> 
+    
     </body>
 </html>
-<!-- washing machine https://i.ibb.co/QXZNDhj/washingmachine.jpg
-    kitchen https://i.ibb.co/9ppFq4G/kitchen4.jpg
-    balkeni https://i.ibb.co/tH5Dyr3/balkeni3.jpg
-    fridge https://i.ibb.co/j5bKQV3/fridge.png
-    tv https://i.ibb.co/qYdyzjJ/TV.png
-    food https://i.ibb.co/DYqHcLM/food1.png
-    wifi https://i.ibb.co/P4gv0SP/wifi.png
 
-    parking https://i.ibb.co/CB78WBd/parking.png
-    water https://i.ibb.co/xhBHDXZ/waterfluency.png
-    dining https://i.ibb.co/ydGfJQn/fecility.jpg -->

@@ -3,6 +3,8 @@
 
     <head>
         <link rel="stylesheet" href="../../assets/css/applicants.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,55 +24,11 @@
         </header>
 
         <div class="section"></div>
-        <footer>
-            <div class="section"></div>
-            <footer>
-                <div clas="foot">
-                </div>
-                <div class="footer1">
-                    <div class="footerone">
-                        <h2> About Sound bricks</h2>
-                        <h4>
-                            Soundbricks is a full stack service provider for all real estate needs, with 15+<br>
-                            services including home loans, pay rent, packers and movers, legal assistance, property
-                            valuation,<br>
-                        </h3>
-                </div>
-                            <div class="foot">
-                                <h2>Real Estate in India</h2>
-                                <br>
-                                <h4>
-                                    Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
+        
+                               
 
-                                    in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                                    New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
-                                </h4>
-                            </div>
-            </div>
-                            <div class="link">
-                                <i class="fa fa-instagram" style="font-size:48px;"> </i>
-                                <i class="fa fa-facebook-f" style="font-size:36px"></i>
-                                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-                            </div>
-
-                            <div class="buttons">
-
-                                <span>Terms&conditions</span>
-                                <span> Blog</span>
-                                <span>Careers</span>
-                                <span>Testimonials</span>
-                                <span>Feedback</span>
-                                <span>Unsubscribe</span>
-                                <span> Help centeer</span>
-                                <span>Sales Enquiry</span>
-                                <span>Buy our services</span>
-                </ul>
-
-                            </div>
-        </footer>
-
-                            <script>const owner = JSON.parse(localStorage.getItem("pgdetails"));
-
+            <script>const owner = JSON.parse(localStorage.getItem("pgdetails"));
+             console.log(owner);
             const searching = window.location.search;
             console.log(searching);
             const newurl = new URLSearchParams(searching);
@@ -78,47 +36,45 @@
             console.log(pg_id);
             const selected_room = newurl.get("my_room_id");
             console.log(selected_room);
-            // const queryString = window.location.search;
-            // const urlParams = new URLSearchParams(queryString);
-            // const pg_id = urlParams.get('my_uuid');
-            // const selected_room = urlParams.get('my_room_id');
+            
+             const Applicant = owner.find((e) => e.my_uuid == pg_id);
+             console.log(Applicant);
 
-            const Applicant = owner.find((e) => e.my_uuid == pg_id);
+            const selectedObject = owner.find((object) => object.share_data.find((data) => data.name === selected_room));
 
-            // getting name of pg//
+           
+                // Get the image from the selected object
+                const selectedImage = Applicant.share_data.find((data) => data.name === selected_room).image;
+               
+                console.log(selectedImage);
 
-            const div_border = document.createElement("div");
+                const selectedrent = selectedObject.share_data.find((data) => data.name === selected_room).rent;
+                console.log(selectedrent);
+
+                const div_border = document.createElement("div");
             div_border.setAttribute("class", "border");
             document.querySelector(".section").append(div_border);
 
-            const div_detail = document.createElement("div");
-            div_detail.setAttribute("class", "pg_detail");
-            div_border.append(div_detail);
 
-            const div_image = document.createElement("div");
-            div_image.setAttribute("class", "detail");
-            div_detail.append(div_image);
+                const div_image = document.createElement("div");
+              div_image.setAttribute("class", "detail");
+              div_border.append(div_image);
 
-            const img = document.createElement("img");
-            img.setAttribute("src", Applicant.image);
-            img.setAttribute("id", "image");
-            img.setAttribute("alt", "photo");
-            img.setAttribute("height", "300px");
-            img.setAttribute("width", "300px");
-            div_image.append(img);
-
-            // let div_address = document.createElement("div");
-            // div_address.setAttribute("class", "address");
-            // div_detail.append(div_address);
-
-            const h2 = document.createElement("h2");
+              const img = document.createElement("img");
+              img.setAttribute("src", selectedImage);
+              img.setAttribute("id", "image");
+              img.setAttribute("alt", "photo");
+              img.setAttribute("height", "300px");
+              img.setAttribute("width", "300px");
+              div_image.append(img);
+              const h2 = document.createElement("h2");
             h2.setAttribute("class", "pg_name");
             div_image.append(h2);
 
             const Name_ofthepg = document.createElement("h3");
             Name_ofthepg.setAttribute("class", "name_of_pg");
             Name_ofthepg.setAttribute("id", "name");
-            Name_ofthepg.innerText = Applicant.name;
+            Name_ofthepg.innerText = Applicant.pg_details.name;
             h2.append(Name_ofthepg);
 
             const div_two = document.createElement("div");
@@ -137,7 +93,7 @@
 
             const b_one = document.createElement("span");
             b_one.setAttribute("id", "sharing");
-            b_one.innerText = Applicant.sharing[selected_room];
+            b_one.innerText = selectedrent;
             monthly_rent.append(b_one);
 
             const advance_three = document.createElement("b");
@@ -147,7 +103,7 @@
 
             const b_four = document.createElement("span");
             b_four.setAttribute("id", "amount");
-            b_four.innerText = Applicant.amount;
+            b_four.innerText = Applicant.pg_details.advance;
             advance_three.append(b_four);
 
             const book_button = document.createElement("button");
@@ -159,41 +115,12 @@
               signUp(event);
             };
             b_four.append(book_button);
+            
 
-            // let data = JSON.parse(localStorage.getItem("room_book_request"));
-            // let sharing_id = JSON.parse(localStorage.getItem("request_id"));
-            // // console.log(sharing_id);
-            // const queryStringging = window.location.search;
-            //     console.log(queryStringging);
-            //     const urlParamss = new URLSearchParams(queryStringging);
-            //     const product = urlParamss.get('my_uuid');
-            // let request = data.find(e => e.my_uuid == sharing_id );
 
-            // let value = "";
-            // let status =" ";
-            // // let status = request["status"];
-            // // console.log(my_uuid);
+           
 
-            // console.log(request);
-
-            // // let request_id = JSON.parse(localStorage.getItem("status"));
-            // // filterdata = data.find(e =>e.request_id = request_id);
-
-            // if (request["status"] === 1) {
-            //     value = "Not seen";
-            // } else if (request["status"] === 2) {
-            //     value = "Accepted";
-            // } else if (request["status"] === 0) {
-            //     value = "Rejected";
-            // }
-
-            // let statusDev = document.createElement("p");
-            // statusDev.setAttribute("id", "status");
-
-            // statusDev.innerText = value;
-            // b_four.append(statusDev);
-
-            //booking data storing//
+          
 
             function signUp(e) {
               e.preventDefault();
@@ -207,36 +134,35 @@
               console.log(month);
               console.log(date);
 
-              const room_book_request =
-    JSON.parse(localStorage.getItem("room_book_request")) || [];
-              const exit =
-    room_book_request.length &&
-    room_book_request.some((data) => data.my_uuid === pg_id);
-              const customer_id = JSON.parse(localStorage.getItem("userId"));
-              const product_id = JSON.parse(localStorage.getItem("productId"));
+const customer_id = JSON.parse(localStorage.getItem("userId"));
+const product_id = JSON.parse(localStorage.getItem("productId"));
+const room_book_request = JSON.parse(localStorage.getItem("room_book_request")) || [];
 
-              if (!exit) {
-                room_book_request.push({
-                  request_id: my_uuid,
-                  customer_id,
-                  product_id: pg_id,
-                  status: 1,
-                  typeOfShare: selected_room,
-                  pgname: Applicant.name,
-                  image: Applicant.image,
-                  dateAndTime: `${date}/${month}/${year}`,
-                });
-                // date and year//
 
-                //end//
-                localStorage.setItem(
-      "room_book_request",
-      JSON.stringify(room_book_request)
-                );
-    console.log(localStorage.getItem("room_book_request"));
-                alert("request sent successfully");
-              }
-            }
+ 
+const exit = room_book_request.some((data) => data.product_id === pg_id && data.customer_id === customer_id && data.selected_room === selected_room);
+
+if (!exit) {
+  room_book_request.push({
+    request_id: my_uuid,
+    customer_id,
+    product_id: pg_id,
+    status: 1,
+    selected_room,
+    image: selectedImage,
+    rent: selectedrent,
+    pgname: Applicant.pg_details.name,
+    dateAndTime: `${date}/${month}/${year}`,
+  });
+
+  localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+  console.log(localStorage.getItem("room_book_request"));
+  alert("Request sent successfully");
+} else {
+  alert("Already booked");
+}
+}
+
 
             // responses come here//
 
@@ -249,7 +175,8 @@
 
             //date and year//
         </script>
-                            <script src="/assets/js/header.js"></script>
+        <script src="/assets/js/header.js"></script>
+        <script src= "/assets/js/footer.js"></script>
 </body>
 
 </html>

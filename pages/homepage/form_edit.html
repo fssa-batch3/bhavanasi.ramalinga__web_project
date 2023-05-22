@@ -3,6 +3,8 @@
     <head>
     
         <link rel="stylesheet" href="../../assets/css/form_read.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
         <meta charset="UTF-8">   
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,42 +25,14 @@
                     <label for="name">
                         <b> 1.pg_Name</b>
                     </label>
-                    <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled>
+                    <input type="text" placeholder="pg_name" id="name"id="name" disabled >
                     <br>
                     <br>
        
-                    <label for="type">
-                        <b>2.Rooms categories are available and rent</b>
-                    </label>
-                    <br>
-        
-                    <label for="sharing">
-                        <b>single sharing</b> 
-                    </label>
-                    <input type="number" id="Onesharing" min="1000" max="30000" pattern="[0-9]+" required>
-                    <br>
-                    <br>
-     
-                    <label for="sharing">
-                        <b>Twin sharing</b> 
-                    </label>
-                    <input type="number" id="Twosharing" min="1000" max="30000" pattern="[0-9]+" required>
-                    <br>
-                    <br>
-      
-                    <label for="sharing">
-                        <b>Triple sharing</b>  
-                    </label>
-                    <input type="number"id="Threesharing" min="3000" max="30000" pattern="[0-9]+" required>
-                    <br>
-                    <br>
-      
-                    <label for="sharing">
-                        <b>Four sharing</b> 
-                    </label>
-                    <input type="number"id="Foursharing" min="3000" max="30000" pattern="[0-9]+" required>
-                    <br>
-                    <br>
+                                   
+
+                 
+                <div class="section">
 
                     <label for="name">
                         <b> 3.Deposite amount</b>
@@ -68,55 +42,29 @@
                     <br>
       
                     <label for="sharing">
-                        <b>4. Notice Period</b>
+                        <b>4. Notice Period</b><br>
                     </label>
-                    <input id="period" placeholder="example:10 days " min="10 days " max="30 days " required>
+                    <input  type="text"id="period" placeholder="example:10 days " min="10 days " max="30 days " required>
                     <br>
                     <br>
     
                     <label for="sharing">
-                        <b>5. Closing Time </b>
+                        <b>5. Closing Time </b><br>
                     </label>
-                    <input id="time" pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
+                    <input  type="text" id="time" placeholder ="eample:11:00 PM"pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
                     <br>
                     <br>
 
                     <label for="sharing">
                         <b>6.Available For</b>
                     </label>
-                    <input id="available" disabled>
+                    <input type="text"id="available" >
                     <br>
                     <br>
   
-                    <label for="image1">
-                        <b>Facilities ((kitchen))</b>
-                    </label>
-                    <input type="url" id="image1" required>
-</input><br>
-                    <br>
 
-                    <label for="image">
-                        <b>Facilities(Tv)</b>
-                    </label>
-                    <input type="url" id="image2" required>
-</input><br>
-                    <br>
-
-                    <label for="image">
-                        <b> Facilities(balkeni)</b>
-                    </label>
-                    <input type="url" id="lastimage" required>
-</input><br>
-                    <br>
-
-                    <label for="image1">
-                        <b>Facilities(terrus)</b>
-                    </label>
-                    <input type="url" id="image4" required>
-</input><br>
-                    <br>
+                 
                 </div>
-                <div class="section">
                     <label for="sharing">
                         <b>7.No.of Beds</b> 
                     </label>
@@ -124,45 +72,12 @@
                     <br>
                     <br>
 
-                    <label for="sharing">
-                        <b>8.facilities(fridge)</b>
-                    </label>
-                    <input type="url" id="parking" name="vehicle1"required>
-                    <br>
-                    <br>
-
-                    <label for="sharing">
-                        <b>9.facilities(food)</b>
-                    </label>
-                    <input type="url" id="wifi" required>
-                    <br>
-                    <br>
-   
-                    <label for="sharing">
-                        <b>10.facilities ((w.m))</b>
-                    </label>
-                    <input type="url" id="food" required>
-                    <br>
-                    <br>
-    
-                    <label for="sharing">
-                        <b>11.facilities(wifi)</b>
-                    </label>
-                    <input type="url" id="fridge" required>
-                    <br>
-                    <br>
-   
-                    <label for="sharing">
-                        <b>12.facilities(water purified)</b>
-                    </label>
-                    <input type="url"id="tv" required>
-                    <br>
-                    <br>
+                  
 
                     <label for="pg_name">
-                        <b>13.Image</b>
+                        <b>13.Image</b><br>
                     </label>
-                    <input type ="url" id="image" disabled>
+                    <input type ="url" id="image" >
                     <br>
                     <br>
 
@@ -181,55 +96,15 @@
           
             </div>
         </form>
-        <footer>
-            <div clas="foot">
-            </div>
-            <div class="footer1">
-                <div class="footerone">
-                    <h2> About Sound Bricks</h2>
-                    <h3>
-                        Magicbricks is a full stack service provider for all real estate needs, with 15+<br>
-                        services including home loans, pay rent, packers and movers, legal assistance, property
-                        valuation,<br>
-                    </h3>
-                </div>
-                <div class="foot">
-                    <h2>Real Estate in India</h2>
-                    <br>
-                    <h3>
-                        Property in Delhi NCR Property in Mumbai Property in Chennai Property in Pune Property<br>
-
-                        in Noida Property in Gurgaon Property in Bangalore Property in Ahmedabad<br>
-                        New Projects in IndiaNew Projects in Delhi/NCR New Projects in Mumbai<br>
-                    </h3>
-                </div>
-            </div>
-            <div class="link">
-                <i class="fa fa-instagram" style="font-size:48px;"> </i>
-                <i class="fa fa-facebook-f" style="font-size:36px"></i>
-                <i class="fa fa-youtube-play" style="font-size:48px;color:red"></i>
-            </div>
-
-            <div class="buttons">
- 
-                <span>Terms&conditions</span>
-                <span> Blog</span>
-                <span>Careers</span>
-                <span> Testimonials</span>
-                <span> Feedback</span>
-                <span> Unsubscribe</span>
-                <span> Help centeer</span>
-                <span> Sales Enquiry</span>
-                <span> Buy our services</span>
-         
-            </div>
-        </footer>
+       
         <script src="../../assets/js/header.js"></script>
+        <script src ="/assets/js/footer.js"></script>
         <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const my_uuid = urlParams.get("my_uuid");
         const details = JSON.parse(localStorage.getItem("pgdetails"));
+        console.log(details);
 
 function login_data(e) {
   return e.my_uuid == my_uuid;
@@ -237,35 +112,31 @@ function login_data(e) {
 const user_data = details.find(login_data);
 console.log(details);
 
-document.getElementById("name").value = user_data.name;
-document.getElementById("Onesharing").value = user_data.sharing.Onesharing;
-document.getElementById("Twosharing").value = user_data.sharing.Twosharing;
-document.getElementById("Threesharing").value = user_data.sharing.Threesharing;
-document.getElementById("Foursharing").value = user_data.sharing.Foursharing;
+document.getElementById("name").value = user_data.pg_details.name;
 
-document.getElementById("beds").value = user_data.beds;
-document.getElementById("time").value = user_data.time;
-document.getElementById("period").value = user_data.period;
-document.getElementById("available").value = user_data.available;
-document.getElementById("image").value = user_data.image;
-document.getElementById("address").value = user_data.address;
-document.getElementById("amount").value = user_data.amount;
+document.getElementById("beds").value = user_data.pg_details.beds;
+document.getElementById("time").value = user_data.pg_details.time;
+document.getElementById("period").value = user_data.pg_details.period;
+document.getElementById("available").value = user_data.pg_details.available;
+document.getElementById("image").value = user_data.pg_details.image;
+document.getElementById("address").value = user_data.pg_details.address;
+document.getElementById("amount").value = user_data.pg_details.advance;
 // document.getElementById("secondname").value = user_data["secondname"];
 
-document.getElementById("parking").value = user_data.fecilities.parking;
-document.getElementById("tv").value = user_data.fecilities.tv;
-document.getElementById("wifi").value = user_data.fecilities.wifi;
-document.getElementById("food").value = user_data.fecilities.food;
-document.getElementById("fridge").value = user_data.fecilities.fridge;
-// more images //
-document.getElementById("image1").value =
-  user_data.house_fecilities_image.image1;
-document.getElementById("image2").value =
-  user_data.house_fecilities_image.image2;
-document.getElementById("lastimage").value =
-  user_data.house_fecilities_image.lastimage;
-document.getElementById("image4").value =
-  user_data.house_fecilities_image.image4;
+// document.getElementById("parking").value = user_data.facilities_data[0];
+// document.getElementById("tv").value = user_data.facilities_data[2];
+// document.getElementById("wifi").value = user_data.facilities_data[4];
+// document.getElementById("food").value = user_data.facilities_data[6];
+// document.getElementById("fridge").value = user_data.facilities_data[8];
+// // more images //
+// document.getElementById("image1").value =
+//   user_data.facilities_data[1];
+// document.getElementById("image2").value =
+//   user_data.facilities_data[3];
+// document.getElementById("lastimage").value =
+//   user_data.facilities_data[5];
+// document.getElementById("image4").value =
+//   user_data.facilities_data[7];
 
 function update(e) {
   e.preventDefault();
@@ -276,63 +147,217 @@ function update(e) {
     .value.trim()
     .split(/\s+/g)
     .join(" ");
-  const up_Onesharing = document.getElementById("Onesharing").value;
-  const up_Twosharing = document.getElementById("Twosharing").value;
-  const up_Threesharing = document.getElementById("Threesharing").value;
-  const up_Foursharing = document.getElementById("Foursharing").value;
+ 
   const up_image = document.getElementById("image").value;
   const up_beds = document.getElementById("beds").value;
-  const up_parking = document.getElementById("parking").value;
-  const up_tv = document.getElementById("tv").value;
-  const up_wifi = document.getElementById("wifi").value;
-  const up_food = document.getElementById("food").value;
-  const up_fridge = document.getElementById("fridge").value;
+ 
   const up_available = document.getElementById("available").value;
-  const up_image1 = document.getElementById("image1").value;
-  const up_image2 = document.getElementById("image2").value;
-  const up_lastimage = document.getElementById("lastimage").value;
-  const up_image4 = document.getElementById("image4").value;
+ 
   const up_period = document.getElementById("period").value;
   const up_time = document.getElementById("time").value;
   const up_amount = document.getElementById("amount").value;
   // let up_secondname = document.getElementById("secondname").value
+  
 
-  user_data.name = up_name;
-  user_data.address = up_address;
-  user_data.beds = up_beds;
-  user_data.sharing.Onesharing = up_Onesharing;
-  user_data.sharing.Twosharing = up_Twosharing;
-  user_data.sharing.Threesharing = up_Threesharing;
-  user_data.sharing.Foursharing = up_Foursharing;
-  user_data.image = up_image;
-  user_data.fecilities.parking = up_parking;
-  user_data.fecilities.tv = up_tv;
-  user_data.fecilities.wifi = up_wifi;
-  user_data.fecilities.food = up_food;
-  user_data.fecilities.fridge = up_fridge;
-  user_data.available = up_available;
-  user_data.house_fecilities_image.image1 = up_image1;
-  user_data.house_fecilities_image.image2 = up_image2;
-  user_data.house_fecilities_image.lastimage = up_lastimage;
-  user_data.house_fecilities_image.image4 = up_image4;
-  user_data.period = up_period;
-  user_data.time = up_time;
-  user_data.amount = up_amount;
+            user_data.pg_details.name = up_name;
+            user_data.pg_details.address = up_address;
+            user_data.pg_details.beds = up_beds;
+            
+            user_data.pg_details.image = up_image;
+            
+            user_data.pg_details.available = up_available;
+            
+            user_data.pg_details.period = up_period;
+            user_data.pg_details.time = up_time;
+            // user_data.amount = up_amount;
   // user_data["secondname"] = up_secondname;
 
-  function validate() {
-            let val = document.getElementById("address").value;
-            if (/^\s*$/g.test(val) || val.indexOf("\n") != -1) {
-              alert("Write your address properly");
-              val = reset();
-            }
-          }
-          validate();
+  
 
-  localStorage.setItem("pgdetails", JSON.stringify(details));
+   localStorage.setItem("pgdetails", JSON.stringify(details));
 
   window.location.href = "../products/seller_product.html";
 }
+// getting data from local storage //
+const arrayofdata = details.find((e) => e.my_uuid == my_uuid);
+      console.log(arrayofdata);
+
+if (arrayofdata&& Array.isArray(arrayofdata.share_data)) {
+  // Access the array details within the object
+  const share_data = arrayofdata.share_data;
+
+  console.log(share_data);
+  } else {
+  console.log("Invalid or missing data in local storage");
+   }
+
+
+const div_border = document.createElement("div");
+div_border.setAttribute("class", "border");
+console.log(div_border);
+document.querySelector(".readform").append(div_border);
+
+// Create the label element for "Type of share"
+ if (arrayofdata && Array.isArray(arrayofdata.share_data)) {
+  const arrayshare_data = arrayofdata.share_data;
+  for (let i = 0; i < arrayshare_data.length; i++) {
+    const typeOfShareLabel = document.createElement("label");
+    typeOfShareLabel.setAttribute("for", "typeofshare");
+    typeOfShareLabel.innerHTML = "<b>Type of share</b>";
+    div_border.append(typeOfShareLabel);
+
+    // Create the input element for "Type of share"
+    const typeOfShareInput = document.createElement("input");
+    typeOfShareInput.setAttribute("type", "text");
+    typeOfShareInput.setAttribute("id", "typeofshare");
+   
+    typeOfShareInput.value = arrayshare_data[i].name;
+    typeOfShareInput.setAttribute("required", true);
+    div_border.append(typeOfShareInput);
+
+    // Create line break elements
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    // Create the label element for "Rent"
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Rent</b> <br>";
+    div_border.append(rentLabel);
+
+    // Create the input element for "Rent"
+    const rentInput = document.createElement("input");
+    rentInput.setAttribute("type", "text");
+    rentInput.setAttribute("id", "onesharerent");
+    rentInput.setAttribute("min", "1000");
+    rentInput.setAttribute("max", "30000");
+    rentInput.setAttribute("pattern", "[0-9]+");
+    rentInput.setAttribute("required", true);
+    rentInput.value = arrayshare_data[i].rent;
+    div_border.appendChild(rentInput);
+
+
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    const imageLabel = document.createElement("label");
+    imageLabel.setAttribute("for", "onesharerent");
+    imageLabel.innerHTML = "<b>Image</b> <br>";
+    div_border.append(imageLabel);
+
+    // Create the input element for "Image"
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("min", "1000");
+    imageInput.setAttribute("max", "30000");
+   
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare_data[i].image;
+    div_border.append(imageInput);
+
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    typeOfShareInput.addEventListener("input", function () {
+      arrayshare_data[i].name = typeOfShareInput.value;
+      updateLocalStorage();
+    });
+
+    rentInput.addEventListener("input", function () {
+      arrayshare_data[i].rent = rentInput.value;
+      updateLocalStorage();
+    });
+
+    imageInput.addEventListener("input", function () {
+      arrayshare_data[i].image = imageInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("not valid");
+}
+
+// Function to update localStorage with the updated data
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("pgdetails", JSON.stringify(arrayofdata));
+  }
+}
+
+
+// .......................................................................another for loop ......................................
+
+if (arrayofdata && Array.isArray(arrayofdata.facilities_data)) {
+  // Access the array details within the object
+  const facilities_data = arrayofdata.facilities_data;
+
+  console.log(facilities_data);
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+const div_borders = document.createElement("div");
+div_borders.setAttribute("class", "border");
+console.log(div_borders);
+document.querySelector(".container").append(div_borders);
+
+// Create the label element for "Facility of the pg"
+if (arrayofdata && Array.isArray(arrayofdata.facilities_data)) {
+  const arrayshare = arrayofdata.facilities_data;
+  for (let j = 0; j< arrayshare.length; j++) {
+
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Facility of the pg</b> <br>";
+    div_borders.append(rentLabel);
+
+    // Create the input element for "Facility"
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare[j].image;
+    div_borders.append(imageInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const imageLabel = document.createElement("label");
+    imageLabel.setAttribute("for", "image");
+    imageLabel.innerHTML = "<b>Image</b> <br>";
+    div_borders.append(imageLabel);
+
+    // Create the input element for "Facility"
+    const rentInput = document.createElement("input");
+    rentInput.setAttribute("type", "text");
+    rentInput.setAttribute("id", "onesharerent");
+    rentInput.setAttribute("required", true);
+    rentInput.value = arrayshare[j].name;
+    div_borders.append(rentInput);
+
+    div_borders.append(document.createElement("br"));
+
+    imageInput.addEventListener("input", function () {
+      arrayshare[j].image = imageInput.value;
+      updateLocalStorage();
+    });
+
+     rentInput.addEventListener("input", function () {
+      arrayshare[j].name = rentInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+// Function to update localStorage with the updated data
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("facilities_data", JSON.stringify(arrayofdata));
+  }
+}
+
  </script>
   
     </body>

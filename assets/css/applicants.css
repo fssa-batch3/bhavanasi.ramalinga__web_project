@@ -4,94 +4,7 @@
   
 
  
-#container {
-	margin: 0 auto;
-}
 
-
-
-nav {
-
-	background-color: #E64A19;
-	top:0;
-	width:100%;
-	z-index:1;
-	
-}
-
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
-    justify-content: space-around;
-    height:70px;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-  height:70%;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
- 
-}
-
-nav a:hover { 
-	background-color:none; 
-}
-
-
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-
-.magic{
-  margin-right: 10%;
-}
-.fa.fa-user{
-	margin-top: 10px;
-	color:white;
-	font-size:36px;
-  }
-  .last{
-    display: flex;
-    justify-content: space-around;
-    
-    
-    
-  }
  
    
   .slide1{
@@ -149,42 +62,7 @@ button.button{
     justify-content: space-around;
 	
 }
-button.buttons{
-	margin-left: 10%;
-}
-.footerone h4{
-	
-	margin-top: 10%;
-	 /* cursor: pointer; */
-}
 
-.link{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .buttons{
-    display: flex;
-    justify-content: space-around;
-  }
-  footer{
-    background-color: hsl(240, 49%, 84%);
-    height:40vh;
-	margin-top: 10%;
-  }
-  div.footer1{
-	display: flex;
-	justify-content: space-around;
-  }
-  ul{
-	display: flex;
-	justify-content: space-around;
-	
-  }
 
   
 

@@ -3,104 +3,18 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
-
-h1 {
-	font-size: 60px;
-	text-align: center;
-	color:black;
-    
-}	
-
-
-
-h3 a {
-	color:black;
+.stars span  {
+    font-size: 30px;
 }
-
-a {
-	color:black;
-    text-decoration: none;
+.rating-stars,span.star {
+    cursor: pointer;
 }
-
-
-
-#container {
-	margin: 0 auto;
+button#saveRating{
+    padding: 12px 25px;
+   background-color:#094067;
+   color:aliceblue;
 }
-
-/* p {
-	text-align: center;
-} */
-
-nav {
-
-	background-color: #E64A19;
-}
-
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
-    justify-content: space-around;
-    height:70px;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-    height:80%;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
-}
-
-nav a:hover { 
-	background-color:none; 
-}
-
-
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-.main{
-    display: flex;
-    flex-direction: column;
-  }
-  .footer1{
-    display: flex;
-    
-  }
+  
   .one{
     border: 1px solid ;
     display: flex;
@@ -125,7 +39,7 @@ div.right{
     height:70vh;
     margin-top: 5%;
     width:40vh;
-    background-color: bisque;
+   
     
 }
 main{
@@ -146,10 +60,7 @@ div.clean{
     align-content: space-around;
     align-items: center;
 }
-.one1{
-    margin-left: 3%;
-    margin-right: 3%;
-}
+
 
 div.right1{
     margin-left: 5%;
@@ -178,32 +89,10 @@ span.fa.fa-star.checked{
     color:orange;
 }
 
-footer{
-    background-color: aliceblue;
-    padding-bottom: 4%;
+.one h2,b ,.experiance,.stars {
+    margin: 0rem 0rem 0rem 2rem;
 }
-.footerone{
-    margin-left: 4%;
-}
-.verified{
-    color:blue;
-}
-div.review{
-    color:crimson;
-}
-.link{
-    display: flex;
-    justify-content: space-evenly;
-}
-.real{
-    color:deeppink;
-}
-.about{
-    color:blueviolet;
-}
-.options{
-    color:deeppink;
-}
+
 input[type="text"] {
     margin-top: 7px;
     margin-bottom: 7px;
@@ -216,7 +105,3 @@ input[type="text"] {
     flex-direction: row;
     justify-content: space-around;
 }
-.magic{
-    margin-right: 40%;
-}
-

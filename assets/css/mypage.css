@@ -19,85 +19,18 @@ a {
 }
 
 
-#container {
-	margin: 0 auto;
-}
 
-
-
-nav {
-
-	background-color: #E64A19;
-  position: fixed;
-  top:0;
-  width:100%;
-}
-
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
+  .last{
+    display: flex;
     justify-content: space-around;
-    height:70px;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-  height:70%;
-	}
+	flex-direction: column;
+  }
 
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
-}
-
-nav a:hover { 
-	background-color:none; 
-}
-
-
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-.magic{
-  margin-right: 40%;
-}
-
-.fa.fa-user{
+ .fa.fa-user{
   margin-top: 10px;
   color:white;
   font-size:36px;
-}
+} 
 
 #overlay {
   position: fixed;
@@ -124,7 +57,7 @@ nav ul ul ul li {
     width:25%;
   }
   body{
-    background-image: url("../../assets/images/hostel.png");
+   
     background-size: cover;
     backdrop-filter: blur(5px);
 
