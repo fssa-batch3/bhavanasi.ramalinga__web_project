@@ -49,11 +49,11 @@ if (findData && Array.isArray(findData.share_data)) {
   console.log("Invalid or missing data in local storage");
    }
 
-   const filterdata = findData.filter((e) => e.customer_id == customer);
-        console.log(filterdata);
+  //  const filterdata = findData.filter((e) => e.customer_id === customer);
+  //       console.log(filterdata);
 
 
-        if (filterdata.length === 0) {
+        if (findData.length === 0) {
      const noDataMessage = document.createElement("h2");
       noDataMessage.setAttribute("class","message")
       noDataMessage.innerText = "Sorry , You Did not Added any pg";
@@ -238,14 +238,45 @@ if (findData && Array.isArray(findData.share_data)) {
     } else {
       console.log("Invalid or missing data in local storage");
     }
-  }
+
+    const rulesandregulations = document.createElement("div");
+    rulesandregulations.setAttribute("class", "rulesandregulations");
+      div_border.append(rulesandregulations);
+
+    // more details of the pg //
+    if ( findData &&Array.isArray(findData[i].rulesOfPG)) {
+      const pgrules = findData[i].rulesOfPG;
+
+      for (let h = 0; h< pgrules.length; h++) {
+        const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","rules");
+      rulesandregulations.append(cooking_image);
+
+      const image = document.createElement("img");
+      image.setAttribute("src", pgrules[h].image);
+      image.setAttribute("alt", "photo");
+      image.setAttribute("height", "100px");
+      image.setAttribute("width", "120px");
+      cooking_image.append(image);
+
       
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = pgrules[h].name;
+      cooking_image.append(facilityfifthname);
 
-      // another image//
+      const img_pictures = document.createElement("img");
+      // img_pictures.setAttribute("class","yesorno");
+      img_pictures.setAttribute("src", pgrules[h].rule);
+      img_pictures.setAttribute("alt", "photo");
+      img_pictures.setAttribute("height", "50px");
+      img_pictures.setAttribute("width", "60px");
+      cooking_image.append(img_pictures);
 
-  //button//
-
-  div_last = document.createElement("div");
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+    div_last = document.createElement("div");
   div_last.setAttribute("class", "last");
   div_border.append(div_last);
 
@@ -263,6 +294,14 @@ if (findData && Array.isArray(findData.share_data)) {
   // button_del.setAttribute("onclick", "del()")
   button_del.innerHTML = "Delete";
   div_last.append(button_del);
+  }
+      
+
+      // another image//
+
+  //button//
+
+  
 
 
   }

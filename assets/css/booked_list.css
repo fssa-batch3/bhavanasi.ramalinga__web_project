@@ -24,8 +24,20 @@ h2{
 
 	margin-top: 5%;
 }
+h1.message{
+  margin: 20rem;
+  margin-left: 30%;
+  color:red;
+}
 h3.name_of_pg{
 	color:blue;
+}
+h4{
+  margin-top: 0px;
+}
+h3.date{
+  margin-top: 0px;
+  font-size: 25px;
 }
 div.data{
 	display: flex;
@@ -41,7 +53,9 @@ img#image{
   h4.monthanddate{
     display: flex;
   }
-
+p#status{
+color:green;
+}
 
 
 button.delete{
@@ -50,9 +64,9 @@ button.delete{
     color:white;
 	   border:none;
     padding:14px 25px;
-  
+  margin-top: 40px;
     font-size: 16px;
-    margin-left:100px;
+    margin-left:70px;
     opacity:0.9;
     cursor: pointer;
     justify-content:flex-end;

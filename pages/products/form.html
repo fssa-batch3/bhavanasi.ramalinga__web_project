@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+     
     <div class="information">
         <div class="image">
             <div class="more">
@@ -42,13 +42,13 @@
                     </label>
                     <br>
                     <input type="text" placeholder="pg_name" pattern="^(?!\s)[a-zA-Z\s]+$" name="fname" id="name"
-                        required>
+                       required >
                     <br>
                     <br>
                     <div id="input-container">
                         <div class="input-field">
                             <label for="single-share-name"><b>Type of share:</b></label>
-                            <input type="text" id="single-share-name" name="single_share_name[]" required><br><br>
+                            <input type="text" id="single-share-name" name="single_share_name[]" required ><br><br>
                         </div>
                         <div class="input-field">
                             <label for="single-share-image"><b>Sharingbed Image url:</b></label>
@@ -68,7 +68,7 @@
                         <b>Deposite amount:</b>
                     </label>
                     <br>
-                    <input type="number" id="amount" name="number" pattern="[0-9]+" required>
+                    <input type="number" id="amount" name="number" pattern="[0-9]+" required >
                     </input> <br>
                     <br>
                     <label for="sharing">
@@ -88,12 +88,36 @@
                     <br>
                     <br>
 
+              
 
 
-
-                </div>
-                <div class="anotherfecilities">
-
+              
+              
+                    // another facilities
+                
+        
+                    <div id="rules">
+                        <div class="plus-buttons-contented">
+                          <label for="rule-image-1"><b>Rule Image URL:</b></label><br>
+                          <input type="url" id="rule-image-1" name="rule_image[]" required><br><br>
+                        </div>
+                        <div class="plus-buttons-contented">
+                          <label for="rule-name-1"><b>Above Rule Name:</b></label><br>
+                          <input type="text" id="rule-name-1" name="rule_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$" required><br><br>
+                        </div>
+                        <div class="plus-buttons-contented">
+                          <label for="rule-mark-1"><b>Yes or No Image URL:</b></label><br>
+                          <input type="url" id="rule-mark-1" name="rule_image[]" required><br><br>
+                        </div>
+                      </div>
+                      
+                      <div id="plus-button-content">
+                        <span class="button">Add more+</span><br><br>
+                      </div>
+                    </div>
+        <!-- // end// -->
+       
+                          <div class="anotherfecilities">
                     <div id="facilities">
                         <div class="plus-button-content">
 
@@ -111,7 +135,7 @@
                             </label>
                             <br>
                             <input type="text" id="facilities-image" name="facilty_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$"
-                                required>
+                            required>
                             </input><br>
                             <br>
                         </div>
@@ -119,6 +143,7 @@
                     <div id="plus-button">
                         <span class="plus-buttons"> Add more+</span><br><br>
                     </div>
+           
                     <label for="sharing">
                         <b>Total Number of Beds</b>
                     </label>
@@ -126,13 +151,15 @@
                     <input type="number" id="beds" min="20" max="200" required>
                     <br>
                     <br>
-
+          
+          
+        
 
                     <label for="pg_name">
                         <b>Paying guest url</b>
                     </label>
                     <br>
-                    <input type="url" name="image" id="image" required>
+                    <input type="url" name="image" id="image" required >
                     <br>
                     <br>
 
@@ -158,15 +185,22 @@
                         <option>Choose</option>
                         <option>Boys</option>
                         <option>Girls</option>
-                        <option>Both for girls and boys</option>
+                        <option>Both living gender pg</option>
                     </select>
 
                     <button type="submit" id="submit" class="registerbtn">Submit</button>
+                  
+                   
+                    
                     <br>
 
                 </div>
+                
             </div>
+              
+           
         </form>
+        
 
         <script src="/assets/js/header.js"></script>
 
@@ -212,73 +246,102 @@
 
                 const pgdetails = JSON.parse(localStorage.getItem("pgdetails")) || [];
 
-                const exit = pgdetails.length && pgdetails.some((data) => data.name == name);
+const exit = pgdetails.length && pgdetails.some((data) => data.name == name);
 
-                const owner_id = JSON.parse(localStorage.getItem("userId"));
-
-
-                if (!exit) {
-                    const singleShareDataElements = document.querySelectorAll('input[name^="single_share_name[]"], input[name^="single_share_image[]"], input[name^="single_share_rent[]"]');
-                    const facilitiesDataElements = document.querySelectorAll('input[name^="facilty_image[]"], input[name^="facilty_Name[]"]');
-                    const facilitiesData = Array.from(facilitiesDataElements).map((element) => element.value);
-                    const singleShareData = Array.from(singleShareDataElements).map((element) => element.value);
-
-                    const tempArray = [];
-                    const imageIndex = 1;
-                    const nameIndex = 0;
-                    const rentIndex = 2;
-
-                    const imageDataArray = singleShareData.filter((element, index) => index % 3 === imageIndex);
-                    const nameDataArray = singleShareData.filter((element, index) => index % 3 === nameIndex);
-                    const rentDataArray = singleShareData.filter((element, index) => index % 3 === rentIndex);
+const owner_id = JSON.parse(localStorage.getItem("userId"));
 
 
+if (!exit) {
+    const singleShareDataElements = document.querySelectorAll('input[name^="single_share_name[]"], input[name^="single_share_image[]"], input[name^="single_share_rent[]"]');
+    const facilitiesDataElements = document.querySelectorAll('input[name^="facilty_image[]"], input[name^="facilty_Name[]"]');
+    const ruleofpgDataElements = document.querySelectorAll('input[name^="rule_image[]"],input[name^="rule_Name[]"], inpu[name^="rule_image[]"]');
+    const facilitiesData = Array.from(facilitiesDataElements).map((element) => element.value);
+    const singleShareData = Array.from(singleShareDataElements).map((element) => element.value);
+   const  ruleofpgData =  Array.from(ruleofpgDataElements).map((element) => element.value);
 
-                    for (let i = 0; i < imageDataArray.length; i++) {
-                        const image = imageDataArray[i];
-                        const name = nameDataArray[i];
-                        const rent = rentDataArray[i];
+    const tempArray = [];
+    const imageIndex = 1;
+    const nameIndex = 0;
+    const rentIndex = 2;
 
-                        tempArray.push({ image, name, rent });
-                    }
-
-                    const anotherArray = [];
-                    const imageindex = 0;
-                    const nameindex = 1;
-
-                    const imagedata = facilitiesData.filter((element, index) => index % 2 === imageindex);
-                    const namedata = facilitiesData.filter((element, index) => index % 2 === nameindex);
-
-                    for (let i = 0; i < imagedata.length; i++) {
-
-                        const image = imagedata[i];
-                        const name = namedata[i];
-
-                        anotherArray.push({ image, name });
-
-                    }
-
-                    pgdetails.push({
-                        my_uuid,
-                        pg_details: { name, period, available, beds, advance, time, address, owner_id, image, phone_number },
-                        share_data: tempArray,
-                        facilities_data: anotherArray,
-                    });
-
-                }
-                console.log(pgdetails);
+    const imageDataArray = singleShareData.filter((element, index) => index % 3 === imageIndex);
+    const nameDataArray = singleShareData.filter((element, index) => index % 3 === nameIndex);
+    const rentDataArray = singleShareData.filter((element, index) => index % 3 === rentIndex);
 
 
-                localStorage.setItem("pgdetails", JSON.stringify(pgdetails));
-                console.log(localStorage.getItem("pgdetails"));
-                localStorage.setItem("productId", JSON.stringify(my_uuid));
 
-                document.querySelector("form").reset();
+    for (let i = 0; i < imageDataArray.length; i++) {
+        const image = imageDataArray[i];
+        const name = nameDataArray[i];
+        const rent = rentDataArray[i];
 
-                alert("PG Created successfully");
+        tempArray.push({ image, name, rent });
+    }
 
-                location.href = "../products/seller_product.html";
-            }
+    const anotherArray = [];
+    const imageindex = 0;
+    const nameindex = 1;
+
+    const imagedata = facilitiesData.filter((element, index) => index % 2 === imageindex);
+    const namedata = facilitiesData.filter((element, index) => index % 2 === nameindex);
+
+    for (let i = 0; i < imagedata.length; i++) {
+
+        const image = imagedata[i];
+        const name = namedata[i];
+
+        anotherArray.push({ image, name });
+
+    }
+
+    const instrunctionsArray = [];
+        const imagesindex = 0;
+        const namesindex = 1;
+        const imagesesindex = 2;
+
+// Assuming ruleofpgData is defined and contains enough elements
+
+const imagesdata = ruleofpgData.filter((element, index) => index % 3 === imagesindex);
+const namesdata = ruleofpgData.filter((element, index) => index % 3 === namesindex);
+const image1data = ruleofpgData.filter((element, index) => index % 3 === imagesesindex);
+
+
+for (let i = 0; i < imagesdata.length; i++) {
+        const image = imagesdata[i];
+        const name = namesdata[i];
+        const rule = image1data[i];
+
+        instrunctionsArray.push({ image, name, rule });
+    }
+
+  
+
+
+
+
+    pgdetails.push({
+        my_uuid,
+        pg_details: { name, period, available, beds, advance, time, address, owner_id, image, phone_number },
+        share_data: tempArray,
+        facilities_data: anotherArray,
+        rulesOfPG:instrunctionsArray,
+    });
+
+}
+console.log(pgdetails);
+
+
+localStorage.setItem("pgdetails", JSON.stringify(pgdetails));
+console.log(localStorage.getItem("pgdetails"));
+localStorage.setItem("productId", JSON.stringify(my_uuid));
+
+document.querySelector("form").reset();
+
+alert("PG Created successfully");
+
+location.href = "../products/seller_product.html";
+}
+
 
 
 
@@ -338,16 +401,41 @@
             });
 
 
+ // rules of the pg//
 
 
 
 
+ const plusButtonses = document.querySelector('.button');
+const inputContents = document.getElementById('rules');
+let inputCountses = 1;
+
+plusButtonses.addEventListener('click', () => {
+  if (inputCountses <= 10) {
+    const newInputField = document.createElement('div');
+    newInputField.classList.add('plus-button-contented');
+    newInputField.innerHTML = `
+      <label for="rule-image-${inputCountses}"><b>Rule Image URL:</b></label><br>
+      <input type="url" id="rule-image-${inputCountses}" name="rule_image[]" required><br><br>
+
+      <label for="rule-name-${inputCountses}"><b>Above Rule Name:</b></label><br>
+      <input type="text" id="rule-name-${inputCountses}" name="rule_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$" required><br><br>
+
+      <label for="rule-mark-${inputCountses}"><b>Yes or No Image URL:</b></label><br>
+      <input type="url" id="rule-mark-${inputCountses}" name="rule_image[]" required><br><br>
+    `;
+    inputContents.appendChild(newInputField);
+    inputCountses++;
+  } else {
+    alert('You have reached the maximum limit of input fields (10).');
+  }
+});
+            
 
 
 
 
-
-            // adding data with plus //
+          
 
 
         </script>

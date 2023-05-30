@@ -10,11 +10,15 @@
         <link rel="stylesheet" href="../../assets/css/footer.css">
     
         <title>Rent</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          
     </head>
     <body>
+      <input type="text" id="searchInput" placeholder="Search PGs">
+      <button id="searchButton">Search</button>
+      <div id="pgListContainer"></div>
       
 
         <div class="section"></div>
@@ -22,6 +26,11 @@
         <script>
       const filteredUseravailable = JSON.parse(localStorage.getItem("pgdetails"));
       console.log(filteredUseravailable);
+
+
+     
+
+
       
 
 for (let i = 0; i < filteredUseravailable.length; i++) {
@@ -117,15 +126,6 @@ line_p.append(page_a);
 }
 
 
-
-  // logout //
-
-// function Logout(e) {
-//   alert("are you sure to logout");
-
-//   localStorage.removeItem("userId");
-//   window.location.href = "/index.html";
-
 const selectbtn = document.querySelectorAll(".button");
 selectbtn.forEach((each) => {
   each.addEventListener("click", (event) => {
@@ -136,7 +136,18 @@ selectbtn.forEach((each) => {
 });
 
 
+  // logout //
+
+// function Logout(e) {
+//   alert("are you sure to logout");
+
+//   localStorage.removeItem("userId");
+
+
+
 // }
+//...........................................................................................................................................
+
     </script> 
       <script src= "/assets/js/header.js"></script>   
       <script src = "/assets/js/footer.js"></script>

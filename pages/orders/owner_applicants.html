@@ -17,8 +17,16 @@
     </head>
 
     <body>
+      
 
         <div class="section">
+          <div class="heading">
+            <h1>Date</h1>
+            <h1>User Name</h1>
+            <h1>Selected room</h1>
+            <h1>Phone Number</h1>
+            <h1>response</h1>
+           </div>
            
             <script src="/assets/js/header.js"></script>
             
@@ -28,11 +36,16 @@
         console.log(product);
         const customers = JSON.parse(localStorage.getItem("userId"));
 
-        const sellerdata = product.filter((e) => e.pg_details.owner_id == customers);
+        const products = JSON.parse(localStorage.getItem("productId"))
+   
+       
+
+      const sellerdata = product.filter((e) => e.pg_details.owner_id == customers);
         console.log(sellerdata);
 
+
         const bookeddata = seller_section.filter((e) =>
-     sellerdata.some((s) => s.my_uuid === e.product_id)
+     sellerdata.some((s) => s.product_id === e.products)
     );
 
         console.log(bookeddata);
@@ -58,7 +71,7 @@
 
          const  h2_name = document.createElement("h2");
           h2_name.setAttribute("class", "name_of_pg");
-          h2_name.innerText = bookeddata[i].pgname;
+          h2_name.innerText = bookeddata[i].userName;
           div_border.append(h2_name);
 
           const div_two = document.createElement("div");
@@ -71,15 +84,18 @@
 
           const email = document.createElement("h2");
           email.setAttribute("class", "email");
-          email.innerHTML = bookeddata[i].customer_id;
+          email.innerHTML = bookeddata[i].phoneNumber;
           div_border.append(email);
 
          const div_click = document.createElement("div");
           div_click.setAttribute("class", "click");
           div_border.append(div_click);
 
+          
+          
           const button = document.createElement("button");
           button.setAttribute("class", "button_accept");
+          button.setAttribute("style","")
           button.setAttribute("type", "button");
           button.setAttribute("data-id", bookeddata[i].request_id);
           button.innerHTML = "Accept";
@@ -87,10 +103,53 @@
 
          const rejectbutton = document.createElement("button");
          rejectbutton.setAttribute("class", "button_reject");
+         rejectbutton.setAttribute("style","")
          rejectbutton.setAttribute("type", "button");
          rejectbutton.setAttribute("data-id", bookeddata[i].request_id);
          rejectbutton.innerHTML = "Reject";
           div_click.append(rejectbutton);
+
+
+          const acceptedButton = document.createElement("button");
+          acceptedButton.setAttribute("style","display:none")
+  acceptedButton.setAttribute("class", "button_accepted");
+  acceptedButton.setAttribute("type", "button");
+  acceptedButton.setAttribute("data-id", bookeddata[i].request_id);
+  acceptedButton.innerHTML = "Accepted";
+  div_click.append(acceptedButton);
+
+  const rejectedButton = document.createElement("button");
+  rejectedButton.setAttribute("class", "button_accepted");
+  rejectedButton.setAttribute("style","display:none")
+  rejectedButton.setAttribute("type", "button");
+  rejectedButton.setAttribute("data-id", bookeddata[i].request_id);
+  rejectedButton.innerHTML = "Rejected";
+  div_click.append(rejectedButton);
+
+       
+
+  button.addEventListener("click", ()=>{
+  // button.style.display = "none"; // Hide the accept button
+  // rejectbutton.style.display = "none"; // Hide the reject button
+  button.style.display="none"
+  rejectbutton.style.display="none"
+  acceptedButton.style.display="inline-block"
+
+
+  
+  }
+);
+
+
+ 
+// Add event listener to the reject button
+    rejectbutton.addEventListener("click", function() {
+  rejectbutton.style.display = "none"; // Hide the reject button
+  button.style.display = "none"; 
+  rejectedButton.style.display ="inline-block"
+  
+});
+       
         }
     }
 
@@ -149,11 +208,17 @@
 
             seller_data.status = 0;
             localStorage.setItem(
-      "room_book_request",
+           "room_book_request",
       JSON.stringify(room_book_request)
     );
   });
         });
+
+
+
+        
+
+        
     </script>
     <script src ="../../assets/js/footer.js"></script>
     

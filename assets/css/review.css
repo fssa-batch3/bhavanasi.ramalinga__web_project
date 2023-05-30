@@ -36,7 +36,7 @@ button#saveRating{
 }
 div.right{
     border:1px solid;
-    height:70vh;
+    height:50vh;
     margin-top: 5%;
     width:40vh;
    
@@ -67,7 +67,7 @@ div.right1{
 
 }
 .star{
-  font-size: 2rem;
+  font-size: 3rem;
   color:#ff9800;
   background-color: unset;
   border:none;

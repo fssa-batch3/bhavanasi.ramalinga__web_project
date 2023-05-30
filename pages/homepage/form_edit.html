@@ -37,7 +37,7 @@
                     <label for="name">
                         <b> 3.Deposite amount</b>
                     </label>
-                    <input type="number" name="fname" id="amount" min="4000" max="10000" pattern="[0-9]+" required>
+                    <input type="number" name="fname" id="advance" min="4000" max="10000" pattern="[0-9]+" required>
                     <br>
                     <br>
       
@@ -87,6 +87,12 @@
                     <br>
                     <textarea type="text"id="address" required></textarea>
                     <br>
+                  
+                         
+                      
+                          
+                     
+                      
                 </div>
             </div>
         
@@ -105,6 +111,8 @@
         const my_uuid = urlParams.get("my_uuid");
         const details = JSON.parse(localStorage.getItem("pgdetails"));
         console.log(details);
+        // aniditional information //
+       
 
 function login_data(e) {
   return e.my_uuid == my_uuid;
@@ -120,7 +128,8 @@ document.getElementById("period").value = user_data.pg_details.period;
 document.getElementById("available").value = user_data.pg_details.available;
 document.getElementById("image").value = user_data.pg_details.image;
 document.getElementById("address").value = user_data.pg_details.address;
-document.getElementById("amount").value = user_data.pg_details.advance;
+document.getElementById("advance").value = user_data.pg_details.advance;
+
 // document.getElementById("secondname").value = user_data["secondname"];
 
 // document.getElementById("parking").value = user_data.facilities_data[0];
@@ -155,7 +164,7 @@ function update(e) {
  
   const up_period = document.getElementById("period").value;
   const up_time = document.getElementById("time").value;
-  const up_amount = document.getElementById("amount").value;
+  const up_advance = document.getElementById("advance").value;
   // let up_secondname = document.getElementById("secondname").value
   
 
@@ -169,7 +178,7 @@ function update(e) {
             
             user_data.pg_details.period = up_period;
             user_data.pg_details.time = up_time;
-            // user_data.amount = up_amount;
+            user_data.pg_details.advance = up_advance;
   // user_data["secondname"] = up_secondname;
 
   
@@ -229,9 +238,9 @@ document.querySelector(".readform").append(div_border);
     const rentInput = document.createElement("input");
     rentInput.setAttribute("type", "text");
     rentInput.setAttribute("id", "onesharerent");
-    rentInput.setAttribute("min", "1000");
-    rentInput.setAttribute("max", "30000");
-    rentInput.setAttribute("pattern", "[0-9]+");
+    // rentInput.setAttribute("min", "1000");
+    // rentInput.setAttribute("max", "30000");
+    // rentInput.setAttribute("pattern", "[0-9]+");
     rentInput.setAttribute("required", true);
     rentInput.value = arrayshare_data[i].rent;
     div_border.appendChild(rentInput);
@@ -357,7 +366,74 @@ function updateLocalStorage() {
     localStorage.setItem("facilities_data", JSON.stringify(arrayofdata));
   }
 }
+// getting rulesofpg //...............................................................................................................................
+if (arrayofdata && Array.isArray(arrayofdata.rulesOfPG)) {
+  const arrayshare = arrayofdata.rulesOfPG;
+  for (let h = 0; h < arrayshare.length; h++) {
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Facility of the pg</b> <br>";
+    div_borders.append(rentLabel);
 
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare[h].image;
+    div_borders.append(imageInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const nameInput = document.createElement("input");
+    nameInput.setAttribute("type", "text");
+    nameInput.setAttribute("id", "onesharerent");
+    nameInput.setAttribute("required", true);
+    nameInput.value = arrayshare[h].name;
+    div_borders.append(nameInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const ruleInput = document.createElement("input");
+    ruleInput.setAttribute("type", "url");
+    ruleInput.setAttribute("id", "onesharerent");
+    ruleInput.setAttribute("required", true);
+    ruleInput.value = arrayshare[h].rule;
+    div_borders.append(ruleInput);
+
+    div_borders.append(document.createElement("br"));
+
+    imageInput.addEventListener("input", function () {
+      arrayshare[h].image = imageInput.value;
+      updateLocalStorage();
+    });
+
+    nameInput.addEventListener("input", function () {
+      arrayshare[h].name = nameInput.value;
+      updateLocalStorage();
+    });
+
+    ruleInput.addEventListener("input", function () {
+      arrayshare[h].rule = ruleInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("facilities_data", JSON.stringify(arrayofdata));
+  }
+}
+
+// amother input fields in the edit page // ......................................................................................................
+
+
+
+
+
+  
  </script>
   
     </body>
