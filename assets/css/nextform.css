@@ -1,0 +1,31 @@
+.radio-container{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.form{
+    border:1px solid;
+    margin: 10rem 20rem 20rem 20rem;
+
+
+ 
+
+}
+
+.plus-button-content{
+    margin-left: 40%;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.formhead{
+    color: green;
+    font-size: 30px;
+    margin-left: 300px;
+    margin-top: 10px;
+
+}
+div#plus-button{
+    margin-left: 40%;
+    font-size: 30px; 
+    color: blue;
+}

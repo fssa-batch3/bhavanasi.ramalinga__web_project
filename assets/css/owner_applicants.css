@@ -47,4 +47,14 @@ h2.message{
 	margin:10rem 30rem 10rem;
 	color:red;
 }
-
+.heading{
+	display: flex;
+	justify-content: space-around;
+	margin-right: 10px;
+	color:blue;
+	border-bottom: 1px solid;
+}
+.section{
+	border:1px solid;
+	margin-top: 80px;
+}

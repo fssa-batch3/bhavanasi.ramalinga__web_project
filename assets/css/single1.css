@@ -28,7 +28,7 @@
 .border {
     border: 1px solid gray;
     border-radius: 8px;
-    height: 1100px;
+    height: 1300px;
     width: 1420px;
     margin: 8rem 5rem 0 7rem;
 }  
@@ -116,6 +116,21 @@ strong {
 .faculties {
     display: flex;
     justify-content: space-evenly;
+}
+.rules{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:space-evenly;
+}
+.rules b , img.yesorno{
+  padding-left: 10%;
+}
+
+.rulesandregulations{
+  display: flex;
+  margin:2rem 2rem 2rem 2rem;
+  justify-content: space-evenly;
 }
 
 

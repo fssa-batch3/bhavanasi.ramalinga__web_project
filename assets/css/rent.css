@@ -100,8 +100,23 @@ span.fa.fa-star {
    
 
   }
+  input[type="text"i]{
+    height: 40px;
+    width: 80vh;
+    margin-left: 30%;
+    border-radius: 22px;
+    margin-top: 60px;
+  }
+  .content i {
+    position: relative;
+    right: 40px;
+}
+.fa-search:before {
+  content: "\f002";
+}
   .para p{
     margin-left: 10px;
+    margin-right: 10px;
   }
   div.name rent{
     display: flex;
@@ -118,6 +133,7 @@ span.fa.fa-star {
     display: flex;
     justify-content: center;
     margin-left: 10%;
+    margin-right: 10px;
     
    
   }

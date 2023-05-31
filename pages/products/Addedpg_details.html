@@ -40,7 +40,7 @@
 
 
     
-      if (unique_id && Array.isArray(unique_id.share_data)) {
+     if (unique_id && Array.isArray(unique_id.share_data)) {
   // Access the array details within the object
   const share_data = unique_id.share_data;
 
@@ -107,13 +107,13 @@
       Address.innerText = unique_id.pg_details.address;
       div_address.append(Address);
 
-      const phone = document.createElement("b");
+      const phone = document.createElement("h4");
       phone.setAttribute("class","number");
       phone.innerText = unique_id.pg_details.phone_number;
       div_address.append(phone);
 
       const page_a = document.createElement("p");
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
   const starSpan = document.createElement("span");
   starSpan.setAttribute("class", "fa fa-star ");
   
@@ -165,9 +165,23 @@ div_address.append(page_a);
     bold.innerText = "Monthly Rent:";
     div_one.append(bold);
 
+    const rupeesandrent = document.createElement("div");
+    rupeesandrent.setAttribute("class","rupees");
+    div_one.append(rupeesandrent);
+
+    const rupees = document.createElement("img");
+    rupees.setAttribute("src","/assets/images/rupees-removebg-preview.png");
+    rupees.setAttribute("height","25px");
+    rupees.setAttribute("width","25px");
+    rupeesandrent.append(rupees);
+   
+
     const p_one = document.createElement("p");
     p_one.innerText = arrayshare_data[i].rent + "/-";
-    bold.append(p_one);
+    rupeesandrent.append(p_one);
+
+
+   
 
     const button = document.createElement("button");
     button.setAttribute("class", "view");
@@ -239,7 +253,7 @@ div_address.append(page_a);
       div_border.append(div_facilities);
 
       strong = document.createElement("h3");
-      strong.innerText = "Facilities:";
+      strong.innerHTML = "Facilities of pg:";
       div_facilities.append(strong);
 
       const div_faculties = document.createElement("div");
@@ -275,6 +289,47 @@ div_address.append(page_a);
     } else {
       console.log("Invalid or missing data in local storage");
     }
+
+    const rulesofpg = document.createElement("h3");
+    rulesofpg.setAttribute("class","rulesofpg");
+    rulesofpg.innerHTML ="Rules and facilities"
+    div_border.append(rulesofpg);
+
+  const rulesandregulations = document.createElement("div");
+rulesandregulations.setAttribute("class", "rulesandregulations");
+div_border.append(rulesandregulations);
+
+if (unique_id && Array.isArray(unique_id.rulesOfPG)) {
+  const rulesOfPG = unique_id.rulesOfPG;
+
+  for (let h = 0; h < rulesOfPG.length; h++) {
+    const cooking_image = document.createElement("div");
+    cooking_image.setAttribute("class", "rules");
+    rulesandregulations.append(cooking_image);
+
+    const image = document.createElement("img");
+    image.setAttribute("src", rulesOfPG[h].image);
+    image.setAttribute("alt", "photo");
+    image.setAttribute("height", "100px");
+    image.setAttribute("width", "120px");
+    cooking_image.append(image);
+
+    const facilityfifthname = document.createElement("b");
+    facilityfifthname.innerText = rulesOfPG[h].name;
+    cooking_image.append(facilityfifthname);
+
+    const img_pictures = document.createElement("img");
+    img_pictures.setAttribute("class", "yesorno");
+    img_pictures.setAttribute("src", rulesOfPG[h].rule);
+    img_pictures.setAttribute("alt", "photo");
+    img_pictures.setAttribute("height", "50px");
+    img_pictures.setAttribute("width", "60px");
+    cooking_image.append(img_pictures);
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
       const select = document.querySelectorAll(".view");
       select.forEach((each) => {
         each.addEventListener("click", function selectObject() {
@@ -289,7 +344,7 @@ div_address.append(page_a);
 
 
 
-      const reviewselect = document.querySelectorAll(".rating");
+  const reviewselect = document.querySelectorAll(".rating");
 reviewselect.forEach((each) => {
 each.addEventListener("click", function selectObject() {
 const person_data = each.dataset.rating;

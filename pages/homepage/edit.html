@@ -46,11 +46,11 @@
                 <br>
                 <br>
 
-                <label for="address">
+                <!-- <label for="address">
                     <b>Address</b>
                 </label>
                 <br>
-                <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"name="address" id="address" required></textarea> 
+                <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+"name="address" id="address" required></textarea>  -->
                 <div class="last">  
                     <button type="submit">submit</button>
         
@@ -75,19 +75,19 @@ console.log(user_data);
 document.getElementById("name").value = user_data.name;
 document.getElementById("phone_number").value = user_data.phone_number;
 document.getElementById("email").value = user_data.email;
-document.getElementById("address").value = user_data.address;
+// document.getElementById("address").value = user_data.address;
 document.getElementById("customer_or_owner").value =
   user_data.customer_or_owner;
 function update(e) {
   e.preventDefault();
 
   const up_name = document.getElementById("name").value;
-  const up_address = document.getElementById("address").value;
+//   const up_address = document.getElementById("address").value;
   const up_phone_number = document.getElementById("phone_number").value;
   const customer_or_owner = document.getElementById("customer_or_owner").value;
 
   user_data.name = up_name;
-  user_data.address = up_address;
+//   user_data.address = up_address;
   user_data.phone_number = up_phone_number;
   user_data.customer_or_owner = customer_or_owner;
 

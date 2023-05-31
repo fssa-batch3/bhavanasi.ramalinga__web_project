@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Register</title>
         <link rel="stylesheet" href="../../assets/css/resister.css">
-        <link rel="stylesheet" href="/assets/css/footer.css">
-       
+        
         
         <link rel="main page"
             href="file:///C:/Users/BhavanasiSoundarya/Desktop/hundred%20day%20project/hundred%20day%20project/main%20page.html#">
@@ -30,10 +29,10 @@
                         <ul>
                             <div class="magic">
                                 <li>
-                                    <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="100%">
+                                    <img src="../../assets/images/Screenshot__17_-removebg-preview.png" alt="photo" height="60px" width="120%">
                                 </li>
                             </div>
-
+                         
                             <li>
                                 <a href="../homepage/register.html">Register</a>
                             </li>
@@ -67,7 +66,7 @@
                 <label for="phone">
                     <b>phone_number</b>
                 </label>
-                <input type="tel" placeholder="phone_number" name="tel" pattern="[6-9]{1}[0-9]{9}" id="phone_number" required>
+                <input type="tel" placeholder="phone_number" name="tel" pattern="[6-9]{1}[0-9]{9}" id="phone_number" required >
                 <br>
                 <br>
 
@@ -82,12 +81,12 @@
                     <b>Password</b>
                 </label>
                 <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    id="psw" required>
-                Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters<br>
+                    id="psw" required >
+                 Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters<br>
                 <label for="psw-repeat">
                     <b>confirm Password</b>
                 </label>
-                <input type="password" placeholder="Repeat Password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" id="repeat" required>
+                <input type="password" placeholder="Repeat Password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="psw" id="repeat" required >
 
                 <label for="cars">
                     <b>Choose Owner/Customer</b> 
@@ -101,11 +100,18 @@
                 <br>
                 <br>
 
-                <label for="address">
-                    <b>Address</b>
+                <label for="cars">
+                    <b>Chose gender</b> 
                 </label>
+                <select name="available" id="gender" required>
+                    <option>Choose</option>
+                    <option>Girls</option>
+                    <option>Boys</option>
+                    <option>Both gender living pg</option>
+
+                </select>
                 <br>
-                <textarea type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+" id="address" required></textarea>
+                <br>
 
                 <button type="submit" class="registerbtn">Register</button>
           
@@ -117,15 +123,16 @@
         <script>const signUp = (e) => {
         e.preventDefault();
         const email = document.getElementById("email").value;
-  repeat = document.getElementById("repeat").value;
-  psw = document.getElementById("psw").value;
-  name = document.getElementById("name").value;
-  phone_number = document.getElementById("phone_number").value;
-  address = document
-    .getElementById("address")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
+        repeat = document.getElementById("repeat").value;
+        psw = document.getElementById("psw").value;
+        name = document.getElementById("name").value;
+        phone_number = document.getElementById("phone_number").value;
+        gender = document.getElementById("gender").value;
+//   address = document
+//     .getElementById("address")
+//     .value.trim()
+//     .split(/\s+/g)
+//     .join(" ");
   customer_or_owner = document.getElementById("customer_or_owner").value;
         const my_uuid = uuidv4();
 
@@ -146,14 +153,14 @@
             return false;
         }
 
-        function validate() {
-        let val = document.getElementById("address").value;
-        if (/^\s*$/g.test(val) || val.indexOf("\n") != -1) {
-              alert("Write your address properly");
-              val = reset();
-            }
-  }
-  validate();
+//         function validate() {
+//         let val = document.getElementById("address").value;
+//         if (/^\s*$/g.test(val) || val.indexOf("\n") != -1) {
+//               alert("Write your address properly");
+//               val = reset();
+//             }
+//   }
+//   validate();
 
   const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
 
@@ -171,9 +178,10 @@
       email,
       psw,
       phone_number,
-      address,
+    //   address,
       customer_or_owner,
       my_uuid,
+      gender,
     });
 
             localStorage.setItem("user_cred", JSON.stringify(user_cred));
@@ -204,6 +212,7 @@
   // localStorage.setItem("customer_data", JSON.stringify(customer_data));
 };
   </script>
+  
   <script src="/assets/js/footer.js"></script>
 
     </body>

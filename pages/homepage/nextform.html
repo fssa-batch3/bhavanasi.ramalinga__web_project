@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/nextform.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  
+  <title>Nextform</title>
+</head>
+<body>
+  <header>
+
+  </header>
+  
+    
+    <!-- Repeat the radio-container pattern for the remaining columns -->
+    
+    <br>
+    
+    <!-- Repeat the same pattern for Drinking and Smoking fields -->
+    
+  </form>
+  <script>
+     const facilitiesDataElements = document.querySelectorAll('input[name^="rules_image[]"], input[name^="rules_name[]"]');
+     const facilitiesData = Array.from(facilitiesDataElements).map((element) => element.value);
+     const pg_rules = [];
+                    const imageindex = 0;
+                    const nameindex = 1;
+
+                    const imagedata = facilitiesData.filter((element, index) => index % 2 === imageindex);
+                    const namedata = facilitiesData.filter((element, index) => index % 2 === nameindex);
+
+                    for (let i = 0; i < imagedata.length; i++) {
+
+                        const image = imagedata[i];
+                        const name = namedata[i];
+
+                        pg_rules.push({ image, name });
+
+                    }
+
+          localStorage.setItem("pgdetails", JSON.stringify(pg_rules));
+
+          window.location.href = "../products/seller_product.html";
+
+
+
+
+
+
+
+
+        const plusButtons = document.querySelector('.plus-buttons');
+            const inputContent = document.getElementById('facilities');
+            let inputCounts = 1;
+
+            plusButtons.addEventListener('click', () => {
+                if (inputCounts <= 10) {
+                    const newInputField = document.createElement('div');
+                    newInputField.classList.add('plus-button-content');
+                    newInputField.innerHTML = `
+      <label for="facilities-share-image-${inputCounts}"><b>Rules Image url:</b></label><br>
+      <input type="url" id="rules-image-${inputCounts}" name="rules_image[]" required><br>
+      <br>
+    
+      <label for="facilities-share-name-${inputCounts}"><b>Above facility name:</b></label><br>
+      <input type="text" id="rules-name-${inputCounts}" name="rules_name[]"  pattern="^(?!\s)[a-zA-Z\s]+$" required><br>
+      <br>
+    `;
+                    inputContent.appendChild(newInputField);
+                    inputCounts++;
+                } else {
+                    alert('You have reached the maximum limit of input fields (5).');
+                }
+            });
+  </script>
+  <script src="/assets/js/header.js"></script>
+</body>
+</html>

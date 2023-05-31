@@ -21,6 +21,14 @@
  
   .slideshow-container{
     margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+
+  .mySlides {
+    display: none;
   }
  
   
@@ -28,14 +36,14 @@
     text-decoration: none;
     color: white;
     margin-right: 20px;
-    font-size: medium;
+    font-size:20px;
    
    
   }
   .dropdownlist{
     display: flex;
     flex-direction: row;
-    
+    margin-right:20px;
   }
  
   
@@ -56,6 +64,7 @@
     
     
   }
+  
   
   
   

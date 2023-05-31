@@ -39,8 +39,10 @@ const after_login = `
             <li><a href="../../pages/products/updated Boys.html">Boys pgs</a></li>
             <li><a href="../../pages/products/updated for girls.html">Girls pgs</a></li>
             <li><a href="../../pages/products/updated for both.html">Both Gender living pg</a></li>
-            <li><a href="../orders/booked_list.html">My page</a></li>                                           
+            <li><a href="../orders/booked_list.html">My bookings </a></li>  
+                                                 
             <li><a href="../../pages/homepage/my profile.html"> My profile</a></li>
+           
             
           </ul>         
         </nav>

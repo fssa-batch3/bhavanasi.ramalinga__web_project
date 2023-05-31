@@ -24,15 +24,18 @@
                     <div class="verified"> 100% verified reviews</div>
                 </h2>
                 <div class="revi">
-            
-                    
+                    <!-- <div class="one">
+                <div><h2>Sindhu</h2></div>
+                <div>Super good</div>
+                <div>Pg is more comfortable to me and food is good</div> -->
+
+
+                
+            </div>
                     </div>
         
             </div>
            
-                  
-                   
-        
                     <form role="form">
                                  <div class="right">
                                     <div class="right1">
@@ -40,16 +43,14 @@
                                             <h2> Write a review</h2>
                                         </div>
                                        
-                                            <label for="birthday">Date:</label>
-                                            <input type="date" id="date" name="date" required><br><br>
-                                      
+                                          
             
-                                       <label for="name">1.Your name</label><br>
+                                       <!-- <label for="name">1.Your name</label><br>
                                         <input type="text" id="name" required>
-                                        <br>
-                                        <label for="rate" >2.Write your feeling </label><br><br>
+                                        <br> -->
+                                        <label for="rate" >1.Write your feeling </label><br><br>
                                         <input type="text" placeholder="Example:Excelent" id="feeling" required><br><br>
-                                        <div> 3.Explain your experiance and confort:</div><br>
+                                        <div> 2.Explain your experiance and confort:</div><br>
                                         <textarea id="experiance" required></textarea>
                                         <h3 class="rating_heading"> 5 star Rating</h3>
 
@@ -102,15 +103,15 @@ ratingStars.forEach((star) => {
 document.querySelector("#saveRating").addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from submitting and reloading the page
 
-  const name = document.getElementById("name").value;
-  const date = document.getElementById("date").value;
+//   const name = document.getElementById("name").value;
+//   const date = document.getElementById("date").value;
   const feeling = document.getElementById("feeling").value;
   const experiance = document.getElementById("experiance").value;
 
   // Store all the data in an object
   const reviewData = {
-    name,
-    date,
+    // name,
+    // date,
     feeling,
     experiance,
     rating: selectedRating,
@@ -134,11 +135,27 @@ document.querySelector("#saveRating").addEventListener("click", (event) => {
   location.reload();
 });
 
+
+
+
+// 
+
 const searching = window.location.search;
 console.log(searching);
 const newurl = new URLSearchParams(searching);
 const pg_id = newurl.get("my_uuid");
 console.log(pg_id);
+const userid = JSON.parse(localStorage.getItem("userId"));
+console.log(userid);
+const usercred = JSON.parse(localStorage.getItem("user_cred"));
+console.log(usercred);
+
+ const emailid = usercred.filter((e) => e.email == userid);
+        console.log(emailid);
+
+        const username = usercred.find((data) => data.email === userid).name;
+                console.log(username);
+
 
 const reviewofpg = JSON.parse(localStorage.getItem("reviews"));
 console.log(reviewofpg);
@@ -154,7 +171,7 @@ for (let i=0; i<reviewofpg.length; i++){
   pgreviews.append(nameofuser);
 
   const nameoftheuser = document.createElement("div");
-  nameoftheuser.innerText = reviewofpg[i].name;
+  nameoftheuser.innerText =username;
   nameofuser.append(nameoftheuser);
 
   const rateofpg = document.createElement("b");

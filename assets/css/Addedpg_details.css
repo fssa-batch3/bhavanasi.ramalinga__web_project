@@ -16,7 +16,7 @@
     }
 
   .border{
-      border: 1px solid gray;
+      /* border: 1px solid gray; */
       border-radius: 8px;
       /* height: 1470px;
       width: 1315px; */
@@ -160,17 +160,12 @@
     font-size:20px;
   }
 
-  .facilities {
-      margin: 2rem 0 0 5rem;
-     
-     
-  }
-
+  
   
   .faculties {
       display: flex;
     justify-content: space-around;
-    margin-bottom: 10%;
+    margin-bottom: 6%;
    
   }
   div.faculties div{
@@ -190,7 +185,13 @@ div.faculties b{
     color:blue;
     font-size: 25px;
   }
-
+div.rupees{
+  display: flex;
+  align-items: center;
+}
+.rupees img{
+  margin: 0px;
+}
   
   button.view{
        /* margin-left: -14%; */
@@ -301,6 +302,15 @@ div.faculties b{
     
     .singleshare:hover  {
     transform: perspective(1000px) translateZ(100px);
+    }
+    .rulesandregulations{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .rules{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   
 
