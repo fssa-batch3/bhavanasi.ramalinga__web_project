@@ -160,59 +160,44 @@
         console.log(filteredUseravailable);
 
         const selectbtn = document.querySelectorAll(".button_accept");
-        selectbtn.forEach((each) => {
-          each.addEventListener("click", (event) => {
-            const person_data = each.dataset.id;
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
 
-            console.log(person_data);
-
-            // response for accept//
-            const room_book_request = JSON.parse(
-      localStorage.getItem("room_book_request")
-    );
+    const room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
 
     function getting_data(e) {
-              return e.request_id == person_data;
-            }
+      return e.request_id == person_data;
+    }
 
-            const user_data = room_book_request.find(getting_data);
+    const user_data = room_book_request.find(getting_data);
 
-            console.log(user_data);
+    user_data.status = 2;
 
-            user_data.status = 2;
-            localStorage.setItem(
-      "room_book_request",
-      JSON.stringify(room_book_request)
-            );
-          });
+    localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+  });
 });
 
-        // response for reject//
+// response for reject//
+const selectb = document.querySelectorAll(".button_reject");
+selectb.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
 
-        const selectb = document.querySelectorAll(".button_reject");
-        selectb.forEach((each) => {
-          each.addEventListener("click", (event) => {
-            const person_data = each.dataset.id;
-
-            console.log(person_data);
-            const room_book_request = JSON.parse(
-      localStorage.getItem("room_book_request")
-    );
+    const room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
 
     function rejectdata(e) {
-              return e.request_id == person_data;
-            }
-            const seller_data = room_book_request.find(rejectdata);
+      return e.request_id == person_data;
+    }
 
-            console.log(seller_data);
+    const seller_data = room_book_request.find(rejectdata);
 
-            seller_data.status = 0;
-            localStorage.setItem(
-           "room_book_request",
-      JSON.stringify(room_book_request)
-    );
+    seller_data.status = 0;
+
+    localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
   });
-        });
+});
+
 
 
 
