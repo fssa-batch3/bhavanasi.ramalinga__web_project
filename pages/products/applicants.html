@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="../../assets/css/applicants.css" >
+        <link rel="stylesheet" href="../../assets/css/header.css" >
+        <link rel="stylesheet" href="../../assets/css/footer.css" >
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com"  crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <title>Applicant</title>
+
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+    
+        <div class="section"></div> 
+        <div class="popup" id="popupContainer">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <h2>Add Details</h2>
+         
+        
+          <form id="myForm">
+            <div class="form-row">
+              <label for="bookingType">For whom are you booking for</label>
+              <select id="bookingType" name="bookingType" onchange="toggleInputFields()">
+                <option value="choose">Choose</option>
+                <option value="myself">Myself</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="selectType" id="select" style="display: none;">Slelect options</label>
+               <select id="selectType" name="selectType" style="display: none;" >
+                <option value="choose">Choose</option>
+                <option value="Girls">Girls</option>
+                <option value="Boys">Boys</option>
+                <option value="Both Gender living pg">Both gender living pg</option>
+              </select>
+            </div>
+            
+        
+            <div class="form-row" id="nameField" style="display: none;">
+              <label for="name">Your Name:</label>
+              <input type="text" id="username" name="name">
+            </div>
+        
+            <div class="form-row" id="phoneField" style="display: none;">
+              <label for="phone">Phone Number:</label>
+              <input type="text" id="phone" name="phone">
+            </div>
+        
+            <div class="form-row" id="emailField" style="display: none;">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email">
+            </div>
+        
+            <div class="form-row" id="passwordField" style="display: none;">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password">
+            </div>
+        
+            <div class="form-row" id="submit" style="display: none;">
+              <button class="button" type="submit" id="submitButton">Submit</button>
+            </div>
+            
+          </form>
+        
+          <button class="button" type="button" id="book"onclick="signUp(event)">Book</button>
+        </div>
+        
+                               
+
+            <script>const owner = JSON.parse(localStorage.getItem("pgdetails"));
+             console.log(owner);
+            const searching = window.location.search;
+            console.log(searching);
+            const newurl = new URLSearchParams(searching);
+            const pg_id = newurl.get("my_uuid");
+            console.log(pg_id);
+            const selected_room = newurl.get("my_room_id");
+            console.log(selected_room);
+            
+             const Applicant = owner.find((e) => e.my_uuid == pg_id);
+             console.log(Applicant);
+
+            const selectedObject = owner.find((object) => object.share_data.find((data) => data.name === selected_room));
+
+           
+                // Get the image from the selected object
+                const selectedImage = Applicant.share_data.find((data) => data.name === selected_room).image;
+               
+                console.log(selectedImage);
+
+                const selectedrent = Applicant.share_data.find((data) => data.name === selected_room).rent;
+                console.log(selectedrent);
+
+                const div_border = document.createElement("div");
+            div_border.setAttribute("class", "border");
+            document.querySelector(".section").append(div_border);
+
+
+                const div_image = document.createElement("div");
+              div_image.setAttribute("class", "detail");
+              div_border.append(div_image);
+
+              const img = document.createElement("img");
+              img.setAttribute("src", selectedImage);
+              img.setAttribute("id", "image");
+              img.setAttribute("alt", "photo");
+              img.setAttribute("height", "300px");
+              img.setAttribute("width", "300px");
+              div_image.append(img);
+              const h2 = document.createElement("h2");
+            h2.setAttribute("class", "pg_name");
+            div_image.append(h2);
+
+            const Name_ofthepg = document.createElement("h3");
+            Name_ofthepg.setAttribute("class", "name_of_pg");
+            Name_ofthepg.setAttribute("id", "name");
+            Name_ofthepg.innerText = Applicant.pg_details.name;
+            h2.append(Name_ofthepg);
+
+            const div_two = document.createElement("div");
+            div_two.setAttribute("class", "moredetail");
+            h2.append(div_two);
+
+            const sharing_room = document.createElement("h3");
+            sharing_room.setAttribute("id", "share");
+            sharing_room.innerText = selected_room;
+            div_two.append(sharing_room);
+
+            const monthly_rent = document.createElement("p");
+            monthly_rent.setAttribute("id", "rent");
+            monthly_rent.innerText = "Monthly Rent:";
+            div_two.append(monthly_rent);
+
+            const b_one = document.createElement("span");
+            b_one.setAttribute("id", "sharing");
+            b_one.innerText = selectedrent;
+            monthly_rent.append(b_one);
+
+            const advance_three = document.createElement("b");
+            advance_three.setAttribute("id", "advance");
+            advance_three.innerText = "Advance:";
+            div_two.append(advance_three);
+
+            const b_four = document.createElement("span");
+            b_four.setAttribute("id", "amount");
+            b_four.innerText = Applicant.pg_details.advance;
+            advance_three.append(b_four);
+
+            // const book_button = document.createElement("button");
+            // book_button.setAttribute("class", "button");
+            // book_button.setAttribute("type", "button"); // Change type to 'button' instead of 'submit'
+
+            // book_button.innerText = "Book Now";
+            // // popup form //
+            //  book_button.addEventListener("click", function(event) {
+            //   signUp(event);
+            //    // Call the signUp function on button click
+            // });
+            // b_four.append(book_button);
+
+ // popup data//
+ const normalPageContent = document.getElementById("normalPageContent");
+
+const bookButton = document.createElement("button");
+bookButton.setAttribute("class", "button");
+bookButton.innerText = "Book Now";
+bookButton.addEventListener("click", function() {
+  openPopup();
+  bookButton.style.display = "none";
+});
+b_four.append(bookButton);
+
+// normalPageContent.appendChild(bookButton);
+
+function openPopup() {
+  const popupContainer = document.getElementById("popupContainer");
+  const body = document.getElementsByTagName("body")[0];
+
+  // Apply overlay to the background
+  const overlay = document.createElement("div");
+  overlay.classList.add("popup-overlay");
+  body.appendChild(overlay);
+
+  // Add CSS class to body to apply grayed-out effect
+  body.classList.add("popup-open");
+
+  // Show the popup
+  popupContainer.style.display = "block";
+}
+
+
+
+function closePopup() {
+  const popupContainer = document.getElementById("popupContainer");
+  popupContainer.style.display = "none";
+}
+
+ function toggleInputFields() {
+  const bookingType = document.getElementById("bookingType").value;
+  const nameField = document.getElementById("nameField");
+  const phoneField = document.getElementById("phoneField");
+  const emailField = document.getElementById("emailField");
+  const passwordField = document.getElementById("passwordField");
+  const submit = document.getElementById("submit");
+  const book = document.getElementById("book");
+  const selectType = document.getElementById("selectType");
+
+  // Reset input fields
+  document.getElementById("username").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("selectType").value =""
+
+  // Show/hide input fields based on booking type
+  if (bookingType === "myself") {
+    nameField.style.display = "none";
+    phoneField.style.display = "none";
+    emailField.style.display = "none";
+    passwordField.style.display = "none";
+    submit.style.display ="none";
+    book.style.display ="block";
+    selectType.style.display="none";
+
+  } else if (bookingType === "others") {
+    nameField.style.display = "block";
+    phoneField.style.display = "block";
+    emailField.style.display = "block";
+    passwordField.style.display = "block";
+    submit.style.display ="block";
+    book.style.display ="none";
+    selectType.style.display="block";
+    select.style.display ="block";
+  } else {
+    nameField.style.display = "none";
+    phoneField.style.display = "none";
+    emailField.style.display = "none";
+    passwordField.style.display = "none";
+  }
+}
+
+function update(event) {
+  event.preventDefault();
+
+  const bookingType = document.getElementById("bookingType").value;
+  const phoneNumber = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const userName = document.getElementById("username").value;
+  const my_uuid = uuidv4();
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth() + 1;
+            const date = currentDate.getDate();
+
+            console.log(year);
+            console.log(month);
+            console.log(date);
+
+  const products = JSON.parse(localStorage.getItem("pgdetails"));
+  console.log(products);
+
+  const searching = window.location.search;
+  console.log(searching);
+
+  const newurl = new URLSearchParams(searching);
+  const pg_id = newurl.get("my_uuid");
+  console.log(pg_id);
+  const customer_id = JSON.parse(localStorage.getItem("userId"));
+            console.log(customer_id);
+
+  const selectedProduct = products.find((e) => e.my_uuid == pg_id);
+  console.log(selectedProduct);
+
+  const selectedType = document.getElementById('selectType').value;
+  const isAvailable = selectedProduct.pg_details.available === selectedType;
+  console.log(isAvailable);
+
+  if (isAvailable) {
+    let room_book_request = JSON.parse(localStorage.getItem("room_book_request")) || [];
+
+    room_book_request.push({
+     
+      userName,
+      phoneNumber,
+      request_id,
+      customer_id,
+      email,
+      request_id:my_uuid,
+      product_id: pg_id,
+      status: 1,
+      selected_room,
+      image: selectedImage,
+      rent: selectedrent,
+      pgname: Applicant.pg_details.name,
+      dateAndTime: `${date}/${month}/${year}`,
+    });
+
+    localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+    console.log(localStorage.getItem("room_book_request"));
+    alert("Request successfully sent");
+  } else {
+    alert("Sorry, wrong option chosen. Please select a valid option.");
+  }
+  location.reload();
+}
+
+const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", update);
+
+
+
+
+                     
+//  data storing //
+          function signUp(e) {
+            e.preventDefault();
+            const my_uuid = uuidv4();
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth() + 1;
+            const date = currentDate.getDate();
+
+            console.log(year);
+            console.log(month);
+            console.log(date);
+           
+            const products = JSON.parse(localStorage.getItem("pgdetails"));
+            console.log(products);
+
+            const searching = window.location.search;
+            console.log(searching);
+
+            const newurl = new URLSearchParams(searching);
+            const pg_id = newurl.get("my_uuid");
+            console.log(pg_id);
+
+            const selectedproduct = products.find((e) => e.my_uuid == pg_id);
+            console.log(selectedproduct);
+
+            // const genderSelect = document.getElementById("gender");
+            // const selectedOptionValue = genderSelect.value;
+
+
+// comparing the availables //
+        
+const customer_id = JSON.parse(localStorage.getItem("userId"));
+console.log(customer_id);
+
+const usercured = JSON.parse(localStorage.getItem("user_cred"));
+console.log(usercured);
+
+const email = usercured.find((e) => e.email === customer_id);
+console.log(email);
+
+const username = email.name
+console.log(username);
+
+const phonenumber = email.phone_number
+console.log(phonenumber);
+
+
+
+            
+           
+            const product_id = JSON.parse(localStorage.getItem("productId"));
+
+            const room_book_request = JSON.parse(localStorage.getItem("room_book_request")) || [];
+
+
+
+
+
+            if (selectedproduct && selectedproduct.pg_details && selectedproduct.pg_details.available && email && email.gender) {
+  if (selectedproduct.pg_details.available === email.gender) {
+    // Gender matches, perform desired actions
+    console.log("Gender matches");
+
+    // Rest of your code...
+    const exit = room_book_request.some((data) => data.product_id === pg_id && data.customer_id === customer_id && data.selected_room === selected_room );
+                // ...
+
+                if (!exit && selectedObject) {
+                  room_book_request.push({
+                    request_id:my_uuid,
+                    customer_id,
+                    product_id: pg_id,
+                    status: 1,
+                    
+                    selected_room,
+                    userName:username,
+                    phoneNumber:phonenumber,
+
+                    image: selectedImage,
+                    rent: selectedrent,
+                    pgname: Applicant.pg_details.name,
+                    dateAndTime: `${date}/${month}/${year}`,
+                  });
+
+                  localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+                  console.log(localStorage.getItem("room_book_request"));
+                  alert("Successfully request sent");
+  } else {
+    alert("Already booked");
+  }
+} else {
+  alert("Sorry , Check whether you are booking correctly or not based on your gender");
+}
+
+           }
+          }
+
+
+            // for closing popup//
+            function closePopup() {
+  const popupContainer = document.getElementById("popupContainer");
+  const body = document.getElementsByTagName("body")[0];
+
+  // Remove overlay
+  const overlay = document.querySelector(".popup-overlay");
+  if (overlay) {
+    overlay.remove();
+  }
+
+  // Remove popup-open class from body
+  body.classList.remove("popup-open");
+
+  // Hide the popup
+  popupContainer.style.display = "none";
+
+  // Show the "Book Now" button
+  const bookButton = document.createElement("button");
+  bookButton.setAttribute("class", "button");
+  bookButton.innerText = "Book Now";
+  b_four.append(bookButton);
+}
+
+
+
+        </script>
+        <script src="/assets/js/header.js"></script>
+        <script src= "/assets/js/footer.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,93 @@
 @import "normalize.css";
 
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+#container {
+	margin: 0 auto;
+}
+
+p {
+	text-align: center;
+}
+
+nav {
+
+	background-color:#094067;
+  position: fixed;
+  top:0;
+  width: 100%;
+ 
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: space-around;
+    height:70px;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color:#094067;
+  height:70%;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color:none; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px;
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+.magic{
+  margin-right: 30%;
+}
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+    
+    
+  }
 #overlay {
   position: fixed;
   display: none;
@@ -27,12 +115,12 @@
      width: 450px;
     margin-left: 35%;
     margin-bottom: 5%;
-    margin-top:3%;
+    margin-top:7%;
 
   }
   
   /* Full-width input fields */
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password],input[type=email],textarea#address {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -40,10 +128,25 @@
     border: none;
     background: #f1f1f1;
   }
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
   
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
+  }
+  input#phone_number{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
   }
   
   
@@ -53,7 +156,7 @@
   }
   
    button {
-    background-color: #04AA6D;
+    background-color:#094067;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -81,6 +184,7 @@
     background-color: #f1f1f1;
     text-align: center;
   }
+ 
   
  
   select#options{

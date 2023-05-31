@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../assets/css/form.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+</head>
+
+<body>
+     
+    <div class="information">
+        <div class="image">
+            <div class="more">
+                <h2>post property Add to Sell or rent online for free!</h2>
+
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"></i>
+                <b> Free professional photoshot</b>
+                <br>
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                <b> Access to 15 Lac Buyers & Tenants</b>
+                <br>
+                <i class="fa fa-check-circle-o" style="font-size:20px; color:green"> </i>
+                <b>Get Contact Details of upto 5 Responses</b>
+            </div>
+            <div class="image">
+                <img src="../../assets/images/seller-removebg-preview.png" alt="photo">
+            </div>
+        </div>
+        <form role="form" id="dynamic-form" onsubmit="signUp()">
+
+            <div class="container">
+                <div class="pgdetails">
+                    <label for="name">
+                        <b> pg_Name</b>
+                    </label>
+                    <br>
+                    <input type="text" placeholder="pg_name" pattern="^(?!\s)[a-zA-Z\s]+$" name="fname" id="name"
+                       required >
+                    <br>
+                    <br>
+                    <div id="input-container">
+                        <div class="input-field">
+                            <label for="single-share-name"><b>Type of share:</b></label>
+                            <input type="text" id="single-share-name" name="single_share_name[]" required ><br><br>
+                        </div>
+                        <div class="input-field">
+                            <label for="single-share-image"><b>Sharingbed Image url:</b></label>
+                            <input type="url" id="single-share-image" name="single_share_image[]" required><br><br>
+                        </div>
+                        <div class="input-field">
+                            <label for="single-share-image"><b>Monthly rent:</b></label>
+                            <input type="number" id="single-share-rent" pattern="[0-9]" min="3000" max="30000"
+                                name="single_share_image[]" required><br><br>
+                        </div>
+                    </div>
+                    <div id="plus-button-container">
+                        <span class="plus-button">Add more+</span><br><br>
+                    </div>
+
+                    <label for="number">
+                        <b>Deposite amount:</b>
+                    </label>
+                    <br>
+                    <input type="number" id="amount" name="number" pattern="[0-9]+" required >
+                    </input> <br>
+                    <br>
+                    <label for="sharing">
+                        <b>Notice Period</b>
+                    </label>
+                    <br>
+                    <input type="text" id="period" placeholder="example: 10 days " min="10 days" max="30 days" required>
+                    </input><br>
+                    <br>
+
+                    <label for="sharing">
+                        <b>PG Closing Time:</b>
+                    </label>
+                    <br>
+                    <input type="text" id="time" placeholder="Example:11:00 PM"
+                        pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
+                    <br>
+                    <br>
+
+              
+
+
+              
+              
+                    // another facilities
+                
+        
+                    <div id="rules">
+                        <div class="plus-buttons-contented">
+                          <label for="rule-image-1"><b>Rule Image URL:</b></label><br>
+                          <input type="url" id="rule-image-1" name="rule_image[]" required><br><br>
+                        </div>
+                        <div class="plus-buttons-contented">
+                          <label for="rule-name-1"><b>Above Rule Name:</b></label><br>
+                          <input type="text" id="rule-name-1" name="rule_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$" required><br><br>
+                        </div>
+                        <div class="plus-buttons-contented">
+                          <label for="rule-mark-1"><b>Yes or No Image URL:</b></label><br>
+                          <input type="url" id="rule-mark-1" name="rule_image[]" required><br><br>
+                        </div>
+                      </div>
+                      
+                      <div id="plus-button-content">
+                        <span class="button">Add more+</span><br><br>
+                      </div>
+                    </div>
+        <!-- // end// -->
+       
+                          <div class="anotherfecilities">
+                    <div id="facilities">
+                        <div class="plus-button-content">
+
+                            <label for="sharing">
+                                <b>Facilities Image url </b>
+                            </label>
+                            <br>
+                            <input type="url" id="facilities-image" name="facilty_Name[]" required>
+                            </input><br>
+                            <br>
+                        </div>
+                        <div class="plus-button-content">
+                            <label for="image">
+                                <b>Above Facility url Name</b>
+                            </label>
+                            <br>
+                            <input type="text" id="facilities-image" name="facilty_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$"
+                            required>
+                            </input><br>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="plus-button">
+                        <span class="plus-buttons"> Add more+</span><br><br>
+                    </div>
+           
+                    <label for="sharing">
+                        <b>Total Number of Beds</b>
+                    </label>
+                    <br>
+                    <input type="number" id="beds" min="20" max="200" required>
+                    <br>
+                    <br>
+          
+          
+        
+
+                    <label for="pg_name">
+                        <b>Paying guest url</b>
+                    </label>
+                    <br>
+                    <input type="url" name="image" id="image" required >
+                    <br>
+                    <br>
+
+                    <label for="address">
+                        <b> Address</b>
+                    </label>
+                    <br>
+                    <textarea type="text" id="address" required></textarea>
+                    <br><br>
+
+                    <label for="tel">
+                        <b> pg  Number</b>
+                    </label>
+                    <br>
+                    <input type="tel" id="phone_number" pattern="[6-9]{1}[0-9]{9}" required></input>
+                    <br><br>
+
+
+                    <label for="cars">
+                        <b>Choose</b>
+                    </label>
+                    <select name="available" id="available" required>
+                        <option>Choose</option>
+                        <option>Boys</option>
+                        <option>Girls</option>
+                        <option>Both living gender pg</option>
+                    </select>
+
+                    <button type="submit" id="submit" class="registerbtn">Submit</button>
+                  
+                   
+                    
+                    <br>
+
+                </div>
+                
+            </div>
+              
+           
+        </form>
+        
+
+        <script src="/assets/js/header.js"></script>
+
+        <script>
+            function signUp() {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+
+
+                const period = document.getElementById("period").value;
+                const phone_number = document.getElementById("phone_number").value;
+                const available = document.getElementById("available").value;
+                const beds = document.getElementById("beds").value;
+                const time = document.getElementById("time").value;
+                const advance = document.getElementById("amount").value;
+                const image = document.getElementById("image").value;
+
+
+
+
+                const address = document
+                    .getElementById("address").value.trim()
+                    .split(/\s+/g)
+                    .join(" ");
+                const my_uuid = uuidv4();
+
+                if (available === "Choose") {
+                    alert("Please select either Boys, Girls, or Both for girls and boys");
+                    return false;
+                }
+
+                function validate() {
+                    let val = document.getElementById("address").value;
+                    if (/^\s*$/g.test(val)) {
+                        alert("Write your address properly");
+                        //   val = reset();
+                        return false;
+                    }
+                }
+                validate();
+
+
+                const pgdetails = JSON.parse(localStorage.getItem("pgdetails")) || [];
+
+const exit = pgdetails.length && pgdetails.some((data) => data.name == name);
+
+const owner_id = JSON.parse(localStorage.getItem("userId"));
+
+
+if (!exit) {
+    const singleShareDataElements = document.querySelectorAll('input[name^="single_share_name[]"], input[name^="single_share_image[]"], input[name^="single_share_rent[]"]');
+    const facilitiesDataElements = document.querySelectorAll('input[name^="facilty_image[]"], input[name^="facilty_Name[]"]');
+    const ruleofpgDataElements = document.querySelectorAll('input[name^="rule_image[]"],input[name^="rule_Name[]"], inpu[name^="rule_image[]"]');
+    const facilitiesData = Array.from(facilitiesDataElements).map((element) => element.value);
+    const singleShareData = Array.from(singleShareDataElements).map((element) => element.value);
+   const  ruleofpgData =  Array.from(ruleofpgDataElements).map((element) => element.value);
+
+    const tempArray = [];
+    const imageIndex = 1;
+    const nameIndex = 0;
+    const rentIndex = 2;
+
+    const imageDataArray = singleShareData.filter((element, index) => index % 3 === imageIndex);
+    const nameDataArray = singleShareData.filter((element, index) => index % 3 === nameIndex);
+    const rentDataArray = singleShareData.filter((element, index) => index % 3 === rentIndex);
+
+
+
+    for (let i = 0; i < imageDataArray.length; i++) {
+        const image = imageDataArray[i];
+        const name = nameDataArray[i];
+        const rent = rentDataArray[i];
+
+        tempArray.push({ image, name, rent });
+    }
+
+    const anotherArray = [];
+    const imageindex = 0;
+    const nameindex = 1;
+
+    const imagedata = facilitiesData.filter((element, index) => index % 2 === imageindex);
+    const namedata = facilitiesData.filter((element, index) => index % 2 === nameindex);
+
+    for (let i = 0; i < imagedata.length; i++) {
+
+        const image = imagedata[i];
+        const name = namedata[i];
+
+        anotherArray.push({ image, name });
+
+    }
+
+    const instrunctionsArray = [];
+        const imagesindex = 0;
+        const namesindex = 1;
+        const imagesesindex = 2;
+
+// Assuming ruleofpgData is defined and contains enough elements
+
+const imagesdata = ruleofpgData.filter((element, index) => index % 3 === imagesindex);
+const namesdata = ruleofpgData.filter((element, index) => index % 3 === namesindex);
+const image1data = ruleofpgData.filter((element, index) => index % 3 === imagesesindex);
+
+
+for (let i = 0; i < imagesdata.length; i++) {
+        const image = imagesdata[i];
+        const name = namesdata[i];
+        const rule = image1data[i];
+
+        instrunctionsArray.push({ image, name, rule });
+    }
+
+  
+
+
+
+
+    pgdetails.push({
+        my_uuid,
+        pg_details: { name, period, available, beds, advance, time, address, owner_id, image, phone_number },
+        share_data: tempArray,
+        facilities_data: anotherArray,
+        rulesOfPG:instrunctionsArray,
+    });
+
+}
+console.log(pgdetails);
+
+
+localStorage.setItem("pgdetails", JSON.stringify(pgdetails));
+console.log(localStorage.getItem("pgdetails"));
+localStorage.setItem("productId", JSON.stringify(my_uuid));
+
+document.querySelector("form").reset();
+
+alert("PG Created successfully");
+
+location.href = "../products/seller_product.html";
+}
+
+
+
+
+            const plusButton = document.querySelector('.plus-button');
+            const inputContainer = document.getElementById('input-container');
+            let inputCount = 1;
+
+            plusButton.addEventListener('click', () => {
+                if (inputCount <= 5) {
+                    const newInputField = document.createElement('div');
+                    newInputField.classList.add('input-field');
+                    newInputField.innerHTML = `
+      <label for="twin-share-name-${inputCount}"><b>Type of share:</b></label><br>
+      <input type="text" id="twin-share-name-${inputCount}" name="single_share_name[]"  required><br>
+      <br>
+      <label for="twin-share-image-${inputCount}"><b>Sharingbed Image URL:</b></label><br>
+      <input type="url" id="twin-share-image-${inputCount}" name="single_share_image[]" required><br>
+      <br>
+      <label for="twin-share-rent-${inputCount}"><b>Monthly rent:</b></label><br>
+      <input type="number" id="twin-share-rent-${inputCount}" name="single_share_rent[]" pattern="[0-9]" min="3000" max="30000" required><br>
+      <br>
+      <br>
+    `;
+                    inputContainer.appendChild(newInputField);
+                    inputCount++;
+                } else {
+                    alert('You have reached the maximum limit of input fields (5).');
+                }
+            });
+
+
+            // facilities input //
+
+
+            const plusButtons = document.querySelector('.plus-buttons');
+            const inputContent = document.getElementById('facilities');
+            let inputCounts = 1;
+
+            plusButtons.addEventListener('click', () => {
+                if (inputCounts <= 10) {
+                    const newInputField = document.createElement('div');
+                    newInputField.classList.add('plus-button-content');
+                    newInputField.innerHTML = `
+      <label for="facilities-share-image-${inputCounts}"><b>Facility Image url:</b></label><br>
+      <input type="url" id="facilities-image-${inputCounts}" name="facilty_image[]" required><br>
+      <br>
+    
+      <label for="facilities-share-name-${inputCounts}"><b>Above facility name:</b></label><br>
+      <input type="text" id="facilities-name-${inputCounts}" name="facilty_Name[]"  pattern="^(?!\s)[a-zA-Z\s]+$" required><br>
+      <br>
+    `;
+                    inputContent.appendChild(newInputField);
+                    inputCounts++;
+                } else {
+                    alert('You have reached the maximum limit of input fields (5).');
+                }
+            });
+
+
+ // rules of the pg//
+
+
+
+
+ const plusButtonses = document.querySelector('.button');
+const inputContents = document.getElementById('rules');
+let inputCountses = 1;
+
+plusButtonses.addEventListener('click', () => {
+  if (inputCountses <= 10) {
+    const newInputField = document.createElement('div');
+    newInputField.classList.add('plus-button-contented');
+    newInputField.innerHTML = `
+      <label for="rule-image-${inputCountses}"><b>Rule Image URL:</b></label><br>
+      <input type="url" id="rule-image-${inputCountses}" name="rule_image[]" required><br><br>
+
+      <label for="rule-name-${inputCountses}"><b>Above Rule Name:</b></label><br>
+      <input type="text" id="rule-name-${inputCountses}" name="rule_Name[]" pattern="^(?!\s)[a-zA-Z\s]+$" required><br><br>
+
+      <label for="rule-mark-${inputCountses}"><b>Yes or No Image URL:</b></label><br>
+      <input type="url" id="rule-mark-${inputCountses}" name="rule_image[]" required><br><br>
+    `;
+    inputContents.appendChild(newInputField);
+    inputCountses++;
+  } else {
+    alert('You have reached the maximum limit of input fields (10).');
+  }
+});
+            
+
+
+
+
+          
+
+
+        </script>
+</body>
+
+</html>

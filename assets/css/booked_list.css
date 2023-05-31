@@ -1,0 +1,87 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+
+
+  .section{
+	margin-top:10%;
+  }
+
+.border{
+	display: flex;
+	border:1px solid;
+	border-radius: 8px;
+	height:30%;
+	width:50%;
+	margin: 2rem 20rem  3rem;
+}
+.detail{
+	display: flex;
+	
+}
+h2{
+
+	margin-top: 5%;
+}
+h1.message{
+  margin: 20rem;
+  margin-left: 30%;
+  color:red;
+}
+h3.name_of_pg{
+	color:blue;
+}
+h4{
+  margin-top: 0px;
+}
+h3.date{
+  margin-top: 0px;
+  font-size: 25px;
+}
+div.data{
+	display: flex;
+	
+}
+img#image{
+	width:40%;
+	margin:4rem 3rem 4rem 3rem;;
+  }
+  .moredetail.h4{
+	color:none;
+  }
+  h4.monthanddate{
+    display: flex;
+  }
+p#status{
+color:green;
+}
+
+
+button.delete{
+	display:inline-block;
+    background-color:  #094067;
+    color:white;
+	   border:none;
+    padding:14px 25px;
+  margin-top: 40px;
+    font-size: 16px;
+    margin-left:70px;
+    opacity:0.9;
+    cursor: pointer;
+    justify-content:flex-end;
+	
+}
+
+
+
+
+
+
+
+
+@media screen and  (max-width: 900px){
+
+
+}
+	

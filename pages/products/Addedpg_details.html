@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../assets/css/Addedpg_details.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+
+        <title>pgdetails</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        >
+    </head>
+    <header></header>
+    <body>
+        <div class="section"></div>
+        
+
+        <script>
+      const single_details = JSON.parse(localStorage.getItem("pgdetails"));
+        
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const pg_id = urlParams.get("my_uuid");
+      console.log(pg_id);
+        
+      // const findnumber = seller_id.find(e) => 
+
+      const unique_id = single_details.find((e) => e.my_uuid == pg_id);
+      console.log(unique_id);
+
+
+    
+     if (unique_id && Array.isArray(unique_id.share_data)) {
+  // Access the array details within the object
+  const share_data = unique_id.share_data;
+
+  console.log(share_data);
+  } else {
+  console.log("Invalid or missing data in local storage");
+   }
+
+      const div_border = document.createElement("div");
+      div_border.setAttribute("class", "border");
+      console.log(div_border);
+      document.querySelector(".section").append(div_border);
+
+      const div_detail = document.createElement("div");
+      div_detail.setAttribute("class", "pg_detail");
+      div_border.append(div_detail);
+
+    
+
+      const div_image = document.createElement("div");
+      div_detail.append(div_image);
+     
+      const img = document.createElement("img");
+      img.setAttribute("src", unique_id.pg_details.image);
+      img.setAttribute("alt", "photo");
+      img.setAttribute("height", "400px");
+      img.setAttribute("width", "450px");
+      div_image.append(img);
+
+
+
+
+
+      const iconsContainer = document.createElement("div");
+        iconsContainer.setAttribute("class", "icons-container");
+        div_detail.append(iconsContainer);
+
+      const pg_icon = document.createElement("icon");
+      pg_icon.setAttribute("class","icon");
+      pg_icon.innerHTML = '<i class="fa fa-home" style="font-size:36px"></i>';
+      iconsContainer.append(pg_icon);
+
+      const address_icon = document.createElement("icon");
+      address_icon.setAttribute("class","icon");
+      address_icon.innerHTML=' <i class="fa fa-address-card-o" style="font-size:36px"></i>';
+      iconsContainer.append(address_icon);
+
+      const phone_number = document.createElement("icon");
+      phone_number.setAttribute("class","icon");
+      phone_number.innerHTML='<i class="fa fa-phone" style="font-size:36px"></i>';
+      iconsContainer.append(phone_number);
+    
+       
+
+      const div_address = document.createElement("div");
+      div_address.setAttribute("class", "address");
+      div_detail.append(div_address);
+
+      const h2 = document.createElement("h2");
+      h2.innerText = unique_id.pg_details.name;
+      div_address.append(h2);
+
+      const Address = document.createElement("p");
+      Address.innerText = unique_id.pg_details.address;
+      div_address.append(Address);
+
+      const phone = document.createElement("h4");
+      phone.setAttribute("class","number");
+      phone.innerText = unique_id.pg_details.phone_number;
+      div_address.append(phone);
+
+      const page_a = document.createElement("p");
+      for (let i = 0; i < 5; i++) {
+  const starSpan = document.createElement("span");
+  starSpan.setAttribute("class", "fa fa-star ");
+  
+  page_a.append(starSpan);
+}
+
+div_address.append(page_a);
+
+
+// review button //
+     const button = document.createElement("button");
+     button.setAttribute("class","rating");
+     button.setAttribute("data-rating","reviews");
+     button.innerText="See the reviews>>";
+     div_address.append(button);
+
+    const div_sharing = document.createElement("div");
+    div_sharing.setAttribute("class", "sharing");
+    div_border.append(div_sharing);
+
+
+
+       // single sharing //
+  if (unique_id && Array.isArray(unique_id.share_data)) {
+  const arrayshare_data = unique_id.share_data;
+
+  for (let i = 0; i < arrayshare_data.length; i++) {
+    const singleshare = document.createElement("div");
+    singleshare.setAttribute("id", "share");
+    singleshare.setAttribute("class", "singleshare");
+    div_sharing.append(singleshare);
+
+    const singleshareimage = document.createElement("img");
+    singleshareimage.setAttribute("src", arrayshare_data[i].image);
+    singleshareimage.setAttribute("height", "220px");
+    singleshareimage.setAttribute("width", "250px");
+    singleshare.append(singleshareimage);
+
+    const div_one = document.createElement("div");
+    div_one.setAttribute("class", "data");
+    singleshare.append(div_one);
+
+    const h4 = document.createElement("h4");
+    h4.innerText = arrayshare_data[i].name;
+    div_one.append(h4);
+
+    const bold = document.createElement("b");
+    bold.setAttribute("class", "month");
+    bold.innerText = "Monthly Rent:";
+    div_one.append(bold);
+
+    const rupeesandrent = document.createElement("div");
+    rupeesandrent.setAttribute("class","rupees");
+    div_one.append(rupeesandrent);
+
+    const rupees = document.createElement("img");
+    rupees.setAttribute("src","/assets/images/rupees-removebg-preview.png");
+    rupees.setAttribute("height","25px");
+    rupees.setAttribute("width","25px");
+    rupeesandrent.append(rupees);
+   
+
+    const p_one = document.createElement("p");
+    p_one.innerText = arrayshare_data[i].rent + "/-";
+    rupeesandrent.append(p_one);
+
+
+   
+
+    const button = document.createElement("button");
+    button.setAttribute("class", "view");
+    button.setAttribute("data-id", arrayshare_data[i].name);
+    button.innerText = "Select";
+
+    div_one.append(button);
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+     
+      //timimg//
+      const rulesandregulation = document.createElement("h3");
+      rulesandregulation.innerText = "Rules and regulation :";
+     div_border.append(rulesandregulation);
+
+      const div_time = document.createElement("div");
+      div_time.setAttribute("class", "time");
+      div_border.append(div_time);
+
+
+      const para = document.createElement("b");
+      para.innerText = " Book the PG before:";
+      div_time.append(para);
+
+      const pgclosingtime = document.createElement("p");
+      pgclosingtime.innerText = unique_id.pg_details.period;
+      para.append(pgclosingtime);
+
+      const para_one = document.createElement("b");
+      para_one.innerText = "PG Closing Time :";
+      div_time.append(para_one);
+
+      const bold_one = document.createElement("p");
+      bold_one.innerText = unique_id.pg_details.time;
+      para_one.append(bold_one);
+
+      const para_two = document.createElement("b");
+      para_two.innerText = "Available For:";
+      div_time.append(para_two);
+
+      const bold_two = document.createElement("p");
+      bold_two.innerText = unique_id.pg_details.available;
+      para_two.append(bold_two);
+
+      const para_three = document.createElement("b");
+      para_three.innerText = "No.of beds:";
+      div_time.append(para_three);
+
+      const bold_three = document.createElement("p");
+      bold_three.innerText = unique_id.pg_details.beds;
+      para_three.append(bold_three);
+
+      const sharing_room_advance = document.createElement("b");
+      sharing_room_advance.setAttribute("class", "advance");
+      sharing_room_advance.innerText = "For all sharing rooms Advance:";
+
+      div_time.append(sharing_room_advance);
+
+      const sharing_amount = document.createElement("p");
+      sharing_amount.innerText = unique_id.pg_details.advance;
+      sharing_room_advance.append(sharing_amount);
+
+     
+       //facilities more//
+      const div_facilities = document.createElement("div");
+      div_facilities.setAttribute("class", "facilities");
+      div_border.append(div_facilities);
+
+      strong = document.createElement("h3");
+      strong.innerHTML = "Facilities of pg:";
+      div_facilities.append(strong);
+
+      const div_faculties = document.createElement("div");
+      div_faculties.setAttribute("class", "faculties");
+      div_border.append(div_faculties);
+
+      //images//
+      if ( unique_id &&Array.isArray(unique_id.facilities_data)) {
+      const facilities = unique_id.facilities_data;
+
+      for (let k = 0; k < facilities.length; k++) {
+        const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","fivefacilities");
+      div_faculties.append(cooking_image);
+      console.log(div_faculties);
+
+      const img_picture = document.createElement("img");
+      img_picture.setAttribute("src", facilities[k].image);
+      img_picture.setAttribute("alt", "photo");
+      img_picture.setAttribute("height", "100px");
+      img_picture.setAttribute("width", "120px");
+      cooking_image.append(img_picture);
+
+      
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = facilities[k].name;
+      cooking_image.append(facilityfifthname);
+
+      
+
+       
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+
+    const rulesofpg = document.createElement("h3");
+    rulesofpg.setAttribute("class","rulesofpg");
+    rulesofpg.innerHTML ="Rules and facilities"
+    div_border.append(rulesofpg);
+
+  const rulesandregulations = document.createElement("div");
+rulesandregulations.setAttribute("class", "rulesandregulations");
+div_border.append(rulesandregulations);
+
+if (unique_id && Array.isArray(unique_id.rulesOfPG)) {
+  const rulesOfPG = unique_id.rulesOfPG;
+
+  for (let h = 0; h < rulesOfPG.length; h++) {
+    const cooking_image = document.createElement("div");
+    cooking_image.setAttribute("class", "rules");
+    rulesandregulations.append(cooking_image);
+
+    const image = document.createElement("img");
+    image.setAttribute("src", rulesOfPG[h].image);
+    image.setAttribute("alt", "photo");
+    image.setAttribute("height", "100px");
+    image.setAttribute("width", "120px");
+    cooking_image.append(image);
+
+    const facilityfifthname = document.createElement("b");
+    facilityfifthname.innerText = rulesOfPG[h].name;
+    cooking_image.append(facilityfifthname);
+
+    const img_pictures = document.createElement("img");
+    img_pictures.setAttribute("class", "yesorno");
+    img_pictures.setAttribute("src", rulesOfPG[h].rule);
+    img_pictures.setAttribute("alt", "photo");
+    img_pictures.setAttribute("height", "50px");
+    img_pictures.setAttribute("width", "60px");
+    cooking_image.append(img_pictures);
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+      const select = document.querySelectorAll(".view");
+      select.forEach((each) => {
+        each.addEventListener("click", function selectObject() {
+          const person_data = each.dataset.id; // SING
+          console.log(person_data);
+       
+         window.location.href = `./applicants.html?my_uuid=${pg_id}&my_room_id=${person_data}`;
+
+    //     //   window.location.href = `./applicants.html?my_uuid=${pg_id}&&my_room_id=${person_data}&&&image=${images}`;
+        });
+      });
+
+
+
+  const reviewselect = document.querySelectorAll(".rating");
+reviewselect.forEach((each) => {
+each.addEventListener("click", function selectObject() {
+const person_data = each.dataset.rating;
+console.log(person_data);
+window.location.href = `../homepage/review.html?my_uuid=${pg_id}`;
+});
+});
+
+
+
+    </script>
+        <script src="../../assets/js/header.js"></script>
+        <script src="../../assets/js/footer.js"></script>
+
+    </body>
+</html>

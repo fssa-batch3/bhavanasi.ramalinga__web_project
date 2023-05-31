@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible"content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="../../assets/css/rent.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+    
+        <title>Rent</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+     
+      
+
+        <div class="section"></div>
+        
+        <script>
+      const filteredUseravailable = JSON.parse(localStorage.getItem("pgdetails"));
+      console.log(filteredUseravailable);
+
+
+     
+
+
+      
+
+for (let i = 0; i < filteredUseravailable.length; i++) {
+
+  const div_bar = document.createElement("div");
+  div_bar.setAttribute("class", "bar");
+  console.log(div_bar);
+  document.querySelector(".section").append(div_bar);
+ 
+
+  // <div class= "image" >
+  const div_image = document.createElement("div");
+  div_image.setAttribute("class", "image");
+  div_bar.append(div_image);
+
+  // <img> //
+
+  const img_picture = document.createElement("img");
+  img_picture.setAttribute("src", filteredUseravailable[i].pg_details.image);
+  img_picture.setAttribute("alt", "image");
+  img_picture.setAttribute("height", "280px");
+  img_picture.setAttribute("width", "300px");
+  div_image.append(img_picture);
+
+  //<div class="room-details"> </div>
+  const div_room_details = document.createElement("div");
+  div_room_details.setAttribute("class", "room-details");
+  div_bar.append(div_room_details);
+
+  //<div class="para"> </div>
+  const div_para = document.createElement("div");
+  div_para.setAttribute("class", "para");
+  div_room_details.append(div_para);
+
+  const line_p = document.createElement("p");
+  div_para.append(line_p);
+
+  const one_b = document.createElement("b");
+  one_b.innerText = filteredUseravailable[i].pg_details.name;
+  line_p.append(one_b);
+
+
+
+  const rate4_b = document.createElement("p");
+  rate4_b.innerText = filteredUseravailable[i].pg_details.address;
+  line_p.append(rate4_b);
+
+  const page_a = document.createElement("p");
+
+for (let i = 0; i < 5; i++) {
+  const starSpan = document.createElement("span");
+  starSpan.setAttribute("class", "fa fa-star ");
+  
+  page_a.append(starSpan);
+}
+
+line_p.append(page_a);
+
+
+  const div_payment = document.createElement("div");
+  div_payment.setAttribute("class", "payment");
+  div_room_details.append(div_payment);
+
+  const div_rent = document.createElement("div");
+  div_rent.setAttribute("class", "rent");
+  div_payment.appendChild(div_rent);
+
+  for (let j = 0; j < filteredUseravailable[i].share_data.length; j++) {
+    const div_text = document.createElement("div");
+    div_text.setAttribute("class", "name");
+     div_rent.append(div_text);
+
+    const textarea = document.createElement("p");
+    textarea.innerText = filteredUseravailable[i].share_data[j].name;
+   div_text.append(textarea);
+
+    const rate_p = document.createElement("p");
+    rate_p.innerText = filteredUseravailable[i].share_data[j].rent+"/-";
+    div_text.append(rate_p);
+  }
+
+ 
+
+  // const rate4_b = document.createElement("p");
+  // rate4_b.innerText = filteredUseravailable[i].pg_details.address;
+  // div_content.append(rate4_b);
+
+  const div_button = document.createElement("div");
+  div_button.setAttribute("class", "button");
+  div_button.setAttribute("data-id", filteredUseravailable[i].my_uuid);
+  div_button.innerHTML = "View more details >>";
+  div_payment.append(div_button);
+}
+
+
+const selectbtn = document.querySelectorAll(".button");
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
+    console.log(person_data);
+    window.location.href = `../products/Addedpg_details.html?my_uuid=${person_data}`;
+  });
+});
+
+
+  // logout //
+
+// function Logout(e) {
+//   alert("are you sure to logout");
+
+//   localStorage.removeItem("userId");
+
+
+
+// }
+//...........................................................................................................................................
+
+    </script> 
+      <script src= "/assets/js/header.js"></script>   
+      <script src = "/assets/js/footer.js"></script>
+
+
+    </body>
+    
+</html>

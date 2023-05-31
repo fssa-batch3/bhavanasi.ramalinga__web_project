@@ -1,5 +1,32 @@
 @import "normalize.css";
 
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color:black;
+  display: flex;
+}	
+
+
+
+h3 a {
+	color:black;
+}
+
+a {
+	color:black;
+    text-decoration: none;
+}
+
+
+
+.fa.fa-user{
+  margin-top: 10px;
+  color:white;
+  font-size:36px
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -19,9 +46,18 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  div.photo img{
+    border-radius: 50px;
+    margin-left: 40%;
+    width:25%;
+  }
+
+
+
   img{
     border-radius: 50px;
     margin-left: 40%;
+    width: 100%;
   }
 
   
@@ -59,7 +95,7 @@
   }
   
    button {
-    background-color: #04AA6D;
+    background-color:#094067;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="../../assets/css/owner_applicants.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <title>Applicant</title>
+    </head>
+
+    <body>
+      
+
+        <div class="section">
+          <div class="heading">
+            <h1>Date</h1>
+            <h1>User Name</h1>
+            <h1>Selected room</h1>
+            <h1>Phone Number</h1>
+            <h1>response</h1>
+           </div>
+           
+            <script src="/assets/js/header.js"></script>
+            
+            <script>const seller_section = JSON.parse(localStorage.getItem("room_book_request"));
+        console.log(seller_section);
+        const product = JSON.parse(localStorage.getItem("pgdetails"));
+        console.log(product);
+        const customers = JSON.parse(localStorage.getItem("userId"));
+
+        const products = JSON.parse(localStorage.getItem("productId"))
+   
+       
+
+      const sellerdata = product.filter((e) => e.pg_details.owner_id == customers);
+        console.log(sellerdata);
+
+
+        const bookeddata = seller_section.filter((e) =>
+     sellerdata.some((s) => s.product_id === e.products)
+    );
+
+        console.log(bookeddata);
+
+        
+        if (bookeddata.length === 0) {
+     const noDataMessage = document.createElement("h2");
+     noDataMessage.setAttribute("class","message");
+     noDataMessage.innerText = "No user booked  your Paying guest";
+    document.querySelector(".section").append(noDataMessage);
+    } else {
+
+        for (let i = 0; i < bookeddata.length; i++) {
+          const div_border = document.createElement("div");
+          div_border.setAttribute("class", "border");
+          console.log(div_border);
+          document.querySelector(".section").append(div_border);
+
+          const dateandyear = document.createElement("h2");
+          dateandyear.setAttribute("class", "monthanddate");
+          dateandyear.innerHTML = bookeddata[i].dateAndTime;
+          div_border.append(dateandyear);
+
+         const  h2_name = document.createElement("h2");
+          h2_name.setAttribute("class", "name_of_pg");
+          h2_name.innerText = bookeddata[i].userName;
+          div_border.append(h2_name);
+
+          const div_two = document.createElement("div");
+          div_two.setAttribute("class", "moredetail");
+          div_border.append(div_two);
+
+          const sharing_room = document.createElement("h2");
+          sharing_room.innerHTML = bookeddata[i].selected_room;
+          div_two.append(sharing_room);
+
+          const email = document.createElement("h2");
+          email.setAttribute("class", "email");
+          email.innerHTML = bookeddata[i].phoneNumber;
+          div_border.append(email);
+
+         const div_click = document.createElement("div");
+          div_click.setAttribute("class", "click");
+          div_border.append(div_click);
+
+          
+          
+          const button = document.createElement("button");
+          button.setAttribute("class", "button_accept");
+          button.setAttribute("style","")
+          button.setAttribute("type", "button");
+          button.setAttribute("data-id", bookeddata[i].request_id);
+          button.innerHTML = "Accept";
+          div_click.append(button);
+
+         const rejectbutton = document.createElement("button");
+         rejectbutton.setAttribute("class", "button_reject");
+         rejectbutton.setAttribute("style","")
+         rejectbutton.setAttribute("type", "button");
+         rejectbutton.setAttribute("data-id", bookeddata[i].request_id);
+         rejectbutton.innerHTML = "Reject";
+          div_click.append(rejectbutton);
+
+
+          const acceptedButton = document.createElement("button");
+          acceptedButton.setAttribute("style","display:none")
+  acceptedButton.setAttribute("class", "button_accepted");
+  acceptedButton.setAttribute("type", "button");
+  acceptedButton.setAttribute("data-id", bookeddata[i].request_id);
+  acceptedButton.innerHTML = "Accepted";
+  div_click.append(acceptedButton);
+
+  const rejectedButton = document.createElement("button");
+  rejectedButton.setAttribute("class", "button_accepted");
+  rejectedButton.setAttribute("style","display:none")
+  rejectedButton.setAttribute("type", "button");
+  rejectedButton.setAttribute("data-id", bookeddata[i].request_id);
+  rejectedButton.innerHTML = "Rejected";
+  div_click.append(rejectedButton);
+
+       
+
+  button.addEventListener("click", ()=>{
+  // button.style.display = "none"; // Hide the accept button
+  // rejectbutton.style.display = "none"; // Hide the reject button
+  button.style.display="none"
+  rejectbutton.style.display="none"
+  acceptedButton.style.display="inline-block"
+
+
+  
+  }
+);
+
+
+ 
+// Add event listener to the reject button
+    rejectbutton.addEventListener("click", function() {
+  rejectbutton.style.display = "none"; // Hide the reject button
+  button.style.display = "none"; 
+  rejectedButton.style.display ="inline-block"
+  
+});
+       
+        }
+    }
+
+     const customer = JSON.parse(localStorage.getItem("room_book_request"));
+        console.log(customer);
+
+        const filteredUseravailable = customer.filter((e) => e.request_id == "data-id");
+        console.log(filteredUseravailable);
+
+        const selectbtn = document.querySelectorAll(".button_accept");
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
+
+    const room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+
+    function getting_data(e) {
+      return e.request_id == person_data;
+    }
+
+    const user_data = room_book_request.find(getting_data);
+
+    user_data.status = 2;
+
+    localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+  });
+});
+
+// response for reject//
+const selectb = document.querySelectorAll(".button_reject");
+selectb.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = each.dataset.id;
+
+    const room_book_request = JSON.parse(localStorage.getItem("room_book_request"));
+
+    function rejectdata(e) {
+      return e.request_id == person_data;
+    }
+
+    const seller_data = room_book_request.find(rejectdata);
+
+    seller_data.status = 0;
+
+    localStorage.setItem("room_book_request", JSON.stringify(room_book_request));
+  });
+});
+
+
+
+
+        
+
+        
+    </script>
+    <script src ="../../assets/js/footer.js"></script>
+    
+</body>
+
+</html>

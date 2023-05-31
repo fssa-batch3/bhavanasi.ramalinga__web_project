@@ -1,0 +1,60 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+
+	
+
+
+
+
+
+  
+.border{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color:black;
+}
+.section h2{
+	font-size: 30px;
+}
+
+div.click{
+	display: flex;
+}
+button{
+	margin-right: 10%;
+	height:50%;
+	margin-top: 10%;
+	background-color:cadetblue;
+	color:white;
+	border: none;
+	padding-inline: 25px 25px;
+	font-size: large;
+	
+}
+/* .section{
+	margin-top: 6%;
+} */
+.sections{
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+h2.message{
+	margin:10rem 30rem 10rem;
+	color:red;
+}
+.heading{
+	display: flex;
+	justify-content: space-around;
+	margin-right: 10px;
+	color:blue;
+	border-bottom: 1px solid;
+}
+.section{
+	border:1px solid;
+	margin-top: 80px;
+}

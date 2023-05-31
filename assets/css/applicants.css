@@ -3,88 +3,139 @@
   }
   
 
-td,th{
-    border:1px solid #252424;
-    text-align: left;
-    padding:10px;
-}
-.magic{
-    margin-right: 70%;
-}
-table{
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 3%;
-}
-tr:nth-child(odd) {
-    background-color:#dddddd;
+ 
 
-}
-nav {
+ 
+   
+  .slide1{
+    display: flex;
+    margin-right: 30%;
+    margin-top: 8%;
+  }
+  
 
-	background-color: #E64A19;
+.border{
+	border:1px solid;
+	border-radius: 8px;
+	
+	margin: 8rem 5rem 0 7rem;
+	width:60%;
+    height:60%;
+    margin-left: 20%;
+   
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    transform: perspective(1000px);
+    transition: transform 0.5s ease;
+    
 }
-
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
+.detail{
+	display: flex;
+	
+}
+h2{
+	margin-left: 10%;
+	margin-top: 5%;
+}
+h3.name_of_pg{
+	color:blue;
+}
+div.detail img{
+	margin: 3.5rem 0 0 4rem;
+	margin-bottom: 5%;
+}
+div.click{
+	display: flex;
+	margin-left: 60%;
+	margin-bottom: 3%;
+	justify-content:space-around;
+}
+button.button{
+	padding:12px 23px;
+	background-color: black;
+	color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left:20px;
+    opacity:0.9;
+    cursor:pointer;
     justify-content: space-around;
-    height:70px;
-    align-items: center;
-	}
 	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-    
-    
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	
-	text-decoration:none;
-    
 }
-
-nav a:hover { 
-	background-color:none; 
+/* popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  height:430px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #454242;
+  border-radius: 4px;
+  z-index: 9999;
 }
 
 
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 9999; /* Make sure the overlay is above other elements */
 }
 
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
+.popup-open {
+  filter: grayscale(100%); /* Apply grayscale effect to the background elements */
 }
+
+/* Add styles to the popup card */
+#popupContainer {
+  background-color: white; /* Set the background color of the popup card to white */
+  z-index: 10000; /* Make sure the popup card is above the grayed-out background elements */
+  position: absolute; /* Position the popup card */
+  top: 50%; /* Adjust the vertical position as needed */
+  left: 50%; /* Adjust the horizontal position as needed */
+  transform: translate(-50%, -50%); /* Center the popup card */
+  padding: 20px; /* Add padding to the popup card */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow to the popup card */
+}
+
+
+
+/* Style for the overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+.close{
+  cursor: pointer;
+  margin-left: 400px;
+  font-size: 20px;
+}
+
+
+  
+
 @media screen and  (max-width: 900px){
 
 

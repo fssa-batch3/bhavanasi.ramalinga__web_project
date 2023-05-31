@@ -4,110 +4,32 @@
   font-family: 'Poppins', sans-serif;
 }
 
-#container {
-	margin: 0 auto;
-}
-
-p {
-	text-align: center;
-}
-
-nav {
-
-	background-color: #E64A19;
-}
-
-nav ul {
-	padding: 0;
-  margin: 0;
-	list-style: none;
-	position: relative;
-    display:flex;
-    align-content: center;
-    justify-content: space-around;
-    height:70px;
-	}
-	
-nav ul li {
-	display:inline-block;
-	background-color: #E64A19;
-  height:70%;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
-}
-
-nav a:hover { 
-	background-color:none; 
-}
 
 
-nav ul ul {
-	display: none;
-	position: absolute; 
-	top: 60px;
-}
-	
-
-nav ul li:hover > ul {
-	display:inherit;
-}
-	
-
-nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
-}
-
-
-nav ul ul ul li {
-	position: relative;
-	top:-60px; 
-	left:170px;
-}
-.magic{
-  margin-right: 30%;
-}
-
+    
+  .data p{
+  display: flex;
+  justify-content: center;
+  }
   .last{
     display: flex;
     justify-content: space-around;
-    
-    
-    
+  }
+  h2.message{
+    color:red;
+    margin: 15rem 20rem 0rem 30rem;
+    font-size: 30px;
+
   }
   
   
-  
-  input[type="text"]{
-    height:40px;
-    margin-top: 15px;
-    border-radius:22px;
-    
-  }
-  .searchbar i{
-    position:relative;
-  right: 13%;
-  }
-  .slide1{
-    display: flex;
-    margin-right: 30%;
-    margin-top: 8%;
-  }
+ 
 
 .border {
     border: 1px solid gray;
     border-radius: 8px;
-    height: 850px;
-    width: 1250px;
+    height: 1300px;
+    width: 1420px;
     margin: 8rem 5rem 0 7rem;
 }  
 
@@ -116,17 +38,27 @@ nav ul ul ul li {
 }
 
 .pg_detail img {
-    margin: 3.5rem 0 0 4rem;
+    margin: 3.5rem 1rem 0 4rem;
     border-radius: 7px;
 }
-
-.address {
-    margin: 2%;
+.fivefacilities{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.fivefacilities b{
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
 }
 
 .sharing {
-    display: flex;
-    margin-top: 3rem;
+  
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 220px);
+    /* justify-content: space-evenly; */
+  
 }
 
 h4, b {
@@ -135,32 +67,74 @@ h4, b {
 
 .sharing div {
     border: 0.5px solid black;
-    width: 11rem;
+    width: 14rem;
     height: 10rem;
+   
+}
+.sharing b,h4{
+margin-left: 10%;
+  justify-content: center;
+}
+.acavailable{
+  display: flex;
+ 
+}
+.facility,.setofnames{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 6px;
+  font-size: medium;
+  margin-top: 20px;
+ 
+ }
+ 
+ 
+.acavailable div {
+  border: 0.5px solid black;
+  width: 11rem;
+  height: 10rem; 
+  margin-top: 10px; 
 }
 
-.time {
+.time{
     display: flex;
-    word-spacing: 6px;
-    margin: 3rem 0 0 0;
-    align-content: space-evenly;
+   font-size: 20px;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 .facilities {
     margin: 2rem 0 0 5rem;
+    color:blue;
 }
 
 strong {
     font-size: 25px;
+    margin-left: 7%;
 }
 
 .faculties {
     display: flex;
     justify-content: space-evenly;
 }
+.rules{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:space-evenly;
+}
+.rules b , img.yesorno{
+  padding-left: 10%;
+}
+
+.rulesandregulations{
+  display: flex;
+  margin:2rem 2rem 2rem 2rem;
+  justify-content: space-evenly;
+}
 
 
-.button {
+.delete , .edit{
     color: white;
     background-color: red;
     border: none;
@@ -171,17 +145,12 @@ strong {
 align-items: center;
 justify-content: center;
 }
-button.edit{
-  color: white;
-    background-color: red;
-    border: none;
-    height: 40px;
-    width: 80px;
-    margin-top: 2rem;
-    display:flex;
-align-items: center;
-justify-content: center;
+
+.faculties_image{
+  display: flex;
+justify-content: space-evenly;
 }
+
 
 .edit {  
     margin-left: 55rem;
@@ -193,159 +162,7 @@ justify-content: center;
 }
 
 
-/* 
-.rent{
 
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: 1px solid;
-    margin-top: 3%;
-    flex-wrap: nowrap;
-}
-/* .bar{
-    display: flex;
-   border:1px solid;
-   /* width:80%; */
-   /* margin-top: 3%;
-   background-color: #fff;
-   border-radius: 8px;
-   box-shadow: 1px 2px rgb(0 0 0 /20%);
-   background-clip: padding-box;
-   margin-left: 1%;
-} */
- 
-/* .button{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2%;
-  
-  margin-left: 8%;
-  margin-bottom: 4%;
-} */
-
-     /* .button{
-        display:inline-block;
-        background-color: #f44336;
-        color:#FFF;
-        padding:14px 25px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        margin-left:20px;
-        opacity:0.9;
-      }
-      a{
-        color:white;
-        text-decoration: none;
-      }
-      .main-content{
-        display: flex;
-        flex-direction: column; 
-        margin-left: 3%;
-        align-content: space-around;
-        flex-wrap: nowrap;
-        justify-content: center;
-       
-      }
-      .roomdetail img{
-        width:99%;
-        height:50%;
-      }
-      .bar img{
-        margin-top: 3%;
-        margin-left: 2%;
-        height:400px;
-        width:350px;
-        margin-bottom: 2%;
-        
-      }
-      .passage{
-        border-bottom: 1px solid;
-      }
-      .one{
-        display: flex;
-        flex-direction: column;
-      }
-      .slide{
-        display: flex;
-        margin-top: 3%;
-        margin-right: 1%;
-      }
-      .main{
-        display: flex;
-        border:1px solid;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        height:auto;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 1px 2px rgb(0 0 0 /20%);
-        background-clip: padding-box;
-       
-        align-content: space-around;
-        width:80%;
-        margin-left: 10%;
-      }
-      .sidebar{
-        margin-left: 7%;
-      }
-      .main img{
-        margin-right: 2%;
-        margin-top: 2%;
-        margin-bottom: 2%;
-      }
-      .another{
-        display:flex;
-        
-
-      }
-      .texttop{
-        border:1px solid;
-        
-        
-        height:auto;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 1px 2px rgb(0 0 0 /20%);
-        background-clip: padding-box;
-        align-content: space-around;
-        width:80%;
-        margin-left: 10%;
-      }
-      .another1{
-        display: flex;
-        margin-top: 3%;
-        flex-wrap: nowrap;
-        margin-left: 3%;
-        justify-content: space-evenly;
-      }
-      .\31{
-        display: flex;
-        flex-direction: column;
-      }
-      .\32{
-        display: flex;
-        flex-direction: column;
-      }
-      .\33{
-        display: flex;
-        flex-direction: column;
-      }
-      i.fa.fa-check-circle-o{
-        margin-right: 1%;
-      }
-      /* .{
-        display:inline-block;
-        background-color: darkred;
-        color:#FFF;
-        padding:14px 25px;
-        text-align: center;
-        text-decoration: none;
-        margin-right: 30%;
-        margin-left:18%;
-        opacity:0.9;
-      } */
-     
       .roomdetail{
        width:48vh;
        height:100%;
@@ -364,9 +181,7 @@ justify-content: center;
         
        }
       
-       td{
-        padding-top: 8%;
-       }
+     
        .fecilities{
         margin-top: 8%;
         margin-bottom: 8%;
@@ -404,6 +219,8 @@ justify-content: center;
       h3{
         margin-left: 4%;
         margin-bottom: 3%;
+        color:darkmagenta;
+        font-size: 24px;
         
       }
      .otherfecilities{
@@ -420,61 +237,13 @@ justify-content: center;
         margin-left: 3%;
      }
 
-     footer{
-        
-        background-color: skyblue;
-        margin-top: 10%;
-        padding-bottom: 4%;
-     }
-     .footerone{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-     }
-     .footer2{
-        margin-bottom: 4%;
-        margin-top: 8%;
-     }
-     .footer1{
-      display: flex;
-        margin-top: 3%;
-        margin-left: 3%;
-        
-     }
-     .link{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-     }
-     h2{
+    
+    .address h2{
       color:deeppink;
      }
-
-/* @media screen and (max-width:800px)
-     /* {
-       */
-      /* nav{
-        width:1600px;
-      }
-      div.magic{
-        margin-right: 0%;
-
-      }
-      div.start{
-        width:200vh;
-        margin-bottom: 4%;
-      }
-      div.bar{
-        margin-left: 4%;
-      }
-      .main{
-        margin-left: 19%;
-        width:160vh;
-        margin-top: 3%;
-      }
-    } 
- */ 
-
+     .fivefacilities img{
+      margin-bottom: 8%;
+     }
 
 
     

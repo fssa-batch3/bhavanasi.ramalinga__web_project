@@ -1,13 +1,49 @@
 *{font-family: 'Poppins', sans-serif;}
-input[type=text], input[type=password] {
+/* header start */
+/* h1 {
+	font-size: 60px;
+	text-align: center;
+	color:black;
+  display: flex;
+}	 */
+
+
+
+
+
+
+/* header end */
+
+
+/* input[type=text], input[type=password], input[type=number]{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 9px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    */
 
+  /* } */
+  input[type=text],input[type=url],input[type=number],select#available,input[type=tel]{
+    width: 90%;
+    padding: 10px;
+    margin-right: 10px;
+   
+    border: 1px solid #ccc;
+   
   }
+  .plus-button,.plus-buttons {
+    cursor: pointer;
+    color: blue;
+    font-size: 2vh;
+  }
+
+
+ .pgdetails{
+  margin-right: 30px;
+ }
+ 
 
   .more{
     margin-left: 3%;
@@ -16,32 +52,47 @@ input[type=text], input[type=password] {
     display:inline-block;
 
   }
-  h1{
+  h2{
     color:deeppink;
     display: flex;
   }
   .image img{
-    height: 50vh;
+    height: 40vh;
   }
   .information{
     display: flex;
-    border:1px solid;
+    /* border:1px solid; */
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 8%;
   }
 
+
 form{
-    
-    width: 400px;
-    border:3px solid #f1f1f1;
-    margin-top: 100px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  box-sizing: border-box; /* Include padding and border within the element's total width */
+  padding: 10px;
+    /* width: 200%;
+    border:3px solid #f1f1f1; */
+    /* margin-top: 100px; */
     box-shadow: 20px 20px 50px 15px white;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     
 }
+
+.fa.fa-user{
+  margin-top: 10px;
+  color:white;
+  font-size:36px;
+}
+
+
 .container {
-    padding: 19px;
+    padding: 19px ;
+    display: flex;
+    
+    justify-content: space-around;
   }
   
   span.psw {
@@ -54,7 +105,7 @@ form{
   
   
   button {
-    background-color: #04AA6D;
+    background-color: #094067;
     color: white;
     padding: 14px 20px;
      border: none;
@@ -63,8 +114,10 @@ form{
    margin-left: 35%;
    height: 50px;  
   }
+  
   select#available{
     margin-bottom: 8%;
     margin-top: 4%;
   }
+  
   

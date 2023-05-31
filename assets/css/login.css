@@ -1,6 +1,134 @@
 
+
+
+
+
 @import "normalize.css";
 
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* td,th{
+  border:1px solid #252424;
+  text-align: left;
+  padding:10px;
+}
+.magic{
+  margin-right: 70%;
+}
+table{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+}
+tr:nth-child(odd) {
+  background-color:#dddddd;
+
+} */
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color:black;
+  display: flex;
+}	
+
+
+
+h3 a {
+	color:black;
+}
+
+a {
+	color:black;
+    text-decoration: none;
+}
+
+
+#container {
+	margin: 0 auto;
+}
+
+
+
+nav {
+
+	background-color:#094067;
+  position: fixed;
+  top:0;
+  width:100%;
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+    display:flex;
+    align-content: center;
+    justify-content: space-around;
+    height:70px;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #094067;
+  height:70%;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color:none; 
+}
+
+
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px;
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+.magic{
+  margin-right: 40%;
+}
+
+  .last{
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
 
 *{font-family: 'Poppins', sans-serif;}
 input[type=text], input[type=password] {
@@ -10,11 +138,12 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    
 
   }
   
   button {
-    background-color: #04AA6D;
+    background-color:#094067;
     color: white;
     padding: 14px 20px;
      border: none;
@@ -69,7 +198,7 @@ a:link, a:visited{
 
 
 form{
-    height:450px;
+    height:480px;
     width: 400px;
     border:3px solid #f1f1f1;
     margin-top: 100px;

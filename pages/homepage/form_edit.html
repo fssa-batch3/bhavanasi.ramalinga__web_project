@@ -1,151 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     
-    <link   rel="stylesheet"     href="../../assets/css/form_read.css">
-    <meta charset="UTF-8">   
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form_edit</title>
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-</head>
-<body>
-    <form role="form">
+        <link rel="stylesheet" href="../../assets/css/form_read.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+        <meta charset="UTF-8">   
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Form_edit</title>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    </head>
+    <body>
+        <header>
+
+        </header>
+  
+        <form role="form" onsubmit="update(event)">
+            <div class="readform">
         
-        <div class="container">
-        <label for="name"><b> pg_Name</b></label>
-        <input type="text" placeholder="pg_name" id="name" pattern="[a-zA-Z]+"id="name" disabled><br><br>
-        
+                <div class="container">
+          
+                    <label for="name">
+                        <b> 1.pg_Name</b>
+                    </label>
+                    <input type="text" placeholder="pg_name" id="name"id="name" disabled >
+                    <br>
+                    <br>
        
-        <label for="type"><b>Rooms categories are available and rent</b></label><br>
-        <input type="checkbox" id="one_share" name="vehicle1"   disabled>
-      <label for="sharing"> single sharing </label><input  placeholder="rent" id="onesharing"   ><br><br>
+                                   
 
-      <input type="checkbox" id="two_share" name="vehicle2"   disabled>
-      <label for="sharing">Twin sharing </label><input  placeholder="rent" id="twosharing" ><br><br>
+                 
+                <div class="section">
 
-      <input type="checkbox" id="three_share" name="vehicle3" disabled>
-      <label for="sharing"> Triple sharing  </label><input  placeholder="rent"id="threesharing" ><br><br>
-
-      <input type="checkbox" id="four_share" name="vehicle4" disabled >
-      <label for="sharing"> Four sharing </label><input  placeholder="rent"id="foursharing"  ><br><br>
-
-      <label for="name"><b> Deposite amount</b></label>
-      <input type="text" placeholder=""name="fname" id="amount" required><br><br>
+                    <label for="name">
+                        <b> 3.Deposite amount</b>
+                    </label>
+                    <input type="number" name="fname" id="advance" min="4000" max="10000" pattern="[0-9]+" required>
+                    <br>
+                    <br>
       
-      <label for="sharing"> Notice Period </label>
-      <input  id="period" required><br><br>
+                    <label for="sharing">
+                        <b>4. Notice Period</b><br>
+                    </label>
+                    <input  type="text"id="period" placeholder="example:10 days " min="10 days " max="30 days " required>
+                    <br>
+                    <br>
     
-      <label for="sharing"> Closing Time </label>
-      <input  id="time" required><br><br>
-   
+                    <label for="sharing">
+                        <b>5. Closing Time </b><br>
+                    </label>
+                    <input  type="text" id="time" placeholder ="eample:11:00 PM"pattern="^(0?[1-9]|1[0-2]):([0-5]\d) (AM|PM)$" required>
+                    <br>
+                    <br>
 
-      <label for="sharing"> Available For</label>
-      <input  id="available" required><br><br>
+                    <label for="sharing">
+                        <b>6.Available For</b>
+                    </label>
+                    <input type="text"id="available" >
+                    <br>
+                    <br>
   
 
-   
-    <label for="sharing"> Total Number of Beds </label>
-    <input  id="beds" required><br><br>
-     
+                 
+                </div>
+                    <label for="sharing">
+                        <b>7.No.of Beds</b> 
+                    </label>
+                    <input type="number"id="beds" required placeholder="example: 60 beds" min="20" max="200">
+                    <br>
+                    <br>
 
+                  
 
-      <label for="pg_name"><b>Image</b></label>
-        <input type="text"  name="image" id="image" ><br><br>
+                    <label for="pg_name">
+                        <b>13.Image</b><br>
+                    </label>
+                    <input type ="url" id="image" >
+                    <br>
+                    <br>
 
-         <label for="address"><b> Address</b></label><br>
-        <textarea type="text"id="address" ></textarea><br>
+                    <label for="address">
+                        <b>14. Address</b>
+                    </label>
+                    <br>
+                    <textarea type="text"id="address" required></textarea>
+                    <br>
+                  
+                         
+                      
+                          
+                     
+                      
+                </div>
+            </div>
         
-        <div class="last">
-            <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
-          <button type="button"  onclick="update(event)" class="registerbtn">submit</button>
+            <div class="last">
+                <!-- <button type="button"  onclick="del(event)"class="registerbtn" >delete</button> -->
+                <button type="submit" class="registerbtn">submit</button>
           
-      </div>
-    </form>
-    <script>
+            </div>
+        </form>
+       
+        <script src="../../assets/js/header.js"></script>
+        <script src ="/assets/js/footer.js"></script>
+        <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const my_uuid = urlParams.get('my_uuid');
-        let users = JSON.parse(localStorage.getItem("users"));
+        const my_uuid = urlParams.get("my_uuid");
+        const details = JSON.parse(localStorage.getItem("pgdetails"));
+        console.log(details);
+        // aniditional information //
+       
 
-    
-   function login_data(e){
-      
-      return e.my_uuid == my_uuid;
-    }
-     let user_data = users.find(login_data);
-     console.log(users)
+function login_data(e) {
+  return e.my_uuid == my_uuid;
+}
+const user_data = details.find(login_data);
+console.log(details);
 
-     document.getElementById("name").value = user_data["name"];
-    document.getElementById("one_share").checked = user_data["one_share"];
-    document.getElementById("two_share").checked = user_data["two_share"];
-    document.getElementById("three_share").checked = user_data["three_share"];
-    document.getElementById("four_share").checked = user_data["four_share"];
+document.getElementById("name").value = user_data.pg_details.name;
 
-document.getElementById("name").value = user_data["name"]
-document.getElementById("onesharing").value = user_data["onesharing"];
-    document.getElementById("twosharing").value = user_data["twosharing"];
-    document.getElementById("threesharing").value = user_data["threesharing"];
-    document.getElementById("foursharing").value = user_data["foursharing"];
-   document.getElementById("beds").value = user_data["beds"];
-   document.getElementById("time").value = user_data["time"];
-   document.getElementById("period").value = user_data["period"];
-   document.getElementById("available").value = user_data["available"];
-    document.getElementById("image").value = user_data["image"];
-    document.getElementById("address").value = user_data["address"];
-    document.getElementById("amount").value = user_data["amount"];
+document.getElementById("beds").value = user_data.pg_details.beds;
+document.getElementById("time").value = user_data.pg_details.time;
+document.getElementById("period").value = user_data.pg_details.period;
+document.getElementById("available").value = user_data.pg_details.available;
+document.getElementById("image").value = user_data.pg_details.image;
+document.getElementById("address").value = user_data.pg_details.address;
+document.getElementById("advance").value = user_data.pg_details.advance;
 
-    function update(e){
+// document.getElementById("secondname").value = user_data["secondname"];
 
-e.preventDefault();
+// document.getElementById("parking").value = user_data.facilities_data[0];
+// document.getElementById("tv").value = user_data.facilities_data[2];
+// document.getElementById("wifi").value = user_data.facilities_data[4];
+// document.getElementById("food").value = user_data.facilities_data[6];
+// document.getElementById("fridge").value = user_data.facilities_data[8];
+// // more images //
+// document.getElementById("image1").value =
+//   user_data.facilities_data[1];
+// document.getElementById("image2").value =
+//   user_data.facilities_data[3];
+// document.getElementById("lastimage").value =
+//   user_data.facilities_data[5];
+// document.getElementById("image4").value =
+//   user_data.facilities_data[7];
 
-let up_name = document.getElementById("name").value
-let up_address = document.getElementById("address").value
-let up_onesharing = document.getElementById("onesharing").value
-let up_twosharing = document.getElementById("twosharing").value
-let up_threesharing = document.getElementById("threesharing").value
-let up_foursharing = document.getElementById("foursharing").value
-let up_image = document.getElementById("image").value
+function update(e) {
+  e.preventDefault();
+
+  const up_name = document.getElementById("name").value;
+  const up_address = document
+    .getElementById("address")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+ 
+  const up_image = document.getElementById("image").value;
+  const up_beds = document.getElementById("beds").value;
+ 
+  const up_available = document.getElementById("available").value;
+ 
+  const up_period = document.getElementById("period").value;
+  const up_time = document.getElementById("time").value;
+  const up_advance = document.getElementById("advance").value;
+  // let up_secondname = document.getElementById("secondname").value
+  
+
+            user_data.pg_details.name = up_name;
+            user_data.pg_details.address = up_address;
+            user_data.pg_details.beds = up_beds;
+            
+            user_data.pg_details.image = up_image;
+            
+            user_data.pg_details.available = up_available;
+            
+            user_data.pg_details.period = up_period;
+            user_data.pg_details.time = up_time;
+            user_data.pg_details.advance = up_advance;
+  // user_data["secondname"] = up_secondname;
+
+  
+
+   localStorage.setItem("pgdetails", JSON.stringify(details));
+
+  window.location.href = "../products/seller_product.html";
+}
+// getting data from local storage //
+const arrayofdata = details.find((e) => e.my_uuid == my_uuid);
+      console.log(arrayofdata);
+
+if (arrayofdata&& Array.isArray(arrayofdata.share_data)) {
+  // Access the array details within the object
+  const share_data = arrayofdata.share_data;
+
+  console.log(share_data);
+  } else {
+  console.log("Invalid or missing data in local storage");
+   }
 
 
-user_data["name"] = up_name;
-user_data["address"] = up_address;
-user_data["onesharing"] = up_onesharing;
-user_data["twosharing"] = up_twosharing;
-user_data["threesharing"] = up_threesharing;
-user_data["foursharing"] = up_foursharing;
+const div_border = document.createElement("div");
+div_border.setAttribute("class", "border");
+console.log(div_border);
+document.querySelector(".readform").append(div_border);
 
-localStorage.setItem("users", JSON.stringify(users));
+// Create the label element for "Type of share"
+ if (arrayofdata && Array.isArray(arrayofdata.share_data)) {
+  const arrayshare_data = arrayofdata.share_data;
+  for (let i = 0; i < arrayshare_data.length; i++) {
+    const typeOfShareLabel = document.createElement("label");
+    typeOfShareLabel.setAttribute("for", "typeofshare");
+    typeOfShareLabel.innerHTML = "<b>Type of share</b>";
+    div_border.append(typeOfShareLabel);
 
-window.location.href="./edit and update owners.html"
+    // Create the input element for "Type of share"
+    const typeOfShareInput = document.createElement("input");
+    typeOfShareInput.setAttribute("type", "text");
+    typeOfShareInput.setAttribute("id", "typeofshare");
+   
+    typeOfShareInput.value = arrayshare_data[i].name;
+    typeOfShareInput.setAttribute("required", true);
+    div_border.append(typeOfShareInput);
 
+    // Create line break elements
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    // Create the label element for "Rent"
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Rent</b> <br>";
+    div_border.append(rentLabel);
+
+    // Create the input element for "Rent"
+    const rentInput = document.createElement("input");
+    rentInput.setAttribute("type", "text");
+    rentInput.setAttribute("id", "onesharerent");
+    // rentInput.setAttribute("min", "1000");
+    // rentInput.setAttribute("max", "30000");
+    // rentInput.setAttribute("pattern", "[0-9]+");
+    rentInput.setAttribute("required", true);
+    rentInput.value = arrayshare_data[i].rent;
+    div_border.appendChild(rentInput);
+
+
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    const imageLabel = document.createElement("label");
+    imageLabel.setAttribute("for", "onesharerent");
+    imageLabel.innerHTML = "<b>Image</b> <br>";
+    div_border.append(imageLabel);
+
+    // Create the input element for "Image"
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("min", "1000");
+    imageInput.setAttribute("max", "30000");
+   
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare_data[i].image;
+    div_border.append(imageInput);
+
+    div_border.append(document.createElement("br"));
+    div_border.append(document.createElement("br"));
+
+    typeOfShareInput.addEventListener("input", function () {
+      arrayshare_data[i].name = typeOfShareInput.value;
+      updateLocalStorage();
+    });
+
+    rentInput.addEventListener("input", function () {
+      arrayshare_data[i].rent = rentInput.value;
+      updateLocalStorage();
+    });
+
+    imageInput.addEventListener("input", function () {
+      arrayshare_data[i].image = imageInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("not valid");
 }
 
-// function del(e){
-// e.preventDefault();
-// if(confirm("Are you sure delete your account?")){
-
-// let userId = JSON.parse(localStorage.getItem("name"));
-// let users = JSON.parse(localStorage.getItem("users"));
-
-// function login_data(e){
- 
-// return e.name == name;
-// }
-
-// user_data = users.find(login_data);
+// Function to update localStorage with the updated data
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("pgdetails", JSON.stringify(arrayofdata));
+  }
+}
 
 
-// const indexOfUser = users.indexOf(user_data);
-// console.log(indexOfUser);
-// users.splice(indexOfUser, 1);
-// // console.log(indexOfUser);  
-// localStorage.setItem("users", JSON.stringify(users));   
-// window.location.href="./edit and update owners.html";
-// }
-// // localStorage.
-// }
+// .......................................................................another for loop ......................................
+
+if (arrayofdata && Array.isArray(arrayofdata.facilities_data)) {
+  // Access the array details within the object
+  const facilities_data = arrayofdata.facilities_data;
+
+  console.log(facilities_data);
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+const div_borders = document.createElement("div");
+div_borders.setAttribute("class", "border");
+console.log(div_borders);
+document.querySelector(".container").append(div_borders);
+
+// Create the label element for "Facility of the pg"
+if (arrayofdata && Array.isArray(arrayofdata.facilities_data)) {
+  const arrayshare = arrayofdata.facilities_data;
+  for (let j = 0; j< arrayshare.length; j++) {
+
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Facility of the pg</b> <br>";
+    div_borders.append(rentLabel);
+
+    // Create the input element for "Facility"
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare[j].image;
+    div_borders.append(imageInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const imageLabel = document.createElement("label");
+    imageLabel.setAttribute("for", "image");
+    imageLabel.innerHTML = "<b>Image</b> <br>";
+    div_borders.append(imageLabel);
+
+    // Create the input element for "Facility"
+    const rentInput = document.createElement("input");
+    rentInput.setAttribute("type", "text");
+    rentInput.setAttribute("id", "onesharerent");
+    rentInput.setAttribute("required", true);
+    rentInput.value = arrayshare[j].name;
+    div_borders.append(rentInput);
+
+    div_borders.append(document.createElement("br"));
+
+    imageInput.addEventListener("input", function () {
+      arrayshare[j].image = imageInput.value;
+      updateLocalStorage();
+    });
+
+     rentInput.addEventListener("input", function () {
+      arrayshare[j].name = rentInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+// Function to update localStorage with the updated data
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("facilities_data", JSON.stringify(arrayofdata));
+  }
+}
+// getting rulesofpg //...............................................................................................................................
+if (arrayofdata && Array.isArray(arrayofdata.rulesOfPG)) {
+  const arrayshare = arrayofdata.rulesOfPG;
+  for (let h = 0; h < arrayshare.length; h++) {
+    const rentLabel = document.createElement("label");
+    rentLabel.setAttribute("for", "onesharerent");
+    rentLabel.innerHTML = "<b>Facility of the pg</b> <br>";
+    div_borders.append(rentLabel);
+
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "text");
+    imageInput.setAttribute("id", "onesharerent");
+    imageInput.setAttribute("required", true);
+    imageInput.value = arrayshare[h].image;
+    div_borders.append(imageInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const nameInput = document.createElement("input");
+    nameInput.setAttribute("type", "text");
+    nameInput.setAttribute("id", "onesharerent");
+    nameInput.setAttribute("required", true);
+    nameInput.value = arrayshare[h].name;
+    div_borders.append(nameInput);
+
+    div_borders.append(document.createElement("br"));
+
+    const ruleInput = document.createElement("input");
+    ruleInput.setAttribute("type", "url");
+    ruleInput.setAttribute("id", "onesharerent");
+    ruleInput.setAttribute("required", true);
+    ruleInput.value = arrayshare[h].rule;
+    div_borders.append(ruleInput);
+
+    div_borders.append(document.createElement("br"));
+
+    imageInput.addEventListener("input", function () {
+      arrayshare[h].image = imageInput.value;
+      updateLocalStorage();
+    });
+
+    nameInput.addEventListener("input", function () {
+      arrayshare[h].name = nameInput.value;
+      updateLocalStorage();
+    });
+
+    ruleInput.addEventListener("input", function () {
+      arrayshare[h].rule = ruleInput.value;
+      updateLocalStorage();
+    });
+  }
+} else {
+  console.log("Invalid or missing data in local storage");
+}
+
+function updateLocalStorage() {
+  if (localStorage) {
+    localStorage.setItem("facilities_data", JSON.stringify(arrayofdata));
+  }
+}
+
+// amother input fields in the edit page // ......................................................................................................
 
 
-    </script>
 
+
+
+  
+ </script>
+  
+    </body>
+</html>

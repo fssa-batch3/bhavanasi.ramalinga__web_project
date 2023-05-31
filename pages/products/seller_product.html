@@ -1,0 +1,419 @@
+<!DOCTYPE >
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../assets/css/single1.css">
+        <link rel="stylesheet" href="../../assets/css/header.css">
+        <link rel="stylesheet" href="../../assets/css/footer.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <title>seller_page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+            </div>
+        <div class="section"></div>
+        
+       
+      
+<script>
+ const filteredUseravailable = JSON.parse(localStorage.getItem("pgdetails"));
+      console.log(filteredUseravailable);
+
+      const seller_id = JSON.parse(localStorage.getItem("userId"));
+    console.log(seller_id);
+
+// const findData = filteredUseravailable.find((e) => {
+//   return Array.isArray(e.pg_details) && e.pg_details.every(item => item.owner_id !== seller_id);
+ 
+// });
+
+// console.log(findData);
+
+const findData = filteredUseravailable.filter((e) => e.pg_details.owner_id === seller_id);
+console.log(findData);
+
+if (findData && Array.isArray(findData.share_data)) {
+  // Access the array details within the object
+  const share_data = findData.share_data;
+
+  console.log(share_data);
+  } else {
+  console.log("Invalid or missing data in local storage");
+   }
+
+  //  const filterdata = findData.filter((e) => e.customer_id === customer);
+  //       console.log(filterdata);
+
+
+        if (findData.length === 0) {
+     const noDataMessage = document.createElement("h2");
+      noDataMessage.setAttribute("class","message")
+      noDataMessage.innerText = "Sorry , You Did not Added any pg";
+    document.querySelector(".section").append(noDataMessage);
+    } else {
+
+
+  for (let i = 0; i < findData.length; i++) {
+    const div_border = document.createElement("div");
+    div_border.setAttribute("class", "border");
+    console.log(div_border);
+    document.querySelector(".section").append(div_border);
+
+    const div_detail = document.createElement("div");
+    div_detail.setAttribute("class", "pg_detail");
+    div_border.append(div_detail);
+
+    const div_image = document.createElement("div");
+    div_detail.append(div_image);
+
+    const img = document.createElement("img");
+    img.setAttribute("src", findData[i].pg_details.image);
+    img.setAttribute("alt", "photo");
+    img.setAttribute("height", "400px");
+    img.setAttribute("width", "450px");
+    div_image.append(img);
+
+    const div_address = document.createElement("div");
+    div_address.setAttribute("class", "address");
+    div_detail.append(div_address);
+
+    const h2 = document.createElement("h2");
+    h2.innerText = findData[i].pg_details.name;
+    div_address.append(h2);
+
+    const p = document.createElement("p");
+    p.innerText = findData[i].pg_details.address;
+    div_address.append(p);
+
+    const div_sharing = document.createElement("div");
+    div_sharing.setAttribute("class", "sharing");
+    div_address.append(div_sharing);
+
+    // single sharing //
+    if ( findData &&Array.isArray(findData[i].share_data)) {
+      const arrayshare_data = findData[i].share_data;
+
+      for (let j = 0; j < arrayshare_data.length; j++) {
+        const singleshare = document.createElement("div");
+        singleshare.setAttribute("id", "share");
+        singleshare.setAttribute("class", "Single Sharing");
+        div_sharing.append(singleshare);
+
+      
+        const div_one = document.createElement("div");
+        div_one.setAttribute("class", "data");
+        singleshare.append(div_one);
+
+        const h4 = document.createElement("h4");
+        h4.innerText = arrayshare_data[j].name;
+        div_one.append(h4);
+
+        const bold = document.createElement("b");
+        bold.setAttribute("class", "month");
+        bold.innerText = "Monthly Rent:";
+        div_one.append(bold);
+
+        const p_one = document.createElement("p");
+        p_one.innerText = arrayshare_data[j].rent + "/-";
+        bold.append(p_one);
+
+
+        
+
+       
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+
+
+    
+    const div_facilities = document.createElement("div");
+   div_facilities.setAttribute("class", "facilities");
+   div_detail.append(div_facilities);
+
+ 
+ const div_faculties = document.createElement("div");
+  div_faculties.setAttribute("class", "faculties");
+  div_facilities.append(div_faculties);
+  //images//
+  const rulesandregulation = document.createElement("h3");
+      rulesandregulation.innerText = "Rules and regulation :";
+      div_border.append(rulesandregulation);
+
+      const div_time = document.createElement("div");
+      div_time.setAttribute("class", "time");
+      div_border.append(div_time);
+
+
+      const para = document.createElement("b");
+      para.innerText = " Book the PG before:";
+      div_time.append(para);
+
+      const pgclosingtime = document.createElement("p");
+      pgclosingtime.innerText = findData[i].pg_details.period;
+      para.append(pgclosingtime);
+
+      const para_one = document.createElement("b");
+      para_one.innerText = "PG Closing Time :";
+      div_time.append(para_one);
+
+      const bold_one = document.createElement("p");
+      bold_one.innerText = findData[i].pg_details.time;
+      para_one.append(bold_one);
+
+      const para_two = document.createElement("b");
+      para_two.innerText = "Available For:";
+      div_time.append(para_two);
+
+      const bold_two = document.createElement("p");
+      bold_two.innerText = findData[i].pg_details.available;
+      para_two.append(bold_two);
+
+      const para_three = document.createElement("b");
+      para_three.innerText = "No.of beds:";
+      div_time.append(para_three);
+
+      const bold_three = document.createElement("p");
+      bold_three.innerText = findData[i].pg_details.beds;
+      para_three.append(bold_three);
+
+      const sharing_room_advance = document.createElement("b");
+      sharing_room_advance.setAttribute("class", "advance");
+      sharing_room_advance.innerText = "For all sharing rooms Advance:";
+
+      div_time.append(sharing_room_advance);
+
+      const sharing_amount = document.createElement("p");
+      sharing_amount.innerText = findData[i].pg_details.advance;
+      sharing_room_advance.append(sharing_amount);
+
+     
+       //facilities more//
+      const div_facility = document.createElement("div");
+      div_facility.setAttribute("class", "facilities");
+      div_border.append(div_facility);
+
+      strong = document.createElement("h3");
+      strong.innerText = "Facilities:";
+      div_facility.append(strong);
+
+      const div_facultieses = document.createElement("div");
+      div_facultieses.setAttribute("class", "faculties");
+      div_border.append(div_facultieses);
+
+      //images//
+      if ( findData &&Array.isArray(findData[i].facilities_data)) {
+      const facilities = findData[i].facilities_data;
+
+      for (let k = 0; k< facilities.length; k++) {
+        const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","fivefacilities");
+      div_facultieses.append(cooking_image);
+
+      const img_picture = document.createElement("img");
+      img_picture.setAttribute("src", facilities[k].image);
+      img_picture.setAttribute("alt", "photo");
+      img_picture.setAttribute("height", "100px");
+      img_picture.setAttribute("width", "120px");
+      cooking_image.append(img_picture);
+
+      
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = facilities[k].name;
+      cooking_image.append(facilityfifthname);
+
+        
+
+       
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+
+    const rulesandregulations = document.createElement("div");
+    rulesandregulations.setAttribute("class", "rulesandregulations");
+      div_border.append(rulesandregulations);
+
+    // more details of the pg //
+    if ( findData &&Array.isArray(findData[i].rulesOfPG)) {
+      const pgrules = findData[i].rulesOfPG;
+
+      for (let h = 0; h< pgrules.length; h++) {
+        const cooking_image = document.createElement("div");
+      cooking_image.setAttribute("class","rules");
+      rulesandregulations.append(cooking_image);
+
+      const image = document.createElement("img");
+      image.setAttribute("src", pgrules[h].image);
+      image.setAttribute("alt", "photo");
+      image.setAttribute("height", "100px");
+      image.setAttribute("width", "120px");
+      cooking_image.append(image);
+
+      
+      const facilityfifthname = document.createElement("b");
+      facilityfifthname.innerText = pgrules[h].name;
+      cooking_image.append(facilityfifthname);
+
+      const img_pictures = document.createElement("img");
+      // img_pictures.setAttribute("class","yesorno");
+      img_pictures.setAttribute("src", pgrules[h].rule);
+      img_pictures.setAttribute("alt", "photo");
+      img_pictures.setAttribute("height", "50px");
+      img_pictures.setAttribute("width", "60px");
+      cooking_image.append(img_pictures);
+
+      }
+    } else {
+      console.log("Invalid or missing data in local storage");
+    }
+    div_last = document.createElement("div");
+  div_last.setAttribute("class", "last");
+  div_border.append(div_last);
+
+  button = document.createElement("button");
+  button.setAttribute("class", "edit");
+  button.setAttribute("data-id", findData[i].my_uuid);
+  button.setAttribute("type", "submit");
+  button.innerHTML = "Edit";
+  div_last.append(button);
+
+  button_del = document.createElement("button");
+  button_del.setAttribute("type", "submit");
+  button_del.setAttribute("class", "delete");
+  button_del.setAttribute("data-del", findData[i].my_uuid);
+  // button_del.setAttribute("onclick", "del()")
+  button_del.innerHTML = "Delete";
+  div_last.append(button_del);
+  }
+      
+
+      // another image//
+
+  //button//
+
+  
+
+
+  }
+
+
+
+  //facilities// 
+
+const selectbtn = document.querySelectorAll(".edit");
+selectbtn.forEach((each) => {
+  each.addEventListener("click", (event) => {
+    const person_data = findData.find(
+      (book) => book.my_uuid === each.dataset.id
+    );
+
+    window.location.href = `../homepage/form_edit.html?my_uuid=${person_data.my_uuid}`;
+  });
+});
+
+const del_pgs = document.querySelectorAll("button.delete");
+del_pgs.forEach(function (check) {
+  check.addEventListener("click", function () {
+    const unique_id = this.dataset.del;
+    localStorage.setItem("uniqueId", JSON.stringify(unique_id));
+
+    if (confirm("Are you sure to delete this pg?")) {
+      const id = JSON.parse(localStorage.getItem("uniqueId"));
+      console.log(id);
+      const all_pgs = JSON.parse(localStorage.getItem("pgdetails"));
+      console.log(all_pgs);
+      const pg_check = all_pgs.find((e) => e.my_uuid == id);
+      console.log(pg_check);
+      const pgs = all_pgs.indexOf(pg_check);
+      all_pgs.splice(pgs, 1);
+      console.log(pgs);
+      localStorage.setItem("pgdetails", JSON.stringify(all_pgs));
+      location.reload();
+    }
+  });
+});
+
+// function del(){
+
+//     if(confirm("Are you sure to delete this product ?")){
+
+//                 let users = JSON.parse(localStorage.getItem("users"));
+
+//                 let user_id = JSON.parse(localStorage.getItem("my_uuid"));
+
+//                 console.log(user_id);
+
+//                 function check (e){
+
+//                     return e.my_uuid == user_id;
+
+//                 }
+
+//                 users = users.find(check)
+
+//                 let indexOfUser = users.indexOf(users);
+
+//                 users.removeI(indexOfUser, 1);
+
+//                 localStorage.setItem("users", JSON.stringify(users));
+
+//                 // window.location.href = "../edit and update owners.html";
+
+//     }
+
+// }
+
+//      function del(e){
+//         e.preventDefault();
+
+//         if(confirm("Are you sure delete your account?")){
+
+//     let userId = JSON.parse(localStorage.getItem('userId'));
+//     let user_cred = JSON.parse(localStorage.getItem('user_cred'));
+
+//     function login_data(e){
+//       return e.email == userId;
+//     }
+
+//     user_data = user_cred.find(login_data);
+
+//     const indexOfUser = user_cred.indexOf(user_data);
+// console.log(indexOfUser);
+// user_cred.splice(indexOfUser, 1);
+// // console.log(indexOfUser);
+// localStorage.setItem("user_cred", JSON.stringify(user_cred));
+// window.location.href="./rent.html";}}
+
+// let del_product = document.querySelector(".that");
+// del_product.addEventListener("click", delData);
+// function delData() {
+//   if (confirm("Are you sure?")) {
+//     let uid = JSON.parse(localStorage.getItem("product_uuid"));
+//     let product = JSON.parse(localStorage.getItem("product_crud"));
+//     function find_data(e) {
+//       return e.product_uuid == uid;
+//     }
+//     product_data = product.find(find_data);
+//     const indexOfUser = product.indexOf(product_data);
+//     product.splice(indexOfUser, 1);
+//     localStorage.setItem('product_crud', JSON.stringify(product));
+//     location.reload();
+//   };
+// }
+    </script> 
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/header.js"></script> 
+    
+    </body>
+</html>
+

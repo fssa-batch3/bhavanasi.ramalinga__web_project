@@ -1,6 +1,33 @@
-*{font-family: 'Poppins', sans-serif;}
-input[type=text], input[type=password] {
-    width: 100%;
+
+
+/* header start */
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+h3 a {
+	color:black;
+}
+
+a {
+  display: flex;
+  color:white;
+  justify-content: center;
+  text-decoration: none;
+	
+   
+}
+
+
+#container {
+	margin: 0 auto;
+}
+
+
+/* header end */
+input[type=text], input[type=url],input[type=name],input[type=number]{
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -8,19 +35,36 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 
   }
-
-form{
-    
-    width: 400px;
-    border:3px solid #f1f1f1;
-    margin-top: 100px;
-    box-shadow: 20px 20px 50px 15px white;
-    margin-left: 35%;
-}
-.container {
-    padding: 19px;
+  input[type=textarea]{
+    padding:15px 14px 20px;
   }
+
+ 
+form{
+  padding: 16px;
+  background-color: white;
+  border:3px solid #f1f1f1;
+   width: 750px;
+   height:10%;
+  margin: 8rem 35rem ;
+  /* margin-bottom: 5%;
+  margin-top:3%; */
+}
+ .readform{
+  display: flex;
+  align-content: space-around;
+  margin-top: 8%;
+   
+    
+      display: grid;
+    grid-template-columns: repeat(2, 400px);
   
+   grid-template-areas: calc();
+   
+     
+ }
+ 
+
   span.psw {
     float: right;
     display: flex;
@@ -29,8 +73,8 @@ form{
     
   }
   
-  
-  button {
+ 
+ button {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
@@ -40,12 +84,40 @@ form{
    margin-left: 30%;
    height: 50px;  
   }
-  a {
-    display: flex;
-    color:white;
-    justify-content: center;
-    text-decoration: none;
-  }
+  
   .last{
     display: flex;
   }
+  footer{
+        
+    background-color: skyblue;
+    margin-top: 10%;
+    padding-bottom: 4%;
+ }
+ .footerone{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ }
+ .footer2{
+    margin-bottom: 4%;
+    margin-top: 8%;
+ }
+ .footer1{
+  display: flex;
+    margin-top: 3%;
+    margin-left: 3%;
+    
+ }
+ .link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+ h2{
+  color:deeppink;
+ }
+ .buttons{
+  display: flex;
+  justify-content: space-around;
+ }
