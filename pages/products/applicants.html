@@ -298,10 +298,10 @@ function update(event) {
      
       userName,
       phoneNumber,
-      request_id: pg_id,
+      request_id,
       customer_id,
       email,
-      
+      request_id:my_uuid,
       product_id: pg_id,
       status: 1,
       selected_room,
@@ -339,7 +339,7 @@ submitButton.addEventListener("click", update);
             console.log(year);
             console.log(month);
             console.log(date);
-
+           
             const products = JSON.parse(localStorage.getItem("pgdetails"));
             console.log(products);
 
@@ -397,10 +397,11 @@ console.log(phonenumber);
 
                 if (!exit && selectedObject) {
                   room_book_request.push({
-                    request_id: pg_id,
+                    request_id:my_uuid,
                     customer_id,
                     product_id: pg_id,
                     status: 1,
+                    
                     selected_room,
                     userName:username,
                     phoneNumber:phonenumber,
